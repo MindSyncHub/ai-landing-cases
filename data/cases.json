@@ -1842,5 +1842,39 @@
     "evidence_note": "OpenAI 官网公告（2026-01-20）经 IT之家/新浪财经转述（原文抓取被 Cloudflare 拦截，以转载全文留存）；「15 倍」为官宣标题口径。",
     "url": "https://finance.sina.com.cn/stock/t/2026-01-21/doc-inhiaemt5445869.shtml",
     "source": "OpenAI 官宣（2026-01-20，IT之家/新浪财经转述）"
+  },
+  {
+    "id": "d03-syneos-accenture",
+    "detail_tier": "标准",
+    "company": "Syneos Health × Accenture",
+    "industry": "医药/CRO（生物医药解决方案）",
+    "scenario": "全球临床项目运营统一数字底座：Oracle Cloud ERP + Workday HR 覆盖 60+ 国家，19 个月全球上线，为 R&D 价值链 AI 应用筑 AI-ready 数据底座",
+    "pain_points": [
+      "data-siloed",
+      "reconciliation",
+      "management-visibility",
+      "manual-data-transfer"
+    ],
+    "problem": "全球扩张加并购后，财务、人力、采购、项目数据分散在互不连通的系统，需人工对账才能拼出可靠视图；临床项目要快速启动、扩容、跨区域调整时，数据可见性跟不上交付节奏，决策慢。",
+    "solution": "19 个月完成 60+ 国家 Oracle Cloud ERP（财务）+ Workday（HR）全球上线，替换碎片化遗留系统；标准化数据模型并把控制内嵌进核心流程，保证临床与研发场景要求的准确性、可解释性、可审计性；设卓越中心（Center of Excellence）持续扩展能力；底座面向 R&D 全价值链 AI（方案设计、试验选址、招募、审计、监管申报）。",
+    "human": "人类对判断和科学严谨性负责（临床与研发环境硬性要求）；领导者与团队 hands-on 参与推动采纳，而非靠自然渗透；变革 reshaping 协作方式（共享流程与责任）。",
+    "result": "供应商官方案例口径（未经独立审计）：99%+ 数据迁移成功率、系统足迹减少 90%+、供应商发票 81% 无接触处理；全球团队基于近实时统一视图更快决策，临床执行更可预测。",
+    "decision_info": {
+      "effort": "企业级——Accenture 主导的全球转型项目",
+      "duration": "19 个月完成全球 60+ 国家上线",
+      "prerequisites": "高管层决心；并购整合压力；标准化数据模型与内嵌控制设计；CoE 持续运营",
+      "failure_modes": "案例未披露（仅暗示采纳风险靠 hands-on 变革管理对冲）",
+      "transferability": "中高——「先统一数据底座、内嵌合规控制、再谈 AI」路径适合多系统碎片化、强监管的中大型组织"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "数据底座先行：统一 ERP/HR 主系统并标准化数据模型，把 AI-ready 当转型目标而非事后补丁",
+      "合规场景内嵌控制：准确性/可解释性/可审计性写进核心流程",
+      "上线后设卓越中心（CoE）持续运营扩展"
+    ],
+    "pattern_links": [],
+    "evidence_note": "Accenture 官方案例页（客户署名背书）；效果数字为来源方披露，未经独立审计。",
+    "url": "https://www.accenture.com/en/case-studies/industry/syneos-health-real-time-visibility",
+    "source": "Accenture 官方案例页"
   }
 ]
