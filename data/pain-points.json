@@ -139,6 +139,11 @@
       "id": "review-backlog",
       "name": "审核排队积压",
       "description": "审核请求随业务量堆积，专业人员被低级问题占用"
+    },
+    {
+      "id": "anomaly-by-human",
+      "name": "异常靠人盯",
+      "description": "业务异常靠人问、人查才能发现，无法主动预警"
     }
   ]
 }
