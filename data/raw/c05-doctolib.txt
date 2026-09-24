@@ -1,5 +1,5 @@
 # 待补抓
 
 - 目标：https://medium.com/doctolib/from-one-ai-product-to-an-ai-factory-e6337ffa75d9
-- 状态：2026-09-24 curl 抓取超时（Medium 反爬）
-- 计划：浏览器环境补抓
+- 状态：2026-09-24 curl 与 freedium 镜像超时，archive.org 不可达，本机网络连接 medium.com 挂起（ping 通但 TCP 不通）；playwright 真浏览器亦重定向失败
+- 计划：需换网络环境（如手机热点）补抓；参考库 FDE-case-library 中该案例摘要可作线索索引，正式提取仍以 Medium 原文为准
