@@ -1876,5 +1876,39 @@
     "evidence_note": "Accenture 官方案例页（客户署名背书）；效果数字为来源方披露，未经独立审计。",
     "url": "https://www.accenture.com/en/case-studies/industry/syneos-health-real-time-visibility",
     "source": "Accenture 官方案例页"
+  },
+  {
+    "id": "d04-hibob-gpt",
+    "detail_tier": "标准",
+    "company": "HiBob × OpenAI",
+    "industry": "科技/HR SaaS（人力资源软件）",
+    "scenario": "全员 GPT 体系化落地并反哺产品：2,500+ 实验性 GPT → 200 个部署进内部工作流 → 成熟方案经 OpenAI API 产品化为 Bob 平台 AI 功能",
+    "pain_points": [
+      "ai-adoption-org",
+      "throughput-limit",
+      "content-production",
+      "ad-hoc-analysis"
+    ],
+    "problem": "HR SaaS 公司要把 AI 变成全员核心能力而非少数专家工具；销售、交付、增购等环节依赖大量人工准备与检索；同时需要把内部 AI 实践转化为面向 5,000+ 客户的 Bob 平台产品功能。",
+    "solution": "AI Mind 团队牵头五步流程（创意与验证→构建→推广与赋能→运维优化→规模化复用），把员工按业务痛点提出的 GPT 构想转成「数字队友」：每个 GPT 有明确角色、专门负责人、与业务成果挂钩的绩效目标；默认加入（opt-out）推广；优秀 GPT 进内部目录跨部门复用。内部验证成熟的方案经 OpenAI API 产品化，以 GPT-4o 嵌入 Bob 平台，让 HR 领导者对话式查询人力数据。",
+    "human": "员工从「使用者」变为「构建者」；每个 GPT 当「数字队友」管理（有角色、负责人、KPI）；CEO 公开立场「AI 不替代人，赋能人」；AI Leaders 跨职能网络把想法变实用工具。",
+    "result": "来源方披露（未经独立审计）：90%+ 员工活跃使用 ChatGPT Enterprise；构建 2,500+ 实验性 GPT，其中 200 个部署进内部工作流（漏斗淘汰率约 92%）；HR 领导者用 Bob AI 对话式查数据，决策从数日缩至数分钟；内部与外部 KPI 直接挂钩（营收贡献、交付上线效率、CSAT）。",
+    "decision_info": {
+      "effort": "中等——全员 GPT 体系+专职 AI Mind 团队+内部目录基础设施",
+      "duration": "2025-10 OpenAI 官方案例发布，持续迭代",
+      "prerequisites": "ChatGPT Enterprise 全员许可；专职 AI Mind 团队；五步流程与负责人机制；内部目录复用基础设施",
+      "failure_modes": "未直接披露；2,500 实验→200 部署的漏斗隐含大量实验被自然淘汰，说明容错机制是关键",
+      "transferability": "高——「内部实验→产品化」飞轮和五步流程适合 SaaS 公司与知识型组织直接参照"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "设专职 AI 团队（AI Mind）+五步流程，把员工创意变成标准 Agent 并配负责人与 KPI",
+      "默认加入（opt-out）制推动全员采纳，而非自愿报名",
+      "内部实验成熟后经 API 产品化，内外 KPI 挂钩验证价值"
+    ],
+    "pattern_links": [],
+    "evidence_note": "OpenAI 客户案例页原文经觉醒学院镜像留存（本机直连 openai.com 被 Cloudflare 拦截）；HiBob 官方博客交叉印证；数字为来源方披露。",
+    "url": "https://openai.com/zh-Hans-CN/index/hibob/",
+    "source": "OpenAI 客户案例（2025-10-08，觉醒学院镜像留存）+ HiBob 官方博客"
   }
 ]

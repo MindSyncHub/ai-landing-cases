@@ -1,0 +1,806 @@
+HiBob and OpenAI: 2,500 GPTs driving people-first innovation | HiBob
+Skip to content
+HiBob has entered a new era of AI built on collaboration. With the help of
+OpenAI’s technology
+, we’re advancing how our teams and our customers use intelligent tools to enhance productivity and human potential.
+Our approach to AI is simple: Use it to empower people, not replace them. It’s about helping every person at HiBob—and every HR leader who uses Bob—work smarter, faster, and with greater confidence.
+This is the story of how we’re building with OpenAI, using
+AI in HR
+and beyond, and helping people proud companies turn this technology into a force for professional growth, creativity, connection, and business success.
+Table of contents
+Building with OpenAI: 2,500 GPTs and 90% adoption
+We use people-first AI every day. Nearly all Bobbers use ChatGPT as part of their daily workflows.
+Together, we’ve developed over 2,500 internal GPTs, designed around HiBob’s real-world needs. This kind of big-picture thinking meets the reality of day-to-day work to make sure every agent actually helps the people using it.
+That approach also inspired the creation of our AI Mind team, a group that leads
+HiBob’s AI innovation
+and supports our cross-functional network of AI Leaders who turn ideas into practical tools that serve the entire business. To streamline those ideas from proof and concept to scalable solutions, the team developed a five-step process to turn GPTs from an idea into digital agents capable of solving real business problems.
+Our framework includes:
+1. Idea and proof of concept.
+Bobbers propose GPT ideas based on the pain points they experience and explore how AI can simplify or enhance specific workflows.
+2. Build.
+Our engineers collaborate with AI Leaders to turn ideas into secure, compliant agents using ChatGPT Enterprise and our internal systems.
+3. Adoption and enablement.
+Once built, we work with agent owners to roll out each GPT with the right documentation, context, and training so teams know how to use them and how they can help.
+4. Maintenance.
+Feedback loops and usage data help us refine each agent’s performance and relevance, ensuring it continues to add value over time.
+5. Scale.
+We make our GPTs available for reuse and adaptation, publishing them to an internal directory for reuse across departments.
+We’re using GPTs in Sales, Marketing, Product, Design, Legal, and, of course, we’re using AI in HR. The goal isn’t to automate humans out of the process but to help them do more
+with
+more.
+And these internal GPTs aren’t just useful for the HiBob team. They’re helping us create customer-facing features on the Bob platform, designed to support HR digital transformation. HR leaders can now use Bob’s AI features to interact with their data naturally, asking questions, surfacing insights, and making decisions in minutes instead of hours.
+<<
+Get a free demo to see HiBob’s AI-powered HR platform in action.
+>>
+Trusted
+,
+responsible AI adoption
+AI adoption can only be successful when people trust it. We’re living in a climate where many people are worried about what AI means for their jobs. This is why we’ve taken a transparent approach from the start. We want to ensure responsible AI adoption and instill a sense of
+trust in AI
+and what it can offer.
+To do this, we’ve developed a clear AI policy (you can download our
+AI Policy Template
+to build your own) and established frameworks for safe and transparent AI usage. Our HR team, compliance leaders, and AI trainers work together to ensure the right level of governance across all processes. That’s why we’ve built human oversight into every step.
+As we
+navigate AI adoption
+, this is the mindset we’re creating at HiBob. We encourage our customers to adopt it, as well.
+Creating a culture of AI confidence
+Whether you’re using AI for HR teams or anywhere else in your organization, it’s important to frame
+AI as
+friendly tech
+, not the existential threat we’ve all been reading about in the news. Because when people understand the technology, they’re a lot less likely to fear or reject it.
+Here at HiBob, we’re fostering AI literacy and accessibility for
+all
+our people by following these guidelines.
+Use AI to strengthen trust, not replace human instinct
+For best results, you need a combination of AI and human collaboration. AI should enhance human creativity and insight, not try to replace it.
+Let’s look at the example of recruitment.
+AI can provide HR automation. It can screen thousands of resumes at incredible speed, helping your team make faster decisions. But we can’t rely on data analysis alone. This approach runs the risk of bias—and of missing out on great candidates who don’t fit the usual patterns.
+This is where we emphasize the role of intuition, empathy, and experience. These are the uniquely
+human capabilities AI can’t replace
+. They’re what our HR professionals bring to the table to turn data into good decisions. So, while AI can speed up processes, humans should always make the final call.
+Frame AI as an ally, not a competitor
+Much of the public conversation around AI still centers on fear—fear of jobs being automated or roles becoming redundant. At HiBob, we frame AI differently.
+Here, AI is a powerful partner. It’s an assistant that can take on repetitive, time-consuming tasks, freeing people up to focus on creative, strategic, and meaningful work.
+So, how are we getting this mindset to stick? Our HR team recognizes and rewards human-centric skills. They’re finding ways to integrate AI naturally into daily methodologies so it brings flow (not friction) to the workday.
+Train your teams for the future
+We believe AI literacy is the new
+digital literacy
+. That’s why we’re committed to
+AI upskilling
+, giving every Bobber the confidence and knowledge they need to make the most of this time-saving tool.
+Whether they’re using AI in HR, Sales, Marketing, Finance, or Product, our goal is to prepare people for the future of work, where we imagine everyone will use AI as part of their job.
+We’re proud to see that this investment pays off, not just at HiBob, but in the careers our people take beyond it. Learning how to work with AI is a skill that will serve everyone, wherever they go next.
+Make AI work for your people and your business
+Organizations that take a piecemeal or hesitant approach to AI adoption are finding it harder to keep up. And the gap between AI adopters and AI skeptics is widening.
+HR teams play a really important role in bridging that gap. They shape how people experience AI and how the business benefits. That means building strong governance frameworks that keep AI safe, fair, and transparent. It also means highlighting how AI creates value for both people and the business. When HR teams model responsible AI adoption, they build trust across the organization and help create lasting cultural change.
+HiBob’s role in the HR AI landscape
+The Bob platform is among the
+top HR AI tools
+currently available. What sets us apart is our people-first philosophy.
+Our AI innovation is grounded in three key principles:
+Responsible design.
+Every AI feature we build prioritizes privacy, security, and transparency.
+People-first innovation.
+We design HR technology to empower HR teams and their people, not replace them.
+Measurable impact.
+Our AI features drive real outcomes that improve productivity, data accuracy, and decision-making.
+Recommended For Further Reading
+Merging man and machine: How to create an effective AI policy
+How to promote AI as friendly tech
+Bridging the AI trust gap: What managers see that team members don’t
+Navigating AI adoption: Benefits, risks, and the path to success
+AI taking over jobs? Redesign entry-level work to protect early careers.
+Agentic AI in HR: What it is and how it works
+How to implement AI responsibly in HR: Best practices and checklist
+Looking ahead
+When it comes to HR software innovation, we’re just getting started. Here at HiBob, we’re continuing to work with OpenAI models, iterating, improving, and developing new solutions.
+We’re committed to empowering HR through AI and exploring new ways to work smarter and more efficiently, while putting people at the center of everything we do.
+So, watch this space.
+<<
+Download our AI Policy Template to start building trust with AI.
+>>
+Key takeaways
+HiBob is embracing AI.
+We’re using it as part of our own workflows and giving our customers the AI tools they need to improve HR services.
+We’re not using AI to replace our people.
+We’re using it to enhance their skills and take on repetitive tasks, empowering our people to do and be more.
+Our customers are using AI tools on the Bob platform.
+They’re using AI in HR to better understand people data and make more informed decisions.
+To create a culture of confidence in AI at your workplace, make like HiBob.
+Offer training, frame AI as a co-pilot not a competitor, and celebrate the tasks only humans can complete.
+<<
+Get a free demo to see HiBob’s AI-powered HR platform in action.
+>>
+Table of contents
+Stay updated
+Get the latest HR tips and insights in our monthly newsletter.
+Subscribe
+Related Resources
+Sign up here!
+Join 50,000 HR leaders who get our monthly newsletter.
+Business email*
+Choose Country*
+Afghanistan
+Aland Islands
+Albania
+Algeria
+American Samoa
+Andorra
+Angola
+Anguilla
+Antarctica
+Antigua and Barbuda
+Argentina
+Armenia
+Aruba
+Australia
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bermuda
+Bhutan
+Bolivia
+Bonaire, Sint Eustatius and Saba
+Bosnia and Herzegovina
+Botswana
+Bouvet Island
+Brazil
+British Indian Ocean Territory
+Brunei Darussalam
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Cameroon
+Canada
+Cape Verde
+Cayman Islands
+Central African Republic
+Chad
+Chile
+China
+Christmas Island
+Cocos (Keeling) Islands
+Colombia
+Comoros
+Congo
+Congo, the Democratic Republic of the
+Cook Islands
+Costa Rica
+Cote d'Ivoire
+Croatia
+Cuba
+Curacao
+Cyprus
+Czech Republic
+Denmark
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Ethiopia
+Falkland Islands (Malvinas)
+Faroe Islands
+Fiji
+Finland
+France
+French Guiana
+French Polynesia
+French Southern Territories
+Gabon
+Gambia
+Georgia
+Germany
+Ghana
+Gibraltar
+Greece
+Greenland
+Grenada
+Guadeloupe
+Guam
+Guatemala
+Guernsey
+Guinea
+Guinea-Bissau
+Guyana
+Haiti
+Heard Island and McDonald Islands
+Holy See (Vatican City State)
+Honduras
+Hong Kong
+Hungary
+Iceland
+India
+Indonesia
+Iran
+Iraq
+Ireland
+Isle of Man
+Israel
+Italy
+Jamaica
+Japan
+Jersey
+Jordan
+Kazakhstan
+Kenya
+Kiribati
+Korea, Democratic People's Republic of
+Kuwait
+Kyrgyzstan
+Lao People's Democratic Republic
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+Macao
+Macedonia, the Former Yugoslav Republic of
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Marshall Islands
+Martinique
+Mauritania
+Mauritius
+Mayotte
+Mexico
+Micronesia, Federated States of
+Moldova, Republic of
+Monaco
+Mongolia
+Montenegro
+Montserrat
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nauru
+Nepal
+Netherlands
+New Caledonia
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Niue
+Norfolk Island
+Northern Mariana Islands
+Norway
+Oman
+Pakistan
+Palau
+Palestinian Territory, Occupied
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Pitcairn
+Poland
+Portugal
+Puerto Rico
+Qatar
+Reunion
+Romania
+Russia
+Rwanda
+Saint Barthélemy
+Saint Helena, Ascension and Tristan da Cunha
+Saint Kitts and Nevis
+Saint Lucia
+Saint Martin (French part)
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Sint Maarten (Dutch part)
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Georgia and the South Sandwich Islands
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Svalbard and Jan Mayen
+Swaziland
+Sweden
+Switzerland
+Syria
+Taiwan
+Tajikistan
+Tanzania
+Thailand
+Timor-Leste
+Togo
+Tokelau
+Tonga
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United States
+United States Minor Outlying Islands
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Viet Nam
+Virgin Islands, British
+Virgin Islands, U.S.
+Wallis and Futuna
+Western Sahara
+Yemen
+Zambia
+Zimbabwe
+Kosovo
+Korea, Republic of
+Country*
+Would you like a demo of the HiBob platform?
+Yes
+No
+By checking this checkbox you agree to receive marketing communications from HiBob. You can update your preferences at any time.
+By submitting your details you hereby agree to our
+Terms and Conditions
+and
+Privacy Policy
+. You may always opt-out from our mailing lists in accordance with the Privacy Policy.
+Subscribe
+You’re all set.
+Go ahead and watch a demo video here
+Preview Bob (4:01)
+Hey there!
+What demo would you like today?*
+Bob Core
+Org, Time, Docs, Tasks, Analytics
+Workforce Planning
+Position Planning, Change Management
+Hiring
+Job Openings, Hiring Approvals
+Payroll Hub
+Payroll Sync, Integration Management
+Talent
+Surveys, Performance, Goals, 1-On-1s
+Compensation
+Events, Bands
+Compensation Benchmarking
+Compensation Benchmark Data
+Sandbox
+Build, Test, Refine, And Repeat
+Learning
+Learning, Courses
+Time & Attendance
+Clocking, Timesheets, Work Cycles
+Your Voice
+Safe, Anonymous Reporting
+UK Payroll
+Manage UK Payroll
+US Payroll
+Manage US Payroll
+What demo would you like today?*
+closed
+Core
+closed
+Workforce Planning
+closed
+Hiring
+closed
+Payroll Hub
+closed
+Talent Package
+closed
+Compensation
+closed
+Compensation Benchmarking Powered by Mercer
+closed
+Sandbox
+closed
+Learning
+closed
+Time & Attendance
+closed
+Your Voice
+closed
+UK Payroll
+closed
+US Payroll
+What demo would you like today?*
+Why are you interested in this module?*
+Next
+Tell us a bit about your company.
+Number of employees            *
+Company Name*
+Job Title*
+Mobile Phone*
+SCHEDULE NOW
+You’re in.
+Pick your ideal time here:
+Oops!!!
+Looks like something isn’t working as expected. Please refresh and try again later.
+There was an error with your email.
+Please click here to start over.
+Get a free demo
+Claim your spot today!
+Business email*
+Full Name*
+Choose Country*
+Afghanistan
+Aland Islands
+Albania
+Algeria
+American Samoa
+Andorra
+Angola
+Anguilla
+Antarctica
+Antigua and Barbuda
+Argentina
+Armenia
+Aruba
+Australia
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bermuda
+Bhutan
+Bolivia
+Bonaire, Sint Eustatius and Saba
+Bosnia and Herzegovina
+Botswana
+Bouvet Island
+Brazil
+British Indian Ocean Territory
+Brunei Darussalam
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Cameroon
+Canada
+Cape Verde
+Cayman Islands
+Central African Republic
+Chad
+Chile
+China
+Christmas Island
+Cocos (Keeling) Islands
+Colombia
+Comoros
+Congo
+Congo, the Democratic Republic of the
+Cook Islands
+Costa Rica
+Cote d'Ivoire
+Croatia
+Cuba
+Curacao
+Cyprus
+Czech Republic
+Denmark
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Ethiopia
+Falkland Islands (Malvinas)
+Faroe Islands
+Fiji
+Finland
+France
+French Guiana
+French Polynesia
+French Southern Territories
+Gabon
+Gambia
+Georgia
+Germany
+Ghana
+Gibraltar
+Greece
+Greenland
+Grenada
+Guadeloupe
+Guam
+Guatemala
+Guernsey
+Guinea
+Guinea-Bissau
+Guyana
+Haiti
+Heard Island and McDonald Islands
+Holy See (Vatican City State)
+Honduras
+Hong Kong
+Hungary
+Iceland
+India
+Indonesia
+Iran
+Iraq
+Ireland
+Isle of Man
+Israel
+Italy
+Jamaica
+Japan
+Jersey
+Jordan
+Kazakhstan
+Kenya
+Kiribati
+Korea, Democratic People's Republic of
+Kuwait
+Kyrgyzstan
+Lao People's Democratic Republic
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+Macao
+Macedonia, the Former Yugoslav Republic of
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Marshall Islands
+Martinique
+Mauritania
+Mauritius
+Mayotte
+Mexico
+Micronesia, Federated States of
+Moldova, Republic of
+Monaco
+Mongolia
+Montenegro
+Montserrat
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nauru
+Nepal
+Netherlands
+New Caledonia
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Niue
+Norfolk Island
+Northern Mariana Islands
+Norway
+Oman
+Pakistan
+Palau
+Palestinian Territory, Occupied
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Pitcairn
+Poland
+Portugal
+Puerto Rico
+Qatar
+Reunion
+Romania
+Russia
+Rwanda
+Saint Barthélemy
+Saint Helena, Ascension and Tristan da Cunha
+Saint Kitts and Nevis
+Saint Lucia
+Saint Martin (French part)
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Sint Maarten (Dutch part)
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Georgia and the South Sandwich Islands
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Svalbard and Jan Mayen
+Swaziland
+Sweden
+Switzerland
+Syria
+Taiwan
+Tajikistan
+Tanzania
+Thailand
+Timor-Leste
+Togo
+Tokelau
+Tonga
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United States
+United States Minor Outlying Islands
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Viet Nam
+Virgin Islands, British
+Virgin Islands, U.S.
+Wallis and Futuna
+Western Sahara
+Yemen
+Zambia
+Zimbabwe
+Kosovo
+Korea, Republic of
+Country*
+By checking this checkbox you agree to receive marketing communications from HiBob. You can update your preferences at any time.
+By submitting your details you hereby agree to our
+Terms and Conditions
+and
+Privacy Policy
+. You may always opt-out from our mailing lists in accordance with the Privacy Policy.
+NEXT
+Hey,
+!
+What demo would you like today?*
+Bob Core
+Org, Time, Docs, Tasks, Analytics
+Workforce Planning
+Position Planning, Change Management
+Hiring
+Job Openings, Hiring Approvals
+Payroll Hub
+Payroll Sync, Integration Management
+Talent
+Surveys, Performance, Goals, 1-On-1s
+Compensation
+Events, Bands
+Compensation Benchmarking
+Compensation Benchmark Data
+Sandbox
+Build, Test, Refine, And Repeat
+Learning
+Learning, Courses
+Time & Attendance
+Clocking, Timesheets, Work Cycles
+Your Voice
+Safe, Anonymous Reporting
+UK Payroll
+Manage UK Payroll
+US Payroll
+Manage US Payroll
+What demo would you like today?*
+closed
+Core
+closed
+Workforce Planning
+closed
+Hiring
+closed
+Payroll Hub
+closed
+Talent Package
+closed
+Compensation
+closed
+Compensation Benchmarking Powered by Mercer
+closed
+Sandbox
+closed
+Learning
+closed
+Time & Attendance
+closed
+Your Voice
+closed
+UK Payroll
+closed
+US Payroll
+What demo would you like today?*
+Why are you interested in this module?*
+Next
+Tell us a bit about your company.
+Number of employees            *
+Company Name*
+Job Title*
+Mobile Phone*
+SCHEDULE NOW
+You’re in.
+Pick your ideal time here:
+Good news!
+You already have a meeting scheduled.
+To reschedule, go to the confirmation email in your inbox and click on the link.
+Your form has been submitted.
+We’re on top of this and will get back to you quickly.
+You’re all set.
+Watch a demo video here.
+Preview Bob (4:01)
+You’re all set.
+A demo of Bob is coming your way.
+Go ahead and watch a demo video here.
+Preview Bob (4:01)
+Oops, the calendar timed out.
+It’s all good. A HiBob expert will contact you soon!
+Until then, check your inbox for an email with the video.
+Oops!!!
+Looks like something isn’t working as expected. Please refresh and try again later.
+There was an error with your email.
+Please click here to start over.
