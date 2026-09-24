@@ -144,6 +144,11 @@
       "id": "anomaly-by-human",
       "name": "异常靠人盯",
       "description": "业务异常靠人问、人查才能发现，无法主动预警"
+    },
+    {
+      "id": "compliance-check",
+      "name": "规范合规核对耗时",
+      "description": "强规范行业的逐项合规检查比干活本身还耗时，修改牵一发动全身"
     }
   ]
 }
