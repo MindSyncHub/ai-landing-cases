@@ -149,6 +149,11 @@
       "id": "compliance-check",
       "name": "规范合规核对耗时",
       "description": "强规范行业的逐项合规检查比干活本身还耗时，修改牵一发动全身"
+    },
+    {
+      "id": "manual-data-transfer",
+      "name": "人工搬运数据",
+      "description": "人在多个系统间扒数、誊抄、核对，充当数据连接件"
     }
   ]
 }
