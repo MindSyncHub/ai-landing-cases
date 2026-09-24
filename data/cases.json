@@ -1166,5 +1166,39 @@
     "evidence_note": "数字为 BBVA 官网新闻稿（2026-04-30，署名 Head of Talent & Culture Transformation and Data Aila Jiménez）披露，未经独立审计。",
     "url": "https://www.bbva.com/en/innovation/bbva-drives-ai-adoption-through-talent/",
     "source": "BBVA 官网新闻稿"
+  },
+  {
+    "id": "c17-walmart-icm2025",
+    "detail_tier": "S",
+    "company": "沃尔玛（Walmart）",
+    "industry": "零售",
+    "scenario": "AI 赋能商品全链路：买手助手 Wally、趋势到商品 Trend-to-Product、需求预测与库存编排",
+    "pain_points": [
+      "ad-hoc-analysis",
+      "throughput-limit",
+      "management-visibility"
+    ],
+    "problem": "沃尔玛商品数亿级、门店 4600+，买手团队分析销售表现（跨店、跨市场、跨渠道）靠人工取数与经验判断，定位商品滞销/畅销原因慢，新品从趋势识别到上架的周期以数十周计。",
+    "solution": "自建三类 AI 能力：①Wally——买手 AI 助手，自然语言分析销售表现、诊断商品异常表现原因、输出可执行业务洞察，路线图为从助手升级为自动调优商品/数量/库存流决策的 AI agent（智能体）；②Trend-to-Product——把趋势信号直接转成商品，首个服装系列上线即从典型周期中砍掉 18 周；③需求预测与库存编排——预测未来购买行为、优化「备多少货、备在哪、怎么流」，并同步强化商品目录描述。面向顾客的 Sparky 购物助手另线推进。",
+    "human": "买手仍是选品与库存决策主体，Wally 先做分析与诊断、路线图才是自动决策；CEO 公开表态「任务会被自动化，岗位会变化，但多年后仍会雇佣大量员工」；店内在岗员工的辅助工具另建。",
+    "result": "首个 Trend-to-Product 服装系列砍掉 18 周上市周期且售罄表现强（strong sell-throughs）；Wally 已成为买手日常工具（分析数据、回答 how-to、产出洞察）；同日达覆盖 93% 美国家庭（2 年增长 22%）。数字为 Walmart 2025 投资社区会议（ICM）管理层演讲披露，未经独立审计。",
+    "decision_info": {
+      "effort": "自建为主（built by our team）：买手助手、趋势转商品、需求预测三线并行，叠加顾客侧助手",
+      "duration": "18 周周期压缩是首个系列的实测口径；AI 投入早于 GenAI 热潮，持续多年",
+      "prerequisites": "自有数据规模与全渠道触点（线上+门店+服务）是 CTO 自认的护城河；内部工程团队有能力自建而非纯外购",
+      "failure_modes": "路线图里 Wally 从「助手」到「自动决策 agent」的跨越是最难一步，涉及决策权让渡；CEO 明示岗位会变化——组织承接要跟上",
+      "transferability": "高——「买手/运营助手先行、agent 决策殿后」的渐进路线适合大型零售与分销企业；「趋势→商品」的周期压缩打法可复制到时尚、快消"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "买手助手先诊断分析、再升级自动决策的渐进授权路线",
+      "趋势信号直接驱动商品化（砍掉 18 周周期）",
+      "AI 早于 GenAI 时代的长期投入口径（非追风口）",
+      "用全渠道数据规模当护城河而非单点模型"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字与路线图为 Walmart 2025 年投资社区会议管理层演讲实录披露，未经独立审计；Wally 的 agent 化当时尚在路线图中。",
+    "url": "https://stock.walmart.com/",
+    "source": "Walmart 2025 Investment Community Meeting 演讲实录（PDF 文字版）"
   }
 ]
