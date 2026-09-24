@@ -29,8 +29,17 @@ data/
   patterns.json       # FDE 模式库
   pain-points.json    # 痛点标签受控词表
   raw/                # 原文留存（提取时的来源材料）
+site/                 # 静态站（单页应用，无构建依赖）
+index.html            # 站点入口
 scripts/
   validate.mjs        # 数据校验（npm test）
+```
+
+## 本地浏览
+
+```bash
+python3 -m http.server 8000   # 或任意静态服务器
+# 打开 http://localhost:8000
 ```
 
 ## 校验
