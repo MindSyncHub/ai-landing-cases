@@ -1,0 +1,118 @@
+Block - Block Open Source Introduces “codename goose” — an Open Framework for AI Agents
+Block logo
+Author
+Block
+Tags
+AI
+,
+Open Source
+,
+Company News
+,
+Block
+Author
+Block
+Tags
+AI
+,
+Open Source
+,
+Company News
+,
+Block
+Today, Block’s
+Open Source Program Office
+announced the launch of
+codename goose
+, an interoperable AI agent framework that enables users to connect large language models (LLMs) to real-world actions. Its first use cases are related to software engineering, but developers both within Block and the broader open source community are exploring other non-engineering use cases as well.
+Dhanji Prasanna, CTO of Block, said, “Making goose open source creates a framework for new heights of invention and growth. Block engineers are already using goose to free up time for more impactful work, and we’re excited to see how our contribution to AI and agents can do the same for our customers and community. As more people build with AI, we will unlock new ideas and advantages that can collectively reduce toil and give people time back to be their most creative selves.”
+goose is designed in an open and modular way so that anyone can build a system and start operating it. In an AI-powered internet, systems can be conceptualized as the application layer. goose offers interoperability between user interfaces, language models, and systems:
+goose can connect to these systems using Anthropic’s open source
+Model Context Protocol
+(MCP) — a standardized set of APIs and endpoints that connect AI agents to the systems where data lives, including content repositories, business tools, and development environments. Block has been collaborating closely with Anthropic to develop this protocol.
+goose is designed to discover new systems on the fly, so its capabilities can grow through a community building new integrations for MCP. This enables potential use cases that range from streamlining developer workflows to enhancing music creation, personalizing shopping experiences, and beyond.
+goose has built-in desktop application and command line interfaces, but developers can also build custom user interfaces for goose, tailored to the system they intend to offer.
+Finally, they can choose
+which large language model
+they want to use to power goose.
+The first operational system from goose is a software engineering agent that reduces time spent on maintenance and repetitive tasks, giving human engineers time back to focus on higher-value, innovative work. It operates in real time within the development environment, acting as a true “agent” by not only searching, navigating, and writing code based on LLM output, but also executing tasks autonomously — reading and writing files, running code and tests, refining outputs, installing dependencies, and handling additional actions as needed.
+goose has been released under the
+Apache License 2.0 (ASL2)
+, a permissive open source license that allows people to freely use, modify, and distribute the software, even for commercial purposes.
+To explore goose and join its developer community, please visit the links below:
+codename goose Website
+codename goose Github Repo
+Block Open Source Discord
+Block Open Source Website
+About Block
+Block, Inc. (NYSE: $XYZ) builds technology to increase access to the global economy. Each of our brands unlocks different aspects of the economy for more people.
+Square
+makes commerce and financial services accessible to sellers.
+Cash App
+is the easy way to spend, send, and store money.
+Afterpay
+is transforming the way customers manage their spending over time.
+TIDAL
+is a music platform that empowers artists to thrive as entrepreneurs.
+Bitkey
+is a simple self-custody wallet built for bitcoin.
+Proto
+is a suite of bitcoin mining products and services. Together, we’re helping build a financial system that is open to everyone.
+Author
+Block
+Tags
+AI
+,
+Open Source
+,
+Company News
+,
+Block
+Today, Block’s
+Open Source Program Office
+announced the launch of
+codename goose
+, an interoperable AI agent framework that enables users to connect large language models (LLMs) to real-world actions. Its first use cases are related to software engineering, but developers both within Block and the broader open source community are exploring other non-engineering use cases as well.
+Dhanji Prasanna, CTO of Block, said, “Making goose open source creates a framework for new heights of invention and growth. Block engineers are already using goose to free up time for more impactful work, and we’re excited to see how our contribution to AI and agents can do the same for our customers and community. As more people build with AI, we will unlock new ideas and advantages that can collectively reduce toil and give people time back to be their most creative selves.”
+goose is designed in an open and modular way so that anyone can build a system and start operating it. In an AI-powered internet, systems can be conceptualized as the application layer. goose offers interoperability between user interfaces, language models, and systems:
+goose can connect to these systems using Anthropic’s open source
+Model Context Protocol
+(MCP) — a standardized set of APIs and endpoints that connect AI agents to the systems where data lives, including content repositories, business tools, and development environments. Block has been collaborating closely with Anthropic to develop this protocol.
+goose is designed to discover new systems on the fly, so its capabilities can grow through a community building new integrations for MCP. This enables potential use cases that range from streamlining developer workflows to enhancing music creation, personalizing shopping experiences, and beyond.
+goose has built-in desktop application and command line interfaces, but developers can also build custom user interfaces for goose, tailored to the system they intend to offer.
+Finally, they can choose
+which large language model
+they want to use to power goose.
+The first operational system from goose is a software engineering agent that reduces time spent on maintenance and repetitive tasks, giving human engineers time back to focus on higher-value, innovative work. It operates in real time within the development environment, acting as a true “agent” by not only searching, navigating, and writing code based on LLM output, but also executing tasks autonomously — reading and writing files, running code and tests, refining outputs, installing dependencies, and handling additional actions as needed.
+goose has been released under the
+Apache License 2.0 (ASL2)
+, a permissive open source license that allows people to freely use, modify, and distribute the software, even for commercial purposes.
+To explore goose and join its developer community, please visit the links below:
+codename goose Website
+codename goose Github Repo
+Block Open Source Discord
+Block Open Source Website
+About Block
+Block, Inc. (NYSE: $XYZ) builds technology to increase access to the global economy. Each of our brands unlocks different aspects of the economy for more people.
+Square
+makes commerce and financial services accessible to sellers.
+Cash App
+is the easy way to spend, send, and store money.
+Afterpay
+is transforming the way customers manage their spending over time.
+TIDAL
+is a music platform that empowers artists to thrive as entrepreneurs.
+Bitkey
+is a simple self-custody wallet built for bitcoin.
+Proto
+is a suite of bitcoin mining products and services. Together, we’re helping build a financial system that is open to everyone.
+Search
+AI Chat
+You are being connected to our automated chatbot which utilizes generative AI. By continuing,
+you recognize that
+Block’s Privacy Notice
+applies to your use of this tool and you agree to Block’s AI terms of use located
+here
+and
+here
+.

@@ -2050,5 +2050,38 @@
     "evidence_note": "Berenberg 官网新闻稿（2025-06-05，一手）；获奖与 AuM 数字为银行自述口径。",
     "url": "https://www.berenberg.de/en/news/pressemeldung/berenberg-global-private-banking-innovation-award-2025/",
     "source": "Berenberg 官网新闻稿（2025-06-05）"
+  },
+  {
+    "id": "d09-block-goose",
+    "detail_tier": "标准",
+    "company": "Block（原 Square）× Anthropic（MCP 协议合作）",
+    "industry": "金融科技",
+    "scenario": "开源 AI Agent 框架 codename goose：以 MCP（模型上下文协议）连接 LLM 与真实系统动作，首个运营系统是软件工程 Agent（自主执行维护与重复性任务）",
+    "pain_points": [
+      "algorithm-execution-gap",
+      "throughput-limit",
+      "professional-judgment-gap"
+    ],
+    "problem": "工程团队大量时间耗在维护与重复性任务上；企业需要把 LLM 从对话工具升级为能连接真实系统执行动作的 Agent；闭源 Agent 工具锁定单一模型与厂商，难以定制。",
+    "solution": "2025-01-28 Block 开源项目办公室发布 codename goose（Apache 2.0 许可）：互操作 Agent 框架，模块化连接 UI/大模型/系统三层；用 Anthropic 开源的 MCP 协议连接 GitHub、Google Drive、JetBrains IDE 等系统，可自建自定义集成；内置桌面应用与 CLI；开发者可选任意 LLM 驱动。首个运营系统是软件工程 Agent：在开发环境实时自主执行——搜索/导航/写代码、读写文件、跑代码和测试、迭代输出、安装依赖。Block 工程师作为第一用户先用起来，再开源给社区。",
+    "human": "人类工程师从维护性任务转向高价值创新工作；开源社区通过扩展 MCP 集成共同扩展能力；互操作设计让组织不被单一模型厂商绑定。",
+    "result": "Block 官方口径：工程师已用 goose 释放时间（发布时未量化）；后续第三方报道引 Block 披露——内部约 18 个月后开源，2025-09 起 Agentic 编码工具使每工程师生产代码量提升 40%+（未经独立审计）；2025-12 goose 与 Anthropic MCP 一同捐入 Linux 基金会 Agentic AI Foundation。",
+    "decision_info": {
+      "effort": "中——开源框架+内部先行验证",
+      "duration": "内部约 18 个月→2025-01 公开发布→持续迭代",
+      "prerequisites": "开源项目办公室（OSPO）；MCP 生态位；模型可插拔架构",
+      "failure_modes": "未披露",
+      "transferability": "高——「开源 Agent 框架+MCP 互操作」是通用路径，任意组织可直接采用或参照其内部先行模式"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "用开源互操作协议（MCP）连接 Agent 与企业系统，避免厂商锁定",
+      "先在内部当第一用户验证，再开源建生态",
+      "成熟后捐给中立基金会（Linux 基金会）扩大行业采用"
+    ],
+    "pattern_links": [],
+    "evidence_note": "Block 官方博客原文（2025-01-28，一手留存）；「40%+」为第三方报道转引 Block 口径，未经独立审计。",
+    "url": "https://block.xyz/inside/block-open-source-introduces-codename-goose",
+    "source": "Block 官方博客（2025-01-28，一手）"
   }
 ]
