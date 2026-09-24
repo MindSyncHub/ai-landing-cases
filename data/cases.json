@@ -1778,5 +1778,69 @@
     "evidence_note": "核心数字（被骗率 5.1→0.55、效能 6 倍等）唯一来源为实在智能投递的数据猿《2024 中国数智化转型升级创新服务企业》榜单参评稿（网易订阅转载），属供应商自述口径，未经独立审计；候选清单标注「口径需核」即指此，本条目已如实降级标注。党媒上游新闻（2026-01-23）报道的「山城金盾」「渝警法智」为重庆公安其他 AI 系统，仅作同客户方向旁证，未混用数字。",
     "url": "https://www.163.com/dy/article/J6U6I0TI0552YZST.html",
     "source": "数据猿榜单参评稿·实在智能投递（网易订阅转载）；上游新闻（2026-01-23）同客户旁证"
+  },
+  {
+    "id": "d01-airbus-skywise",
+    "detail_tier": "标准",
+    "company": "Airbus（Skywise 平台，与 Palantir 共建）",
+    "industry": "航空制造/航空服务",
+    "scenario": "Skywise 开放航空数据平台：统一数据底座（Ontology）+预测性维护（Fleet Performance+）+机队运营分析，连接主机厂、航空公司、供应商",
+    "pain_points": [
+      "data-siloed",
+      "anomaly-by-human",
+      "professional-tool-heavy"
+    ],
+    "problem": "航空数据分散在主机厂、航司、供应商的数十个孤立系统中（工单、航材、机载传感数据、飞行计划、技术文档等），无法交叉分析；故障靠事后排故，延误与维修成本高；各参与方数据口径不一，缺乏单一可信源。",
+    "solution": "2017 年与 Palantir 联合发布 Skywise：把所有数据源汇入云端统一数据模型（Skywise Ontology，日摄入 15 万+ 数据源），在其上提供自助分析、机器学习建模、仿真与预测性维护应用（S.Fleet Performance+：健康监控/预测维护/可靠性三大能力）。2026-02 与 Palantir 续多年期约（数据主权迁移、多 LLM 能力）；2026-07 Skywise 合并 Navblue 成为 Airbus 全资子公司（约 750 人）。",
+    "human": "航司工程团队在过站时执行预测性换件；技术飞行员与工程师基于同一数据源做决策（客户引用：「everybody sees the same data, one source of truth」）。",
+    "result": "官网/媒体口径：140+ 航空公司采用、1.2 万+ 架飞机连接、5 万+ 日常用户（2026 续约报道）；easyJet 试点（85 架、三个月）：预防性更换 14 个组件，避免 2000+ 乘客行程受扰；客户引用「0.3 个百分点等于维护成本 10% 节省」「Skywise Core 节省 10-20% 时间」。以上为官网与媒体报道口径，未经独立审计。",
+    "decision_info": {
+      "effort": "平台级——OEM 主导的生态工程，2017 启动至今持续演进（2026 独立为子公司）",
+      "duration": "easyJet 案例：双方先合作 2 年识别 Top100 技术问题，再上线平台",
+      "prerequisites": "OEM 级数据整合能力；航司侧需把机队数据接入平台",
+      "failure_modes": "报道未披露",
+      "transferability": "中——「Ontology 统一数据模型+生态多方接入」对产业链型平台（制造+服务多方协作）有参照，但投入量级为巨头级"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "统一本体（Ontology）数据模型整合产业链多方数据",
+      "与标杆客户先共研 2 年识别 Top 问题再平台化"
+    ],
+    "pattern_links": [],
+    "evidence_note": "来源：Skywise 官网（skywise.com）、Palantir 续约报道（2026-02）、Airbus 子公司新闻稿（2026-07，Skies Mag 转载）、easyJet 案例报道（aviator.aero/TravelDailyMedia）。",
+    "url": "https://www.skywise.com/en/digital-platform/skywise-core",
+    "source": "Skywise 官网；Airbus/Palantir 新闻稿与行业媒体报道（2017-2026）"
+  },
+  {
+    "id": "d02-cisco-codex",
+    "detail_tier": "标准",
+    "company": "Cisco（含 Splunk 部门）× OpenAI",
+    "industry": "科技/网络设备与软件",
+    "scenario": "Codex 深度集成企业软件工程闭环：跨仓库构建优化、大规模缺陷修复、框架迁移（C/C++ 为主的多仓库代码库）",
+    "pain_points": [
+      "algorithm-execution-gap",
+      "throughput-limit",
+      "professional-judgment-gap"
+    ],
+    "problem": "生成式 AI 从实验走向真实运营：思科拥有超大规模多仓库系统、以 C/C++ 为主的遗留代码库，需满足全球企业级安全、合规与治理要求；传统开发模式下跨仓库构建低效、大规模缺陷修复与框架迁移耗时。",
+    "solution": "2026-01-20 OpenAI 官宣深度合作：Codex 不作为独立工具，而直接集成进思科生产工程工作流（定义「企业级 AI 软件工程」形态）；思科工程师持续向 OpenAI 反馈，优化 Codex 在工作流编排、安全控制、长期运行工程任务上的表现；Splunk 团队将 Codex 当「团队核心成员」，用其生成并遵循开发文档便于审核团队理解代码生成逻辑。",
+    "human": "思科工程师向 OpenAI 提供真实生产反馈共塑产品；审核团队阅读 Codex 生成的开发文档来理解代码逻辑；人机协作定位在「核心成员」而非工具。",
+    "result": "官宣通稿口径（未经独立审计）：缺陷修复效率提升最高 15 倍；Codex 在合规性、长期任务管理、与现有开发流水线集成方面成熟度提升（思科生产反馈驱动）。双方表示未来数月继续推进企业规模 AI 原生工程任务。",
+    "decision_info": {
+      "effort": "企业级——与模型厂商深度共建，非开箱即用",
+      "duration": "2026-01 官宣，数月内持续协作推进",
+      "prerequisites": "大规模真实工程环境作为反馈源；安全合规治理能力",
+      "failure_modes": "报道未披露",
+      "transferability": "中——「客户深度共建反馈塑造产品」模式适合大型软件组织与模型厂商协作参照"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "把编码 Agent 集成进生产工程工作流而非当独立工具",
+      "客户生产反馈驱动模型产品迭代（工作流编排/安全控制/长任务）"
+    ],
+    "pattern_links": [],
+    "evidence_note": "OpenAI 官网公告（2026-01-20）经 IT之家/新浪财经转述（原文抓取被 Cloudflare 拦截，以转载全文留存）；「15 倍」为官宣标题口径。",
+    "url": "https://finance.sina.com.cn/stock/t/2026-01-21/doc-inhiaemt5445869.shtml",
+    "source": "OpenAI 官宣（2026-01-20，IT之家/新浪财经转述）"
   }
 ]
