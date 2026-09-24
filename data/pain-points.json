@@ -134,6 +134,11 @@
       "id": "management-visibility",
       "name": "经营数据延迟",
       "description": "管理层看大盘靠人工统计，延迟以月计，无法动态分析"
+    },
+    {
+      "id": "review-backlog",
+      "name": "审核排队积压",
+      "description": "审核请求随业务量堆积，专业人员被低级问题占用"
     }
   ]
 }
