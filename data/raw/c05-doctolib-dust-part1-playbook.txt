@@ -1,0 +1,237 @@
+Product
+Product
+Chrome Extension
+Frames
+Integrations
+Solutions
+DEPARTMENTS
+Sales
+Customer Support
+Marketing & Content
+Engineering
+Data & Analytics
+Knowledge
+IT
+Legal
+People
+Productivity
+INDUSTRIES
+B2B SaaS
+Consulting
+Financial Services
+Insurance
+Marketplaces
+Retail & E-commerce
+Resources
+BUILD
+Get Started
+Guides & Tutorials
+Academy
+EXPLORE
+Blog
+Online Events
+Events
+Customer Stories
+CONNECT
+Slack Community
+Support
+Become a Partner
+Security
+Pricing
+Sign in
+Try for free
+Contact sales
+← Back to Customer Stories
+Doctolib's AI Adoption Playbook: from 30-person pilot to company-wide deployment
+Industry
+Healthcare
+Company Size
+1001+
+Departments
+IT
+HR & People
+Executive
+
+Titouan Aubrun
+
+IT Project Manager for Internal AI
+
+
+This is the last article in a four-part series exploring how Doctolib successfully rolled out Dust across 3,000 employees. This piece provides the tactical playbook for executing AI adoption across 3,000 employees—what worked, what didn't, and lessons learned along the way.
+WHO: Implementation leaders and project managers executing AI transformation
+PAIN: Moving from successful pilots to company-wide adoption—tactical execution challenges
+PAYOFF: Detailed playbook for scaling AI across thousands of employees with proven tactics and lessons learned
+The Cross-Functional Foundation
+Before diving into phases, understand Doctolib's foundational decision: treating AI transformation as organizational change, not technology deployment.
+"Many companies keep it very Data/AI focused," explains Titouan Aubrun, IT Project Manager. "We really broke down silos between IT and People teams to work together on a project with significant weight."
+The implementation team combined:
+IT expertise: Technical implementation and integration
+People team expertise: Change management and training design
+Leadership sponsorship: Both technical and HR leadership championed the initiative
+Continuous upskilling focus: "We bet on our teams and train them on AI tools because we know it's now a skill they need to master both to thrive at Doctolib but also for their career development and bankability in the market" says Gabrielle Caille, People Program Manager
+The Three-Phase Rollout Strategy
+Phase 1: Diverse Pilot (30 People)
+Selection strategy: "We started with a diverse panel of about thirty people, trying to have representation across departments—some operational people, some higher-level people from each department."
+Key learning: "People were really enthusiastic about being able to create agents themselves. We started to see the philosophy of letting people do things themselves rather than waiting for IT to deploy something."
+Phase 2: Team-Based Scaling
+The Technical Services Success
+"We took the Technical Services team entirely—they had champions who had really embraced the thing, it's a team where everyone does roughly the same job, so when you roll out use cases, they all adopt them."
+Why this approach worked:
+Full team deployment: Everyone got access simultaneously
+Champion-driven adoption: Early enthusiasts became internal evangelists
+Operational focus: Clear, measurable use cases
+Job similarity: Shared workflows meant successful use cases spread quickly
+The A/B Testing Failure
+They attempted A/B testing with Product Managers—giving half the team access while withholding from others. "Honestly, not great. The A/B test never really worked."
+Why it failed:
+Initial learning curve: "At first you lose time before you gain it"
+Timing conflicts: Rollout coincided with year-end workload pressures
+Peer pressure absence: Without full team access, social adoption dynamics didn't work
+Key insight: AI transformation requires full team deployment, not individual adoption.
+Phase 3: Company-Wide Launch (3,000 People)
+1. Event-Driven Launch Strategy
+"We made it a strategic priority—an event, made it a keynote—an important moment in Doctolib life."
+The event strategy:
+Keynote presentations: Positioning AI as a company milestone and explaining the upcoming shift
+Multiple communication channels: All-hands meetings, departmental messaging
+Follow-up events: "We did a dedicated event for people who hadn't understood anything"
+2. Champion Network Development
+"We built a community of champions—chosen by taking early adopters from highest usage, then top builders, leveraging Dust’s built-in analytics."
+Champion development process:
+Use platform analytics: Identify early adopters from usage data
+Find builders: Look for people creating agents others actually use
+Recognition programs: Give champions visibility, recognition and leverage them to advocate within their team
+Enable teaching: Create mechanisms for champions to share knowledge
+3. Comprehensive Support Infrastructure
+"Having accompaniment, a bit of a hotline, internal Dust support—it's repeating to people, spending time with them."
+Support components:
+Task force/"hotline": Personal coaching for employees
+Reassurance programs: Help people adapt to changing job requirements
+Champion network: Peer support from successful adopters
+Office hours: Regular Q&A sessions
+Upskilling Investment:
+Masterclass program: Regular deep-dive sessions on advanced Dust capabilities and the Art of prompting
+Expert mentorship: Dust specialists embedded during hackathons and training events
+Career development focus: Positioning AI skills as essential for professional growth both within Doctolib and in the broader market
+4. Leadership-First Training
+"We did not hesitate to purchase training to ensure people were used to it."
+Training approach:
+Leadership first: "7-hour training sessions for all leadership including sales MDs"
+Role-specific content: Tailored training for different functions with experts
+Peer learning: Champions teaching colleagues within departments
+e-Learning: Modules built by the People team to drive AI literacy
+"A key was to train the leadership to build perspective on what AI can and cannot do, so they can set proper expectations from their teams. But equally important was our commitment to upskilling everyone, because we believe AI fluency is now a core skill for their career success" — Implementation Team
+Implementation Lessons Learned
+What Worked Well
+1. Cross-Functional Team Approach: Breaking down silos brought essential change management expertise
+2. Full Team Deployments: "Technical Services worked because we took the entire team"
+3. Operational Teams First: Teams with clear, repetitive processes showed faster adoption
+4. Champion-Driven Scaling: Early adopters became internal teachers
+5. Event-Driven Launch: Making transformation a company milestone created momentum
+What They Would Do Differently
+1. More Pre-Built Agents: Anticipate the project and prepare change management
+2. Don't Leave People Alone: Build the conditions for them to learn the tool either through self-serve or guided learning"
+3. Better Data Preparation: Connect necessary systems before deployment
+4. Focus on Operational Teams Earlier: "If I were to redo it, I'd do it more on really operational teams", Titouan Aubrun
+5. Earlier Change Management Investment: People team should be involved from the beginning
+Measuring Success: Beyond Traditional ROI
+Nine months post-deployment, Doctolib's measurement approach reveals a key insight: start with adoption, not ROI.
+"It felt unrealistic to have tangible KPIs at this stage. First 6 months' goal should really be about adoption."
+The Three Success Pillars
+1. Adoption Excellence
+Daily usage standard: "30% use Dust every day"
+Training completion: "All of Tech is 'AI Certified'"
+Sustained engagement: Users maintaining consistent usage over months
+Specific use cases ROI: team members sharing use cases with multiple hours saved weekly, especially in Marketing & Technical Services
+2. Engagement Depth
+The "disappointment test": "45% would be very disappointed if they lose Dust"
+Cross-team collaboration: Agents created by one team, adopted by others
+Knowledge sharing: Successful use cases spreading organically
+3. Use Case Maturity
+Complex problem-solving: "Bugbuster" agent identified problematic code in minutes during production crisis
+Self-improving systems: "You troubleshoot a case, query the knowledge base, document your solution, and generate documentation for the new case"
+Advanced feature adoption: Teams using agent chaining and sophisticated workflows
+Key Takeaways
+Implementation: Focus on full team deployments, operational teams first, champion networks, and comprehensive human support. AI transformation is change management, not technology deployment.
+Timeline: Plan for 6+ months to see meaningful behavior change. Measure adoption first, engagement depth second, and use case sophistication third.
+Success: "We have agents for everything and anything now"—proliferation became both a victory indicator and a governance challenge.
+The future belongs to organizations that can execute systematic rollouts while building cultural foundations for sustained AI-first transformation—and that requires People teams as much as IT teams.
+div class="kg-callout-emoji">💡
+Ready to start your AI transformation? Schedule a demo to see our EU-hosted, permission-safe AI platform in action.
+Find all other articles of the series?
+- Part 1: Why Doctolib made AI a National Cause
+- Part 2: Why Doctolib's VP of Data stopped internal development to buy Dust
+- Part 3: From Risk to Reward: Inside Doctolib’s Enterprise AI Security Playbook
+
+Interested in learning more about how Dust can help your team? Visit our solutions page or reach out to our sales team.
+
+TABLE OF CONTENTS
+The Cross-Functional Foundation
+The Three-Phase Rollout Strategy
+Phase 1: Diverse Pilot (30 People)
+Phase 2: Team-Based Scaling
+Phase 3: Company-Wide Launch (3,000 People)
+Implementation Lessons Learned
+What Worked Well
+What They Would Do Differently
+Measuring Success: Beyond Traditional ROI
+The Three Success Pillars
+Key Takeaways
+More Customer Stories
+Alan
+How Alan produces customer stories 80% faster with Dust
+Healthcare
+Marketing
+Product
+Doctolib
+From Risk to Reward: Inside Doctolib’s Enterprise AI Security Playbook
+Healthcare
+Engineering
+IT
+Executive
+Doctolib
+Why Doctolib's VP of Data & AI stopped internal development to buy Dust
+Healthcare
+Data
+Executive
+ONLINE EVENT
+Take control of your AI bill - with Metronome and Northlane CEOs
+October 8 · 12:30pm ET / 6:30pm CET
+Register Now
+→
+ONLINE EVENT
+How to use OpenAI in Dust
+October 1 · 12:00pm ET / 6:00pm CET
+Vince Sarkisian, Solutions Engineer @Dust
+Register Now
+→
+We use cookies
+By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. You can also reject non-essential cookies. View our Privacy Policy for more information.
+Accept All Cookies
+PRODUCT
+Product
+Chrome Extension
+Pricing
+Security
+DEVELOPERS
+Developer Platform
+Dust for Engineers
+Platform Documentation
+Github Repo
+COMPANY
+About Us
+Jobs
+We're hiring
+Brand resources
+Support
+Become a Partner
+CONNECT
+Slack Community
+X
+LinkedIn
+YouTube
+LEGAL
+Terms & Policies
+Privacy Policy
+Trust Center
+Vulnerability Disclosure

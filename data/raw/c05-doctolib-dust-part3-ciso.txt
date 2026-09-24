@@ -1,0 +1,176 @@
+Product
+Product
+Chrome Extension
+Frames
+Integrations
+Solutions
+DEPARTMENTS
+Sales
+Customer Support
+Marketing & Content
+Engineering
+Data & Analytics
+Knowledge
+IT
+Legal
+People
+Productivity
+INDUSTRIES
+B2B SaaS
+Consulting
+Financial Services
+Insurance
+Marketplaces
+Retail & E-commerce
+Resources
+BUILD
+Get Started
+Guides & Tutorials
+Academy
+EXPLORE
+Blog
+Online Events
+Events
+Customer Stories
+CONNECT
+Slack Community
+Support
+Become a Partner
+Security
+Pricing
+Sign in
+Try for free
+Contact sales
+← Back to Customer Stories
+From Risk to Reward: Inside Doctolib’s Enterprise AI Security Playbook
+Industry
+Healthcare
+Company Size
+1001+
+Departments
+Engineering
+IT
+Executive
+
+Cédric Voisin
+
+Chief Information Security Officer
+
+
+This is the third article in a four-part series exploring how Doctolib successfully rolled out Dust across 3,000 employees. This piece explains how their CISO managed deployment risks and reflects on challenges raised with Enterprise AI.
+WHO: CISOs and Security Leaders managing AI deployment risks
+PAIN: Balancing AI innovation with security compliance—especially in regulated industries
+PAYOFF: Learn how Doctolib's CISO safely scaled AI across 3,000 healthcare employees while maintaining strict compliance
+Cédric Voisin, CISO at Doctolib, had to figure out how to deploy AI safely across 3,000 employees in a healthcare company. "This needs to be a complete culture shift and put in the hands of many," Cédric explains. But getting AI "in the hands of many" in healthcare requires sophisticated governance and risk management.
+The Platform Consolidation Philosophy
+As Cédric worked through security requirements for AI deployment, consolidating on a single platform provided key benefits:
+Cost control: "Each department tells me, 'they give me a super AI feature in addition,' it's 10,000 or 100,000 more per year."
+Centralized permissions: Single point of control for AI access across the organization
+Reduced complexity: Fewer tools mean fewer integration points and less security overhead
+Simplified oversight: One security framework to audit and monitor
+The Cortex Migration: A Strategic Win
+The most compelling example was migrating from their legacy intranet system, Cortex, to AI-powered knowledge management. This eliminated an entire legacy system while providing superior functionality—the ideal outcome of reduced complexity with enhanced capabilities.
+Managing Risk During Deployment
+Cédric's approach to risk management during the pilot phase offers a blueprint for healthcare organizations:
+Setting Clear Guidelines and Red Lines
+EU hosting and restricted permission controls were pre-requisites for a deployment. Dust committed, and delivered, to a fully EU-hosted solution by the time the company rollout was done.
+Data Boundaries: "Clear red lines: never add any kind of PHI [Personal Health Information]"—absolute boundaries on sensitive data
+Accepting Calculated Risk
+"We knew we had to take a risk, so we shared this with our leadership team. The risk was controlled by managing the number of people who could build during the POC." — Cédric Voisin, CISO
+The key was having clear red lines, transparent risk management, and leadership buy-in for the pilot approach.
+Advanced Security Challenges: The Frontier of AI Governance
+As Doctolib's AI usage matured, Cédric identified emerging security challenges that few organizations are prepared to handle.
+Challenge 1: Agent Chaining and Context Sharing
+"Permissions are stressful, especially for agent chaining—when agents 'call other agents.'"
+The Problem: "How do you ensure you don't break the permission model of your first agent when sharing context with the second? If you have context shared between multiple agents, how do you ensure you don't violate the rights model?"
+Dust's Solution: "The agent can only call agents from the same permission space. You've reconstructed permissions, but at least it's in a constrained environment." Dust's native Space-level permissions were purpose-built for this challenge—most enterprise AI platforms still rely on individual user permissions that break down completely with agent chaining.
+Challenge 2: Third-Party Integration Security
+"The proliferation of third-parties introduces a risk of data leakage and prompt injection."
+Rather than building custom integrations, "certified tools that are built and maintained by specialists" on a unified platform reduce security overhead.
+The Challenge: "Today, very few companies offer capabilities for monitoring context sharing. If you want to connect external tools, how do you ensure they don't send inappropriate data to services you haven't verified? How do you manage these risks with the multiplication of third-party MCP servers?"
+"Either you lose the permission model entirely, or your agent can't function. The scarcity of mature solutions makes partnering with specialized AI platforms valuable." — Cédric Voisin, CISO
+The Security Foundation for Transformation
+Cédric's approach wasn't about balancing security vs. innovation—it was about using security principles to enable better AI adoption. Platform consolidation, clear risk boundaries, and graduated deployment allowed Doctolib to scale AI safely while maintaining healthcare compliance standards.
+Key Security Principles:
+Consolidate platforms to reduce complexity and oversight burden
+Set absolute data boundaries with clear red lines for sensitive information
+Use space-based permissions to handle advanced AI workflows safely
+Partner with specialists for complex integration security challenges
+Accept calculated risks with transparent leadership communication
+The Bottom Line
+Security-first AI deployment isn't about preventing innovation—it's about enabling it safely. Doctolib's experience shows that the right platform architecture and governance framework can support both rapid adoption and strict compliance requirements.
+Key Takeaway: Choose AI platforms that are built to solve new types security challenges (like agent chaining permissions) rather than building these capabilities internally. The complexity of AI governance requires specialized expertise that most organizations shouldn't develop in-house.
+Ready to start your AI transformation? Schedule a demo to see our EU-hosted, permission-safe AI platform in action.
+Coming up: Part 4 provides the tactical implementation playbook for moving from a pilot to large-scale deployment across 3,000 employees.
+
+Interested in learning more about how Dust can help your team? Visit our solutions page or reach out to our sales team.
+
+TABLE OF CONTENTS
+The Platform Consolidation Philosophy
+The Cortex Migration: A Strategic Win
+Managing Risk During Deployment
+Setting Clear Guidelines and Red Lines
+Accepting Calculated Risk
+Advanced Security Challenges: The Frontier of AI Governance
+Challenge 1: Agent Chaining and Context Sharing
+Challenge 2: Third-Party Integration Security
+The Security Foundation for Transformation
+The Bottom Line
+More Customer Stories
+Alan
+How Alan produces customer stories 80% faster with Dust
+Healthcare
+Marketing
+Product
+Doctolib
+Why Doctolib's VP of Data & AI stopped internal development to buy Dust
+Healthcare
+Data
+Executive
+Doctolib
+Doctolib's AI Adoption Playbook: from 30-person pilot to company-wide deployment
+Healthcare
+IT
+HR & People
+Executive
+ONLINE EVENT
+Take control of your AI bill - with Metronome and Northlane CEOs
+October 8 · 12:30pm ET / 6:30pm CET
+Register Now
+→
+ONLINE EVENT
+How to use OpenAI in Dust
+October 1 · 12:00pm ET / 6:00pm CET
+Vince Sarkisian, Solutions Engineer @Dust
+Register Now
+→
+We use cookies
+By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. You can also reject non-essential cookies. View our Privacy Policy for more information.
+Accept All Cookies
+PRODUCT
+Product
+Chrome Extension
+Pricing
+Security
+DEVELOPERS
+Developer Platform
+Dust for Engineers
+Platform Documentation
+Github Repo
+COMPANY
+About Us
+Jobs
+We're hiring
+Brand resources
+Support
+Become a Partner
+CONNECT
+Slack Community
+X
+LinkedIn
+YouTube
+LEGAL
+Terms & Policies
+Privacy Policy
+Trust Center
+Vulnerability Disclosure

@@ -1174,6 +1174,53 @@
     }
   },
   {
+    "id": "c05-doctolib-dust",
+    "detail_tier": "S",
+    "company": "Doctolib（法国医疗科技公司，约3000名员工）",
+    "industry": "医疗/健康科技",
+    "scenario": "全员 AI 平台部署：从自研 DoctoGPT 到统一共享平台",
+    "pain_points": [
+      "ai-adoption-org",
+      "data-siloed",
+      "professional-tool-heavy"
+    ],
+    "problem": "自研内部工具 DoctoGPT 快速获得 800 名活跃用户，验证了需求，但功能请求几天内雪崩（各系统连接器、Zendesk 插件、权限管理、审计日志、合规框架），内部团队成为永久瓶颈；同时各部门分散采购 AI 功能，成本与安全口径失控（CISO：每个部门加一项 AI 功能就是每年一两万欧元）。在受严格监管的医疗行业，需要把 AI 安全地铺到 3000 名员工手里。",
+    "solution": "VP of Data & AI 主动叫停自研（「核心优势在医疗，不在建权限系统和连接器」），转向购买统一平台 Dust；三阶段推广：30 人跨部门多元试点 → 整团队推广（Technical Services 全员上线）→ 3000 人公司级发布（keynote 事件化发布 + 从使用数据选拔冠军员工建网络 + 热线陪跑）；IT 与 People 团队跨职能联合执行；CISO 以单一平台集中管控权限与合规，并把旧内网 Cortex 迁移到 AI 知识管理，顺带下线一套遗留系统。",
+    "human": "员工自建 Agent（「agents for everything and anything」），冠军员工作为内部教师横向扩散；IT 管技术集成，People 管变革管理与培训；CISO 管权限与审计；上线 9 个月内的成功标准是先采纳率后 ROI（日活 30%、45% 员工「失去会非常失望」、技术线全员 AI 认证）。",
+    "result": "上线后 30% 员工日活使用；45% 员工在「失望测试」中表示失去平台会非常失望；技术团队全员完成 AI 认证；生产事故中「Bugbuster」Agent 几分钟定位问题代码；旧内网 Cortex 整体迁移下线。效果口径为 Dust 客户案例系列披露的供应商/客户口径，未经独立审计，且购买决策本身由同一供应商发布。",
+    "decision_info": {
+      "effort": "内部 DoctoGPT 实验（数月内 800 用户）+ 平台迁移 + 三阶段推广；人力以 IT+People 跨职能小组为主，具体预算未披露",
+      "duration": "分阶段推进，上线后 9 个月仍以采纳率为首要目标；行为改变按 6 个月以上预期",
+      "prerequisites": "高层把 AI 定为公司级战略事件；IT 与 People 从第一天联合组队；权限与合规框架先行（医疗行业刚需）；平台自带使用数据分析以选拔冠军",
+      "failure_modes": "对产品经理做半团队开通的 A/B 测试失败——没有全员开通就没有同伴压力，社交化采纳机制起不来；推广撞上年末业务高峰，学习时间被挤压；工具上手「先失去时间再获得时间」，前期放弃率高；数据与系统连接准备不足拖后腿",
+      "transferability": "高——三阶段推广、整团队开通、冠军网络、采纳率先行这些方法不依赖医疗行业；「买还是建」的决策框架（前沿创新可持续性/总拥有成本/比较优势三问）对任何非 AI 主业的公司直接可用"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "先做 30 人跨部门多元试点，验证「让员工自建 Agent」的自助哲学",
+      "整团队全员开通而非逐个授权——A/B 半团队开通被证明无效",
+      "keynote 事件化发布，把 AI 部署做成公司里程碑，事后再办补课活动",
+      "用平台使用数据选拔冠军员工，给曝光和认可，让其成为团队内教师",
+      "热线/陪跑机制：重复讲、陪着用，不把人丢下不管",
+      "先定采纳率指标（日活/失望测试），6 个月内不谈 ROI"
+    ],
+    "pattern_links": [
+      "m3",
+      "m4",
+      "m5"
+    ],
+    "dimensions": {
+      "entry": "pilot-cut",
+      "human_ai": "human-led-ai-assist",
+      "knowledge": "documents",
+      "validation": "pilot-ab",
+      "diffusion": "catalyst-network"
+    },
+    "evidence_note": "供应商案例系列（Dust 客户故事四部曲 Part 2/3/4，原文留存 data/raw/c05-*），引述 Doctolib 具名高管第一人称（VP Data & AI、CISO、IT 项目经理）；原计划的 medium.com 一手来源因该站被网络封锁不可达，改用供应商官方客户案例口径，购买决策与效果数字同属来源方披露，未经独立审计。",
+    "url": "https://dust.tt/customers/doctolibs-ai-adoption-playbook-from-30-person-pilot-to-company-wide-deployment",
+    "source": "Dust 官方客户案例系列《Doctolib rolled out Dust across 3,000 employees》四部曲之 Part 2（停自研转购买）、Part 3（CISO 安全手册）、Part 4（采纳手册：30人试点→全公司）；原候选 medium 来源不可达，此为供应商一手口径"
+  },
+  {
     "id": "c06-uber-genie",
     "detail_tier": "S",
     "company": "Uber（Michelangelo 团队）",

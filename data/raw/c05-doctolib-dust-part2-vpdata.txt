@@ -1,0 +1,192 @@
+Product
+Product
+Chrome Extension
+Frames
+Integrations
+Solutions
+DEPARTMENTS
+Sales
+Customer Support
+Marketing & Content
+Engineering
+Data & Analytics
+Knowledge
+IT
+Legal
+People
+Productivity
+INDUSTRIES
+B2B SaaS
+Consulting
+Financial Services
+Insurance
+Marketplaces
+Retail & E-commerce
+Resources
+BUILD
+Get Started
+Guides & Tutorials
+Academy
+EXPLORE
+Blog
+Online Events
+Events
+Customer Stories
+CONNECT
+Slack Community
+Support
+Become a Partner
+Security
+Pricing
+Sign in
+Try for free
+Contact sales
+← Back to Customer Stories
+Why Doctolib's VP of Data & AI stopped internal development to buy Dust
+Industry
+Healthcare
+Company Size
+1001+
+Departments
+Data
+Executive
+
+Nacim Rahal
+
+VP of Data & AI
+
+
+This is the second article in a four-part series exploring how Doctolib successfully rolled out Dust across 3,000 employees. This piece explains why their VP of Data & AI decided to stop internal development of their 'DoctoGPT' solution to migrate to a fully-deployed Dust.
+WHO: CTOs and VPs of Engineering evaluating AI platform strategies
+PAIN: Deciding between building internal AI capabilities vs. buying external solutions—resource allocation and technical debt concerns
+PAYOFF: Learn Doctolib's framework for strategic AI decisions that freed engineering resources while enabling company-wide transformation
+When Nacim, VP of Data & AI at Doctolib, first championed building an internal AI solution, he had a clear vision: "Being at the forefront of technology with AI means excelling in both product AI and internal processes—not compromising between them." This very same vision would ultimately lead him to become the first advocate for stopping that very same internal development.
+The DoctoGPT Experiment: When Success Reveals Hidden Challenges
+The data team's approach was pragmatic: build DoctoGPT, an internal ChatGPT-based solution for quick, safe deployment. "We needed something super fast & safe to deploy immediately and get people into the habit of using GenAI."
+The experiment worked—perhaps too well. DoctoGPT quickly gained 800 active users, validating both demand and potential for internal AI tools.
+But success brought an unexpected challenge.
+The Feature Request Avalanche
+We created a Feature Requests JIRA board that revealed massive demand. We were overwhelmed with requests within days of launch.
+The requests poured in:
+Out-of-the-box connectors for existing tools
+Native plugins for platforms like Zendesk
+Advanced features users expected from modern AI platforms
+Integration capabilities with existing tech stack
+What had started as a simple internal tool was about to evolve into a full product development effort. Nacim, who had spearheaded the project, made a surprising decision—he became the first to advocate for stopping internal development.
+Three Strategic Realizations
+1. Frontier innovation requires massive resources
+"This was unsustainable if we had the objective to be at the frontier. We would be a permanent bottleneck requiring resources across multiple teams." — Nacim Rahal, VP of Data & AI
+Concrete example: "Dust's native MCP support meant we automatically got access to the latest integration protocols without any internal development—exactly the kind of frontier innovation we couldn't maintain internally."
+2. There is a hidden infrastructure burden
+"Building AI was just the beginning—it required extensive supporting infrastructure way beyond AI functionality."
+Essential but non-core requirements:
+Connector development: "Particularly resource-intensive and painful"
+Access rights management: Complex permissions systems
+Security features: Audit logs, compliance frameworks
+Governance & training: Product marketing, documentation, support
+The maintenance reality: "There are always ongoing maintenance costs that are intangible: hosting, bug fixes, continuous maintenance, API rate limits changes."
+3. Strategically, you would rather focus on your comparative advantage
+"We'd rather put 100% of our core resources on helping patients' and solving practitioners’ problems."
+Priority Alignment: "Being AI-first means excelling in both product AI and internal processes—not compromising between them."
+Comparative Advantage: "Healthcare is our comparative advantage. We don't have a comparative advantage at building permissions systems and connectors."
+This led to Nacim's guiding principle: "Build what's in our core business, buy what will be a side project."
+The Strategic Pivot: From Product Owner to Customer
+"We needed a predictable cost & time investment. SaaS pricing models provide visibility into how we'll spend."
+The decision to partner with Dust represented a strategic choice: "Buying Dust lets us outsource commoditized ML infrastructure, transfer part of the compliance and security burden, and tap into a constant stream of innovation—so we can invest 100% of scarce talent in healthcare features."
+The Validation: Proving the decision right
+Looking back after successful company-wide deployment, Nacim's framework proved prescient.
+"I was the first one to ask for it [to stop internal development]. We wanted to be free from the 'burden' of having to be the product owner, rather than the customer." — Nacim Rahal, VP of Data
+The benefits extended beyond ownership cost savings:
+Continuous innovation access: Automatic access to latest models and capabilities
+Reduced maintenance burden: No internal resource drain for infrastructure
+Predictable scaling: Clear cost structure for organization-wide deployment
+Security and compliance: Leveraging specialized expertise rather than building internally
+Framework for Strategic AI Decisions
+Doctolib's experience offers a replicable framework:
+Question 1: Can you maintain frontier innovation internally?
+Do you have dedicated resources for keeping up with rapid AI evolution?
+Can you commit to ongoing architectural changes and building all the necessary bricks to make AI both powerful and safe?
+Question 2: What's the total cost of ownership?
+What infrastructure is required beyond AI functionality?
+How predictable are your resource requirements?
+Question 3: Where is your comparative advantage?
+What capabilities differentiate you in your market?
+Where do your best engineering resources create the most value?
+The Bottom Line
+By choosing to partner with Dust, Doctolib freed their technical resources to focus on healthcare innovation while still achieving their goal of being AI-first across all internal processes. The key insight: strategic AI decisions aren't just about technology—they're about resource allocation and competitive positioning.
+Key Takeaway: The most successful AI transformations often come from knowing what not to build internally. Focus engineering talent on your core differentiators while leveraging specialized platforms for AI infrastructure.
+Ready to start your AI transformation? Schedule a demo to see our EU-hosted, permission-safe AI platform in action.
+Coming up: Part 3 explores how CISO Cédric Voisin approached the security challenges of scaling AI across the organization.
+
+Interested in learning more about how Dust can help your team? Visit our solutions page or reach out to our sales team.
+
+TABLE OF CONTENTS
+The DoctoGPT Experiment: When Success Reveals Hidden Challenges
+The Feature Request Avalanche
+Three Strategic Realizations
+1. Frontier innovation requires massive resources
+2. There is a hidden infrastructure burden
+3. Strategically, you would rather focus on your comparative advantage
+The Strategic Pivot: From Product Owner to Customer
+The Validation: Proving the decision right
+Framework for Strategic AI Decisions
+The Bottom Line
+More Customer Stories
+Alan
+How Alan produces customer stories 80% faster with Dust
+Healthcare
+Marketing
+Product
+Doctolib
+From Risk to Reward: Inside Doctolib’s Enterprise AI Security Playbook
+Healthcare
+Engineering
+IT
+Executive
+Doctolib
+Doctolib's AI Adoption Playbook: from 30-person pilot to company-wide deployment
+Healthcare
+IT
+HR & People
+Executive
+ONLINE EVENT
+Take control of your AI bill - with Metronome and Northlane CEOs
+October 8 · 12:30pm ET / 6:30pm CET
+Register Now
+→
+ONLINE EVENT
+How to use OpenAI in Dust
+October 1 · 12:00pm ET / 6:00pm CET
+Vince Sarkisian, Solutions Engineer @Dust
+Register Now
+→
+We use cookies
+By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. You can also reject non-essential cookies. View our Privacy Policy for more information.
+Accept All Cookies
+PRODUCT
+Product
+Chrome Extension
+Pricing
+Security
+DEVELOPERS
+Developer Platform
+Dust for Engineers
+Platform Documentation
+Github Repo
+COMPANY
+About Us
+Jobs
+We're hiring
+Brand resources
+Support
+Become a Partner
+CONNECT
+Slack Community
+X
+LinkedIn
+YouTube
+LEGAL
+Terms & Policies
+Privacy Policy
+Trust Center
+Vulnerability Disclosure
