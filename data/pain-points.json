@@ -124,6 +124,11 @@
       "id": "ad-hoc-analysis",
       "name": "临时数据分析靠人工",
       "description": "分析需求不断变化，人工写SQL慢且易错，仪表盘答不了追问"
+    },
+    {
+      "id": "quotation-bottleneck",
+      "name": "非标报价卡脖子",
+      "description": "报价依赖少数技术骨干经验，响应慢、准确率波动、直接丢单或亏本"
     }
   ]
 }
