@@ -1945,5 +1945,40 @@
     "evidence_note": "OpenAI 客户案例原文经觉醒学院镜像与 ZenML 案例库条目留存（本机直连 openai.com 被 Cloudflare 拦截）；澎湃/腾讯新闻转述交叉印证 80 万美元口径；数字均为来源方披露。",
     "url": "https://www.jxxy.net/ai/cases/holiday-extras/",
     "source": "OpenAI 客户案例（2024-03，觉醒学院镜像+ZenML 案例库留存）+ 澎湃新闻转述"
+  },
+  {
+    "id": "d06-nttdata-codex",
+    "detail_tier": "标准",
+    "company": "NTT DATA Group × OpenAI",
+    "industry": "IT服务/系统集成（全球）",
+    "scenario": "全员 ChatGPT Enterprise 铺底 + Codex 扩展至约 9,000 名技术/非技术员工；标志性用例：复杂事故分析从 5 名工程师 3 天缩到 30 分钟",
+    "pain_points": [
+      "throughput-limit",
+      "manual-matching",
+      "expert-knowledge-loss",
+      "key-person-bottleneck",
+      "process-tracking"
+    ],
+    "problem": "传统 IT 服务商靠增加人头扩大收入的增长模式难以为继；事故分析等高技能工作依赖少量资深工程师，一次要 5 人花 3 天翻日志找根因写报告；非技术员工做数据分析、报告依赖工程师和 BI 工具，门槛高。",
+    "solution": "2025-05 与 OpenAI 建立全球战略合作，分三阶段推进：①全员铺 ChatGPT Enterprise 并建内部 OpenAI 卓越中心（CoE，负责许可分发、技术验证、用例开发、使用监控）；②CoE 制定安全与采用指南（可用数据边界、系统连接范围、沙箱模式、人工审核点）；③以「零号客户」方法把 Codex 推广到约 9,000 员工——标志性用例是把事故分析自动化（读日志、关联事件、生成结构化报告），非技术员工用它做轻量工具、Excel 数据分析、报销单处理、文档整理。",
+    "human": "人类设定方向并评估结果，AI 解读信息并推动执行；安全指南明确何时必须人工审核；员工从「提需求等工程师」变为「自己用 Codex 做出成果」。",
+    "result": "来源方披露（未经独立审计）：事故分析从 5 人 3 天缩到 30 分钟（官宣降幅 99.3%）；内部调查 96%+ 员工对 ChatGPT Enterprise 满意、95%+ 报告生产力提升；Codex 约 9,000 活跃员工，从工程师扩展到商务等非技术岗。",
+    "decision_info": {
+      "effort": "大——全球战略合作+专职 CoE+安全治理体系",
+      "duration": "2025-05 合作启动，约一年内扩展到 9,000 人",
+      "prerequisites": "先全员普及通用 AI 工具再推 Agent 的次序；CoE 专职团队；数据边界/沙箱/人工审核点等安全指南先行",
+      "failure_modes": "未披露；注意「-99.3%」为单案例官宣口径，样本量与复核机制不明",
+      "transferability": "中高——「全员铺底→CoE 治理→零号客户推广 Agent」三阶段路径适合大型服务商与集团型企业直接参照"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "先全员铺通用 AI 建习惯，再推编码/执行 Agent（采用次序不能反）",
+      "CoE 统一制定安全指南：数据边界、系统连接、沙箱模式、人工审核点",
+      "「零号客户」方法：先在自己组织内验证高价值用例，再产品化给客户"
+    ],
+    "pattern_links": [],
+    "evidence_note": "OpenAI 客户案例原文经觉醒学院镜像留存（本机直连 openai.com 被 Cloudflare 拦截）；「-99.3%」为官宣口径，事故类型与样本量未披露。",
+    "url": "https://openai.com/index/ntt-data",
+    "source": "OpenAI 客户案例（2026-07，觉醒学院镜像留存）"
   }
 ]
