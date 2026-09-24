@@ -1,0 +1,5 @@
+# 待补抓
+
+- 目标：https://careersatdoordash.com/blog/doordash-simulation-evaluation-flywheel-to-develop-llm-chatbots-at-scale/
+- 状态：2026-09-24 curl 抓取被 Cloudflare 拦截（83 字节），r.jina.ai 与 archive.org 亦超时
+- 计划：浏览器环境补抓

@@ -1,0 +1,1643 @@
+Building Customer Support AI Agents at 100M-User Scale: An Evaluation-Driven Framework
+Title:
+Content selection saved. Describe the issue below:
+Description:
+arXiv is now an independent nonprofit!
+Learn more
+×
+License: CC BY 4.0
+arXiv:2606.08867v2 [cs.CL] 13 Jun 2026
+Building Customer Support AI Agents at 100M-User Scale: An Evaluation-Driven Framework
+Conference:
+Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2; August 09–13, 2026; Jeju Island, Republic of Korea
+Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2 (KDD ’26), August 09–13, 2026, Jeju Island, Republic of Korea
+DOI:
+10.1145/3770855.3818332
+ISBN:
+979-8-4007-2259-2/2026/08
+CCS:
+Computing methodologies Natural language generation
+Aman Gupta
+Affiliation:
+Nubank
+,
+Palo Alto
+,
+USA
+email:
+aman.gupta@nubank.com.br
+,
+Kevin Rossell
+Affiliation:
+Nubank
+,
+Mexico City
+,
+Mexico
+email:
+kevin.rossell@nubank.com.br
+,
+Edesio Alcobaça
+Affiliation:
+Nubank
+,
+São Paulo
+,
+Brazil
+email:
+edesio.alcobaca@nubank.com.br
+,
+Jose Chrystian Lima Pacheco
+Affiliation:
+Nubank
+,
+São Paulo
+,
+Brazil
+email:
+chrystian.lima@nubank.com.br
+,
+Carolina Baptista de Lima
+Note:
+Work done while at Nubank.
+Affiliation:
+Nubank
+,
+São Paulo
+,
+Brazil
+email:
+carolina.bap.lima@gmail.com
+,
+Shao Tang
+Affiliation:
+Nubank
+,
+Palo Alto
+,
+USA
+email:
+tang.shao@nubank.com.br
+,
+Luiz Paulo Rabachini
+Affiliation:
+Nubank
+,
+São Paulo
+,
+Brazil
+email:
+luiz.rabachini@nubank.com.br
+,
+Luis Moneda
+Affiliation:
+Nubank
+,
+São Paulo
+,
+Brazil
+email:
+luis.moneda@nubank.com.br
+,
+Herbert Fei
+Affiliation:
+Nubank
+,
+Palo Alto
+,
+USA
+email:
+herbert.fei@nubank.com.br
+,
+Daniel Silva
+Affiliation:
+Nubank
+,
+Palo Alto
+,
+USA
+email:
+daniel.ribeiro@nubank.com.br
+and
+Rohan Ramanath
+Affiliation:
+Nubank
+,
+Palo Alto
+,
+USA
+email:
+rohan.ramanath@nubank.com.br
+© cc
+Abstract.
+The rapid rise in LLM capabilities has made AI agents increasingly viable across a broad range of tasks. Among the most promising applications is building production-ready customer-facing agents—a challenge that demands coordinated excellence in evaluation methodology, context engineering, training, and online measurement. Yet these critical pillars are typically developed in isolation, creating blind spots that only surface after deployment.
+In this paper, we present a unified framework that bridges offline development with online impact for customer support AI agents at Nubank - a company with 100m+ users. Our approach integrates several key components: (1) structured context engineering tailored to customer support agents (2) systematic human-in-the-loop prompt iteration, (3) rigorous LLM judge evaluation with measured inter-rater agreement and GEPA-optimization for consistency and (4) ideation-to-production validation.
+A central insight is that evaluation-pipeline quality directly determines iteration velocity. We present results from five production deployments spanning distinct domains—card delivery, debt management, credit-limit support, card management, and product explanation — that deliver consistent customer-satisfaction gains while substantially accelerating iteration. In our card-delivery deployment, large-scale A/B testing yields a 37 percentage-point improvement in AI transactional Net Promoter Score and a 29 percentage-point gain in self-service rate over prior agent variants, alongside a strong correlation between offline simulation metrics and online outcomes—demonstrating that eval-driven development reliably predicts production impact. On most use cases, AI satisfaction reaches within a few percentage points of expert human agents.
+Keywords:
+customer support agents, LLM-as-a-judge, evaluation-driven development,
+prompt optimization, GEPA, inter-rater reliability
+†
+†
+cc-license:
+by
+1.
+Introduction
+The rise of large language models (LLMs)
+(
+Brown et al., 2020
+;
+Dubey et al., 2024
+;
+Comanici et al., 2025
+;
+Guo et al., 2025
+;
+Jiang et al., 2023
+)
+has catalyzed a new paradigm: AI agents capable of dynamically directing their own processes, leveraging tools, and maintaining control over task execution
+(
+Anthropic, 2024
+;
+Yao et al., 2023
+;
+Jin et al., 2025
+;
+Feng et al., 2025
+)
+. When equipped with the
+right context and tools
+, AI Agents have demonstrated impressive capabilities in solving difficult and long running tasks
+(
+Kwa et al., 2025
+;
+Erdogan et al., 2025
+;
+Chen et al., 2025
+)
+.
+Figure 1
+.
+Architecture of a Customer Support AI agent system. User queries arrive via multiple channels and are handled autonomously, with fallback to human agents under low confidence.
+Figure 2
+.
+Overview of our evaluation-driven development framework. Four stages—context engineering, prompt iteration, offline evaluation, and production deployment—are connected by a feedback loop where online metrics inform subsequent iterations. The correlation between offline evaluation and production outcomes validates the pipeline’s predictive power.
+Card
+Delivery
+Debt
+Mgmt.
+Credit
+Limit
+Card
+Mgmt
+Product
+Explainer
+0
+0
+10
+10
+20
+20
+30
+30
+40
+40
++
+37
++37
++
+40
++40
++
+4.5
++4.5
++
+38.3
++38.3
++
+12.3
++12.3
++
+29
++29
++
+2.9
++2.9
++
+7.5
++7.5
++
+4.8
++4.8
+−
+1.5
+-1.5
+Online gain (p.p.)
+AI tNPS gain
+Self-service rate gain
+Figure 3
+.
+Online A/B-test gains for five production agents built with the same eval-driven framework. AI transactional NPS (tNPS) improves across all five domains; self-service rate improves in four (Product Explainer’s slight dip stems from transient LLM request failures). On most use cases the resulting AI tNPS lands within a few percentage points of expert human agents (Table
+3
+).
+While AI agents have seen rapid success in coding and deep research
+(
+Anysphere, Inc., 2024
+;
+OpenAI, 2025
+;
+Google, 2025
+)
+, their potential in many other domains remains largely untapped. In
+customer support (CS)
+, they could transform the way organizations handle millions of interactions — evolving from scripted chatbots to systems that personalize experiences, maintain rich context, take actions through tools, and resolve complex issues end-to-end. Crucially, they can also act as co-pilots for human agents, handling routine cases and enabling people to focus on the hardest, long-tail problems.
+1.1.
+Unique challenge of building CS AI agents
+Compared to general-purpose AI agents, CS agents impose distinct requirements:
+•
+Higher quality bar.
+In CS, failure is costly: a single poor interaction can erode trust and drive churn. This creates a stricter reliability threshold than in many research or coding settings. In a banking environment, any mishap in actions can lead to significant amounts of losses in a single case.
+•
+Sensitive data handling.
+CS agents operate over real customer data (e.g., balances, transactions, addresses), which introduces privacy, security, and regulatory constraints.
+•
+Narrower scope, deeper specialization.
+CS agents typically use a small, domain-specific toolset (often 5–15 tools), but must handle substantial edge-case diversity within that scope.
+•
+Graceful handoff to humans.
+CS agents work within a human-in-the-loop workflow. When automation falls short, they must transfer control with full context preserved, since customer satisfaction reflects the end-to-end journey—not just the automated segment (for a high-level architecture, see
+Figure
+1
+).
+1.2.
+Our Contributions
+We present a highly-scalable, production-tested design for building CS AI agents. Our design is based on evaluation and measurement, working backward from delivering a great customer experience (
+Figure
+2
+). We validate our design on real-world CS use cases for a company that serves 100M+ users. Our contributions can be summarized as follows:
+•
+A unified, evaluation-driven framework
+for developing
+production CS agents, connecting agent architecture, prompt versioning,
+offline evaluation, and online measurement in a closed loop
+(
+Figure
+2
+). A central insight is that
+evaluation pipeline quality directly determines iteration velocity.
+•
+Modular context engineering.
+We propose a prompt
+architecture in which each component—instructions, routines, macros,
+tool descriptions, and working memory—is independently versioned,
+enabling controlled evolution and reuse (
+Figure
+4
+).
+•
+A rigorous evaluation pipeline.
+We introduce a
+calibrated LLM-as-Judge pipeline with (a) inter-rater reliability
+requirements enforcing minimum human-agreement thresholds before
+trusting automated judgments, (b) GEPA-optimized
+(
+Agrawal et al., 2025
+)
+judge prompts that
+align with human criteria, and (c) cross-model validation showing
+that well-specified rubrics yield stable scores across model families,
+sizes, and vendors.
+•
+Prod-validated results at scale across five use cases.
+We report A/B-tested deployments of five production agents built with the same framework, spanning card delivery, debt management, credit-limit support, card management, and product explanation (
+Figure
+3
+). For our headline card-delivery deployment, we achieve a
+37 p.p.
+absolute improvement in AI transactional net promoter score (tNPS - a measure of quality) and
+29 p.p.
+in self-service rate (SSR - a measure of automation) when compared to previous agent variants; the final tNPS is only 10 p.p. lower than expert human-agent tNPS. The four further agents show consistent customer-satisfaction gains in their respective domains (Section
+6.4
+). Across most of these deployments the AI agent’s tNPS lands within a few percentage points of expert human agents (within
+∼
+1
+{\sim}1
+–
+10
+10
+p.p. for card delivery, credit-limit, card management, and product explanation), with a larger gap remaining in the hardest domain, debt management. Crucially, we demonstrate strong correlation between offline eval scores and online business metrics (
+Figure
+9
+), validating that eval-driven development reliably predicts production impact.
+Figure 4
+.
+Our CS Agent context engineering is modular, and semantically versioned. Independently versioned components can be composed into distinct agent configurations.
+2.
+Related Work
+System Architectures and Benchmarks.
+Prior CS systems span modular designs - Obadinma et al.
+(
+Obadinma et al., 2022
+)
+’s Neural Agent Assistant (intent classification, retrieval, generation), Airbnb’s policy-to-schema assistant
+(
+Su et al., 2025
+)
+, and out-of-scope detection for graceful human handoff
+(
+Qian et al., 2022
+)
+. On the data side, NatCS
+(
+Gung et al., 2023
+)
+offers a multi-domain support corpus, CSConv/RoleCS
+(
+Zhu et al., 2026
+)
+a staged conversation framework with synthetic training data, and Mendonça et al.
+(
+Mendonça et al., 2023
+)
+a bilingual corpus annotated for emotion and dialogue quality.
+Feedback, Trust, and Evaluation.
+Feng et al.
+(
+Feng et al., 2023
+)
+model user satisfaction via goal-tracking task slots; Følstad et al.
+(
+Følstad et al., 2024
+)
+show early breakdowns erode trust; and Reinhard et al.
+(
+Reinhard et al., 2024
+)
+frame generative AI as augmenting human agents. Mohammadi et al.
+(
+Mohammadi et al., 2025
+)
+survey LLM-agent evaluation by objective and mode (offline vs. online), noting enterprise challenges such as policy compliance and long-horizon reliability.
+3.
+Background
+3.1.
+AI Agents
+While there is no consensus on the definition of
+AI Agents
+, we use it to specifically refer to the ReACT paradigm
+(
+Yao et al., 2023
+)
+. ReACT stands for Reason + Act, where an LLM interleaves chain-of-thought reasoning
+(
+Wei et al., 2022
+)
+with tool use and can autonomously work on a task (given user input) until it either completes the task, fails, or seeks further user input. In contrast, we define
+workflows
+as predefined computation graphs or DAGs where the developer - and not the LLM - controls the execution flow. Each node in the graph may or may not invoke an LLM.
+Figure
+5
+disambiguates between agents and workflows.
+Frameworks like LangGraph
+(
+Team, 2024
+)
+blur the boundaries between workflows and agents by allowing users to build graphs where some nodes are deterministic (workflow-like) and others involve autonomous decision-making (agent-like). In practice, however, our implementations adhere closely to the ReACT framework, with targeted modifications — such as guardrails and mandatory compliance checks — to address business and regulatory requirements.
+Figure 5
+.
+(a) Our CS agents follow the ReACT pattern: the LLM iteratively calls tools and reasons over results. (b) A workflow is a predefined DAG where the developer controls the execution flow; individual nodes may or may not use an LLM.
+3.2.
+Prompt Engineering for LLMs
+LLMs generalize to new tasks when guided by well-crafted prompts:
+in-context learning
+supplies a few input–output examples without fine-tuning
+(
+Brown et al., 2020
+)
+, and
+chain-of-thought
+prompting adds intermediate reasoning steps for complex tasks
+(
+Wei et al., 2022
+;
+Kojima et al., 2022
+)
+.
+Modular prompting
+decomposes tasks into coordinated stages—e.g., ReAct interleaves reasoning with tool-invoking actions
+(
+Yao et al., 2023
+)
+.
+3.3.
+Automated Prompt Optimization
+Manual prompt engineering is labor-intensive and brittle, as small wording changes can substantially alter model behavior.
+Automated prompt optimization
+treats prompt text as an optimizable parameter, using search algorithms to maximize a target metric.
+Several methods cast this as LLM-driven search. APE
+(
+Zhou et al., 2022
+)
+uses an LLM to generate and score candidate instructions. OPRO
+(
+Yang et al., 2023
+)
+iteratively proposes improved prompts conditioned on prior scores. ProTeGi
+(
+Pryzant et al., 2023
+)
+introduces natural-language “gradients” - critiques of failures - to guide beam-search refinement, while PromptBreeder
+(
+Fernando et al., 2023
+)
+co-evolves task prompts and mutation operators.
+DSPy
+(
+Khattab et al., 2024
+)
+provides a programmatic abstraction where LLM pipelines are defined as modular programs with typed signatures and compiled into optimized prompts. Within DSPy, GEPA
+(
+Agrawal et al., 2025
+)
+implements a reflection-based loop: a strong model critiques errors, synthesizes revisions, and selects candidates via Pareto-based trade-off analysis, optionally incorporating free-text human feedback.
+3.4.
+Evaluation
+Evaluating the quality of LLM-generated text is a prerequisite for any iterative improvement: without reliable evaluation, teams cannot distinguish signal from noise when comparing agents .
+3.4.1.
+LLM-as-a-judge
+Traditional evaluation of natural language generation often relied on reference-based metrics such as BLEU
+(
+Papineni et al., 2002
+)
+and ROUGE
+(
+Lin, 2004
+)
+, which approximate quality via surface-level overlap with references. However, for open-ended, multi-turn dialogue, these metrics correlate weakly with human judgment
+(
+Liu et al., 2016
+)
+. The
+LLM-as-a-judge
+paradigm instead uses a strong LLM to score or rank outputs against an explicit rubric
+(
+Zheng et al., 2023
+)
+. Given a rubric, the judge model assesses whether a response meets quality dimensions such as correctness, helpfulness, safety, or adherence to instructions. This approach scales to thousands of examples, accommodates natural language variation, and can evaluate nuanced, domain-specific criteria that resist rule-based checking.
+However, LLM judges exhibit systematic biases, including position and verbosity bias
+(
+Zheng et al., 2023
+)
+, self-enhancement bias
+(
+Panickssery et al., 2024
+)
+, and sensitivity to rubric wording
+(
+Li et al., 2025
+;
+Arabzadeh and Clarke, 2025
+;
+Yamauchi et al., 2025
+)
+. These failure modes motivate two strategies. First, judge ensembles — using multiple models or prompts — can mitigate individual biases, analogous to multi-annotator schemes
+(
+Verga et al., 2024
+)
+. Second, automated prompt optimization for evaluation criteria can systematically search for rubric formulations that maximize agreement with human annotations, reducing the brittleness of manually authored prompts.
+3.4.2.
+Measuring reliability of judges
+Whether evaluation is performed by humans, LLMs, or both, the fundamental question is how much we can trust the ratings.
+Inter-rater reliability (IRR)
+quantifies agreement among independent raters beyond chance. Cohen’s
+κ
+\kappa
+(
+Cohen, 1960
+)
+assesses pairwise agreement on categorical labels:
+(1)
+κ
+=
+p
+o
+−
+p
+e
+1
+−
+p
+e
+,
+\kappa=\frac{p_{o}-p_{e}}{1-p_{e}},
+where
+p
+o
+p_{o}
+is observed agreement and
+p
+e
+p_{e}
+is expected agreement under chance. Fleiss’s
+κ
+\kappa
+generalizes this to any number of raters
+(
+Fleiss, 1971
+)
+, and Krippendorff’s
+α
+\alpha
+extends it to various data types and missing data
+(
+Krippendorff, 2004
+)
+. High agreement (e.g.,
+κ
+\kappa
+or
+α
+\alpha
+exceeding
+0.8
+0.8
+) instills confidence that quality labels are well-defined and consistently applied.
+Cohen’s
+κ
+\kappa
+naturally extends to the LLM-as-a-judge setting, where two judge models take the role of two annotators. By comparing
+κ
+\kappa
+across judge pairs before and after prompt optimization, we evaluate whether GEPA improves rubric stability across model architectures.
+3.4.3.
+Online Evaluation
+Customer-support agents ultimately succeed or fail with real users, so online metrics from deployment are central to eval-driven development. Many teams track
+CSAT (Customer Satisfaction)
+, typically collected via post-interaction surveys on a Likert scale (e.g., “Were you satisfied with the help you received?”)
+(
+Likert, 1932
+)
+. Another widely used measure is
+Net Promoter Score (NPS)
+, which estimates how likely a user is to recommend the service
+(
+Reichheld, 2003
+)
+. For CS, organizations often use
+Transactional NPS (tNPS)
+- an NPS variant asked immediately after a support interaction. It is important to note we measure tNPS for AI Agents and human experts separately, using the support funnel described in Figure
+1
+.
+Beyond satisfaction, teams track effectiveness and deflection.
+Self-service rate (SSR)
+measures the fraction of support needs resolved via automated or self-serve channels without human escalation. High SSR and task success, together with strong CSAT and tNPS, indicate the agent is delivering effective support. It is worth calling out that there is usually a trade-off between SSR and tNPS, as you can typically improve overall tNPS by sacrificing SSR. One example is directly transfering hard cases or frustrated users to humans and only keeping the easier cases to be solved by the AI agent.
+4.
+System Design
+4.1.
+Design Principles
+We propose the following design principles for CS AI agents:
+•
+Reliable.
+Consistent behavior across interactions with graceful fallback to human agents, preserving full conversational context.
+•
+Correct.
+Responses grounded in verified data from tools and knowledge bases — no hallucinated details or incorrect promises.
+•
+Delightful.
+Empathetic, concise, and natural interactions reflecting the organization’s brand.
+•
+Compliant.
+Adherence to regulations, data-handling policies, and internal business rules.
+•
+Measurable.
+Quality quantifiable through offline evaluations and online business metrics (tNPS, SSR, task success rate).
+4.2.
+Context Engineering for Agents
+Figure 6
+.
+An example of a routine - translation of a human standard operating procedure (SOP) into ordered, agent-executable steps.
+Prompt engineering—crafting textual instructions that steer LLM behavior—understates the scope of what a production system actually needs. For a CS agent, instructions are only one component occupying the context window. We adopt the framing of
+context engineering
+: the systematic design and assembly of the entire input presented to the model at every turn.
+Figure
+4
+shows our context engineering design:
+•
+Instructions.
+The agent’s role, definition, behavioral constraints, compliance guardrails, communication style, output specifications, and response construction guidelines. Instructions encode
+how
+the agent should behave.
+•
+Routines.
+Most customer support units within organizations issue standard operating procedures (SOPs) for human agents to assist customers using an automated process. We convert these SOPs into routines - ordered, step-by-step procedures that guide the agent through a domain-specific conversation flow (see
+Figure
+6
+). For example, a card delivery investigation routine might prescribe: (1) greet and frame the case, (2) retrieve logistics data, (3) run address-type-specific investigation questions, (4) offer reissue if unresolved.
+•
+Macros.
+Pre-written response templates for common scenarios — serve as modular building blocks that the agent adapts and condenses rather than composing responses from scratch while still allowing natural variation in phrasing.
+•
+Tool specifications and usage.
+Each tool is described independently — name, input schema, expected output, and invocation conditions — so tool sets can be recombined across configurations. Orchestration rules then govern how tools are called in concert: parallel invocation strategies, transient error handling, confirmation gating (only confirm outcomes on explicit success), and grounding rules.
+•
+Working memory (scratchpad).
+A persistent state object that tracks information gathered across the conversation: collected parameters, prior tool outputs, current routine step. The scratchpad prevents redundant tool calls while also enabling long-term personalization.
+Each component is independently versioned, allowing a new agent configuration to be composed by selecting specific versions of each module (
+Figure
+4
+). This transforms prompt iteration from monolithic rewrites into targeted, testable changes.
+4.3.
+Infrastructure and Tool Design
+A common failure mode in agent development is beginning with prompts and adding infrastructure later. Our experience indicates the opposite ordering is more effective: the data and action layers should be established first, because they constitute the durable foundation that persists across model generations.
+4.3.1.
+Infrastructure layers
+Our agent system rests on three infrastructure layers:
+•
+Identity and authentication.
+Secure, consent-aware access to customer data.
+•
+Action APIs.
+Idempotent, transactional endpoints that execute real business logic (e.g., reissuing a card, adjusting a payment plan). Idempotency is critical: because LLMs may retry tool calls on transient failures or ambiguous results.
+•
+Audit trails.
+Comprehensive logging of every tool call—inputs, outputs, latency, and errors—with masking of sensitive fields, strict access controls, and retention schedules aligned with legal and regulatory requirements—for compliance, debugging, and post-hoc analysis.
+4.3.2.
+Tool design principles
+Tool design directly affects agent reliability:
+Compose deterministic flows in code, not in prompts.
+When a task requires chaining multiple data sources—for example, checking carrier tracking status
+and
+querying the internal order management system—we wrap the orchestration into a single composite tool rather than relying on the LLM to sequence two separate calls. This reduces latency, eliminates sequential-dependency errors where the model calls tools in the wrong order or drops an intermediate result, and reserves the LLM’s reasoning capacity for tasks that genuinely require judgment.
+Tool descriptions are prompts.
+The schema and docstring of each tool function as part of the agent’s prompt context (§
+4.2
+). Ambiguous or incomplete tool descriptions lead to misuse—incorrect parameters, calls at the wrong time, or misinterpretation of outputs. We treat tool documentation with the same rigor as other prompt components: each tool includes a natural-language description, a typed input schema, the expected output format, example invocations, and explicit guidance on when
+not
+to call it.
+Minimize output surface area.
+Tools return only the fields the LLM needs to reason about, not the full upstream API response. Raw responses often contain dozens of internal fields that consume context-window budget and increase the risk of the model latching onto irrelevant details.
+Design for idempotency.
+Because LLMs may retry tool calls on transient failures or ambiguous results, every action tool must be safely re-callable without side effects.
+4.4.
+Development Lifecycle
+Figure
+2
+depicts our development process using two nested iteration loops.
+The pipeline flows through four stages. First,
+Agent Architecture
+(\small1⃝) defines the modular prompt structure that constitutes the agent’s context (§
+4.2
+). These components are passed to
+Prompt Versioning
+(\small2⃝), where domain experts iterate on individual modules, producing a sequence of candidate versions (
+v
+1
+→
+v
+2
+→
+…
+→
+v
+N
+v_{1}\rightarrow v_{2}\rightarrow\ldots\rightarrow v_{N}
+). Each candidate is then evaluated in
+Offline Evaluation
+(\small3⃝) using real and/or simulated conversations scored by calibrated LLM judges. Only versions that pass offline evaluation—demonstrating improved or stable metrics relative to the current baseline—are promoted to
+Production
+(\small4⃝), where they are deployed via A/B tests and measured on tNPS, SSR, and other business metrics.
+Two feedback loops drive continuous improvement:
+•
+Fast loop
+Offline evaluation results feed directly back into prompt versioning. When an evaluator flags a failure—for example, the agent omitting address verification—the team traces the failure to the responsible prompt component, applies a targeted fix, and re-evaluates. Fixes are surgical: modifying one routine step does not require re-testing the entire prompt.
+•
+Slow loop
+Production metrics reveal patterns that offline evaluation may not capture—for instance, a consistent tNPS gap on a specific customer segment, or a rising escalation rate on a newly launched product. These signals inform architectural changes: adding new routines, redesigning tool interfaces, or restructuring the context allocation.
+This two-loop structure helps prove that evaluation quality determines iteration velocity. A reliable fast loop—enabled by calibrated judges and rigorous inter-rater agreement (§
+3.4
+)—allows teams to iterate confidently without waiting for slow, sparse online signals.
+4.5.
+Deployment Strategy
+Deploying an agent to production at scale requires a progressive rollout strategy that balances iteration velocity with risk management.
+4.5.1.
+Progressive rollout
+New agent versions are deployed at a small percentage (1–5%) while monitoring key metrics (SSR, tNPS, escalation rate, error rate).
+4.5.2.
+Confidence-based escalation
+The agent operates within a human-in-the-loop architecture (Figure
+1
+). When the agent encounters situations outside its defined routines, fails to retrieve the necessary data, or detects low confidence in its proposed response, it transfers the conversation to a human agent.
+4.5.3.
+Model portability
+Because foundation models evolve rapidly, our system is designed to accommodate model transitions with minimal disruption. The modular context engineering architecture (§
+4.2
+) enables targeted prompt adjustments. We maintain per-model evaluation baselines and run the full evaluation suite before any model migration, treating model upgrades as first-class prompt changes subject to the same eval-driven process described in subsequent sections. More details using a case study in Section
+5
+5.
+Building a CS Agent at Scale - A Case Study
+We validate our framework on a
+card delivery
+agent — one of the highest-volume intents at our organization, handling “Where is my card?” inquiries. It exercises the full framework: it requires multi-step reasoning over real-time logistics data, context-dependent branching (e.g., address type determines the investigation path), and careful grounding to avoid misstating delivery timelines.
+5.1.
+Agent Overview
+The card delivery agent’s mission is to resolve card status inquiries. A customer contacts support after ordering a new card (due to first issuance, loss, theft, damage, or expiration), and the agent must determine the card’s current status and guide the customer to resolution.
+Routine.
+The agent follows a routine (see Figure
+6
+for the general pattern) with the following steps: (1) greet and frame the case, (2) retrieve logistics and tracking data via tools, (3) analyze delivery status against expected timelines, (4) run address-type-specific investigation questions (e.g., apartment access, concierge, PO box), and (5) offer card reissue if the issue cannot be resolved.
+Tools.
+The agent has access to a small, domain-specific toolset:
+•
+get_customer_profile
+— retrieves identity, address, and account details for the authenticated customer.
+•
+check_card_delivery
+— queriesthe order management system for tracking status, expected delivery date, and delivery confirmation.
+•
+reissue_card
+— initiates a card reissue to the same or a new address.
+5.2.
+Building Evals
+We now discuss how we built
+LLM-as-a-judge
+evaluators for this use case. Using rigorous evals, we A/B tested 11 variants of the agent online, leading to large gains (see Results for details).
+Data Collection and Annotation.
+To rigorously evaluate the performance of the agent scenarios, we constructed a dataset spanning five evaluation categories (Evals E1–E5), see Table
+1
+for details. This and all other datasets used in this work are privacy-preserving datasets derived from real customer-support conversations through the data-minimization and pseudonymization pipeline described in Section
+6.5
+. Ground-truth binary labels were obtained through a multi-annotator procedure involving three operations analysts with specialized domain knowledge of the target business logic. For each sample, analysts provided both a classification label and a detailed textual explanation justifying their decision. The final ground truth for each sample was determined by majority vote among the three annotators. The accompanying textual explanations were retained as semantic feedback signals for the subsequent optimization phase.
+It is important to note that only a few hundred high quality binary labels are enough to build an effective eval.
+Description
+# Count
+# Class
+Freq.
+Min. Class
+E1: Agent Reissue Failure
+888
+2
+0.49
+E2: Customer Input Verification
+90
+2
+0.22
+E3: Card Delivery Data Check
+816
+2
+0.43
+E4: Response Conciseness
+246
+2
+0.49
+E5: Resolution Completeness
+90
+2
+0.49
+Table 1
+.
+Summary statistics of the evaluation datasets.
+Prompt Optimization.
+We used GEPA
+(
+Agrawal et al., 2025
+)
+within the DSPy framework to automatically refine the eval instructions.
+All classification evaluations used GPT-4.1-mini as the base model and GPT-5.1 as a reflection model to critique errors, synthesize revisions, and propose semantically grounded prompt edits informed by analyst feedback. We ran GEPA with
+auto=light
+(approximately 500 iterations), reflection minibatch size
+=
+3
+=3
+, and Pareto-based candidate selection to balance trade-offs across optimization criteria. We also provided the optimizer with the free-text rationales collected during annotation, enabling the reflection model to anchor prompt updates in expert reasoning rather than surface heuristics.
+We compared against (i) a
+majority-class
+baseline that always predicts the most frequent label, and (ii) a
+starter-prompt
+baseline consisting of a brief, manually written instruction set. We repeated each experiment five times and report mean accuracy and 95% confidence interval across runs.
+We stratified the annotated dataset into train, validation, and test splits using a 40%/30%/30% ratio. During the optimization phase, GEPA utilized the train and validation set to iteratively refine prompt candidates based on the provided feedback. Final performance results reported were measured on the held-out test set.
+Inter-rater Agreement Analysis.
+To validate the robustness of evals after optimization, we analyzed the consistency of predictions across several state-of-the-art language models: GPT-4o, GPT-4o-mini, GPT-4.1, GPT-4.1-mini, GPT-5, o3, o3-mini, all operated under data-processing agreements in controlled environments. The model temperature was set to 0, and all other hyperparameters were left at their default values. This analysis was conducted in two phases: first, using the manual starter prompt and subsequently using the optimized prompt.
+We quantified agreement between model pairs using Cohen’s kappa (
+κ
+\kappa
+) as described in the background section. By comparing
+κ
+\kappa
+before and after prompt optimization, we evaluate whether GEPA improves the stability of the rubric such that it induces more consistent judgments across different model architectures.
+(a)
+Starter prompt
+(b)
+GEPA-optimized prompt
+Figure 7
+.
+Eval E1 - Pairwise Cohen’s
+κ
+\kappa
+heatmaps among seven language models, comparing the starter prompt (left) and the GEPA-optimized prompt (right).
+6.
+Offline and Online Results
+6.1.
+Prompt Optimization
+Eval
+Accuracy (%)
+Baseline
+Starter Prompt
+Optimized Prompt
+E1
+51.11
+77.78
+±
+0.49
+77.78_{\pm 0.49}
+82.00
+±
+0.09
+\mathbf{82.00}_{\pm 0.09}
+E2
+77.78
+68.88
+±
+3.41
+68.88_{\pm 3.41}
+88.89
+±
+0.00
+\mathbf{88.89}_{\pm 0.00}
+E3
+56.62
+58.07
+±
+0.26
+58.07_{\pm 0.26}
+73.01
+±
+0.76
+\mathbf{73.01}_{\pm 0.76}
+E4
+51.11
+74.00
+±
+0.95
+74.00_{\pm 0.95}
+76.89
+±
+0.79
+\mathbf{76.89}_{\pm 0.79}
+Table 2
+.
+Evaluator accuracy (mean with 95% confidence intervals in subscript) before and after prompt optimization.
+Table
+2
+summarizes the performance and demonstrates that automated optimization consistently outperforms both the majority-class baseline and manual prompt engineering across all tasks. Notably, in E3, the optimization delivered a substantial improvement, raising accuracy from a manual baseline of
+58.07
+58.07
+to
+73.01
+73.01
+. This illustrates the framework’s capability to capture complex evaluation criteria where manual prompting failed to align with expert consensus. Furthermore, the narrow confidence intervals observed across all optimized prompts (ranging from
+0.00
+0.00
+to
+0.79
+0.79
+) indicate that the GEPA optimization process yields robust prompts that are consistent across multiple inference runs.
+A sample before-and-after prompt for Eval E2 can be found in Appendix
+A
+.
+A critical insight emerged from E2, a binary evaluator characterized by a high class imbalance (baseline accuracy of
+77.78
+77.78
+). In this instance, the manual starter prompt degraded performance to
+68.88
+68.88
+, performing worse than the majority-class baseline.
+This highlights the risks inherent in manual prompt engineering, where human-written instructions may inadvertently introduce noise or bias that contradicts the underlying task distribution
+. Conversely, optimization successfully recovered performance, achieving an accuracy of
+88.89
+88.89
+by aligning the GPT-4.1-mini base model with the rigorous logic of the human specialists.
+For tasks with more balanced class distributions, specifically Eval E1 and E4, where baselines were approximately
+51.11
+51.11
+, the Optimized Prompt demonstrated high reliability, achieving
+82.00
+82.00
+and
+76.89
+76.89
+accuracy, respectively. However, the positive lift from the starter prompt was small compared to E2.
+6.2.
+Inter-rater Agreement
+Figures
+7(a)
+and
+7(b)
+present the pairwise Cohen’s Kappa coefficients for Eval E1, calculated before and after GEPA prompt optimization, respectively.
+The starter prompt resulted in negligible agreement across the majority of model pairs. For instance, the interaction between the GPT-4.1 and GPT-5 families yielded a low coefficient (
+κ
+=
+0.109
+\kappa=0.109
+). Notably, the agreement between GPT-4.1 and GPT-4.1-mini was
+0.00
+0.00
+. Inspection of the predictions revealed that the unoptimized GPT-4.1-mini assigned a single class to all test instances, resulting in zero variance and a consequent
+κ
+\kappa
+of zero. This lack of consensus suggests that the manual starter prompts were ambiguous, leading the models to rely on internal priors.
+Conversely, the GEPA-optimized prompts led to a substantial convergence in judge behavior. Post-optimization, the agreement between GPT-4.1 and GPT-4.1-mini increased to
+κ
+=
+0.745
+\kappa=0.745
+, while the agreement between GPT-4.1 and GPT-4o reached
+κ
+=
+0.895
+\kappa=0.895
+. The highest consensus was observed between the reasoning-intensive models, with GPT-5 and o3 achieving near-perfect alignment
+κ
+=
+0.950
+\kappa=0.950
+. These results indicate that the optimized prompts effectively grounded the evaluation criteria, rendering the judging process largely invariant to the specific model architecture.
+6.3.
+Online Experiments
+We used the aforementioned evals to deploy 10 different variants of the card-delivery use case agent and compared them against our legacy customer support solution across a large number of real customer interactions.
+Each variant was launched at 1% traffic, and subsequently increased to larger percentages. The evaluator scores were used to exclude non-promising variants. The baseline variant (V0) was limited to a knowledge-base retrieval tool and a human-transfer tool, unable to perform domain actions. Subsequent versions progressively added: a structured routine derived from SOPs; domain-specific tools for logistics tracking and customer data retrieval; frustration detection and proactive escalation; self-contained card reissue capability, eliminating the need for human handoff on the most common resolution path; tool-selection hierarchies and conciseness budgets to curb verbosity and tool misuse — each change driven by failures surfaced through the offline evals.
+6.3.1.
+Business Metric Impact
+The AI agent delivered a
+37
+percentage point
+improvement in AI tNPS, reflecting substantially higher customer satisfaction. Additionally, we observed a
+29
+p.p increase in SSR, indicating that more customers successfully resolved their issues without escalation to human agents. These gains translate directly to improved customer experience and reduced operational costs at scale. Notably, the AI tNPS came within
+10
+p.p. of the expert human-agent tNPS score.
+6.3.2.
+Model Ablation
+We evaluated the impact of the underlying base model by comparing agent variants built on GPT-4.1 versus GPT-5 (these constitute 2 of the 10 variants we tried). Notably, transitioning to GPT-5 required prompt adaptation:
+GPT-5 exhibits stricter instruction-following behavior compared to GPT-4.1, which would implicitly
+infer unstated requirements. For instance, GPT-5 failed to call contextual tools before responding
+unless explicitly instructed, whereas GPT-4.1 inferred this requirement from context. To address this, we introduced a
+tool-first principle
+in the Instructions component - a single directive
+mandating tool calls before composing responses when customer-specific data is required. This minimal
+intervention restored the desired behavior.
+Figure
+8
+shows the eval failure rates for both variants for each binary evaluator with 95% confidence intervals. The GPT-5-based agent achieved reductions across all evaluation categories, except E4 (GPT5 was generating more verbose answers).
+Crucially, the GPT-5 variant resulted in better online metrics, correlating with its offline eval improvements when compared to the GPT-4.1 variant
+.
+These results highlight a key insight: more capable models with stricter instruction-following require more explicit prompts but can deliver superior performance when properly guided. The modular prompt architecture enabled rapid, targeted modifications.
+Figure 8
+.
+Evaluation failure rates for GPT-4.1 and GPT-5 with 95% confidence intervals. GPT-5 almost always achieves lower failure rates.
+6.3.3.
+Offline-Online Correlation
+A core claim of our framework is that rigorous offline evaluation enables predictive iteration:
+improvements in simulation metrics should correlate with improvements in production outcomes.
+Figure
+9
+validates this hypothesis by plotting the relationship between offline
+evaluation performance and online tNPS across multiple agent versions (V0–V10). Each point
+represents a deployed agent variant; the
+x
+x
+-axis shows the change in average evaluation failure rate
+relative to the baseline (V0), while the
+y
+y
+-axis shows the corresponding change in tNPS.
+We observe a strong positive correlation: versions with lower eval failure rates consistently
+achieve higher tNPS scores
+. Notably, versions V10 and V8 achieved the largest offline improvements
+(approximately 20 - 25 p.p. reductions in failure rate) and correspondingly demonstrated
+the highest tNPS gains (37 p.p. relative to V0). Conversely, V6, which showed minimal offline
+improvement, delivered near-zero tNPS lift.
+This correlation validates our central thesis: investment in evaluation quality - through rigorous annotation, GEPA-optimized judge prompts, and multi-model agreement analysis enables teams to iterate confidently offline
+, knowing that improvements will translate to online positive gains. The framework reduces the need for expensive online experimentation, enabling fast iteration cycles.
+Figure 9
+.
+Offline evaluation improvements are positively correlated with online gains in both tNPS and SSR across deployed agent variants (numbered by version), measured relative to the V0 baseline.
+6.4.
+Generalization Across Production Use Cases
+To assess whether the same eval-driven workflow generalizes to materially different customer-support domains, we report results from 4 additional agents. We describe two in detail below and summarize all five deployments in Table
+3
+.
+6.4.1.
+Debt Management Agent
+This agent helps customers regularize overdue personal-loan debt by detecting overdue status, simulating offers across installment plans, and guiding the customer. This use case requires multi-step numerical reasoning over financial simulations and empathetic communication with customers. Using the same eval-driven workflow, the best-performing variant substantially improved customer-perceived quality -lifting AI tNPS by
+40 p.p.
+- while maintaining and slightly improving automation (self-service rate and return rate both moved favorably) and reducing evaluator failures by
+3.5 p.p.
+(Table
+3
+).
+6.4.2.
+Credit Limit Agent
+This agent handles credit-card limit questions by explaining limit breakdowns, clarifying discrepancies, and recommending alternative credit options when an increase is unavailable. Unlike card delivery, this use case requires precise grounding across multiple financial data sources and careful communication around decisions. We built three domain-specific evaluators and followed the same iteration cycle. Relative to control, the deployed agent improved AI tNPS, self-service rate, and resolution rate, and sharply cut its evaluator failure rates—for example, account-specific-context and customer-empathy failures dropped by
+14.95
+and
+11.32 p.p.
+, respectively (Table
+3
+).
+6.4.3.
+Cross-Use-Case Summary
+Table
+3
+summarizes the online results across the five production deployments.
+Use Case
+tNPS
+SSR
+Δ
+\Delta
+Human
+Gain
+Gain
+tNPS
+Card Delivery
++
+37
++37
++
+29
++29
+−
+10
+-10
+Debt Management
++
+40
++40
++
+2.9
++2.9
+−
+23.6
+-23.6
+Credit Limit
++
+4.5
++4.5
++
+7.5
++7.5
+−
+7.1
+-7.1
+Card Management
++
+38.3
++38.3
++
+4.8
++4.8
+−
+1.1
+-1.1
+Product Explainer
++
+12.3
++12.3
+−
+1.5
+‡
+-1.5^{\ddagger}
+−
+6.2
+-6.2
+Table 3.
+Online A/B-test results across five production agents. All results are in percentage points (p.p.);
+Δ
+\Delta
+Human tNPS is the AI agent’s tNPS minus the expert human-agent tNPS (negative
+=
+=
+below human). All five agents also showed substantial reductions in evaluator failure rates.
+‡
+The Product Explainer SSR dip reflects transient LLM request failures.
+Taken together, these use cases span distinct domains - from logistics to debt management, credit management, card servicing, and product education - with different routines, tools, and evaluation rubrics. The same framework yields consistent customer-satisfaction (tNPS) gains across all five. The
+Δ
+\Delta
+Human tNPS column further shows that, for four of the five agents, the AI reaches within
+∼
+1
+{\sim}1
+–
+10
+10
+p.p. of expert human-agent tNPS, with the largest remaining gap in the hardest domain (debt management,
+−
+23.6
+-23.6
+p.p.).
+6.5.
+Responsible Deployment: Data Protection and Privacy by Design
+Our agents operate in a highly regulated financial environment under strict privacy-by-design and privacy-by-default principles. All datasets used are derived from customer-support interactions through a data-minimization and pseudonymization pipeline that removes or masks direct identifiers and redacts sensitive financial fields. Access to conversation logs and evaluation datasets is role-based, audited, and time-limited.
+When we use third-party foundation models (e.g., for judge ensembles or prompt optimization), we do so under Data Processing Agreements (DPAs) that contractually prohibit training on Nubank data, with requests restricted to minimized, privacy-preserving inputs and cross-border processing governed by an international transfer framework.
+Finally, the agents make no unconstrained or irrevocable decisions about credit, debt management, or limits; they operate inside existing regulated processes subject to established policies, human oversight, and channels for contestation and review. Logging and audit trails apply the same safeguards without compromising data protection or customer trust.
+7.
+Conclusion
+We presented an eval-driven methodology for building high-quality customer-support agents. The approach couples a maintainable, modular prompt architecture with rigorous eval
+design (including inter-rater reliability) and automated judge-prompt optimization via GEPA. In both
+offline simulation and online A/B tests, this workflow enabled rapid iteration while preserving a
+clear quality bar, yielding material gains in customer satisfaction and self-service over a legacy
+support system. The same framework delivered consistent online customer-satisfaction gains across five deployed agents spanning logistics, debt management, credit-limit support, card management, and product explanation, suggesting that the methodology generalizes across customer-support domains. Future work will broaden use case coverage, generalize to different open-source or proprietary models, and close the loop on fine-tuning by using the same eval-driven methodology to inform data curation and training objectives, applying strict privacy and data-minimization controls.
+References
+Agrawal
+et al.
+(2025)
+L. A. Agrawal, S. Tan, D. Soylu, N. Ziems, R. Khare, K. Opsahl-Ong, A. Singhvi, H. Shandilya, M. J. Ryan, M. Jiang,
+et al.
+Gepa: reflective prompt evolution can outperform reinforcement learning
+.
+arXiv preprint arXiv:2507.19457
+.
+Cited by:
+§A.3
+,
+3rd item
+,
+§3.3
+,
+§5.2
+.
+Anthropic (2024)
+Anthropic
+Building effective agents
+.
+Note:
+Published Dec 19, 2024. Accessed: 2026-02-02
+External Links:
+Link
+Cited by:
+§1
+.
+Anysphere, Inc. (2024)
+Anysphere, Inc.
+Cursor: the ai code editor
+.
+Note:
+Accessed: 2025-02-05
+External Links:
+Link
+Cited by:
+§1
+.
+Arabzadeh and Clarke (2025)
+N. Arabzadeh and C. L. A. Clarke
+A human-ai comparative analysis of prompt sensitivity in LLM-based relevance judgment
+.
+Note:
+Related DOI: 10.1145/3726302.3730159
+External Links:
+2504.12408
+,
+Document
+,
+Link
+Cited by:
+§3.4.1
+.
+Brown
+et al.
+(2020)
+T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell,
+et al.
+Language models are few-shot learners
+.
+Advances in neural information processing systems
+33
+,
+pp. 1877–1901
+.
+Cited by:
+§1
+,
+§3.2
+.
+Chen
+et al.
+(2025)
+K. Chen, M. Cusumano-Towner, B. Huval, A. Petrenko, J. Hamburger, V. Koltun, and P. Krähenbühl
+Reinforcement learning for long-horizon interactive LLM agents
+.
+arXiv preprint arXiv:2502.01600
+.
+Cited by:
+§1
+.
+Cohen (1960)
+J. Cohen
+A coefficient of agreement for nominal scales
+.
+Educational and Psychological Measurement
+20
+(
+1
+),
+pp. 37–46
+.
+Cited by:
+§3.4.2
+.
+Comanici
+et al.
+(2025)
+G. Comanici, E. Bieber, M. Schaekermann, I. Pasupat, N. Sachdeva, I. Dhillon, M. Blistein, O. Ram, D. Zhang, E. Rosen,
+et al.
+Gemini 2.5: pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities
+.
+arXiv preprint arXiv:2507.06261
+.
+Cited by:
+§1
+.
+Dubey
+et al.
+(2024)
+A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle, A. Letman, A. Mathur, A. Schelten, A. Yang, A. Fan,
+et al.
+The Llama 3 herd of models
+.
+arXiv preprint arXiv:2407.21783
+.
+Cited by:
+§1
+.
+Erdogan
+et al.
+(2025)
+L. E. Erdogan, N. Lee, S. Kim, S. Moon, H. Furuta, G. Anumanchipalli, K. Keutzer, and A. Gholami
+Plan-and-act: improving planning of agents for long-horizon tasks
+.
+arXiv preprint arXiv:2503.09572
+.
+Cited by:
+§1
+.
+Feng
+et al.
+(2025)
+J. Feng, S. Huang, X. Qu, G. Zhang,
+et al.
+ReTool: reinforcement learning for strategic tool use in llms
+.
+arXiv preprint arXiv:2504.11536
+.
+Cited by:
+§1
+.
+Feng
+et al.
+(2023)
+Y. Feng, Y. Jiao, A. Prasad, N. Aletras, E. Yilmaz, and G. Kazai
+Schema-guided user satisfaction modeling for task-oriented dialogues
+.
+In
+Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)
+,
+Toronto, Canada
+,
+pp. 2079–2091
+.
+Cited by:
+§2
+.
+Fernando
+et al.
+(2023)
+C. Fernando, D. Banarse, H. Michalewski, S. Osindero, and T. Rocktäschel
+Promptbreeder: self-referential self-improvement via prompt evolution
+.
+arXiv preprint arXiv:2309.16797
+.
+Cited by:
+§3.3
+.
+Fleiss (1971)
+J. L. Fleiss
+Measuring nominal scale agreement among many raters
+.
+Psychological Bulletin
+76
+(
+5
+),
+pp. 378–382
+.
+Cited by:
+§3.4.2
+.
+Følstad
+et al.
+(2024)
+A. Følstad, E. L.-C. Law, and N. van As
+Conversational breakdown in a customer service chatbot: impact of task order and criticality on user trust and emotion
+.
+ACM Transactions on Computer-Human Interaction
+31
+(
+5
+).
+External Links:
+Document
+Cited by:
+§2
+.
+Google (2025)
+Google
+Google antigravity: experience liftoff with the next-generation ide
+.
+External Links:
+Link
+Cited by:
+§1
+.
+Gung
+et al.
+(2023)
+J. Gung, E. Moeng, W. Rose, A. Gupta, Y. Zhang, and S. Mansour
+NatCS: eliciting natural customer support dialogues
+.
+In
+Findings of the Association for Computational Linguistics: ACL 2023
+,
+Toronto, Canada
+,
+pp. 9652–9677
+.
+Cited by:
+§2
+.
+Guo
+et al.
+(2025)
+D. Guo, D. Yang, H. Zhang, J. Song, P. Wang, Q. Zhu, R. Xu, R. Zhang, S. Ma, X. Bi,
+et al.
+DeepSeek-r1 incentivizes reasoning in llms through reinforcement learning
+.
+Nature
+645
+(
+8081
+),
+pp. 633–638
+.
+Cited by:
+§1
+.
+Jiang
+et al.
+(2023)
+A. Q. Jiang, A. Sablayrolles, A. Mensch, C. Bamford, D. S. Chaplot, D. de las Casas, F. Bressand, G. Lengyel, G. Lample, L. Saulnier, L. Renard Lavaud, M. Lachaux, P. Stock, T. Le Scao, T. Lavril, T. Wang, T. Lacroix, and W. El Sayed
+Mistral 7b
+.
+arXiv e-prints
+.
+External Links:
+2310.06825
+,
+Document
+,
+Link
+Cited by:
+§1
+.
+Jin
+et al.
+(2025)
+B. Jin, H. Zeng, Z. Yue, J. Yoon, S. O. Arik, D. Wang, H. Zamani, and J. Han
+Search-r1: training llms to reason and leverage search engines with reinforcement learning
+.
+arXiv preprint arXiv:2503.09516
+.
+Cited by:
+§1
+.
+Khattab
+et al.
+(2024)
+O. Khattab, A. Singhvi, P. Maheshwari, Z. Zhang, K. Santhanam, S. V. A, S. Haq, A. Sharma, T. T. Joshi, H. Moazam, H. Miller, M. Zaharia, and C. Potts
+DSPy: compiling declarative language model calls into state-of-the-art pipelines
+.
+In
+International Conference on Learning Representations (ICLR)
+,
+Note:
+Conference paper
+External Links:
+Link
+Cited by:
+§3.3
+.
+Kojima
+et al.
+(2022)
+T. Kojima, S. S. Gu, M. Reid, Y. Matsuo, and Y. Iwasawa
+Large language models are zero-shot reasoners
+.
+In
+Advances in Neural Information Processing Systems 35 (NeurIPS 2022)
+,
+pp. 22199–22213
+.
+Cited by:
+§3.2
+.
+Krippendorff (2004)
+K. Krippendorff
+Reliability in content analysis: some common misconceptions and recommendations
+.
+Human Communication Research
+30
+(
+3
+),
+pp. 411–433
+.
+Cited by:
+§3.4.2
+.
+Kwa
+et al.
+(2025)
+T. Kwa, B. West, J. Becker, A. Deng, K. Garcia, M. Hasin, S. Jawhar, M. Kinniment, N. Rush, S. Von Arx,
+et al.
+Measuring ai ability to complete long tasks
+.
+arXiv preprint arXiv:2503.14499
+.
+Cited by:
+§1
+.
+Li
+et al.
+(2025)
+D. Li, B. Jiang, L. Huang, A. Beigi, C. Zhao, Z. Tan, A. Bhattacharjee, Y. Jiang, C. Chen, T. Wu, K. Shu, L. Cheng, and H. Liu
+From generation to judgment: opportunities and challenges of LLM-as-a-judge
+.
+In
+Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing
+,
+Suzhou, China
+,
+pp. 2757–2791
+.
+External Links:
+Document
+,
+Link
+Cited by:
+§3.4.1
+.
+Likert (1932)
+R. Likert
+A technique for the measurement of attitudes
+.
+Archives of Psychology
+22
+(
+140
+),
+pp. 1–55
+.
+Cited by:
+§3.4.3
+.
+Lin (2004)
+C. Lin
+ROUGE: a package for automatic evaluation of summaries
+.
+In
+Text Summarization Branches Out
+,
+Barcelona, Spain
+,
+pp. 74–81
+.
+External Links:
+Link
+Cited by:
+§3.4.1
+.
+Liu
+et al.
+(2016)
+C. Liu, R. Lowe, I. Serban, M. Noseworthy, L. Charlin, and J. Pineau
+How NOT to evaluate your dialogue system: an empirical study of unsupervised evaluation metrics for dialogue response generation
+.
+In
+Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing
+,
+J. Su, K. Duh, and X. Carreras (Eds.)
+,
+Austin, Texas
+,
+pp. 2122–2132
+.
+External Links:
+Link
+,
+Document
+Cited by:
+§3.4.1
+.
+Mendonça
+et al.
+(2023)
+J. Mendonça, P. Pereira, M. Menezes, V. Cabarrão, A. C. Farinha, H. Moniz, A. Lavie, and I. Trancoso
+Dialogue quality and emotion annotations for customer support conversations
+.
+In
+Proceedings of the 3rd Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)
+,
+Singapore
+,
+pp. 9–21
+.
+Cited by:
+§2
+.
+Mohammadi
+et al.
+(2025)
+M. Mohammadi, Y. Li, J. Lo, and W. Yip
+Evaluation and benchmarking of llm agents: a survey
+.
+In
+Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+,
+Toronto, Canada
+.
+Cited by:
+§2
+.
+Obadinma
+et al.
+(2022)
+S. Obadinma, F. K. Khattak, S. Wang, T. Sidhom, E. Lau, S. Robertson, J. Niu, W. Au, A. Munim, K. R. K. Bhaskar, B. Wei, I. Ren, W. Muhammad, E. Li, B. Ishola, M. Wang, G. Tanner, Y. Shiah, S. X. Zhang, K. P. Apponsah, K. Patel, J. Narain, D. Pandya, X. Zhu, F. Rudzicz, and E. Dolatabadi
+Bringing the state-of-the-art to customers: a neural agent assistant framework for customer service support
+.
+In
+Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: Industry Track
+,
+Abu Dhabi, UAE
+,
+pp. 440–450
+.
+Cited by:
+§2
+.
+OpenAI (2025)
+OpenAI
+Introducing deep research
+.
+Note:
+Accessed: 2025-02-05
+External Links:
+Link
+Cited by:
+§1
+.
+Panickssery
+et al.
+(2024)
+A. Panickssery, S. R. Bowman, and S. Feng
+LLM evaluators recognize and favor their own generations
+.
+In
+Advances in Neural Information Processing Systems
+,
+Vol.
+37
+.
+External Links:
+Link
+,
+Document
+Cited by:
+§3.4.1
+.
+Papineni
+et al.
+(2002)
+K. Papineni, S. Roukos, T. Ward, and W. Zhu
+Bleu: a method for automatic evaluation of machine translation
+.
+In
+Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics
+,
+P. Isabelle, E. Charniak, and D. Lin (Eds.)
+,
+Philadelphia, Pennsylvania, USA
+,
+pp. 311–318
+.
+External Links:
+Link
+,
+Document
+Cited by: <a href="#S3.SS4.SSS1.p1.1" title="3.4.1. LLM-as-a-judge ‣ 3.4. Evaluation ‣ 3. Backg

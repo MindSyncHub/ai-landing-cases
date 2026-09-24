@@ -800,5 +800,272 @@
     "evidence_note": "方案与流程为公开事实（讲述人第一人称）；「10%→30%」为来源方披露的脱敏数字（量级对、绝对值处理过），未经独立审计。",
     "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=235",
     "source": "Datawhale《FDE 案例 100》第一期 NO.24（2026-09-06），PDF 第235-245页"
+  },
+  {
+    "id": "c01-bayer-prince",
+    "detail_tier": "S",
+    "company": "拜耳（Bayer，与 Thoughtworks 共建）",
+    "industry": "制药/生命科学",
+    "scenario": "临床前研究资料检索与多 Agent 研究助手",
+    "pain_points": [
+      "information-overload",
+      "data-siloed"
+    ],
+    "problem": "临床前研究数据散布在多个异构系统，结构化元数据因历年系统迁移不完整甚至错误，权威「金标准」信息锁在几十年积累的 PDF 研究报告里；关键词布尔搜索对付不了临床前术语的复杂多变，跨文档提取洞察全靠人工，挤占科研时间。",
+    "solution": "PRINCE 平台三期演进：Search（统一网关检索结构化元数据）→ Ask（RAG 让自然语言直接问非结构化 PDF）→ Do（多 Agent 执行复杂任务、起草监管文档）。Agentic RAG 管线：意图澄清→反思规划→Researcher 检索→Reflection 校验数据充分性→Writer 综合成文；context engineering 控制各模型可见上下文，harness engineering 负责编排、工具边界、状态持久化、重试、回退、观测；信任靠透明（逐步推理可见、句级引用可溯源）+ 评估 + 监控 + human-in-the-loop。",
+    "human": "关键判断保留 human-in-the-loop；用户可逐句溯源验证。",
+    "result": "定性结果（原文口径）：已在拜耳显著提升数据可及性和研究效率，改变科学家的工作方式；量化业务影响见配套 Frontiers in AI 论文。本文未公布具体数字。",
+    "decision_info": {
+      "effort": "跨多年演进（Search→Ask→Do 三期），从数据基础设施到多 Agent 编排",
+      "duration": "多年演进，持续迭代",
+      "prerequisites": "权威数据源（已批准 PDF）可获取；工程团队能投入可靠性建设（错误处理/状态/回退/观测）",
+      "failure_modes": "元数据不可信时以原始文档为金标准；工具选择准确性需要专门优化（预过滤有效工具）；生产系统信任三要素：可靠性、透明、可验证，不只是准确率",
+      "transferability": "中高——「Search→Ask→Do」演进路径与「context engineering + harness engineering」双层架构是任何知识密集型 RAG 系统的参照；医药合规场景门槛较高"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "以原始文档为金标准，不信任二手元数据",
+      "Search→Ask→Do 分阶段演进而非一步到位",
+      "context engineering 与 harness engineering 分层治理",
+      "用句级引用和推理可见性建立生产信任",
+      "错误处理/重试/回退/观测作为一等公民"
+    ],
+    "pattern_links": [],
+    "evidence_note": "架构与决策为公开事实（Thoughtworks 工程师署名案例）；效果为定性披露，量化影响指向 Frontiers 论文，未经独立审计。",
+    "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
+    "source": "martinfowler.com 署名技术案例（2026-06-16，Thoughtworks Principal Consultant）"
+  },
+  {
+    "id": "c02-nubank-agents",
+    "detail_tier": "S",
+    "company": "Nubank（1 亿+用户）",
+    "industry": "金融科技/银行",
+    "scenario": "客服 AI Agent 评测驱动迭代",
+    "pain_points": [
+      "customer-service-cost"
+    ],
+    "problem": "在 1 亿+用户规模上建面向客户的客服 Agent：评估方法、上下文工程、训练、线上测量通常各自为政，盲区在部署后才暴露。需要离线与线上打通的评测框架。",
+    "solution": "统一框架四个支柱：面向客服的结构化 context engineering；系统化 human-in-the-loop 提示词迭代；LLM-as-judge 评估（测量评分者间一致性 + GEPA 优化保证稳定性）；ideation-to-production 验证闭环。核心洞见：评估管线质量直接决定迭代速度。五个生产部署（卡配送、债务管理、额度支持、卡管理、产品解释）。",
+    "human": "human-in-the-loop 提示词迭代是框架支柱之一。",
+    "result": "卡配送部署大规模 A/B 测试：AI 交易型 NPS 提升 37 个百分点，自助解决率提升 29 个百分点；多数用例 AI 满意度与专家级人工坐席差距在几个百分点内；离线仿真指标与线上结果强相关——评测驱动开发能可靠预测生产影响。数字为论文披露（KDD 2026），未经独立审计。",
+    "decision_info": {
+      "effort": "统一评估框架横跨五个生产域",
+      "duration": "多轮迭代（原文未给总周期）",
+      "prerequisites": "有线上 A/B 实验条件；离线仿真管线可建",
+      "failure_modes": "评估、上下文、训练、线上测量孤立建设会在部署后暴露盲区；LLM 评判要有评分者间一致性测量，否则无法稳定优化",
+      "transferability": "高——评测驱动框架（GEPA+一致性测量+离线预测线上）是所有客服/对话型 Agent 的通用基线"
+    },
+    "delivery_pattern": "评测型",
+    "fde_actions": [
+      "结构化 context engineering 专门面向客服 Agent",
+      "LLM judge 先测评分者间一致性再优化（GEPA）",
+      "离线仿真指标对齐线上业务结果",
+      "用 A/B 测试验证而非只看离线指标"
+    ],
+    "pattern_links": [],
+    "evidence_note": "方法与数字为论文披露（arXiv 2606.08867，KDD 2026 会议论文，署名作者均 Nubank），未经独立审计。",
+    "url": "https://arxiv.org/html/2606.08867",
+    "source": "arXiv 2606.08867，KDD 2026 署名论文（Nubank 工程师）"
+  },
+  {
+    "id": "c04-meta-second-brain",
+    "detail_tier": "S",
+    "company": "Meta",
+    "industry": "科技",
+    "scenario": "合规领域专家知识 Agent（组织第二大脑）",
+    "pain_points": [
+      "expert-knowledge-loss",
+      "compliance-check"
+    ],
+    "problem": "大组织里最有价值的专家知识活在人脑子里：合规领域同一类问题在数百次产品评审中反复出现，专家评估一次要几天人工研究，不同专家评估不一致会产生真实的组织风险；专家大量时间耗在回答常规问题上。",
+    "solution": "把机构智能编码为合规领域的 AI Agent，四层架构互相依赖：知识系统（离线流程先把隐性的专家推理蒸馏成结构化知识文件——立场、边界、路由含义机器可读，wiki 按信息密度与使用频率组织，稀疏资料走 RAG）；推理层（可组合的 recipes——知识文件是声明式、recipes 是指令式，「知道什么」与「怎么推理」分离，故障可归因到单层，recipe 分阶段渐进披露使每轮 token 消耗降约 80%）；评估框架（门控每次变更）；自我改进循环（专家反馈编译为经验证、回归测试的更新，无需重训模型）。人工控制双机制：检查点（中途 surfaced 供专家评审确认/纠正/改向）+ 升级（真正歧义交专家）。",
+    "human": "专家全程掌控：检查点确认、歧义升级；专家反馈成为训练信号，一次性纠正变成永久性复利机构记忆。",
+    "result": "为 Meta 的领域专家节省大量时间（原文口径，未给具体数字）；recipes 重构后每轮 token 消耗下降约 80%；「一次性专家纠正→永久复利机构记忆」模式成立。架构为署名工程博客披露，未经独立审计。",
+    "decision_info": {
+      "effort": "四层架构需同时建设（去掉任何一层其他层退化）",
+      "duration": "原文未给周期",
+      "prerequisites": "专家愿意深度参与反馈闭环；源文档可离线蒸馏",
+      "failure_modes": "把文档堆当知识是陷阱——真知识是隐性推理；知识（声明式）与推理（指令式）不分层则故障无法归因、更新互相牵扯；上下文一次全量塞入会稀释注意力，渐进披露才省 token（-80%）",
+      "transferability": "高——「wiki+RAG 按密度分层、recipe 分层推理、反馈编译不重训」适用于任何有深层专家知识、规则可文本化的领域（金融、安全、工程），是知识型 Agent 的范式级参照"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "隐性知识先离线蒸馏成结构化知识文件",
+      "知识/推理分层：声明式知识+指令式 recipes",
+      "按密度分 wiki 与 RAG 两路",
+      "检查点+升级机制保持人在控制位",
+      "专家反馈编译为回归测试的更新，不重训模型"
+    ],
+    "pattern_links": [],
+    "evidence_note": "架构为 Meta 工程博客署名披露（2026-09-02）；节省时间为定性口径，token -80% 为披露数字，未经独立审计。",
+    "url": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
+    "source": "Engineering at Meta 署名工程博客（2026-09-02）"
+  },
+  {
+    "id": "c06-uber-genie",
+    "detail_tier": "S",
+    "company": "Uber（Michelangelo 团队）",
+    "industry": "科技/平台工程",
+    "scenario": "值班工程支持（on-call）知识问答 Copilot",
+    "pain_points": [
+      "customer-service-cost",
+      "information-overload"
+    ],
+    "problem": "内部 Slack 支持频道每月约 4.5 万个问题，响应等待长、反复拉扯；答案其实都在文档里，但信息碎片化散落在 Engwiki、内部 Stack Overflow 等地，用户找不到只能重复问，数百个频道对值班工程师形成高负载。",
+    "solution": "选型 RAG 而非微调（无需多样例、上市时间短）；数据源精挑细选（很多数据源不能暴露在 Slack）；幻觉三防线：检索相关度、与权威源验证、持续学习保持数据最新；文档质量是 RAG 上限（可评估文档并给出可执行的改进建议）；提示词改造：要求 LLM 只从带源 URL 的 sub-context 作答并引用，保证每答可溯源；Spark ETL 管线 + 自研向量库 Sia；UUID 贯穿成本追踪审计；用户反馈闭环持续精调。",
+    "human": "值班工程师处理真正需要人判断的问题；反馈机制让用户参与持续改进。",
+    "result": "2023 年 9 月上线至博客发布：扩展到 154 个 Slack 频道，回答超 70,000 个问题，48.9% 有用率，估算节省 13,000 工程小时。数字为署名工程博客披露，未经独立审计。",
+    "decision_info": {
+      "effort": "RAG 管线（Spark ETL+向量库+Knowledge Service）+文档质量评估机制",
+      "duration": "原文未给周期；RAG 选型为缩短上市时间",
+      "prerequisites": "内部文档源质量可治理；权限敏感数据源可甄别排除",
+      "failure_modes": "文档质量差则 RAG 无救——要建文档质量评估与改进建议机制；不给源 URL 强约束，幻觉无法收敛；数据源暴露有安全红线，接入前就要挑",
+      "transferability": "高——「内部知识问答 Copilot」是所有工程团队的标配需求；「sub-context+强制引用」的提示词结构与文档质量治理可直接复用"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "RAG 优先于微调（上市时间考量）",
+      "接入前筛选数据源（安全红线）",
+      "答案强制带来源 URL 的 sub-context 约束",
+      "建文档质量评估与改进建议机制",
+      "UUID 级成本追踪审计"
+    ],
+    "pattern_links": [],
+    "evidence_note": "架构与 48.9% 有用率为 Uber 署名工程博客披露（2024-10-10），未经独立审计。",
+    "url": "https://www.uber.com/us/en/blog/genie-ubers-gen-ai-on-call-copilot/",
+    "source": "Uber 工程博客署名文章（2024-10-10）"
+  },
+  {
+    "id": "c07-grab-llmkit",
+    "detail_tier": "S",
+    "company": "Grab",
+    "industry": "科技/超级应用",
+    "scenario": "从技术支持 Bot 到企业 Agent 开发平台 LLM-Kit",
+    "pain_points": [
+      "ai-adoption-org",
+      "customer-service-cost"
+    ],
+    "problem": "2023 年上半年 Tech Infra 团队数千张支持工单、大量重复问题；GPT-4 到来后把 Bot 升级为 Level-0 支持层（先查文档/runbook/历史 Slack 线程直接回答，不行再带上下文路由给人）。但规模化中反复踩同样的坑：「vibe check 不是评估策略」；换模型供应商（OpenAI↔Anthropic）要重写集成；答案错了要在三个系统里 grep 日志找原因，没有贯穿 workflow/工具调用/模型调用的共享 trace。",
+    "solution": "停止逐服务解决问题、改为集中解决一次——框架而非重型平台（平台会把团队锁进过时的刚性假设，框架标准化管道同时保留迭代自由）。LLM-Kit：生成式类型化 SDK（protobuf）、单一 LLM 网关前置所有模型调用、通道 provider 自动选择（Istio→Consul→静态回退+健康检查+故障后重选）、远程 MCP 框架注册工具。规模：500+ 服务跑在内部 Agent 框架上，50+ MCP 服务器，单网关每月处理数十亿 token。",
+    "human": "Level-0 解决不了的问题带上下文路由给对的人。",
+    "result": "500+ 生产服务、50+ MCP 服务器、单一 LLM 网关每月数十亿 token（博客披露）；Bot 从单团队原型长成全公司日常生产服务，服务数百万商家/司机/消费者。数字为署名工程博客披露，未经独立审计。",
+    "decision_info": {
+      "effort": "先做 Bot 踩坑，再把每个失败变成框架构件",
+      "duration": "2023 年起持续演进（Part 1 系列博客）",
+      "prerequisites": "已有基础设施/管道/密钥管理/可观测性可包进框架",
+      "failure_modes": "「vibe check 不是评估策略」——没有评估体系就没法规模化；框架 vs 平台的选择决定生态寿命；供应商锁定会让技术债拖慢迭代（换模型应只是改配置）",
+      "transferability": "高——「单点 Agent→平台框架」的演进路径是所有多团队公司的必经阶段；「框架不平台、共享 trace、网关统一」三原则可直接借鉴"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "把每个规模化失败变成框架的一个构件",
+      "建评估体系（vibe check 不算评估）",
+      "单一 LLM 网关前置统一模型调用与审计",
+      "自动健康检查与故障重选的通道 provider",
+      "做框架不做平台，保留团队迭代自由"
+    ],
+    "pattern_links": [],
+    "evidence_note": "演进叙事与数字为 Grab 署名工程博客披露（engineering.grab.com 系列 Part 1），未经独立审计。",
+    "url": "https://engineering.grab.com/how-grab-builds-and-runs-ai-agents-at-scale",
+    "source": "Grab Engineering 署名博客系列 Part 1"
+  },
+  {
+    "id": "c09-bmw-factory-genius",
+    "detail_tier": "S",
+    "company": "宝马集团（BMW Group）",
+    "industry": "汽车制造",
+    "scenario": "生产设备维护知识助手 Factory Genius",
+    "pain_points": [
+      "expert-knowledge-loss",
+      "information-overload"
+    ],
+    "problem": "生产设备故障时每分每秒都值钱，维修团队要快速定位原因；知识散落在设备手册、质量数据、内部故障报告和计划文档里，传统搜索引擎无法按语言上下文理解问题，老师傅经验难以复制。",
+    "solution": "「Just ask Factory Genius」：类搜索引擎但只查企业私有数据（手册/质量数据/故障报告/计划文档），LLM 理解自然语言上下文，显示来源链接并可摘要；数据每日更新（班志 shift-log 日常喂入）；组织方式是关键——Dingolfing 工厂 2024 年春试点，Spartanburg（美国）、Rosslyn（南非）同期并行开发类似方案，总部 AI 专家把多厂需求整合成全公司「best of」应用，全球内部平台可用；附翻译功能（匈牙利 Debrecen 建厂时手册无匈牙利语版极有用）。",
+    "human": "维修工保持最终判断；助手只在数秒内给出候选方案。",
+    "result": "数秒内给出特定系统问题的候选解决方案，故障诊断时间降至最低（新闻稿口径，无量化数字）；方法可迁移到其他生产场景。效果为来源方披露（企业新闻稿），未经独立审计。",
+    "decision_info": {
+      "effort": "试点先行+多厂并行+总部整合的三段式组织",
+      "duration": "2024 年春试点 → 全公司初始版本",
+      "prerequisites": "设备手册/故障报告等私有语料可得且可持续日更；多厂愿意透明并行开发",
+      "failure_modes": "单厂自研会重复造轮子——总部整合「best of」是关键；知识保鲜靠日更班志数据，不更新就退化；跨语言场景（建厂）是意外的高价值场景",
+      "transferability": "高——「多试点并行→总部整合 best of→全球推广」的组织路径比技术本身更值得抄；制造业设备维护知识问答是普遍场景"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "多厂透明并行试点而非单点孤军",
+      "总部整合各厂需求做「best of」",
+      "班志数据日更保持知识保鲜",
+      "内置翻译覆盖跨语言建厂场景"
+    ],
+    "pattern_links": [],
+    "evidence_note": "方案为企业新闻稿披露（2025-07-09，署名 Benedikt Torka）；效果为定性口径（数秒、最低），未经独立审计。",
+    "url": "https://www.press.bmwgroup.com/latin-america-caribbean/article/detail/T0451289EN/%E2%80%9Cjust-ask-factory-genius-%E2%80%9D:-how-ai-helps-maintain-manufacturing-equipment?language=en",
+    "source": "BMW Group 官方新闻稿（2025-07-09）"
+  },
+  {
+    "id": "c10-bosch-vision",
+    "detail_tier": "S",
+    "company": "博世（Bosch，Hildesheim 工厂）",
+    "industry": "制造/汽车零部件",
+    "scenario": "定子焊点视觉质检与生成式合成缺陷数据",
+    "pain_points": [
+      "quality-inspection"
+    ],
+    "problem": "AI 光学质检需要大量缺陷样本照片，但博世良率太高产不出足够缺陷图；人为故意损坏零件代价高。传统人工目检只能发现 70-90% 的错误。新产线启动时（如定子焊接，六种潜在缺陷：小孔、多余焊点、虚焊等）样本荒导致质检模型训练被卡住。",
+    "solution": "用生成式 AI 造合成缺陷数据（synthetic data）：以两位数张真实缺陷图为基底，通过 domain transfer（把已有产品类型的图像迁移到新用例）生成约 15,000 张人工图像训练检测模型；2D+3D 相机全段拍摄定子，AI 在零点几秒内判定，缺陷件自动回流返工；工程师持续人工重训练校准「可接受弱焊」与「故障」的边界规则。",
+    "human": "专家定义 OK/NG 的分类规则；缺陷件除「小焊点」外自动返工；工程师手动重训练直到识别可靠。",
+    "result": "项目周期比传统方法缩短约六个月，年生产力提升达六位数欧元量级；人工目检 70-90% 错误发现率 vs 成熟 AI 模型接近 100%；肉眼几乎无法区分合成图与真实图。2023 年底首条试点线，推广至捷克 Jihlava 和美国 Charleston。数字为 Bosch 官方故事页披露，未经独立审计。",
+    "decision_info": {
+      "effort": "每条产线需图像基底数据与规则校准；首批试点后按工厂推广",
+      "duration": "项目周期缩短约 6 个月（对比传统方法）",
+      "prerequisites": "有可迁移的相近产品图像数据（domain transfer 的「旧」）；专家能定义缺陷分类边界",
+      "failure_modes": "良率太高反而是数据瓶颈——合成数据是解锁钥匙；AI 初期会把可接受的弱焊误判为故障，需要专家手动重训练校准分类规则；先试点再跨厂推广（爬坡期现场支持）",
+      "transferability": "中高——「高良率行业缺缺陷样本」的困境普遍（半导体、医药包装）；「两位数真实图→1.5 万张合成图」的数据放大思路可复制，但需图像工程能力"
+    },
+    "delivery_pattern": "评测型",
+    "fde_actions": [
+      "生成式合成数据突破缺陷样本荒",
+      "domain transfer 用旧产品图像迁移到新用例",
+      "零点几秒判定+缺陷自动回流返工的产线闭环",
+      "专家人工重训练校准 OK/NG 边界规则"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字与流程为 Bosch Global 官方故事页署名披露；「接近100%」为完成模型的对比口径，未经独立审计。",
+    "url": "https://www.bosch.com/stories/ai-image-recognition-production/",
+    "source": "Bosch Global 官方故事页（署名 Ria Riemer / Laura Beggel / Timo Schwarz）"
+  },
+  {
+    "id": "c11-jabil-aws",
+    "detail_tier": "S",
+    "company": "捷普（Jabil，全球 EMS 代工）",
+    "industry": "制造/电子制造服务",
+    "scenario": "全球制造数据底座上云 + 车间智能助手（Amazon Q Business）",
+    "pain_points": [
+      "data-siloed",
+      "professional-judgment-gap",
+      "expert-knowledge-loss"
+    ],
+    "problem": "捷普全球 100+ 工厂、25+ 国家的机器数据分散在各厂，没有统一分析数据源，跨域分析做不了；400+ 业务应用从本地迁移上 AWS 后，车间现场的操作工排障仍要靠翻政策文档、制造规格和故障工单，1700+ 份文档多语言分散在多个系统里，排障耗时且依赖个人经验。",
+    "solution": "与 AWS Professional Services 多年合作，用 D2E（Data-Driven Everything，从数据出发的工作回溯法）+ EBA（Experience-Based Acceleration，边做边学的实操加速法）双方法论推进渐进式现代化：先把物料寻源应用栈和车间控制系统（EKS 上）现代化，再基于 Amazon Q Business 做车间智能助手——首版 1 周建成，随后几周持续接入工单、知识库等多源数据，让操作工用自然语言实时检索 1700+ 份政策/规格/排障文档；再横向扩展出客户研究助手、采购助手。同时用 AWS 培训体系（Skill Builder + 认证） upskill（再培训）现有员工而非新招。",
+    "human": "车间操作工仍是排障决策主体，助手只做文档检索与诊断建议；Jabil 作为 Amazon Q 早期采用方给 AWS 反馈制造业需求（如多语言能力），共同塑造产品；分类规则与数据接入由 Jabil 工程师主导。",
+    "result": "首次 EBA 交付：部署时间降低 67-83%，数据处理时间降低 74%，可横向扩容新厂点不降级；Data Dispatcher 迁到 AWS Glue Flex（serverless 无服务器集成）省 23% 成本；车间助手首版 1 周上线，上线后为全球员工提供 1700+ 份文档的实时多语言访问，平均排障时间显著下降、诊断准确率提升。数字为 AWS 官方客户案例页披露，未经独立审计。",
+    "decision_info": {
+      "effort": "多年多阶段项目：先数据/应用现代化，再单点 AI 助手（1 周首版），后横向复制到采购、客户研究、HR、财务",
+      "duration": "多年项目制；AI 助手首版 1 周，后续数周持续接入数据源",
+      "prerequisites": "已完成应用上云（400+ 应用迁移 AWS）是前置；有可集中的文档/工单数据源；员工愿意接受再培训而非换血",
+      "failure_modes": "组织阻力——上云初期遇到 change resistance（变革抵触），CIO 坦言花了时间建成熟度与标准化；「云优先」修正为「适合才上云」的混合策略；AI 工具需要制造业化改造（多语言）才能在全球车间可用",
+      "transferability": "高——「多年云迁移+数据集中→单点 AI 助手试点→横向复制」的渐进路径对大型制造企业普遍适用；1 周出首版、数周接数据的节奏证明助手类项目可以快启动"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "D2E+EBA 双方法论把多年转型切成高影响小步",
+      "助手首版 1 周上线、后续迭代接多源数据的快节奏交付",
+      "用培训体系 upskill 现有员工而非新招（人的转型优先于工具）",
+      "早期采用方身份反哺产品需求（多语言等制造业特性）"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字与引言为 AWS 官方客户案例页（署名 CIO Chase Christensen 等）披露，未经独立审计。",
+    "url": "https://aws.amazon.com/solutions/case-studies/jabil-case-study/",
+    "source": "AWS 官方客户案例页"
   }
 ]

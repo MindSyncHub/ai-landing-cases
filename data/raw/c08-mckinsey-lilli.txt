@@ -1,0 +1,5 @@
+# 待补抓
+
+- 目标：https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/what-mckinsey-learned-while-creating-its-generative-ai-platform
+- 状态：2026-09-24 curl 超时
+- 计划：浏览器环境补抓

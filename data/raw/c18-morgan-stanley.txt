@@ -1,0 +1,5 @@
+# 待补抓
+
+- 目标：https://openai.com/index/morgan-stanley/
+- 状态：2026-09-24 curl 抓取仅 41 字节（OpenAI 站点反爬）
+- 计划：浏览器环境补抓

@@ -1,0 +1,185 @@
+“Just ask Factory Genius!”: How AI helps maintain manufacturing equipment
+Login
+My.PressClub. Login.
+Login
+Remember login
+Forgotten password
+Register now
+Contact
+World Wide
+EN
+English
+Spanish
+Corporate
+Brands
+Technology
+People
+Heritage
+Exhibitions
+Sports
+»
+Enter search terms...
+Add Tag
+Article
+Photo
+TV Footage
+Video
+Audio
+Press Release
+Press Kit
+Speech
+Fact & Figures
+Photo
+Compilation
+Report
+Original Soundtrack
+Sound
+Do you need help?
+Please contact our support team from 9 to 17 CET via
+support.pressclub@bmwgroup.com
+.
+PressClub Latin America, Caribbean · Article.
+Press Release
+Press Kit
+Speech
+Fact & Figures
++ Search Settings
+“Just ask Factory Genius!”: How AI helps maintain manufacturing equipment
+Wed Jul 09 18:00:00 CEST 2025
+Press Release
+Aged
++++ AI maintenance assistant Factory Genius speeds up troubleshooting at BMW Group +++ Pilot project at Plant Dingolfing forms basis of company-wide solution +++ Methodology can be transferred to other areas +++
+Technology
+·
+Information Technology
+·
+Corporate
+·
+Digitalisation
+·
+Production, Recycling
+·
+Artificial Intelligence
+Press Contact.
+Julian Arguelles
+BMW Group
+Tel: +525580181386
+send an e-mail
+Author.
+Benedikt Torka
+BMW Group
+Munich.
+Whenever vehicle production equipment fails
+at a BMW Group plant, every minute counts. The maintenance team must
+work quickly to identify and resolve the cause of the fault. Now,
+employees can ask the new digital AI assistant, “Factory Genius”, for
+help: It can suggest solutions for the specific system problem within
+seconds, reducing the time required for error diagnosis to a minimum.
+“AI applications have become an integral part of modern
+production systems and are a key element of the BMW Group’s digital
+transformation. Factory Genius is an example of how generative AI, in
+particular, can streamline operations for everyone involved and
+enhance economic efficiency,” says Michael Ströbel, head of Process
+Management and Digitalisation, Order to Delivery at the BMW Group. But
+how exactly does the digital assistant, recently launched in its
+initial development phase, support maintenance staff?
+Knowledge discovery tool
+The tool essentially works like a search engine, quickly filtering
+relevant answers to specific user queries from a vast amount of data
+and user reports. However, this search function does not draw content
+and information from the internet, but from equipment manuals, quality
+data, internal fault reports and planning documents it was previously
+trained on. To keep the data management system up to date, it is
+regularly fed with new knowledge – for example, in the form of
+daily-updated shift-log data.
+By integrating a Large Language Model, similar to those used in
+chatbots like ChatGPT and Gemini, Factory Genius is also able to
+understand language: The software can search data for relevant content
+within the appropriate linguistic context, providing more accurate
+results than a conventional search engine. In addition to displaying
+the top matches with links to sources, the assistant can also
+summarise the maintenance instructions found through contextual search
+in just a few sentences, if preferred. The user can then ask questions
+in a chat.
+Collaborative in-house development
+A pilot project in the body shop at BMW Group Plant Dingolfing laid
+the groundwork for this in-house development. Alongside the tool
+developed in Dingolfing in spring 2024, other BMW Group locations,
+including the plants in Spartanburg, USA, and Rosslyn, South Africa,
+were working at the same time on similar solutions through a
+transparent process. All were pursuing the same goal: improving access
+to information when faults occur or during scheduled training and
+maintenance. AI experts at the company’s Munich headquarters
+consolidated this expertise, integrating the plants’ diverse
+requirements to create a company-wide “best of” application. This can
+now be used globally in its initial development phase through an
+internal platform.
+In addition to search and chat functionality, Factory Genius also
+features a translation function, enabling it to switch languages at
+any time to overcome language barriers. This functionality has proven
+extremely useful while building the new plant in Debrecen, Hungary,
+for example, since manuals are often not available in Hungarian.
+Transferable methodology
+The technology behind Factory Genius has the potential to be applied
+to other production use cases as well. The general approach enables
+integration of a wide range of documents and development of assistants
+tailored to different user groups. Thanks to its cloud functionality,
+the tool will also be rapidly available worldwide.
+Show entire text
+Article Offline Attachments.
+“Just ask Factory Genius!”: How AI helps maintain manufacturing equipment
+PDF, EN, 124.64 KB
+Article Media Material.
+Photos
+My.PressClub Login
+PressClub Streaming
+ANNUAL GENERAL MEETING.
+Munich, 13 May 2026. Watch the webcast of the public session of the 106th Annual General Meeting of BMW AG.
+open Streaming Website
+Further News for:
+Technology · Information Technology · Corporate
+Related Videos.
+Search Settings.
+Press Release
+Press Kit
+Speech
+Fact & Figures
+Search with attachment language.
+Spanish
+Language of Attachment
+Arabic
+Chinese - simplified
+Chinese - traditional
+English
+French
+German
+Italian
+Japanese
+Korean
+Multilingual
+Russian
+Spanish
+Updates
+Top-Topic
+Set publication time.
+no Selection
+no Selection
+past 24 hours
+past Week
+past Month
+past Year
+Submit
+Reset
+Sun
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+My.PressClub. Login.
+Login
+Remember login
+Forgotten password
+Register now
+Login

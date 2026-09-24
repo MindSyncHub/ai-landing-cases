@@ -159,6 +159,16 @@
       "id": "key-person-bottleneck",
       "name": "老板是唯一瓶颈",
       "description": "销售/调度/管理全压在老板身上，长尾客户无暇承接"
+    },
+    {
+      "id": "customer-service-cost",
+      "name": "客服体验与自助率",
+      "description": "客服成本高、体验波动，需要可评测、可迭代的 AI 客服方案"
+    },
+    {
+      "id": "quality-inspection",
+      "name": "质检依赖人工",
+      "description": "人工目检漏检率高、质检模型缺缺陷样本训练困难"
     }
   ]
 }

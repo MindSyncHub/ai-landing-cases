@@ -1,0 +1,83 @@
+Jabil Collaborates with AWS to Drive Manufacturing Efficiency and Process Optimization
+Skip to main content
+Interested in cloud offerings specifically available in the China region? Please visit
+www.amazonaws.cn
+. Learn about the China region free tier at
+www.amazonaws.cn/free
+.
+Jabil Collaborates with AWS to Drive Manufacturing Efficiency and Process Optimization
+Learn how Jabil unlocked more value from its data and launched AI-driven solutions to streamline global operations, reduce costs, and improve customer satisfaction.
+Benefit
+decrease in data processing times, improving operational efficiency
+74%
+reduction in deployment times, accelerating project delivery
+67-83%
+cost savings by adopting serverless integration
+23%
+to build the first iteration of intelligent shop floor assistant
+1 week
+Overview
+Jabil
+, a global leader in engineering, supply chain, and manufacturing solutions with over 100 global sites and 140,000 employees, collaborated with Amazon Web Services (AWS) on a multi-year transformation to enhance efficiency and reduce costs. The company reduced deployment times by 67–83 percent and data processing times by 74 percent, accelerating project delivery and improving operational efficiency.
+Play
+About Jabil
+Founded in 1966, Jabil provides engineering, manufacturing, and supply chain solutions for leading global brands across industries, including automotive, healthcare, and AI cloud data centers. With over 100 sites worldwide and more than 140,000 employees, Jabil combines global reach with local expertise to deliver scalable and customized solutions while driving sustainability and community impact.
+Opportunity | Optimizing Global Manufacturing Operations with AWS
+Jabil provides engineering, supply chain, and manufacturing solutions and has focused on innovation since its establishment in 1966. Headquartered in St. Petersburg, Florida, the company expanded globally from the 1990s through the 2000s, broadening its portfolio to serve various sectors and customers. In the 2010s, Jabil introduced digital manufacturing, 3D printing, robotics, automation, and Internet of Things (IoT) solutions to enhance efficiency and meet changing customer needs. Today, Jabil works with more than 400 brands across industries, including automotive and transportation, healthcare, print and retail, consumer goods, telecommunications, energy storage and delivery, cloud, networking, and AI.
+As part of its digital transformation, Jabil migrated over 400 business applications from on-premises infrastructure to AWS, transitioning from a capital expenditure (CAPEX) model of owning and maintaining IT infrastructure to an operational expenditure (OPEX) model of consuming cloud services on a pay-as-you-go basis. Over time, Jabil refined its approach as it gained experience with cloud technologies. Chase Christensen, vice president and chief information officer for global business units and enterprise solutions at Jabil, explains, "About two years ago, we revised our strategy to a 'cloud when it makes sense' approach. We developed hybrid environments, placing workloads in the most appropriate setting—whether cloud or on-premises/edge infrastructure. While it took time to build maturity, standardization, and overcome resistance to change, cloud adoption is now widely embraced, delivering tangible value to the company."
+With extensive global operations spanning more than 100 manufacturing facilities in more than 25 countries, Jabil faced challenges with large volumes of machine data siloed at individual sites. Christensen notes, “We wanted to quickly develop data analytics solutions to respond to business demands, but we didn’t have a centralized place for our data, especially for analytics that would require cross-domain data.” By addressing data fragmentation and gaining unified insights across its facilities, Jabil sought to enhance component sourcing efficiency, reduce operational costs, and implement AI-driven solutions.
+Solution | Leveraging AWS Expertise for an Incremental Path to High-Impact Modernization
+To define and execute its data strategy, Jabil engaged AWS experts in a multi-year program aimed at driving data-driven decision-making and efficiency. Through collaboration with
+AWS Professional Services
+, data strategists, and technologists, Jabil modernized its material sourcing application stack.
+To address these challenges, AWS proposed a comprehensive approach targeting goals across people, processes, and technology. This approach combined the
+Data-Driven Everything (D2E)
+program, a work-backwards methodology designed to help enterprises create value through data, analytics, and AI/ML, with
+Experience-Based Acceleration (EBA)
+, a hands-on methodology for accelerating cloud adoption through practical learning. Together, these strategies provided Jabil with a clear roadmap for an incremental modernization approach, focusing on high impact use cases such as data analysis and generative AI.
+As part of its data modernization efforts, Jabil recognized the importance of upskilling its workforce to effectively adopt new AWS technologies and services. To support this goal, Jabil collaborated with
+AWS Training and Certification
+specialists to implement a structured learning program. This program featured instructor-led sessions and
+AWS Skill Builder
+, an online platform providing hands-on labs, training modules, and certification preparation for all experience levels. “Our company prioritizes our people and staying technologically advanced to differentiate our business,” says Christensen. “Rather than hiring new talent, we utilized AWS training to help our technical and non-technical professionals quickly grasp the technology. Without this investment, our transformation program would have taken significantly longer to reach its goals.”
+Several joint projects were focused on enhancing Jabil’s global applications. “Initially, these applications faced performance and scalability issues, but AWS experts helped us optimize design and data storage,” says Zbigniew Dubaj, vice president of IT operations at Jabil. In another project, AWS assisted in enhancing Jabil’s shop floor control system on
+Amazon Elastic Kubernetes Service
+(Amazon EKS). “We encountered stability and scalability issues, but AWS subject matter experts were quick to identify architectural adjustments that resolved them,” Dubaj adds.
+As a foundational step to centralize and manage data, Jabil worked with AWS to deploy a data lake powered by
+Amazon Redshift
+, centralizing machine data for comprehensive analysis. This data foundation supported Jabil’s adoption of generative AI tools, helping employees become more productive and efficient. " Jabil deploys nearly all our generative AI applications on AWS. By collaborating with AWS, we ensure maximum efficiency and optimized infrastructure costs while meeting our strategic business needs," highlights May Yap, senior vice president and chief information officer at Jabil.
+Among these AI-driven initiatives is the intelligent shopfloor assistant—a chatbot powered by generative AI on
+Amazon Q Business
+. Developed with support from
+Generative AI Innovation Center
+consultants, the assistant provides manufacturing floor operators with instant access to troubleshooting and diagnostic information, significantly enhancing efficiency and accuracy. “As early adopters of Amazon Q Business, we provided AWS with feedback on features tailored to manufacturing, including a recommendation for multilingual capabilities to address our global operations,” says Sun.
+Jabil further expanded its use of generative AI by collaborating with AWS experts to develop two additional solutions powered by Amazon Q Business: Intelligent Customer Research Assistant and Intelligent Procurement Assistant. The intention is to enhance these assistants to drive data-informed decision-making across key business areas.
+Outcome | Improving Manufacturing Efficiency, Optimizing Processes, and Accurately Diagnosing Issues
+Jabil’s collaboration with AWS has delivered impactful results. During its first EBA engagement, Jabil tackled a critical business challenge by automating manual processes for shop floor applications. Using tools such as
+AWS Cloud Development Kit
+(AWS CDK) and Terraform, the company achieved a 67–83 percent reduction in deployment times and a 74 percent decrease in data processing times. These advancements helped Jabil scale operations horizontally, onboard additional sites without performance degradation, and accelerate the global adoption of AWS services.
+In a follow-up EBA engagement supported by AWS experts, Jabil focused on enhancing its Data Dispatcher application by transitioning to
+AWS Glue Flex
+, a serverless data integration service. This change unlocked a 23 percent cost savings compared to standard AWS Glue ETL pricing, even with a significant increase in the processing volume for serial numbers. “Working closely with AWS experts has improved our inventory management and provided our workforce with advanced machine learning tools for more accurate forecasting,” says Christensen.
+Jabil has also accelerated the development of generative AI solutions using Amazon Q, such as the intelligent shop floor assistant. The first iteration of the shop floor assistant was built in just one week, with additional data sources integrated over the following weeks to enable the chatbot to access relevant documents, incident tickets, and knowledge articles from multiple systems. Since its launch, the solution has provided employees globally with real-time access to over 1,700 policies, manufacturing specifications, and troubleshooting documents in various languages, significantly reducing average troubleshooting time and improving diagnostic accuracy for floor operators.
+“The intelligent shop floor assistant is a staple product that will be implemented everywhere in our business. It’s part of a larger strategy to build business value through generative AI on AWS,” says Vivian Sun, senior director at Jabil. Jabil plans to expand this tool for its supply chain, finance, and human resources teams. It has also developed chatbots to support procurement, including the intelligent customer research assistant, which streamlines sales by gathering customer and financial data, and the intelligent procurement assistant, which provides market intelligence on suppliers, pricing, and lifecycle data.
+Jabil is currently working with AWS Professional Services and other AWS experts on new initiatives, such as migrating majority of its business application stack to AWS. “We have a complex application environment here at Jabil, and we’ll continue to work closely with AWS as we move forward with our projects,” Dubaj says.
+Jabil deploys nearly all our generative AI applications on AWS. By collaborating with AWS, we ensure maximum efficiency and optimized infrastructure costs while meeting our strategic business needs.
+May Yap
+Senior Vice President and Chief Information Officer at Jabil
+AWS Services Used
+AWS Professional Services
+AWS Professional Services is a global team of experts that delivers deep, industry-specific expertise to help organizations design, build, migrate, and manage your AWS workloads and applications and achieve your business objectives.
+Learn more
+AWS Training and Certification
+AWS Training and Certification equips organizations with cloud skills and industry-recognized credentials to transform their business, with training developed by AWS experts for practical experience in a live, risk-free AWS environment.
+Learn more
+Generative AI Innovation Center
+AWS science and strategy experts with comprehensive expertise spanning the generative AI journey, helping you prioritize use cases, build a roadmap, and move solutions into production.
+Learn more
+Amazon Q
+The most capable generative AI–powered assistant for accelerating software development and leveraging companies' internal data. Amazon Q generates code, tests, debugs, and has multistep planning and reasoning capabilities that can transform and implement new code generated from developer requests.
+Learn more
+Get Started
+Organizations of all sizes across all industries are transforming their businesses and delivering on their missions every day using AWS. Contact our experts and start your own AWS journey today.
+Contact Sales

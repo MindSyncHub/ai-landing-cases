@@ -1,0 +1,53 @@
+Generative AI in manufacturing | Bosch Global
+Generative AI in manufacturing" />
+Generative AI
+Share this on:
+Generative AI in manufacturing — out of the old, emerges the new
+How generative AI helps to improve quality
+A sudden flash. And another. A brief burst of very bright light. It flashes a few more times. “That’s our integrated camera,“ Ria Riemer says with a laugh. During the manufacturing process at the Hildesheim plant, photos are taken — not of the associates, but of the stator, which is an electric motor component made here. Riemer heads the related project, which is all about images. Not all of them are real. But first things first.
+“For a long time, associates in manufacturing checked parts for possible defects with the naked eye,” explains 26-year-old Riemer. “But in the past few years, Bosch started making more use of automated optical inspection.” This refers to checking the quality of parts using AI-based image recognition. Based on existing photos of faults, the system has learned to distinguish whether a part is OK or not.
+“This method is highly reliable; problem is, we need a lot of data for it,” Riemer says. “We’d either have to wait a very long time until we have photos of all possible fault types, or we’d need to deliberately damage parts.” She adds that manufacturing quality is too high to yield enough images of damage. And it’s at such a high level because even a few errors could have enormous consequences — in the worst case, recalls of entire batches.
+The quality of parts is checked using AI-based image recognition.
+Timo Schwarz and Ria Riemer bring generative AI into manufacturing.
+Generative AI pushes the boundaries of feasibility
+When the Hildesheim plant decided to start up a production line for a new product type, it asked the question: How can we get enough images of all defect types — without actually producing defective parts? The answer was generative artificial intelligence (AI).
+“This allows us to artificially map potential fault types and variants before they actually occur,” says Laura Beggel, a data scientist at Bosch Research. She and her team used generative AI to create artificial images for the Hildesheim plant. Experts refer to this as synthetic data.
+There are various ways to generate such data. “Depending on the material available, generative AI models are trained with different amounts of real data,” says Beggel, whose work focuses on the development and application of generative AI. “For example, you can take images of a comparable product as a basis and apply them to the current use case. We use what exists to create something new.” The technical term for this is domain transfer.
+The project for Hildesheim worked in a similar way: “There were already images of an existing product type,” Beggel says. “We were able to use these to generate fault images for the new use case and train the AI-based inspection model.”
+In stator production, wires are welded to ensure that the current in the electric motor can flow unhindered. Six different types of defects can potentially occur during the welding process: for example, a small hole, an unwanted tiny nugget, or a weld that is too weak.
+During stator production, wires are welded to ensure that the current in the electric motor can flow unhindered.
+Solution delivers measurable benefit
+“Stators let us exploit the potential of generative AI particularly well,” Beggel says. In total, she and her team generated some 15,000 artificial images for the plant. These were based on a two-digit number of real images for each fault type.
+“Thanks to generative AI, we can now train our models for automated optical inspection at a much earlier stage, which makes our quality even better,” Riemer says. The plant expects that project duration will be six months shorter with the new approach than with conventional methods, leading to annual productivity increases in the six-figure euro range.
+Thanks to generative AI, we can now train our models for automated optical inspection at a much earlier stage, which makes our quality even better.
+Another flash of light on the line, coming to twelve times in total. “The camera captures all sections of the stator in 2D and 3D,” says Timo Schwarz, an engineer on Riemer’s project team and an expert in image processing. The AI learns the characteristics and features of good and faulty parts on the basis of real and artificially generated images. When presented with new photos, the AI applies its knowledge and decides within a fraction of a second whether a part is defective. If there is indeed a fault, the part automatically returns to the production process and is reworked. The only case in which the part cannot be reworked is if a small nugget has formed.
+Schwarz is currently training the AI model for visual inspection on a new line. “At the beginning, the AI often finds supposed faults, even though the weld is actually acceptable,” he explains, “so we’re trying to identify all errors reliably and refine the rules for classifying a part as ‘OK.’” For example, the AI currently marks a weak weld as a fault, but from the experts’ point of view, the weld is good enough. Schwarz manually retrains the model until it recognizes faults just as reliably as it does flawless parts.
+See it in action
+Bosch Global on
+Instagram
+Play
+YouTube
+Loading the video requires your consent. If you agree by clicking on the Play icon, the video will load and data will be transmitted to Google as well as information will be accessed and stored by Google on your device. Google may be able to link these data or information with existing data.
+Learn more
+The AI learns characteristics of good and faulty parts based on real and AI generated images.
+The first pilot line was launched in Hildesheim at the end of 2023, and another one followed at the beginning of this year. “There are sometimes hundreds of welds per stator,” Schwarz says. “While humans catch errors at an average rate of 70 to 90 percent, a finished AI model achieves almost 100 percent.” Has he ever mistaken a real picture for an artificially generated one? “Of course,” he says, grinning. “And vice versa, too.”
+Artificially generated images can hardly be distinguished from real images with the naked eye — and that’s precisely the goal. Bosch plans to roll out the approach used at Hildesheim at Jihlava in the Czech Republic and at the Charleston plant in the U.S. Project manager Riemer will support the plants on-site during the ramp-up. “I think it’s great to be at the cutting edge like this,” she says. “Generative AI makes it possible to create images that have never been seen before. This will change a lot of things.”
+Generative AI is also being piloted in manufacturing at other Bosch locations, such as Stuttgart-Feuerbach, with more planned to follow. “Generative AI is one of the biggest levers in manufacturing for improving efficiency and enhancing quality,” Beggel says. “With generative AI, we can not only optimize existing AI solutions, but also promote the broad application of this technology at Bosch.”
+Generative AI is one of the biggest levers in manufacturing for improving efficiency and enhancing quality.
+Research
+Electrified Mobility
+Industry 4.0
+Artificial intelligence
+IoT
+Big Data
+Digital Transformation
+Modeling and Simulation
+Share this on:
+Explore more
+Story
+Computer vision systems
+Assembly assistance for the perfect assembly
+guide
+Story
+Item picking robots in warehouses
+Camera-based item picking: Robotic colleagues help with packing

@@ -1,0 +1,36 @@
+Medtronic | IBM
+15MSC > 17T2C > 20M3K"/>
+15MSC - Miscellaneous LOB > 17T2C - Internal IBM Digital Services > 20M3K - Digital Marketing"/>
+Material ID search revolutionized with Microsoft GenAI + IBM Consulting
+Medtronic achieves 90% accuracy
+Overcoming complexities in material identification processes from engineering design documents
+Medtronic, a leading medical device manufacturer, identified an opportunity to optimize their process for identifying critical raw materials within their extensive range of products. This improvement was crucial for maintaining their product development timelines, controlling costs and ensuring competitiveness in the market. Recognizing the importance of managing how to identify raw materials quickly, Medtronic executives sought a more effective solution. To address this, the company partnered with IBM and leveraged innovative artificial intelligence (AI) to develop an automation solution for intricate engineering drawing analyses.
+We are so fortunate to live in a time of limitless potential, a time where we can build partnership with companies like IBM and experience first-hand the power of collaboration. Together, we are transforming challenges into groundbreaking analytics solutions, setting new industry standards through innovation and excellence.
+Luciano Miranda
+Vice President, Advanced Analytics Global Operations & Supply Chain
+Medtronic
+Harnessing artificial intelligence for operational efficiency and breakthrough results
+Through close collaboration between Medtronic's Global Operations and Supply Chain (GO&SC) Analytics & Insights team, Global Supplier Management team and IBM, a tailored gen AI solution emerged. It combined the precision of Azure Document Intelligence Optical Character Recognition (OCR) technology with the creative and verified abilities of the
+retrieval-augmented generation
+(RAG) framework powered by Azure OpenAI models. The solution extracted vital material information from intricate engineering drawings with unprecedented accuracy rates up to 90%.
+A future focused on limitless possibilities
+The partnership between Medtronic and IBM led to several quantifiable benefits that significantly enhanced Medtronic’s operational efficiency and accuracy. The implementation of the Microsoft GenAI solution—powered by
+IBM Consulting
+—resulted in a 90% accuracy rate in extracting vital material information from engineering drawings. This impressive accuracy not only set new industry standards but also drastically reduced the need for manual verification, allowing Medtronic to reallocate valuable human resources to more strategic tasks. Additionally, the solution demonstrated over 85% accuracy in part number extraction, further minimizing errors and streamlining the identification process. These improvements translated into substantial time savings and reduced operational costs, underscoring the tangible impact of the innovative AI technology.
+Moreover, the convergence of OCR technology from Azure Document Intelligence and the RAG framework fueled by Azure OpenAI models resulted in a unified and streamlined approach to data extraction and processing. This integration led to a significant reduction in manual effort, enabling Medtronic to process and analyze engineering design documents more efficiently. The ability to accurately scan and extract technical attributes not only saved hours of manual work but also significantly increased productivity and supply chain resilience. By storing key attributes in a database and presenting them through a simple search app, Medtronic improved data accessibility and facilitated efficient analysis, ultimately enhancing their decision-making processes and operational agility.
+About Medtronic
+Medtronic Plc
+(link resides outside of ibm.com) is a global healthcare technology company that develops and manufactures a wide range of medical devices. Founded in 1949 and headquartered in Dublin, Ireland, Medtronic's operational headquarters are in Minneapolis, Minnesota. The company is recognized as one of the largest medical device companies in the world, providing solutions in more than 150 countries.  Its portfolio includes cardiovascular, medical surgical, neuroscience and diabetes. The company’s mission, inspired by its founders, is “to alleviate pain, restore health, and extend life.” Medtronic is committed to innovation, regularly investing in research and development to introduce cutting-edge medical devices and therapies across a wide range of conditions​.
+Solution component
+IBM Consulting® for Microsoft
+Microsoft solutions:
+Azure OpenAI
+Azure Document Intelligence
+Azure Blob Storage
+IBM Consulting for Microsoft
+Address your evolving gen AI use cases with IBM® Copilot Runway, a new offering that creates custom copilots for your enterprise’s unique needs
+Read the announcement
+Legal
+© Copyright IBM Corporation 2024 . IBM, the IBM logo, IBM Consulting are trademarks or registered trademarks of IBM Corp., in the U.S. and/or other countries. This document is current as of the initial date of publication and may be changed by IBM at any time. Not all offerings are available in every country in which IBM operates.
+Microsoft, Windows, Windows NT, and the Windows logo are trademarks of Microsoft Corporation in the United States, other countries, or both.
+Client examples are presented as illustrations of how those clients have used IBM products and the results they may have achieved. Actual performance, cost, savings or other results in other operating environments may vary.

@@ -1,0 +1,236 @@
+Rolls-Royce saves millions in cost avoidance with Microsoft Cloud for Manufacturing | Microsoft Customer Stories
+This is the Trace Id: 97efbe96fb406654a05e4dac135955ed
+Skip to main content
+Customer Stories
+All stories
+AI & Microsoft Copilot
+Azure
+Dynamics 365
+Microsoft 365
+Microsoft Security
+Microsoft Power Platform
+Microsoft Teams
+Mercedes-AMG PETRONAS F1 Team
+NFL
+Premier League
+Microsoft 365
+Dynamics 365
+Microsoft Power Platform
+Microsoft Teams
+Microsoft Security
+Nonprofit
+Microsoft Security
+Azure
+Dynamics 365
+Microsoft 365
+Microsoft Teams
+Windows 365
+Microsoft AI
+Azure Space
+Mixed reality
+Microsoft HoloLens
+Microsoft Viva
+Quantum computing
+Sustainability
+Education
+Automotive
+Financial services
+Government
+Healthcare
+Manufacturing
+Retail
+Find a partner
+Become a partner
+Partner Network
+Microsoft Marketplace
+AppSource
+Blog
+Microsoft Advertising
+Developer Center
+Documentation
+Events
+Licensing
+Microsoft Learn
+Microsoft Research
+View Sitemap
+4/1/2025
+Rolls-Royce saves millions in cost avoidance with Microsoft Cloud for Manufacturing</h1>">
+Rolls-Royce saves millions in cost avoidance with Microsoft Cloud for Manufacturing
+Share the story
+Share this story
+LinkedIn
+Facebook
+X
+WhatsApp
+Email
+Executive summary
+Rolls-Royce wanted to improve productivity and reduce costs across its design, build, and operate functions, as part of its digital transformation.
+The company used Microsoft Cloud for Manufacturing to create efficiencies in engine design, turbine production, and engine health monitoring with generative AI and machine learning.
+Rolls-Royce increased machine usage 30%, with significantly less scrap. The company also accelerated fault resolution from days to near real time. It detects and prevents around 400 unplanned maintenance events annually, saving millions in repairs.
+READ THE STORY
+Millions of euros in cost avoidance
+Fault resolution from days to near real time
+For more than a century, Rolls-Royce has been a force for progress, powering, protecting, and connecting people everywhere. From propulsion to power solutions, on land, at sea, and in the air, the company has never stopped evolving. In 2023, Rolls-Royce launched a bold, multiyear transformation program to become a high-performing, competitive, resilient, and growing business enabled by digital and AI technologies.
+As part of this strategy, the business is using digital technologies and AI to create competitive advantages across the value chain, from designing and building to operating an engine.
+“Digital is a key enabler of our transformation,” says Nikki Grady-Smith, Chief Transformation Officer at Rolls-Royce. “And whilst we are already seeing clear benefits—whether in engine design, operations, or customer solutions—there’s still much more to unlock.”
+Innovative AI and cloud-based improvements
+The company is redefining how it designs, builds, and maintains its world-class engines and systems. With the help of Microsoft and Siemens technologies, Rolls-Royce is using AI to accelerate design, streamline production, boost engine efficiency, and predict maintenance needs before issues arise.
+“We are investing heavily in modernizing our systems and improving our design engineering,” says Kaveh Pourteymour, Group Chief Digital Information Officer at Rolls-Royce. “By embracing Microsoft AI and digital technologies, we will develop efficient and fully utilized smart factories, whilst enhancing our customer and employee experience.”
+Rolls-Royce is building a central data repository to connect its data and restructuring its information for use by generative AI. The company wants to create a robust foundation for a seamless digital thread across its value chain. Microsoft AI and cloud capabilities are supporting the journey, helping Rolls-Royce explore ways to enhance productivity and efficiency.
+“We’re working with Microsoft to develop tailored technologies to address our unique challenges and push the boundaries of what’s possible,” says Pourteymour.
+“By digitizing operations, we’re driving engineering innovation while reducing cost and time to market, to deliver an enhanced customer experience. Microsoft is a key partner on our digital journey. With cutting-edge technologies, we are accelerating the pace and intensity of our transformation, helping to redefine the future for Rolls-Royce.”
+Kaveh Pourteymour, Group Chief Digital Info Officer, Rolls-Royce
+Accelerating engine design
+Engine design was traditionally a manual process that took years. Now, with technology stacks such as
+Microsoft Azure Databricks
+, Unity Catalog, and high-powered GPUs, engineers can explore a broader range of design parameters in hours.
+AI-powered automation speeds up component selection and assembly, reducing manual effort and accelerating production. These advancements enable smaller, more agile teams to innovate quickly, cutting time to market and enhancing responsiveness to industry demands.
+Keeping cool: AI-powered turbine blade inspection
+Rolls-Royce is also using AI and machine learning to revolutionize its turbine blade manufacturing with “Signature Analyzer,” predicting defects quickly and efficiently.
+Workers create a sophisticated system of cooling channels and holes across the surface of turbine blades, to protect them from the extreme heat generated by the combustion process. Manual inspection was incredibly time-consuming and often created a production bottleneck.
+“Historically, we inspected about 2 million cooling holes per month manually,” says Tim Pickup, Digital Manufacturing Lead at Rolls-Royce. “With Microsoft AI, we’re able to optimize manual inspection, dramatically reducing the processing time of each component.”
+Machine vibration analysis and generative AI have optimized defect detection, enabling inspectors to focus on specific areas rather than having to check each hole. This has boosted machine utilization by 30%, significantly minimized erroneous scrap from the manual inspection process, and accelerated fault resolution from days to near real time.
+AI-powered engine health monitoring: Maximizing time on wing
+Advancements in digital technology are blurring the line between product and aftermarket services. The Rolls-Royce Pearl aircraft engine family features the state-of-the-art Engine Vibration Health Monitoring Unit (EVHMU), enhancing on-wing intelligence for best-in-class availability and predictive maintenance. With two-way communication, Rolls-Royce can remotely reconfigure engine monitoring features from the ground. Fueled by
+Microsoft Cloud for Manufacturing
+and cloud-based analytics, this system tracks more than 10,000 engine parameters with exceptional data quality.
+Across all fleets, Rolls-Royce detects and prevents around 400 unplanned maintenance events a year, saving millions in repair costs and minimizing disruptions for customers.
+Accelerating innovation
+This is just the beginning. These advanced digital solutions are driving efficiency, accelerating engineering capability, and redefining what is possible.
+“By digitizing operations, we’re driving engineering innovation while reducing cost and time to market, to deliver an enhanced customer experience,” says Pourteymour. “Microsoft is a key partner on our digital journey. With cutting-edge technologies, we are accelerating the pace and intensity of our transformation, helping to redefine the future for Rolls-Royce.”
+Discover more about
+Rolls-Royce
+on
+Facebook
+,
+Instagram
+,
+LinkedIn
+,
+X/Twitter
+, and
+YouTube
+.
+“We are investing heavily in modernizing our systems and improving our design engineering. By embracing Microsoft AI and digital technologies, we will develop efficient and fully utilized smart factories, whilst enhancing our customer and employee experience.”
+Kaveh Pourteymour, Group Chief Digital Info Officer, Rolls-Royce
+Discover more details
+CUSTOMER
+Rolls Royce
+PRODUCTS
+Azure
+Azure Databricks
+SERVICES AND SUPPORT
+Microsoft Cloud for Manufacturing
+ORGANIZATION SIZE
+10,000+ employees
+COUNTRY/REGION
+United Kingdom
+BUSINESS NEED
+Artificial Intelligence
+INDUSTRY
+Discrete Manufacturing
+Share the story
+Explore related stories</h2> ">
+Explore related stories
+Stories in this industry
+Stories about this customer
+"Previous"
+"Next"
+Showing
+32
+of
+98
+categories
+Showing 1-2 of 2 slides
+Previous slide
+Next slide
+We are Microsoft
+Empowering others
+Our mission is to empower every person and every organization on the planet to achieve more.
+Microsoft
+Apple
+Google
+Label
+We are Microsoft
+Empowering others
+Our mission is to empower every person and every organization on the planet to achieve more.
+Label
+Back to carousel navigation controls
+Load more
+Take the next step
+Fuel innovation with Microsoft</h2> ">
+Fuel innovation with Microsoft
+Explore more customer stories</h3> ">
+Explore more customer stories
+Find out how customers are achieving more with Microsoft products and solutions.
+Search all stories
+Talk to an expert about custom solutions</h3> ">
+Talk to an expert about custom solutions
+Let us help you create customized solutions and achieve your unique business goals.
+Contact Sales
+Microsoft 365
+Dynamics 365
+Microsoft Power Platform
+Microsoft Teams
+Microsoft Security
+Nonprofit
+Transform work with Microsoft AI</h3> ">
+Transform work with Microsoft AI
+Bring intelligence into the flow of work and help your organization achieve its goals with secure, scalable AI solutions.
+Explore AI solutions
+Follow Microsoft
+Surface Book 3
+Surface Pro
+Microsoft Copilot
+Microsoft 365
+Windows 11 apps
+Account profile
+Download Center
+Microsoft Store Support
+Extended holiday returns
+Order tracking
+Support
+Microsoft in education
+Devices for education
+Microsoft Teams for Education
+Microsoft 365 Education
+Office Education
+Educator training and development
+Deals for students and parents
+Azure for students
+Microsoft AI
+Microsoft Security
+Azure
+Dynamics 365
+Microsoft 365
+Microsoft Advertising
+Microsoft 365 Copilot
+Microsoft Teams
+Microsoft Developer
+Microsoft Learn
+Support for AI marketplace apps
+Microsoft Tech Community
+Microsoft Marketplace
+Microsoft Power Platform
+Software companies
+Visual Studio
+Careers
+About Microsoft
+Company news
+Privacy at Microsoft
+Investors
+Diversity and inclusion
+Accessibility
+Sustainability
+English (WW)
+Your Privacy Choices Opt-Out Icon
+Your Privacy Choices
+Your Privacy Choices Opt-Out Icon
+Your Privacy Choices
+Consumer Health Privacy
+Contact Microsoft
+Privacy
+Manage cookies
+Terms of use
+Trademarks
+About our ads

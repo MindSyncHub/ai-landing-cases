@@ -1,0 +1,5 @@
+# 待补抓
+
+- 目标：https://medium.com/doctolib/from-one-ai-product-to-an-ai-factory-e6337ffa75d9
+- 状态：2026-09-24 curl 抓取超时（Medium 反爬）
+- 计划：浏览器环境补抓

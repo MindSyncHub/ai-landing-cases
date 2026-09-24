@@ -1,0 +1,240 @@
+Genie: Uber’s Gen AI On-Call Copilot
+Skip to main content
+×
+Browser not supported
+This probably isn't the experience you were expecting. Internet Explorer isn't supported on Uber.com. Try switching to a different browser to view our site.
+October 10, 2024
+Genie: Uber’s Gen AI On-Call Copilot
+MS
+Meghana Somasundara
+Product Lead
+KF
+Kailiang Fu
+CZ
+Chun Zhu
+5+
+Share this article
+Facebook
+Linkedin
+X social
+Link
+Introduction
+In today’s fast-paced tech environment, maintaining robust on-call operations is crucial for ensuring seamless service functioning. Modern platform engineering teams face the challenge of efficiently managing on-call schedules, incident response, communication during critical moments, and strong customer support on Slack
+®
+channels.
+This post describes Genie, an on-call copilot we built that uses generative AI to optimize communication and question-answering with on-call engineers.
+A Closer Look: Problem and Motivation
+At Uber, different teams like the Michelangelo team have Slack support channels where their internal users can ask for help. People ask around 45,000 questions on these channels each month, as shown in Figure 1. High question volumes and long response wait times reduce productivity for users and on-call engineers.
+Figure 1: The high number of questions asked across Slack channels at Uber over 5 months.
+Cumbersome Process
+Figure 2: The slow process of waiting for an on-call engineer to answer a question.
+Typically, when users ask a question in a Slack channel, they have to wait for the on-call engineer to respond. The on-call engineer either answers the user’s initial question or asks for more details. Users might then ask follow-up questions, seek more clarification, or provide extra information. This leads to another wait for a response from the on-call engineer. After several rounds of back-and-forth communication, the user’s question eventually gets resolved.
+Hard to Find Information
+Many questions could‌ get answered by referring to existing documentation, but the information is fragmented across Uber’s internal wiki called Engwiki, internal Stack Overflow, and other locations, making it challenging to find specific answers. As a result, users often ask the same questions repeatedly, leading to a high demand for on-call support across hundreds of Slack channels.
+Architectural Challenges
+For building an on-call copilot, we chose between fine-tuning an LLM model or leveraging
+Retrieval-Augmented Generation (RAG)
+. Fine-tuning requires curated data with high-quality, diverse examples for the LLM to learn from. It also requires compute resources to keep the model updated with new examples.
+In contrast, RAG doesn’t require any diverse examples to begin with. This reduced the time to market for the copilot launch, so we chose this approach for our copilot.
+Building an on-call copilot presented several challenges, including addressing hallucination, protecting data sources, and improving the user experience. Here’s an overview of how we solved each challenge.
+For hallucination, we focused on:
+Accuracy of responses
+: We ensure that the copilot retrieves relevant knowledge for the question, which prevents the LLM engine from generating incorrect or misleading information
+Verification mechanisms
+: We implement methods to verify the copilot’s responses against authoritative sources to reduce the likelihood of hallucination
+Continuous learning
+: We ensure that the copilot has access to the most updated data to enhance its accuracy
+For data security, we chose the data sources to ingest carefully, as many data sources can’t be exposed in Slack channels.
+To improve the user experience, we designed:
+Intuitive interface
+: We designed an easy-to-use interface that allows users to interact with the copilot efficiently
+Feedback loop
+: We created a system for users to provide feedback on responses to continually refine the copilot’s performance
+We addressed these challenges when developing our on-call copilot to ensure that it’s reliable, user-friendly, and secure.
+Deep Dive: Architecture
+Let’s explore the architecture of our on-call copilot, called Genie.
+Figure 3: Architecture of the on-call copilot.
+At a high level, we scrape internal data sources like Uber’s internal wiki, Uber’s internal Stack Overflow, engineering requirement documents, and create vectors from these data sources using an Open AI embedding model. Those embeddings get stored in a vector database. Then, when a user posts a question in a Slack channel, the question gets translated to embeddings. The service searches for relevant embeddings related to the question in a vector database. The results indexed by embeddings get used as prompts to the LLM to get back a response.
+The following steps for data prep, embeddings, and pushing the artifacts for serving can be generalized as a RAG application using Apache Spark
+™
+. These general steps form the basis of a RAG application.
+ETL
+Figure 4: Spark application for data ingest.
+Figure 4 shows a custom Spark application that contains the steps for ingesting data to a vector database. A Spark application runs those steps using Spark executors.
+Data Prep
+A Spark app fetches content from the respective data source using Uber’s internal wiki, called Engwiki, or Uber Stack Overflow APIs. A Spark dataframe gets outputted from this data prep stage. The schema has the Engwiki link in a column and the content of the Engwiki in a separate column, both in string format.
+Figure 5: Columns of the Spark dataframe from the Engwiki datasource.
+Figure 5 shows the columns of the Spark dataframe with Uber’s internal wiki as the original data source. It has the source URL, content, and other columns storing metadata.
+Embedding Generation
+Once the data is scraped, embeddings get created using the OpenAI embedding model and pushed to Terrablob, Uber’s blob storage. The embeddings created are only accessible through a particular Slack channel related to the Engwiki space. The output format is a dataframe with a schema of chunked content mapped to the corresponding vector of that chunk. Uber’s internal wiki content is chunked using langchain and embeddings are generated through OpenAI with PySpark UDFs.
+Figure 6: Columns of the Spark dataframe with vector embeddings.
+Figure 6 shows the columns of the Spark dataframe with Uber’s internal wiki as the original data source. It has the source URL, content, chunked content, and embeddings for that particular chunk.
+Pusher
+Figure 7: Flow of vectors getting pushed to Terrablob.
+Figure 7 shows how vectors are pushed to Terrablob. A bootstrap job is triggered to ingest data from a data source to Sia, Uber’s in-house vector database solution. Then, two Spark jobs are triggered for the index build and merge and ingest data to Terrablob. Every leaf syncs and downloads a base index and snapshot stored in Terrablob. During retrieval, a query is directly sent to each leaf.
+Knowledge Service
+Figure 8: Flow of the back-end Knowledge Service.
+Genie has a back-end service called Knowledge Service, which serves incoming requests for all incoming queries by first converting the incoming query into an embedding and then fetching the most relevant chunks from the vector database.
+Cost Tracking
+Figure 9: Flow of Genie cost tracking.
+For cost tracking, when the Slack client or other platforms call Knowledge Service, a UUID gets passed to Knowledge Service, which in turn passes the UUID through the context header to Michelangelo Gateway. Michelangelo Gateway is a pass-through service to the LLM so that it can be added to an audit log used to track costs by that UUID.
+Genie Performance Evaluation
+Metrics Framework
+Users can provide feedback right away in Slack by clicking the relevant button in the Genie’s reply. We give users the option to choose from:
+Resolved
+: the answer completely resolved the issue
+Helpfu
+l: the answer partially helped, but the user needs more help
+Not Helpful
+: the response is wrong or not relevant
+Not Relevant
+: the user needs help from someone on call and Genie can’t assist (like for a code review)
+Figure 10: Flow of user feedback for Genie.
+When the user leaves their feedback, a Slack plugin picks it up and uses a specific Kafka topic to stream metrics into a Hive table with the feedback and all the relevant metadata. We later visualize these metrics in a dashboard.
+Performance Evaluation
+We provide Genie users with the option to run custom evaluations. They can evaluate hallucinations, answer relevancy, or any other metric that they deem important for their use case. This evaluation can be used for better tuning of all the relevant RAG components—retrieval and generation.
+Figure 11: Performance evaluation process.
+Figure 11 shows the evaluation process, which is a separate ETL pipeline that uses already-built Michelangelo components. Genie’s context and responses are retrieved from Hive and joined on any other relevant date, like Slack metadata and user feedback. It gets processed and passed to the Evaluator. Evaluator fetches specified prompt and runs LLM as a Judge. The specified metrics are extracted and included in the evaluation report, which is available to users in the UI.
+Document Evaluation
+Accurate information retrieval depends on the clarity and accuracy of the source documents. If the quality of the documentation is poor itself, no matter how good the LLM performs, there’s no way to have a good performance. Therefore, the ability to evaluate documents and make actionable suggestions to improve document quality is essential for an efficient and effective RAG system.
+Figure 12: Workflow of the document evaluation app.
+Figure 12 shows the workflow of the document evaluation app. After the data is scraped, documents in the knowledge base are transformed into a Spark dataframe. Each row in the dataframe represents one document in the knowledge base. Then the evaluation is processed by calling LLM as the judge. Here, we feed LLM with a custom evaluation prompt. The LLM returns an evaluation score, together with explanations of the score and actionable suggestions on how to improve the quality of each document. All these metrics get published as an evaluation report, which users can access in the Michelangelo UI.
+Solutions to Challenges
+To reduce hallucinations
+,
+we changed the way we sent prompts to the LLM that we got from the vector database. We explicitly added for all the results obtained from the vector database a section called sub-context along with the source URL for that sub-context. We asked the LLM to only give answers from the various sub-contexts provided and return the source url to cite the answer. This seeks to provide a source URL for every answer it returns.
+To ensure we don’t leak the data sources for which we create embeddings to Open AI or on Slack to folks who might not be able to access to sensitive data sources, we pre-curated data sources which are widely available to most Uber engineers and only allowed using those data sources for generating embeddings.
+To maximize Genie’s potential in answering questions, we developed a new interaction mode. This mode allows users to ask follow-up questions more conveniently and encourages them to read Genie’s answers more attentively. If Genie can’t answer their questions, users can easily escalate the issue to on-call support.
+Figure 13: Flow of how Genie responds to user questions.
+In the new interaction mode, when a user asks a question, Genie will answer with next step action buttons provided. Using those buttons, users can easily ask followup questions, mark questions as resolved, or contact human support.
+Results
+Since its launch in September of 2023, Genie has expanded its presence to
+154 Slack channels
+and has answered over
+70,000 questions
+. Genie boasts a
+48.9% helpfulness rate
+, showcasing its growing effectiveness. We estimate it’s saved us
+13,000 engineering hours
+so far since its launch.
+Future
+Genie is a cutting-edge Slack bot designed to streamline on-call management, optimize incident response, and improve team collaboration. Developed with a focus on simplicity and effectiveness, Genie serves as a comprehensive assistant, empowering engineering teams to handle on-call responsibilities seamlessly.
+This on-call assistant copilot has the scope to change the entire experience of how users and on-call engineers of any platform interact and engage within the respective platform’s Slack channel. It can also change the experience within each product, like Michelangelo or IDEs, where users can find product-specific help within the product or a product-specific Slack channel without having to wait for on-call assistance.
+Conclusion
+Genie, the on-call assistant copilot, revolutionizes the way engineering teams manage on-call duties. By facilitating auto-resolution and providing insightful analytics, Genie empowers teams to handle on-call responsibilities efficiently and effectively.
+Acknowledgements
+The roll-out of this on-call copilot couldn’t have happened without the many team members who contributed to it. A huge thank you to the folks within Uber’s Michelangelo team. We also thank our partners on other Uber teams for making this idea a reality.
+Slack
+®
+is a registered trademark and service mark of Slack Technologies, Inc.Apache
+®
+, Apache Spark
+™
+, and Spark
+™
+are either registered trademarks or trademarks of the Apache Software Foundation in the United States and/or other countries. No endorsement by The Apache Software Foundation is implied by the use of these marks.
+Header Image Attribution: The image was generated by a generative AI tool.
+Category
+Engineering
+Data
+Written by
+MS
+Meghana Somasundara
+Product Lead
+Meghana Somasundara is a Product Lead for the Uber AI Platform. Previously she worked on building AI Platforms with other companies.
+KF
+Kailiang Fu
+Kailiang Fu is an Associate Product Manager on the Michelangelo team based in the San Francisco Bay area.
+CZ
+Chun Zhu
+Chun Zhu is a Senior Software Engineer on the Uber AI Platform team based in the San Francisco Bay area.
+JL
+Jonathan Li
+Jonathan Li is a Software Engineer on the Uber AI Platform team based in the San Francisco Bay Area.
+XF
+Xiyuan Feng
+Xiyuan is a Software Engineer on the Uber AI Platform Feature Store team based in Sunnyvale.
+PC
+Paarth Chothani
+Staff Software Engineer
+Paarth Chothani is a Staff Software Engineer on the Uber AI Gen AI/CoreML team in the San Francisco Bay area. He specializes in building distributed systems/Gen AI solutions at scale.
+ES
+Eduards Sidorovics
+Eduards is a Senior Software Engineer on the Uber AI Platform team based in Amsterdam.
+NM
+Nicholas Marcott
+Nicholas Brett Marcott is a Staff Software Engineer, TLM on the Uber AI Feature Store team in the San Francisco Bay area. He specializes in serving data for ML models at high scale.
+Related Articles
+6 articles
+AI / ML
+Data
+Engineering
+Taming the ML Firehose: Scaling Feature Consistency
+September 22, 2026
+Backend
+Engineering
+How Uber Protects Against Retry Storms
+September 17, 2026
+Backend
+Engineering
+Large-Scale Automated Dependency Analysis Across Uber's Service Mesh
+September 15, 2026
+Backend
+Engineering
+Web
+Halving the Time: How Uber Eats Rebuilt Its Search Pipeline
+September 10, 2026
+Backend
+Engineering
+From One Horizontal Scaling Controller to Many: Evolving Uber's Compute Platform
+September 9, 2026
+Backend
+Engineering
+From Chaos to Control: Addressing Shard Distribution Challenges in M3DB with Subclusters
+September 1, 2026
+Select your preferred language
+English, English
+Products
+Advertising
+Learn more about advertising on Uber. Reach consumers as they go anywhere and get anything.
+Earn
+Resources for driving and delivering with Uber
+Ride
+Experiences and information for people on the move
+Eat
+Ordering meals for delivery is just the beginning with Uber Eats
+Merchants
+Putting stores within reach of a world of customers
+Business
+Transforming the way companies move and feed their people
+Freight
+Taking shipping logistics in a new direction
+Health
+Moving care forward together with medical providers
+Higher Education
+Enhancing campus transportation
+Transit
+Expanding the reach of public transportation
+Company
+Engineering
+The technology behind Uber Engineering
+Community support
+Doing the right thing for cities and communities globally
+Newsroom
+Uber news and updates in your country
+Uber.com
+Product, how-to, and policy content—and more
+Help
+EN
+Select your preferred language
+English, English
+Ride
+Drive & deliver
+Uber Eats
+Business
+Drive & deliver
+Ride
+Uber Eats
+Uber for Business
+Manage account
+Sign out

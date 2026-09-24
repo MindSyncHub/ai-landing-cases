@@ -1,0 +1,28 @@
+Vodafone H1 FY26 Results Presentation - Page 22
+1
+21
+Table of contents
+23
+34
+Vodafone H1 FY26 Results Presentation
+Generative AI ⫶ Embedded in core operations, providing benefits at scale Advancing care Advancing operations
+Organisation-wide application enabled by AI taskforce 2,000 engineers in shared operations
+Call centre agent assist in Germany • GenAI providing immediate overview of customer communication history • Enables improved CX & faster resolution 61% improvement in‘ helpfulness’ rating Optimising AI virtual assistants • TOBi & SuperTOBi (GenAI) handling c.60m customer conversations monthly • SuperTOBi live in all European markets 70% end-to-end resolution rate & +8pp NPS improvement 1
+Autonomous procurement portal • GenAI sourcing platform used in 90% of our tenders • Allowing our procurement team to drive value through
+higher frequency re-tendering 30% reduction in sourcing time
+Vodafone AI Booster platform
+Zero Touch Operation • Automates & optimises field service & network operations by recommending actions based on real-time diagnostics • Issues resolved faster & more accurately, improving CX 43% reduction in mean time to repair Employee GenAI assistant • Now live for >50,000 users • Driving productivity & task automation >90% monthly adoption rate & 93% feel ‘more productive’ GenAI-enabled software code development • 2,800 engineers using AI in software development 30% AI code acceptance & 12% productivity increase across development lifecycle
+App End Points
+GenAI Operations
+GenAI App Catalogue
+Vodafone Data Ocean
+Testing, monitoring & responsible AI
+GenAI Reusable Templates
+AI-powered customer value management • AI models live in all the European markets • First agentic CVM use cases live in Germany 85% reduction in campaign analysis time
+HR digital agent • Personalised support to employees Serving >69k employees with 86% request resolution rate
+Multivendor Cloud & LLMs
+H1 FY26 Results ⫶ November 2025
+1. NPS improvement compared to the NPS rating of conversations handled by previous AI agent.
+22
+Powered by
+FlippingBook
