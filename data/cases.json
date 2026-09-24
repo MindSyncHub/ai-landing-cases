@@ -2015,5 +2015,40 @@
     "evidence_note": "NVIDIA 官方案例页（客户署名背书）；效果数字为来源方披露，未经独立审计。",
     "url": "https://www.nvidia.com/en-eu/case-studies/lockheed-martin-ai-factory-with-dgx-superpod/",
     "source": "NVIDIA 官方案例页"
+  },
+  {
+    "id": "d08-berenberg-ai",
+    "detail_tier": "标准",
+    "company": "Berenberg（贝伦贝格银行，德国最老私人银行）",
+    "industry": "金融/私人银行与投行",
+    "scenario": "全行分层 AI 策略：Base AI（全员通用 GenAI 提效）+ Tailored AI（专有数据训练的定制应用），2022 末起上线投研助手（买方组合经理+卖方分析师）",
+    "pain_points": [
+      "ad-hoc-analysis",
+      "information-overload",
+      "professional-judgment-gap",
+      "throughput-limit",
+      "ai-adoption-org"
+    ],
+    "problem": "研究报告生产与信息处理密集，投研人员被信息过载拖慢；传统定性部门需要更严谨的可度量影响力；银行需要在合规框架内规模化 AI，而不是零散试点。",
+    "solution": "2018 年定 AI 战略，两条线并行：「Base AI」用标准 GenAI 工具做全员日常生产力；「Tailored AI」基于自有数据与流程训练高度专门化应用（如 2022 末起上线的股权投研助手，服务资产管理的组合经理与投行的卖方分析师；此前传统 AI 已管理约 60 亿欧元 AuM）；配套内部数据管理与 AI 治理生态保障可扩展性、合规与安全；由创新与客户体验负责人 Nico Baum 统筹，按影响力与可行性系统排优先级。",
+    "human": "官方立场「AI 赋能团队而非替代」；人类专长与 AI 组合产生真正价值；合规框架下人类对决策负责。",
+    "result": "来源方披露（银行官网口径，未经独立审计）：传统 AI 管理约 60 亿欧元资产；2025 获 Global Private Banking Innovation Award（新加坡颁奖）；投研助手覆盖买方/卖方两类角色；宣称可度量影响力、战略聚焦与文化转型。",
+    "decision_info": {
+      "effort": "中等——1100 人规模银行，无需自建大模型",
+      "duration": "2018 战略起点→2022 末 Gen-AI 应用→2025 获奖",
+      "prerequisites": "明确的 AI 战略与专职统筹（Head of Innovation & Data）；Base/Tailored 分层投入口径；内部数据管理与 AI 治理生态",
+      "failure_modes": "未披露",
+      "transferability": "高——「Base+Tailored 分层策略」适合中型金融机构直接套用：通用工具铺全员，定制应用只投高价值场景"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "AI 投入分两层记账：Base AI 全员提效 + Tailored AI 专有数据定制，避免一锅账",
+      "按影响力与可行性系统排优先级，而非 scattered pilots",
+      "内部数据管理与 AI 治理生态先于规模化建设"
+    ],
+    "pattern_links": [],
+    "evidence_note": "Berenberg 官网新闻稿（2025-06-05，一手）；获奖与 AuM 数字为银行自述口径。",
+    "url": "https://www.berenberg.de/en/news/pressemeldung/berenberg-global-private-banking-innovation-award-2025/",
+    "source": "Berenberg 官网新闻稿（2025-06-05）"
   }
 ]
