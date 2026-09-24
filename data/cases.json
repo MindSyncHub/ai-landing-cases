@@ -1067,5 +1067,37 @@
     "evidence_note": "数字与引言为 AWS 官方客户案例页（署名 CIO Chase Christensen 等）披露，未经独立审计。",
     "url": "https://aws.amazon.com/solutions/case-studies/jabil-case-study/",
     "source": "AWS 官方客户案例页"
+  },
+  {
+    "id": "c12-medtronic-ibm",
+    "detail_tier": "S",
+    "company": "美敦力（Medtronic，医疗器械）",
+    "industry": "医疗/医疗器械制造",
+    "scenario": "工程图纸原材料信息自动提取（OCR + RAG）",
+    "pain_points": [
+      "document-review",
+      "manual-data-transfer"
+    ],
+    "problem": "美敦力产品线庞大，产品开发要快速识别工程图纸中的关键原材料信息；图纸复杂、技术属性多，人工识别与录入既慢又错，还卡住产品开发排期和成本控制。",
+    "solution": "美敦力全球运营与供应链分析团队联合 IBM Consulting（for Microsoft）定制生成式 AI 方案：Azure Document Intelligence 的 OCR（光学字符识别）做图纸文字提取，Azure OpenAI 驱动的 RAG（检索增强生成）做信息抽取与验证，从复杂工程图纸中自动提取原材料关键属性，存入数据库并通过简单搜索应用呈现给业务人员。",
+    "human": "业务人员用搜索应用检索确认结果；抽出的属性入库前由 RAG 验证；大幅减少人工核对后，人力被重新分配到战略性任务。",
+    "result": "原材料信息提取准确率达 90%，零件号提取准确率超 85%；人工核对需求大幅下降，节省大量手工工时，供应链韧性提升。数字为 IBM 官方客户案例页披露，未经独立审计。",
+    "decision_info": {
+      "effort": "单点用例：图纸提取 pipeline（OCR+RAG+数据库+搜索应用），由 IBM Consulting 交付",
+      "duration": "页面未披露项目周期",
+      "prerequisites": "有数字化工程图纸存量；能界定需提取的属性字段清单；愿意把结果入库做成搜索应用而非一次性分析",
+      "failure_modes": "复杂图纸 OCR 精度是首要风险（本案做到 90%，仍有 10% 需兜）；vendor 联合交付（IBM+Microsoft 栈）带来栈锁定",
+      "transferability": "高——「工程图纸/技术文档→OCR+RAG→属性入库→搜索应用」是制造业图纸情报的通用范式，任何图纸密集型行业可复制"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "OCR+RAG 组合处理复杂工程图纸提取",
+      "提取结果属性化入库 + 轻量搜索应用交付业务",
+      "人力从核对环节释放并重新分配到战略任务"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字为 IBM 官方客户案例页披露（含 90%/85% 准确率口径），未经独立审计；页面注明其他环境实际效果可能不同。",
+    "url": "https://www.ibm.com/case-studies/medtronic",
+    "source": "IBM 官方客户案例页"
   }
 ]
