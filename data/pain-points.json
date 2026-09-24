@@ -104,6 +104,16 @@
       "id": "content-production",
       "name": "内容生产靠人力堆",
       "description": "SKU 多上新快，素材生产人力成本高、品控依赖个人、资产留不住"
+    },
+    {
+      "id": "field-visibility",
+      "name": "一线执行看不见",
+      "description": "老板靠周期性汇报了解现场，信息差造成管理盲区"
+    },
+    {
+      "id": "paper-based-process",
+      "name": "纸质/Excel流程割裂",
+      "description": "数据散落在纸质表格、Excel、聊天记录里，不成体系无法决策"
     }
   ]
 }
