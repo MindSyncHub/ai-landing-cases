@@ -1268,5 +1268,39 @@
     "evidence_note": "数字为 Vodafone H1 FY26 Results Presentation（2025-11）第 22 页披露，未经独立审计；NPS +8pp 为与上一代 AI 客服对话的对比口径。",
     "url": "https://investors.vodafone.com/",
     "source": "Vodafone H1 FY26 Results Presentation（2025 年 11 月）第 22 页"
+  },
+  {
+    "id": "c18-morgan-stanley",
+    "detail_tier": "S",
+    "company": "摩根士丹利（Morgan Stanley，财富管理部门）",
+    "industry": "金融/财富管理",
+    "scenario": "eval（评测）驱动的理财顾问 AI：Assistant 知识检索 + Debrief 会议纪要，再扩展到机构证券",
+    "pain_points": [
+      "information-overload",
+      "professional-judgment-gap",
+      "document-review"
+    ],
+    "problem": "大摩财富管理部门的理财顾问要服务高净值客户，但 firm 内 10 万+ 份研究文档与知识资产靠人工检索，顾问能触达的文档只有约 20%，知识与客户沟通之间的摩擦大；会议纪要和跟进靠手工，跟进周期以天计；金融行业对质量与合规标准要求极高，AI 输出必须可信。",
+    "solution": "与 OpenAI 共建，核心是 eval framework（评测框架）先行：每个 AI 用例上线前先用真实用例集评测模型表现，由顾问和 prompt engineer（提示词工程师）对摘要类输出按准确性与连贯性打分，再迭代提示词。首批两个产品：①AI @ Morgan Stanley Assistant——内嵌 GPT-4 的知识问答机器人，随检索方法调优把可回答范围从 7000 个问题扩到「10 万文档语料里的任何问题」；②AI @ Morgan Stanley Debrief——用 Whisper+GPT-4 把（经客户同意的）Zoom 录音转成客户笔记并自动写入 CRM、生成跟进草稿。合规侧：每日回归测试题集（regression suite）监控弱点；OpenAI 零数据保留政策打消数据安全顾虑。",
+    "human": "顾问与提示词工程师参与评测打分；顾问在发出前审阅修改 AI 生成的纪要；监管标准要求自动化+人工监督并存。",
+    "result": "财富管理部门 98%+ 顾问团队日常使用 Assistant；文档触达率从 20% 升至 80%；会议跟进从数天缩到数小时内；Assistant 正扩展为面向员工的「超级应用」，功能同步推广到机构证券集团。数字为 OpenAI 官方案例页引用的大摩口径披露，未经独立审计。",
+    "decision_info": {
+      "effort": "用例级投入但框架复用：eval 框架一次建设、每个新用例（摘要→翻译→Debrief）复用同一套评测方法",
+      "duration": "从试点到全公司铺开分阶段；文档触达率 20%→80% 为多年演进",
+      "prerequisites": "有一线专家愿意参与评测打分（顾问+prompt engineer）；语料库需持续治理（检索方法与文档库同步扩展）；数据安全方案（零保留）是金融前置条件",
+      "failure_modes": "eval 框架不是一次性的——本案明确它随用例演进（摘要 eval→翻译 eval→Debrief 会议类型数据集）；「98% 采用率」是部门内口径，跨部门推广仍在进行",
+      "transferability": "极高——「eval 先行、专家参与打分、每日回归监控」是知识密集型行业（金融/咨询/法律）AI 落地的标准骨架；「先摘要后翻译再会议纪要」的用例爬坡顺序可直接参照"
+    },
+    "delivery_pattern": "评测型",
+    "fde_actions": [
+      "eval 框架先行：上线前用真实用例集测、专家打分、迭代提示词",
+      "可回答问题数 7000→10万文档任意问的检索调优路径",
+      "每日回归题集监控输出合规性",
+      "用例爬坡顺序：摘要→翻译→会议纪要，eval 方法逐用例复用"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字（98%/20%→80%/天→小时）为 OpenAI 官方案例页引用的大摩管理层口径披露，未经独立审计。",
+    "url": "https://openai.com/index/morgan-stanley/",
+    "source": "OpenAI 官方案例页"
   }
 ]
