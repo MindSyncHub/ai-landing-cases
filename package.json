@@ -1,0 +1,9 @@
+{
+  "name": "ai-landing-cases",
+  "version": "0.1.0",
+  "private": true,
+  "description": "墨予镜出品：企业 AI 落地案例库 + FDE 模式库",
+  "scripts": {
+    "test": "node scripts/validate.mjs"
+  }
+}

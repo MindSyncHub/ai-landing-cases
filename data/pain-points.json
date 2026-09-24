@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "id": "expert-knowledge-loss",
+      "name": "专家知识流失",
+      "description": "关键经验沉淀在老员工脑中，面临退休/流失风险，新人培养周期长"
+    },
+    {
+      "id": "onboarding-training",
+      "name": "新人培训低效",
+      "description": "新人上手依赖师傅带教，周期长、质量不稳定、过程不可跟踪"
+    }
+  ]
+}
