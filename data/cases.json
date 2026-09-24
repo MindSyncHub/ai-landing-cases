@@ -2083,5 +2083,40 @@
     "evidence_note": "Block 官方博客原文（2025-01-28，一手留存）；「40%+」为第三方报道转引 Block 口径，未经独立审计。",
     "url": "https://block.xyz/inside/block-open-source-introduces-codename-goose",
     "source": "Block 官方博客（2025-01-28，一手）"
+  },
+  {
+    "id": "d10-telstra-ai",
+    "detail_tier": "标准",
+    "company": "Telstra（澳大利亚电信）× Quantium/Accenture/Microsoft",
+    "industry": "电信",
+    "scenario": "数据底座整合（约80个数据平台精简到约20个）+ 全员 AI 赋能 + 网络自愈（SmartFix）+ 分层负责任的 AI 治理体系（RCAID/模型注册表/控制面）",
+    "pain_points": [
+      "data-siloed",
+      "customer-service-cost",
+      "anomaly-by-human",
+      "process-tracking",
+      "management-visibility"
+    ],
+    "problem": "约 80 个分散数据平台导致数据复杂、工具老化，AI 规模化缺乏地基；客户支持成本高、网络故障靠人工发现慢；AI 应用扩张需要治理先行（对齐澳大利亚 AI 伦理原则）。",
+    "solution": "多年期数据简化（80→约 20 平台）+ 云化 API-first 架构；18,000+ 员工 Microsoft Copilot 许可（80%+ 每周使用）、Data & AI Academy 2 万+人完成培训；与 Quantium 共建 Scam and Fraud Indicator 反诈系统（2023 起）；2025 与 Accenture 合资，把五年 Data & AI 路线图压缩到约两年。应用层：AskTelstra 内部助手（8,000+ 一线员工，平均通话时长缩短超 1 分钟）、Telstra Assistant（自助解答量近 3 倍）、SmartFix 网络自愈（嵌入网络运营，自动在客户察觉前修复）。治理层：负责任 AI 政策+RCAID 风险委员会审查高影响用例+AI 模型注册表+执行数据与 AI 委员会，重大风险半年度上报董事会；在建全公司 Responsible AI 控制面。",
+    "human": "「人类专长与 AI 能力混合」是战略核心；高影响 AI 用例必须经 RCAID 跨职能人工审查；全员年度数据与 AI 风险治理培训。",
+    "result": "公司口径（未经独立审计）：FY25 SmartFix 执行 250 万次主动修复动作、避免近 100 万支持电话；AskTelstra 服务 8,000+ 一线员工、平均通话时长缩短超 1 分钟；Telstra Assistant 无需升级即可解答的咨询量近 3 倍；Copilot 周活 80%+。治理体系被 UTS 人机技术研究所灯塔案例收录（学术背书）。",
+    "decision_info": {
+      "effort": "大——多年期转型+与 Accenture 合资加速",
+      "duration": "多年期；2025 合资后五年路线图压缩到约两年",
+      "prerequisites": "数据平台先整合（80→20）；分层治理先行（模型注册表+风险委员会+董事会上报）；全员培训学院",
+      "failure_modes": "未披露",
+      "transferability": "中——电信/基础设施行业「数据底座+网络自愈+分层治理」三层结构可参照；合资压缩路线打法适合大型组织"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "数据平台先整合再谈 AI（80→20 的减法顺序）",
+      "与咨询伙伴合资/深度绑定压缩路线图周期（5年→2年）",
+      "分层 AI 治理制度化：模型注册表+风险委员会+半年度董事会上报，并沉淀为控制面平台"
+    ],
+    "pattern_links": [],
+    "evidence_note": "Telstra 官方博客（2026-04-20，一手）+ UTS HTI 灯塔治理案例 PDF（2024，学术，存 data/raw/d10-telstra-uts-governance.pdf）+ 澳大利亚议会 AI 采纳委员会书面回应（2024-05）；效果数字为公司口径，未经独立审计。",
+    "url": "https://www.telstra.com.au/exchange/telstra-s-ai-transformation--strategy--partnerships-and-real-wor",
+    "source": "Telstra 官方博客（2026-04-20）+ UTS HTI 灯塔案例（2024）+ 澳议会书面回应（2024-05）"
   }
 ]

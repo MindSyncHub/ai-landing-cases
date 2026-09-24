@@ -1,0 +1,37 @@
+Telstra's AI transformation: strategy, partnerships and real-world results
+Publisher:
+Telstra
+Name:
+Telstra's AI transformation: strategy, partnerships and real-world results
+Copyrighted By:
+Telstra
+Family Friendly:
+Yes
+Language:
+English
+Skip to main content
+How Telstra is reinventing itself with AI
+Artificial intelligence (AI) offers Australia a massive opportunity – potentially a bigger shift than the arrival of mobile and the internet.
+Dayle Stevens · 20 April 2026 · 3 minute read
+We knew that to remain a leading telco we needed to reinvent every part of our business with it, and our
+latest strategy
+places AI at the core of how we deliver connectivity and better customer experiences.
+AI isn't new within our walls but as we kick off this blog series I want to recap how we're approaching the AI opportunity, and what it means for our customers and our people.
+Building our foundations: data, moving to the cloud and upskilling our people
+We first set an ambition to become an AI-fuelled organisation and use AI to address major pain points in our business – particularly how we improve our customer and employee experience. To do that, we needed to simplify our data and modernise our tools, which is a multi-year journey. We started with around 80 data platforms and today we're around 20, and still reducing. We have also moved to a cloud-based, API-first architecture that lets us scale new solutions faster.
+Blending human expertise with AI capabilities is at the heart of our strategy. Over 18,000 of our team members have Microsoft Copilot licenses and more than 80% of them are using it every week to improve how they work. We also launched a Data & AI Academy where 20,000+ employees have completed AI training.
+Partnering to accelerate: Quantium, Accenture and a compressed roadmap
+We were getting the foundations right, but the AI opportunity heated up and we needed to move faster, so we partnered with two organisations to help with that.
+Our partnership with Quantium helps us develop advanced AI solutions for Telstra. For example, Scam and Fraud Indicator (built by Quantium and CommBank) uses AI to help banks flag and block scam calls and fraudulent accounts. Since 2023 it has safeguarded thousands of customers and prevented millions of dollars in fraud.
+In 2025, we teamed with Accenture to supercharge our AI rollout. This joint venture gives Telstra access to Accenture's $3 billion investment in AI and global expertise, helping us compress a five-year Data & AI roadmap into about two years. With Accenture's support, we can launch AI solutions faster and at greater scale – while upholding the highest standards for security and responsible AI.
+The results so far – and why we're just getting started
+Today, we have hundreds of use cases across Telstra that are delivering real benefits for our customers and employees. To name a few:
+AskTelstra, our internal AI assistant helps 8,000+ front-line staff find answers faster, cutting average customer call time by over a minute.
+The Telstra Assistant on our website and MyTelstra app uses generative AI to answer questions instantly – almost tripling the number of queries answered without needing to escalate it further.
+Our SmartFix system is embedded in our network operations to boost reliability. It automatically fixes many issues before customers notice a problem – in FY25 it performed 2.5 million proactive actions, preventing nearly 1 million support calls by resolving issues in advance.
+By making AI a cornerstone of how we improve customer experiences, strengthen network resilience and enable our people, we've already seen major gains and we're just getting started. As AI continues to evolve, we'll keep innovating responsibly to unlock even more value for our customers and our people.
+By Dayle Stevens
+Data & AI Executive, Telstra
+At Telstra we recognise and acknowledge the existing, original, and ancient connection Aboriginal and Torres Strait Islander peoples have to the lands, waterways, and sky country across the Australian continent. We pay our respects to their Elders past and present. We commit to working together to build a
+prosperous and inclusive Australia
+.
