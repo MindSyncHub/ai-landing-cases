@@ -1336,5 +1336,39 @@
     "evidence_note": "事实与引语为 McKinsey 官方 At the Edge 播客文字实录（2024-11-25，署名 Erik Roth / Lareina Yee）；本案无硬效果数字，属方法论型案例。",
     "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/what-mckinsey-learned-while-creating-its-generative-ai-platform",
     "source": "McKinsey 官方播客 At the Edge 文字实录"
+  },
+  {
+    "id": "c03-doordash-sim",
+    "detail_tier": "S",
+    "company": "DoorDash（外卖平台）",
+    "industry": "互联网/本地生活",
+    "scenario": "客服聊天机器人的离线仿真+评测飞轮（simulation & evaluation flywheel）",
+    "pain_points": [
+      "customer-service-cost",
+      "algorithm-execution-gap",
+      "ai-trust-gap"
+    ],
+    "problem": "DoorDash 客服从确定性决策树（decision trees）升级到 LLM 聊天机器人后遇到根本测试难题：LLM 非确定性——改一条提示词无法预测影响，可能修好一个场景却劣化另一个场景。两个选项都不成立：直接上生产观察会拿真实客户当试验品；人工多场景测试是瓶颈且测不全（欺诈、高额退款等边缘场景以前根本无法验证）。",
+    "solution": "自建两个互联系统形成迭代飞轮：①AI 驱动的离线仿真器——用 LLM 扮演客户（动态反驳、追问、真实升级路径），并模拟完整对话上下文（工具调用、配送状态、退款决策等后端响应）；四组件架构：从历史工单提取行为洞察的测试场景生成管线、扮演客户的仿真器、混合测试与生产数据的 mock data、规模化质量评测。②评测框架——LLM-as-a-judge（用 LLM 当裁判）做人工评审代理，先与专家判断校准对齐再规模化使用。飞轮流程：写评测捕捉失效模式→基线（如通过率 50%）→改提示词→仿真重测（如 60%）→迭代到达标（严重场景 exit criteria 可到 99.9%）→全量评测套件终验（幻觉/语气/问题分类三维度）→A/B 上线→上线后同款评测监控。",
+    "human": "专家人工评审用于校准 LLM 裁判（先对齐人类判断再规模化）；错误分析目前主要靠人工读 trace（对话轨迹），团队已在探索提速方法；上线走标准 A/B 测试。",
+    "result": "单次迭代周期从数天降到数小时；5 分钟内可跑 200+ 轮多轮仿真对话并自动出评测结果；评测套件扩到 50+ 个；欺诈、高额退款、极端延迟等过去无法验证的边缘场景现在可测；上线后监控确认仿真中验证的改进在真实流量中保持。数字为 DoorDash 官方工程博客披露，未经独立审计。",
+    "decision_info": {
+      "effort": "平台级自建：仿真器+评测框架+场景生成管线+mock data 四组件；落地案例之一是用 context engineering（上下文工程）改 agent 记忆降低幻觉",
+      "duration": "迭代周期从数天→数小时（这是该飞轮本身的交付效果）",
+      "prerequisites": "有历史工单/transcripts 可提取行为洞察；能接受 LLM-as-a-judge 需先与人工评审校准的前提；工程团队有能力建仿真基础设施",
+      "failure_modes": "LLM 裁判可能漂移，必须持续校准；错误分析仍靠人工读 trace 是飞轮的慢环节；仿真覆盖不到的未建模样式仍可能漏",
+      "transferability": "极高——「仿真器扮演客户+LLM 裁判+基线-迭代-达标-上线-监控」飞轮是任何对话式 AI 产品（客服/销售/政务热线）的通用测试基建；exit criteria 按场景严重度分级（99.9% vs 更低）的做法可直接借用"
+    },
+    "delivery_pattern": "评测型",
+    "fde_actions": [
+      "LLM 扮演客户的离线仿真器（含后端工具/数据模拟）",
+      "LLM-as-a-judge 先与专家校准再规模化",
+      "基线-改-重测-达标的迭代飞轮，exit criteria 按严重度分级",
+      "上线后沿用同一套评测做生产监控"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字与流程为 DoorDash 官方工程博客（2026-01-26，署名 Lewis Warne / Chenran Gong / Aditi Bamba / Matt Gode）披露，未经独立审计。",
+    "url": "https://careersatdoordash.com/blog/doordash-simulation-evaluation-flywheel-to-develop-llm-chatbots-at-scale/",
+    "source": "DoorDash 官方工程博客"
   }
 ]
