@@ -29,6 +29,41 @@
       "id": "professional-judgment-gap",
       "name": "专业判断依赖个人",
       "description": "核心质量依赖少数资深人员经验，新人与资深差距大、经验难复制"
+    },
+    {
+      "id": "cross-department-coordination",
+      "name": "跨部门协同重",
+      "description": "多专业部门协作，汇总报告耗时以天计"
+    },
+    {
+      "id": "professional-tool-heavy",
+      "name": "专业工具割裂",
+      "description": "工作依赖多个专业软件，人在工具和重复计算之间切换"
+    },
+    {
+      "id": "manual-matching",
+      "name": "人工匹配效率低",
+      "description": "资源/商品/人选匹配靠个人经验，规模上来后失效"
+    },
+    {
+      "id": "process-tracking",
+      "name": "履约跟进靠人工",
+      "description": "进度分散在个人和表格里，靠人盯、靠人催"
+    },
+    {
+      "id": "data-siloed",
+      "name": "数据分散",
+      "description": "数据散落在多个系统，看不清业务全漏斗"
+    },
+    {
+      "id": "capacity-underuse",
+      "name": "空间/产能利用不足",
+      "description": "资源利用率低于保本线，直接漏利润"
+    },
+    {
+      "id": "algorithm-execution-gap",
+      "name": "方案落不了地",
+      "description": "算法能算出最优解但现场执行不了，数字化工具反复失败"
     }
   ]
 }
