@@ -99,6 +99,11 @@
       "id": "ai-trust-gap",
       "name": "AI信任与认知门槛",
       "description": "老板听过概念但看不到和日常问题的关系，不敢投入，需先证明再扩张"
+    },
+    {
+      "id": "content-production",
+      "name": "内容生产靠人力堆",
+      "description": "SKU 多上新快，素材生产人力成本高、品控依赖个人、资产留不住"
     }
   ]
 }
