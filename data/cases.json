@@ -1302,5 +1302,39 @@
     "evidence_note": "数字（98%/20%→80%/天→小时）为 OpenAI 官方案例页引用的大摩管理层口径披露，未经独立审计。",
     "url": "https://openai.com/index/morgan-stanley/",
     "source": "OpenAI 官方案例页"
+  },
+  {
+    "id": "c08-mckinsey-lilli",
+    "detail_tier": "S",
+    "company": "麦肯锡（McKinsey & Company）",
+    "industry": "咨询/专业服务",
+    "scenario": "自建生成式 AI 平台 Lilli：近百年的知识资产激活为顾问生产力",
+    "pain_points": [
+      "information-overload",
+      "expert-knowledge-loss",
+      "professional-judgment-gap"
+    ],
+    "problem": "麦肯锡积累了近百年洞察与知识，但顾问难以快速触达「最深最广的最佳洞察」并在客户服务中激活；知识检索与综合靠人工，知识到客户沟通之间有摩擦。",
+    "solution": "自建 gen AI 平台 Lilli（非外购）：起点是「用自己的信息训练」的知识提取与综合工具，后演进为跨内外部多种知识类型的编排层（orchestration layer，而非单一 RAG 实例）——大小模型组合、针对麦肯锡服务语境调优（意图识别与答案微调）。方法论要点：①北极星限定四个域（高绩效团队、AI 增强的客户开发、独特客户服务、项目后持续连接）；②开发管线里每个条目都必须挂一个具体用户问题；③小步快跑——首发只给约 2500 名同事，把首批用户培养成布道者（evangelists）再逐波扩量；④alpha/beta 组 + LilliX 实验研究组的多层测试机制；⑤创始团队 4 人起步，后扩到 150+。",
+    "human": "用户始终处于开发过程中心；早期对同事做观察式民族志研究定需求；未来顾问角色判断：更多时间激活洞察而非做分析，顾问将更 tech-enabled。",
+    "result": "Lilli 成为麦肯锡使用最多的工具之一；创始团队 4 人→150+；首发 2500 人逐波扩量；无单一硬效果数字披露。口径为 McKinsey 官方播客文字实录，未经独立审计。",
+    "decision_info": {
+      "effort": "自建平台：4 人种子团队起步，扩至 150+；平台+内容+采用运营三线并行",
+      "duration": "从实验到全员铺开分波次推进，以年计",
+      "prerequisites": "有可私有化利用的知识语料（近百年档案）；愿意自建平台而非外购 SaaS（需要监管、安全、权限、信息保护的定制控制）；有能承受慢速学习的耐心（「build faster than you can learn，所以要主动放慢」）",
+      "failure_modes": "本案坦承的风险：建设速度快于学习速度是主要陷阱；知识平台不是纯技术问题——数据架构、打标治理、内容策展是前置；硬效果数字缺失本身是教训（采用率高不等于价值可量化）",
+      "transferability": "高——「4 人种子团队+2500 人首发+布道者扩量」的采用节奏、「管线每条目挂用户问题」的产品纪律、「编排层而非单点 RAG」的架构判断，对知识密集型组织（咨询/律所/研究机构）直接适用"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "4 人种子团队+首发 2500 人+布道者逐波扩量",
+      "开发管线每个条目挂具体用户问题",
+      "编排层架构：大小模型组合、为组织语境调优、非单点 RAG",
+      "alpha/beta/LilliX 实验组的多层测试机制"
+    ],
+    "pattern_links": [],
+    "evidence_note": "事实与引语为 McKinsey 官方 At the Edge 播客文字实录（2024-11-25，署名 Erik Roth / Lareina Yee）；本案无硬效果数字，属方法论型案例。",
+    "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/what-mckinsey-learned-while-creating-its-generative-ai-platform",
+    "source": "McKinsey 官方播客 At the Edge 文字实录"
   }
 ]
