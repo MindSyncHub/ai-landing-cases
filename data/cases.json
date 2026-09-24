@@ -1099,5 +1099,39 @@
     "evidence_note": "数字为 IBM 官方客户案例页披露（含 90%/85% 准确率口径），未经独立审计；页面注明其他环境实际效果可能不同。",
     "url": "https://www.ibm.com/case-studies/medtronic",
     "source": "IBM 官方客户案例页"
+  },
+  {
+    "id": "c13-rollsroyce-azure",
+    "detail_tier": "S",
+    "company": "劳斯莱斯（Rolls-Royce，航空发动机）",
+    "industry": "制造/航空发动机",
+    "scenario": "数字主线（digital thread）贯穿设计-制造-运维：AI 辅助发动机设计、涡轮叶片质检、发动机健康监测",
+    "pain_points": [
+      "quality-inspection",
+      "throughput-limit",
+      "anomaly-by-human"
+    ],
+    "problem": "劳斯莱斯 2023 年启动多年转型，目标是让数字与 AI 贯穿设计、制造、运营全价值链。三个具体瓶颈：①发动机设计传统上靠人工、以年计；②涡轮叶片冷却孔人工质检每月约 200 万个孔，是产线瓶颈且误判造成废件；③发动机健康监测数据分散，故障事后响应以天计。",
+    "solution": "基于 Microsoft Cloud for Manufacturing 建中央数据仓库（配合西门子技术），重构数据供生成式 AI 使用，打造跨价值链数字主线：①设计侧用 Azure Databricks+GPU 让工程师数小时内探索更广设计参数空间，AI 自动化组件选型与装配；②制造侧上线 Signature Analyzer——机器学习+振动分析优化缺陷检测，检验员从逐孔检查改为聚焦 AI 标出的可疑区域；③运维侧 Pearl 发动机家族的 EVHMU（发动机振动健康监测单元）追踪 1 万+ 发动机参数，云端分析预测性维护。",
+    "human": "检验员从「逐孔全检」转为「聚焦 AI 标记区域」；工程师从人工设计转为参数空间探索+AI 选型；发动机监控参数支持地面远程重配置。",
+    "result": "机器利用率提升 30%，废件显著减少；故障解决从数天加速到接近实时；全机队每年预防约 400 起非计划维护事件，节省数百万欧元维修成本。数字为 Microsoft 官方客户案例页披露，未经独立审计。",
+    "decision_info": {
+      "effort": "多年转型项目，三条战线并行（设计/制造/运维），需先建中央数据仓库作为数字主线底座",
+      "duration": "2023 年起多年项目制；叶片质检与发动机监测已是运行中能力",
+      "prerequisites": "有数据集中与重构的投入意愿（中央数据仓库是前置）；高价值设备（发动机）数据密度足够支撑预测模型；与平台厂商深度共建（Microsoft+Siemens 栈）",
+      "failure_modes": "数据底座没建好之前 AI 用例立不起来——本案明确把中央数据仓库列为第一步；平台栈深度绑定带来切换成本",
+      "transferability": "高——「中央数据仓库→数字主线→设计/质检/运维三线 AI」的打法是高端制造的通用蓝图；「人工全检→AI 标区域+人聚焦」的人机分工模式可直接迁移"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "先建中央数据仓库再做 AI 用例的底座顺序",
+      "数字主线贯穿设计-制造-运维三条战线",
+      "检验员人机分工重构：AI 标记可疑区、人聚焦判断",
+      "预测性维护按「每年预防的非计划事件数」算账"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字（30%/400起/数百万欧元/每月200万孔）为 Microsoft 官方客户案例页披露，未经独立审计。",
+    "url": "https://customers.microsoft.com/en-us/story/1756432639929315049-rolls-royce-manufacturing-azure-en-gb",
+    "source": "Microsoft Customer Stories 官方案例页"
   }
 ]
