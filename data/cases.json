@@ -1133,5 +1133,38 @@
     "evidence_note": "数字（30%/400起/数百万欧元/每月200万孔）为 Microsoft 官方客户案例页披露，未经独立审计。",
     "url": "https://customers.microsoft.com/en-us/story/1756432639929315049-rolls-royce-manufacturing-azure-en-gb",
     "source": "Microsoft Customer Stories 官方案例页"
+  },
+  {
+    "id": "c14-bbva-talent",
+    "detail_tier": "S",
+    "company": "西班牙对外银行（BBVA）",
+    "industry": "金融/银行",
+    "scenario": "全行 AI 采用战略：工具全员铺开 + 「巫师」催化者网络 + 培训与社区运营",
+    "pain_points": [
+      "ai-adoption-org",
+      "information-overload"
+    ],
+    "problem": "BBVA 面临的不是单点用例问题，而是全组织 AI 采用问题：几万名员工如何真正把生成式 AI 用进日常工作，而不是买了 license 闲置；同时 HR 类咨询（弹性福利、薪酬、职业发展）占用大量人力，知识分散在 2500+ 份文档里。",
+    "solution": "三支柱推进：①全员工具——与 OpenAI、Google 签全球协议，全集团员工持有生成式 AI 工具 license；②人的催化——建立「巫师」（wizards）内部角色网络，由 750 名一线员工兼职推广 AI 采用、识别用例、分享最佳实践；③能力基建——培训（Gemini Express 课程首周破行内参训纪录、10.5 万人完成）+ 9 万人实践社区 + 内部 HR 虚拟助手（知识库 2500+ 文档，月处理 3.4 万+ 咨询）。",
+    "human": "官方立场明确「人仍是判断、批判性思维和同理心的来源」；巫师网络是员工兼职而非专职；HR 助手处理重复咨询，人处理复杂个案。",
+    "result": "超半数员工每周使用 AI 工具（ChatGPT 人均每月用 12 天、Gemini 约 9 天）；全行已识别 8000+ 活跃用例、约 700 个具战略价值；重复任务自动化估计为每位员工每周节省约 3 小时；HR 助手月处理 3.4 万+ 查询；2025 年 AI 培训超 28 万小时。数字为 BBVA 官网新闻稿披露，未经独立审计。",
+    "decision_info": {
+      "effort": "全行级多年项目：license 全员铺开 + 巫师网络运营 + 培训与社区三条线持续投入",
+      "duration": "持续多年的采用战略，按年计",
+      "prerequisites": "高管层把「人的转型」而非「工具部署」当北极星；有预算签全员 license 全球协议；能容忍自下而上的用例涌现（8000+ 用例大多来自一线）",
+      "failure_modes": "工具铺开不等于采用——BBVA 的解法是催化者网络+培训，缺这两条 license 会闲置；用例数量大但战略级的只有约 700/8000，需要有筛选机制；成功度量刻意放在「工作方式转变程度」而非工具数",
+      "transferability": "极高——「全员 license + 催化者网络（巫师）+ 培训社区」是任何大型组织 AI 采用的可复制三件套；90000 人社区与 750 巫师的比例可作参照"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "全员 license 铺开 + 按周使用率跟踪渗透",
+      "「巫师」催化者网络：兼职员工推广+用例识别+最佳实践分享",
+      "把成功度量定在「工作方式转变」而非「部署工具数」",
+      "先让用例自下而上涌现（8000+），再筛战略级（700）"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字为 BBVA 官网新闻稿（2026-04-30，署名 Head of Talent & Culture Transformation and Data Aila Jiménez）披露，未经独立审计。",
+    "url": "https://www.bbva.com/en/innovation/bbva-drives-ai-adoption-through-talent/",
+    "source": "BBVA 官网新闻稿"
   }
 ]
