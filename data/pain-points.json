@@ -79,6 +79,11 @@
       "id": "procurement-waste",
       "name": "采购浪费",
       "description": "买错买重、库存积压报废，损失隐性且没人算过账"
+    },
+    {
+      "id": "rule-based-backoffice",
+      "name": "规则密集后台流程",
+      "description": "财务/人事/行政等规则多层级深的流程，人工判断+录入无法随业务量扩张"
     }
   ]
 }
