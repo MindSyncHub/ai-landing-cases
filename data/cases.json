@@ -1980,5 +1980,40 @@
     "evidence_note": "OpenAI 客户案例原文经觉醒学院镜像留存（本机直连 openai.com 被 Cloudflare 拦截）；「-99.3%」为官宣口径，事故类型与样本量未披露。",
     "url": "https://openai.com/index/ntt-data",
     "source": "OpenAI 客户案例（2026-07，觉醒学院镜像留存）"
+  },
+  {
+    "id": "d07-lockheed-aifactory",
+    "detail_tier": "标准",
+    "company": "Lockheed Martin × NVIDIA",
+    "industry": "航空航天/国防",
+    "scenario": "中心化 AI 基础设施（AI Factory，基于 NVIDIA DGX SuperPOD）：统一 MLOps 平台+内部 LLM 托管（微调/RAG/推理），支撑 7,000 工程师、数百个项目与内部应用（Text Navigator 等）",
+    "pain_points": [
+      "data-siloed",
+      "capacity-underuse",
+      "compliance-check",
+      "throughput-limit",
+      "key-person-bottleneck"
+    ],
+    "problem": "强监管（数据必须留在本地或涉密环境，遵守白宫 AI 行政令）；GPU 资源分散、流程碎片化、自动化有限、云资源静态闲置，重复工作与成本上升；安全约束下开发环境要数周才能搭好，训练耗时数周。",
+    "solution": "2021 年成立 Lockheed Martin AI Center（LAIC）降低 AI 部署门槛；建 AI Factory：以 DGX SuperPOD 为中心化算力+MLOps 平台（分钟级开通 GPU 环境）；把最佳实践沉淀为可复用组件、pipeline 和 playbook；自建 token 化/训练/部署闭环（每周 10 亿+ token），绕开公有云 token 计费；保留云 burst-scaling 处理非密弹性需求。典型应用：投标书库 RAG 生成新方案、开源 LLM 内部托管、内部 chatbot 与编码助手、Text Navigator（数千员工日常用的文本摘要/分析/代码助手）；配套 NVIDIA DLI 培训 1,100+ 人。",
+    "human": "访问控制保证员工只见所需数据；高保障（high-assurance）应用场景强调 trustworthy AI；治理红线（数据不出本地/涉密环境）由制度+平台共同执行。",
+    "result": "来源方披露（NVIDIA 官方案例，未经独立审计）：开发环境从数周缩到几分钟；模型训练从数周缩到数天；每周 10 亿+ token 内部处理；7,000 工程师/开发者使用；产出数千条自动化 pipeline、每周数百万 API 请求。",
+    "decision_info": {
+      "effort": "大——SuperPOD 级专用基础设施+专职 AI Center",
+      "duration": "2021 年 LAIC 成立，AI Factory 持续扩展",
+      "prerequisites": "数据治理红线先行（本地/涉密）；集中算力投资；可复用组件/playbook 沉淀机制；培训体系（DLI 等）",
+      "failure_modes": "未披露",
+      "transferability": "中——「中央 AI 中心+集中算力+统一 MLOps+playbook 沉淀」组织模式适合大型受监管组织；硬件路径本身较重"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "设中央 AI 中心（LAIC）统一降低各项目的 AI 部署门槛",
+      "把最佳实践沉淀为可复用组件/pipeline/playbook，而非口口相传",
+      "算力成本结构决策：高频负载自建 token 闭环，弹性负载保留云 burst"
+    ],
+    "pattern_links": [],
+    "evidence_note": "NVIDIA 官方案例页（客户署名背书）；效果数字为来源方披露，未经独立审计。",
+    "url": "https://www.nvidia.com/en-eu/case-studies/lockheed-martin-ai-factory-with-dgx-superpod/",
+    "source": "NVIDIA 官方案例页"
   }
 ]

@@ -1,0 +1,197 @@
+https://www.nvidia.com/en-eu/case-studies/lockheed-martin-ai-factory-with-dgx-superpod/
+
+Boosting Innovation Through Lockheed Martin’s AI Factory | NVIDIA
+
+访问您所在地区的 NVIDIA 网站，了解您所在地专属的本地内容、定价以及销售合作伙伴。
+
+Argentina
+Australia
+België (Belgium)
+Belgique (Belgium)
+Brasil (Brazil)
+Canada
+Česká Republika (Czech Republic)
+Chile
+Colombia
+Danmark (Denmark)
+Deutschland (Germany)
+España (Spain)
+France
+India
+Italia (Italy)
+México (Mexico)
+Middle East
+Nederland (Netherlands)
+Norge (Norway)
+Österreich (Austria)
+Peru
+Polska (Poland)
+Rest of Europe
+România (Romania)
+Singapore
+Suomi (Finland)
+Sverige (Sweden)
+Türkiye (Turkey)
+United Kingdom
+United States
+대한민국 (South Korea)
+中国大陆 (Mainland China)
+台灣 (Taiwan)
+日本 (Japan)
+继续
+Skip to main content
+ 
+ 
+Shop
+ 
+Drivers
+ 
+Support
+EU
+Customer Stories
+
+Public Sector
+
+Boosting Innovation and Cutting Costs Through Lockheed Martin’s AI Factory
+Learn More
+
+Lockheed Martin
+
+Objective
+
+Lockheed Martin is accelerating AI adoption by centralizing compute resources, machine learning operations (MLOps) tools, and best practices in their AI factory, powered by an NVIDIA DGX SuperPOD™ for training and inference. Within the Lockheed Martin AI Factory, they developed a customized MLOps platform built on top of DGX SuperPOD, providing the necessary solutions for teams to build and deploy trustworthy AI at scale.
+
+Customer
+
+Lockheed Martin
+
+Use Case
+
+Generative AI / LLMs
+
+Products
+
+NVIDIA DGX
+
+Accelerating the Development and Integration of AI Across Lockheed Martin
+
+Lockheed Martin, the leading global security technology company, excels in developing advanced 21st Century Security® solutions across sectors such as aerospace, space exploration, and cybersecurity. For over a century, the company has solved complex challenges and advanced scientific discovery. Current projects include sending humans to Mars, returning them to the Moon, and better detecting, predicting, and fighting wildfires.
+
+With 122,000 employees globally, Lockheed Martin is scaling AI enterprise-wide to drive efficiency and innovation. They currently integrate AI into hundreds of projects, enhancing customer programs and optimizing internal business operations. To further accelerate digital transformation, they established the Lockheed Martin AI Center (LAIC) in 2021 to reduce barriers for AI deployment. Their AI factory initiative is an integration of infrastructure and MLOps and generative AI tools. It empowers engineers and developers to deliver automated and repeatable AI-powered capabilities into high-assurance applications—which propels AI-enabled solutions from prototype to production rapidly and at scale.
+
+Lockheed Martin
+
+Lockheed Martin
+
+Centralizing AI Infrastructure to Overcome Fragmentation and Inefficiencies
+
+Developing safe, secure, and trustworthy AI is a White House executive order to which Lockheed Martin adheres. "Due to our strict data governance guidelines, it's crucial that our data remains on premises at Lockheed Martin or within classified environments. Access controls ensure that people only see the data they need and can secure datasets within their workspaces," says Greg Forrest, Director of AI Foundations at Lockheed Martin.
+
+Forrest adds, “In addition to data governance and security, teams encountered challenges stemming from fragmented processes, limited automation, and separate compute resources, leading to inefficiencies, increased costs, and outdated compute resources. Duplicate work and inconsistent practices emerged from the lack of a unified AI strategy and clear vendor management.”
+
+To support the diverse set of use cases across the business, the LAIC sought to centralize compute resources, MLOps tools, and best practices via their own AI factory built on the NVIDIA DGX SuperPOD reference architecture for training and deployment, enabling them to adhere to the government’s AI ethical principles while leveraging best-of-breed technology solutions across the entire technology stack.
+
+Lockheed Martin’s goal was to align their infrastructure, streamline their cloud resources, and proliferate best practices across teams.
+To achieve this, they established the Lockheed Martin AI Factory, centralizing compute resources, MLOps tools, and best practices with a customized MLOps platform built on top of DGX SuperPOD, providing solutions for teams to build and deploy trustworthy AI at scale.
+Developers can now securely access GPU resources and have their environments up and running in minutes and reduce training times from weeks to days.
+Centralizing generative AI workloads on the DGX SuperPOD enables the company to leverage the full power of specialized infrastructure and reduce the scattered overhead costs of cloud environments.
+Lockheed Martin is using DGX SuperPOD to train and customize models and host them on their internal AI factory. This setup supports the rapid development of AI applications, such as internal chatbots and coding assistants.
+
+Lockheed Martin
+
+Quick Access to Secure Computing and Shared Best Practices Boost Developer Productivity
+
+“One of the most significant benefits we observed after implementing our AI factory was a substantial increase in developer productivity,” said Bryan Donovan, Technical Lead of AI Foundations at Lockheed Martin. “Previously, setting up a development environment on local laptops or workstations was a challenging task due to stringent security constraints, often taking several weeks to complete. Now, with the AI factory powered by DGX SuperPOD, developers can request GPU resources and have their environments up and running in just a few minutes.”
+
+Access to GPUs with high-speed interconnects offered by the DGX SuperPOD has enabled teams to leverage capabilities that were previously unaffordable for individual programs. Training processes that once took weeks are now reduced to days. Forrest commented, “Additionally, our AI factory enables us to share best practices and expertise across Lockheed Martin. We have codified AI best practices into a set of reusable components, pipelines, and playbooks, further improving developer productivity.”
+
+Centralizing compute via the Lockheed Martin AI Factory has led to significant cost savings. Tokens are created when a model breaks down text into smaller units like words, parts of words, or characters, and they are used in the training process to convert textual data into numerical data that the model can understand and learn from. “Using APIs via public cloud requires purchasing tokens to cover the computational costs, but with our on-prem AI factory, we handle tokenization, training, and deployment in-house,” said Forrest. “Our DGX SuperPOD helps us process over one billion tokens per week, enabling fine-tuning, retrieval augmented generation (RAG), or inference on our large language models (LLMs). This solution avoids the escalating costs and significant limitations of fees based on token usage.”
+
+In addition to their DGX SuperPOD, the team still leverages burst-scaling to cloud environments for temporal needs and for non-classified training and data handling. The on-premises DGX systems allow Lockheed Martin to control specific data types and telemetry in a secure environment. “With approved internal data centers, developers can immediately utilize sensitive data, ensuring security and agility across all use cases without waiting for additional approvals. This allows for greater flexibility and faster deployment of AI solutions,” said Donovan.
+
+“Lockheed Martin has a tremendous amount of diverse data types being processed for various AI applications, including time series data, signal intelligence, geospatial data, text, image, and video. The DGX SuperPOD supports a wide range of use cases from data analytics to large-scale inference, on the same platform, enhancing efficiency and reducing costs,” Forrest added.
+
+“Our DGX SuperPOD helps us process over one billion tokens per week… This solution avoids the escalating costs and significant limitations of fees based on token usage.”
+
+Greg Forrest
+Director of AI Foundations, Lockheed Martin
+
+Empowering 7,000 Users Without Trade-Offs in Experimentation, Cost, or Data Security
+
+Today, 7,000 engineers and developers access Lockheed Martin’s AI Factory, powered by DGX SuperPOD, to support programs across all of Lockheed Martin and produce thousands of automated pipelines and millions of weekly API requests. More than 1,100 trainees have enhanced their AI knowledge through NVIDIA's Deep Learning Institute (DLI), while thousands of others have completed additional training programs curated by the Lockheed AI Center (LAIC). These programs have equipped participants with technical expertise and hands-on experience using industry-standard tools and frameworks.
+
+"We went from having scattered GPUs on local ad hoc infrastructure, static and underutilized cloud resources, and even training directly on laptops, to a centralized platform, where we don't have to trade-off experimentation for cost or data security,” said Donovan. “This shift accelerates our workflow." The AI factory supports various generative AI workloads, RAG, fine-tuning of LLMs and internal chatbots and coding assistants.
+
+“For instance, we have made proposal writing more efficient. As a government contractor, we read a lot of proposals and have a huge proposal repository,” Forrest commented. “We host an open-source large language model on DGX SuperPOD and applied RAG on Lockheed Martin proposals. This allows us to rapidly generate new proposals with generative AI, summarizing past work and creating new content.
+
+“Another example is Lockheed Martin Text Navigator, a large language model chat interface that can summarize large bodies of text, analyze research papers, generate strategy ideas, and produce and troubleshoot code embedded in IDE’s,” said Forrest. 
+
+Lockheed Martin Text Navigator is used by thousands of employees for daily productivity tasks. Hosted internally on the DGX SuperPOD and deployed securely through Lockheed Martin MLOps and generative AI platform, Text Navigator enhances efficiency and supports a wide range of functions across the business.
+
+“We went from having scattered GPUs… to a centralized platform, where we don't have to trade-off experimentation for cost or data security.”
+
+Bryan Donovan
+Technical Lead of AI Foundations, Lockheed Martin
+
+Looking Ahead
+
+Lockheed Martin leverages and continues to scale out the NVIDIA DGX SuperPOD within their AI factory to train and fine-tune open-source models and develop new language models for specialized applications. Training and inference are conducted on the DGX SuperPOD, utilizing NVIDIA Triton Inference Server™ and NVIDIA NeMo™ Framework, which are included with NVIDIA AI Enterprise, as well as CUDA® and pre-integrated NVIDIA images.
+
+“Lockheed Martin's domain expertise, combined with NVIDIA's cutting-edge infrastructure, is revolutionizing the way we approach enterprise and mission requirements through AI, enabling us to tackle complex challenges with unparalleled speed, accuracy and insight," said Matt Wittstock, Lockheed Martin AI Infrastructure Lead.
+
+This integrated approach accelerates AI development and deployment, allowing Lockheed Martin to efficiently deliver advanced AI solutions to its customers. Currently, they have consolidated 30+ models on their on-premises infrastructure using their AI factory, and the number is growing.
+
+Today, Lockheed Martin experiences full utilization and occasional overutilization of their on-premises hardware. With 122,000 employees, and a growing number who now use generative AI daily, they already handle millions of API calls weekly. To support growing workloads, they plan to expand their on-premises environment with new NVIDIA GPU architectures and aim to make their AI factory and MLOPs solution commercially available to their clients.
+
+“Lockheed Martin's domain expertise, combined with NVIDIA's cutting-edge infrastructure, is revolutionizing the way we approach enterprise and mission requirements through AI, enabling us to tackle complex challenges with unparalleled speed, accuracy and insight.”
+
+Matt Wittstock
+Lockheed Martin AI Infrastructure Lead
+
+Lockheed Martin
+
+Results
+Secure, on-premises GPU-accelerated AI environments set up from weeks to minutes.
+Significant cost savings scaling generative AI.
+Unified infrastructure for diverse data types and use cases, from training to inference.
+Support for 7,000 engineers and developers producing thousands of automated pipelines weekly.
+
+DGX SuperPOD offers leadership-class accelerated infrastructure and scalable performance for the most challenging AI workloads—with industry-proven results.
+
+Learn More
+Company Information
+About Us
+Investors
+Venture Capital (NVentures)
+NVIDIA Foundation
+Research
+Corporate Sustainability
+Technologies
+Careers
+ 
+News and Events
+Newsroom
+Company Blog
+Technical Blog
+Webinars
+Stay Informed
+Events Calendar
+GTC AI Conference
+NVIDIA On-Demand
+ 
+Popular Links
+Developers
+Partners
+Executive Insights
+Startups and VCs
+Documentation
+Technical Training
+Professional Services for Data Science
+Follow NVIDIA
+Privacy Policy Your Privacy Choices Terms of Service Accessibility Corporate Policies Product Security Contact
+Copyright © 2026 NVIDIA Corporation
+
+NVIDIA and our third-party partners use cookies and other tools to collect and record information you provide as well as information about your interactions with our websites for performance improvement, analytics, and to assist in our marketing efforts. By clicking "Accept All", you consent to our use of cookies and other tools as described in our Cookie Policy. You can manage your cookie settings by clicking on "Manage Settings". Please see our Privacy Policy for more information on our privacy practices.
+
+Manage Settings
+Reject Optional Accept All
