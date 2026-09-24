@@ -9,6 +9,26 @@
       "id": "onboarding-training",
       "name": "新人培训低效",
       "description": "新人上手依赖师傅带教，周期长、质量不稳定、过程不可跟踪"
+    },
+    {
+      "id": "document-review",
+      "name": "人工审核材料",
+      "description": "图片/文档材料靠人工逐张审核录入，慢、累、易错"
+    },
+    {
+      "id": "throughput-limit",
+      "name": "业务吞吐受限",
+      "description": "单件处理时长卡住整体业务量，制约服务模式和成本结构"
+    },
+    {
+      "id": "information-overload",
+      "name": "案头信息过载",
+      "description": "大量非结构化材料消耗专业人员时间，瓶颈在信息处理而非专业判断"
+    },
+    {
+      "id": "professional-judgment-gap",
+      "name": "专业判断依赖个人",
+      "description": "核心质量依赖少数资深人员经验，新人与资深差距大、经验难复制"
     }
   ]
 }
