@@ -119,6 +119,11 @@
       "id": "headcount-cap",
       "name": "编制受限",
       "description": "业务增长但人员不能同步扩张，专业岗位压力越来越大"
+    },
+    {
+      "id": "ad-hoc-analysis",
+      "name": "临时数据分析靠人工",
+      "description": "分析需求不断变化，人工写SQL慢且易错，仪表盘答不了追问"
     }
   ]
 }
