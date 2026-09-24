@@ -1910,5 +1910,40 @@
     "evidence_note": "OpenAI 客户案例页原文经觉醒学院镜像留存（本机直连 openai.com 被 Cloudflare 拦截）；HiBob 官方博客交叉印证；数字为来源方披露。",
     "url": "https://openai.com/zh-Hans-CN/index/hibob/",
     "source": "OpenAI 客户案例（2025-10-08，觉醒学院镜像留存）+ HiBob 官方博客"
+  },
+  {
+    "id": "d05-holidayextras",
+    "detail_tier": "标准",
+    "company": "Holiday Extras × OpenAI",
+    "industry": "旅游/在线预订（机场休息室、酒店、停车、旅行保险等附加服务）",
+    "scenario": "全员 ChatGPT Enterprise 横向部署 + 面向客户的产品化：内部翻译/数据分析/工程提效，外部 Syd AI 保险解释 bot 与 30% 客服前置自动化",
+    "pain_points": [
+      "content-production",
+      "ad-hoc-analysis",
+      "throughput-limit",
+      "customer-service-cost",
+      "algorithm-execution-gap"
+    ],
+    "problem": "多欧洲市场只有一支营销团队，本地化内容生产瓶颈；数据驱动文化下非技术员工不会 SQL 难以自助分析；客服规模化与满意度难两全。",
+    "solution": "全员部署 ChatGPT Enterprise：营销团队用它做数百条多语言文案翻译（周级→小时级，母语者抽检质量）；非技术员工直接上传 CSV 做趋势分析，SQL 用户写查询提速 80%；初级工程师拿它做方案验证、高级用它准备高 stakes 演示，代码调试时间 reportedly 降 75%；定制客服 bot 按目的地推荐旅行资源/保险政策。客户侧推出 Syd AI 解释旅行保险条款，30% 客服咨询由 AI 先行处理，再以 OpenAI API 开发超个性化「超级 App」。",
+    "human": "母语者员工抽检 AI 翻译质量（人在环质量控制）；客服 bot 处理不了再升级人工；AI 前置+人工兜底的客服分工。",
+    "result": "来源方披露（未经独立审计，OpenAI 客户案例为宣传性质）：每年节省约 80 万美元员工时间成本（创新总监口径）；NPS 从 60 提升到 70；营销翻译从数周缩到数小时；调试时间降 75%；30% 咨询 AI 前置处理。",
+    "decision_info": {
+      "effort": "中小——中型公司全员横向部署，无重定制",
+      "duration": "2024-03 OpenAI 客户案例发布，此后持续产品化",
+      "prerequisites": "全员 ChatGPT Enterprise 许可；母语者质检机制；AI 宣传靠员工口碑推动采纳",
+      "failure_modes": "官方案例未披露（ZenML 评注指出治理/回退/评测框架全部缺失）",
+      "transferability": "高——「全员横向部署+轻量质检+客户侧产品化」是中型企业最简可复制路径"
+    },
+    "delivery_pattern": "助手型",
+    "fde_actions": [
+      "全员横向部署而非单点纵深：每部门找自己的「超能力」场景",
+      "母语者抽检作为生产内容的质量门",
+      "内部场景验证后向客户侧产品化（Syd AI/超级 App）"
+    ],
+    "pattern_links": [],
+    "evidence_note": "OpenAI 客户案例原文经觉醒学院镜像与 ZenML 案例库条目留存（本机直连 openai.com 被 Cloudflare 拦截）；澎湃/腾讯新闻转述交叉印证 80 万美元口径；数字均为来源方披露。",
+    "url": "https://www.jxxy.net/ai/cases/holiday-extras/",
+    "source": "OpenAI 客户案例（2024-03，觉醒学院镜像+ZenML 案例库留存）+ 澎湃新闻转述"
   }
 ]
