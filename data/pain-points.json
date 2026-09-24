@@ -154,6 +154,11 @@
       "id": "manual-data-transfer",
       "name": "人工搬运数据",
       "description": "人在多个系统间扒数、誊抄、核对，充当数据连接件"
+    },
+    {
+      "id": "key-person-bottleneck",
+      "name": "老板是唯一瓶颈",
+      "description": "销售/调度/管理全压在老板身上，长尾客户无暇承接"
     }
   ]
 }
