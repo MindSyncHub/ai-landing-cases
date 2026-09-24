@@ -129,6 +129,11 @@
       "id": "quotation-bottleneck",
       "name": "非标报价卡脖子",
       "description": "报价依赖少数技术骨干经验，响应慢、准确率波动、直接丢单或亏本"
+    },
+    {
+      "id": "management-visibility",
+      "name": "经营数据延迟",
+      "description": "管理层看大盘靠人工统计，延迟以月计，无法动态分析"
     }
   ]
 }
