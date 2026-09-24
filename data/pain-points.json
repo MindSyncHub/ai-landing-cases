@@ -84,6 +84,16 @@
       "id": "rule-based-backoffice",
       "name": "规则密集后台流程",
       "description": "财务/人事/行政等规则多层级深的流程，人工判断+录入无法随业务量扩张"
+    },
+    {
+      "id": "reconciliation",
+      "name": "人工对账耗时",
+      "description": "多方数据/单据逐周期人工核对，慢且易返工"
+    },
+    {
+      "id": "revenue-leak",
+      "name": "应收差异被容忍",
+      "description": "差异在容忍区间内被放弃，收入悄悄漏掉"
     }
   ]
 }
