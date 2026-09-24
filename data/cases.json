@@ -1200,5 +1200,73 @@
     "evidence_note": "数字与路线图为 Walmart 2025 年投资社区会议管理层演讲实录披露，未经独立审计；Wally 的 agent 化当时尚在路线图中。",
     "url": "https://stock.walmart.com/",
     "source": "Walmart 2025 Investment Community Meeting 演讲实录（PDF 文字版）"
+  },
+  {
+    "id": "c15-dbs-analytics",
+    "detail_tier": "S",
+    "company": "星展银行（DBS Bank）",
+    "industry": "金融/银行",
+    "scenario": "全行数据 analytics/AI 体系：1500+ 模型、370+ 用例、个性化 nudges 与 AI 理财工具",
+    "pain_points": [
+      "ad-hoc-analysis",
+      "ai-adoption-org",
+      "management-visibility"
+    ],
+    "problem": "DBS 要把 AI/ML 从实验变成全行生产力：19 million 客户的海量行为数据如何规模化变现为个性化服务，同时管理层要能按「经济价值」口径看清 AI 投入产出。",
+    "solution": "多年建设全行数据 analytics/AI 体系：2024 年运行 1500+ 模型覆盖 370+ 用例；对 1300 万+ 客户年发 12 亿+ 个性化 nudges（轻量行为提示）；AI 理财工具承接深度用户；并用「经济价值（economic value）」作为统一度量披露（2024 年 SGD 7.5 亿，同比翻倍）。配套反诈自助工具、SME Spark GenAI Programme（中小企业 GenAI 推广）等生态外溢。",
+    "human": "客户自主决定是否响应 nudges；SME 通过 Spark GenAI 计划接受 GenAI 赋能；反诈工具为客户自助式而非银行代管。",
+    "result": "2024 年 AI/ML 创造经济价值超 SGD 7.5 亿（同比翻倍以上）；1500+ 模型、370+ 用例在跑；年发 12 亿+ 个性化 nudges 触达 1300 万+ 客户；在新加坡，使用 nudges 且用 AI 理财工具的客户储蓄多 2 倍、投资多 5 倍、投保接近多 3 倍。数字为 DBS 2024 年报披露，未经独立审计。",
+    "decision_info": {
+      "effort": "全行多年平台级投入，用例与模型数量持续扩张（370+ 用例、1500+ 模型）",
+      "duration": "多年累积；2024 年价值口径同比翻倍",
+      "prerequisites": "数据与分析底座先行；管理层接受「经济价值」作为统一账本口径；客户规模足够让个性化触达有统计意义",
+      "failure_modes": "nudges 类触达有过度打扰与信任损耗风险（银行用「engaged 用户 vs 非用户」对比口径呈现收益，存在自选择偏差——更主动的客户本来就更可能储蓄/投资更多）；AI 价值口径为银行自定，非独立审计",
+      "transferability": "高——「nudges 轻触达 + AI 理财工具深度承接」的双层个性化架构是零售金融通用打法；「经济价值」统一度量值得金融企业借鉴"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "用「经济价值」统一口径给 AI 投入记账并按年披露",
+      "个性化双层架构：海量 nudges 触达 + 深度工具承接",
+      "AI 能力外溢到 SME 客户生态（Spark GenAI Programme）",
+      "效果呈现采用 engaged vs non-users 对比（注意自选择偏差）"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字为 DBS Group Annual Report 2024 披露；「2倍/5倍/3倍」为 engaged users 与非用户对比口径，未经独立审计且存在自选择偏差可能。",
+    "url": "https://www.dbs.com/annualreports/2024/",
+    "source": "DBS Group Annual Report 2024（Innovating impactful solutions for customers 章节）"
+  },
+  {
+    "id": "c16-vodafone-genai",
+    "detail_tier": "S",
+    "company": "沃达丰（Vodafone）",
+    "industry": "电信",
+    "scenario": "GenAI 嵌入核心运营：客服助手、自主采购、零触控网络运维、员工助手、AI Booster 平台",
+    "pain_points": [
+      "customer-service-cost",
+      "ai-adoption-org",
+      "throughput-limit"
+    ],
+    "problem": "沃达丰要在欧洲多国把 GenAI 从试点推到核心运营：客服对话量每月数千万次、采购招标高频重复、现场与网络运维靠人工诊断、5 万+ 员工的日常生产力、2800 名工程师的研发效率，多条线同时需要规模化落地。",
+    "solution": "以 Vodafone AI Booster 平台为底座（Data Ocean 数据湖 + 多厂商云与 LLM + 可复用 GenAI 模板 + 负责任 AI 测试监控），由全组织 AI taskforce（特别工作组）推进嵌入核心运营：①德国客服 agent assist（坐席辅助）——GenAI 即时汇总客户沟通历史；②TOBi/SuperTOBi 虚拟客服——GenAI 版已覆盖全欧洲市场；③自主采购门户——GenAI sourcing 平台；④Zero Touch Operation（零触控运维）——基于实时诊断推荐操作的现场与网络自动化；⑤员工 GenAI 助手——5 万+ 用户；⑥GenAI 辅助代码研发——2800 工程师；⑦AI CVM（客户价值管理）+ HR 数字代理。",
+    "human": "客服坐席从查历史记录转为审阅 GenAI 摘要；采购团队把精力转到更高频的 re-tendering（重新招标）；员工助手为自助式；平台层设负责任 AI 的测试与监控。",
+    "result": "德国坐席辅助「helpfulness（有用度）」评分提升 61%；SuperTOBi 月处理约 6000 万对话、端到端解决率 70%、NPS +8pp（对比上一代 AI 客服）；采购平台用于 90% 招标、寻源时间降 30%；零触控运维平均修复时长（MTTR）降 43%；员工助手 >5 万用户、月活 >90%、93% 感到更高效；AI 代码采纳率 30%、研发全生命周期生产力 +12%；CVM 活动分析时间降 85%；HR 代理服务 6.9 万员工、请求解决率 86%。数字为 Vodafone H1 FY26 业绩演示材料披露，未经独立审计。",
+    "decision_info": {
+      "effort": "平台+taskforce 双轨：AI Booster 统一底座，一个用例一个用例嵌进核心运营",
+      "duration": "H1 FY26（2025 年下半年）口径，多年推进中",
+      "prerequisites": "统一数据底座（Data Ocean）与多 LLM 策略是先决；有跨组织 taskforce 推动；愿意把 GenAI 直接接进客户-facing 流程（SuperTOBi）",
+      "failure_modes": "多国家多市场 rollout 的合规与质量一致性；客服全自动（端到端 70%）意味着 30% 仍需人兜底；NPS 对比口径是「与上一代 AI 客服比」而非与人类坐席比",
+      "transferability": "极高——七大用例覆盖了客服/采购/运维/HR/研发五个职能部门，几乎是一份「集团级 GenAI 落地清单」；AI Booster 的「模板+负责任 AI 监控」结构可直接参照"
+    },
+    "delivery_pattern": "平台型",
+    "fde_actions": [
+      "AI Booster 平台底座：数据湖+多 LLM+可复用模板+负责任 AI 监控",
+      "全组织 taskforce 推进用例嵌入核心运营",
+      "客服三代演进：人工→AI 客服→GenAI（SuperTOBi 全欧铺开）",
+      "效果口径细分到部门：helpfulness/NPS/MTTR/采纳率/代码接受率各有指标"
+    ],
+    "pattern_links": [],
+    "evidence_note": "数字为 Vodafone H1 FY26 Results Presentation（2025-11）第 22 页披露，未经独立审计；NPS +8pp 为与上一代 AI 客服对话的对比口径。",
+    "url": "https://investors.vodafone.com/",
+    "source": "Vodafone H1 FY26 Results Presentation（2025 年 11 月）第 22 页"
   }
 ]
