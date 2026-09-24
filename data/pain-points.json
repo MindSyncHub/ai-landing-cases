@@ -64,6 +64,21 @@
       "id": "algorithm-execution-gap",
       "name": "方案落不了地",
       "description": "算法能算出最优解但现场执行不了，数字化工具反复失败"
+    },
+    {
+      "id": "ai-adoption-org",
+      "name": "AI采用难成组织",
+      "description": "员工个人提效明显，但认知/工具/流程不统一，无法沉淀为组织能力"
+    },
+    {
+      "id": "data-quality",
+      "name": "主数据污染",
+      "description": "重复/不一致数据让系统越用越脏，检索失效"
+    },
+    {
+      "id": "procurement-waste",
+      "name": "采购浪费",
+      "description": "买错买重、库存积压报废，损失隐性且没人算过账"
     }
   ]
 }
