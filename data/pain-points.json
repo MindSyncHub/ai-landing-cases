@@ -114,6 +114,11 @@
       "id": "paper-based-process",
       "name": "纸质/Excel流程割裂",
       "description": "数据散落在纸质表格、Excel、聊天记录里，不成体系无法决策"
+    },
+    {
+      "id": "headcount-cap",
+      "name": "编制受限",
+      "description": "业务增长但人员不能同步扩张，专业岗位压力越来越大"
     }
   ]
 }
