@@ -94,6 +94,11 @@
       "id": "revenue-leak",
       "name": "应收差异被容忍",
       "description": "差异在容忍区间内被放弃，收入悄悄漏掉"
+    },
+    {
+      "id": "ai-trust-gap",
+      "name": "AI信任与认知门槛",
+      "description": "老板听过概念但看不到和日常问题的关系，不敢投入，需先证明再扩张"
     }
   ]
 }
