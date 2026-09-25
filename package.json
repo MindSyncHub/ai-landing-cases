@@ -1,9 +1,26 @@
 {
-  "name": "ai-landing-cases",
-  "version": "0.1.0",
+  "name": "ai-landing-cases-site",
   "private": true,
-  "description": "墨予镜出品：企业 AI 落地案例库 + FDE 模式库",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "node scripts/validate.mjs"
+    "prebuild": "node scripts/build-data.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^8.0.5"
   }
 }

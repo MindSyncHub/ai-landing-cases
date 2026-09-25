@@ -29,23 +29,31 @@ data/
   patterns.json       # FDE 模式库
   pain-points.json    # 痛点标签受控词表
   raw/                # 原文留存（提取时的来源材料）
-site/                 # 静态站（单页应用，无构建依赖）
-index.html            # 站点入口
+src/                  # 站点源码（React + Vite + Tailwind，hash 路由可分享单条链接）
 scripts/
-  validate.mjs        # 数据校验（npm test）
+  build-data.mjs      # data/*.json → src/data/generated.ts（build 前自动执行）
+  validate.mjs        # 数据校验
+.github/workflows/    # GitHub Pages 构建部署
 ```
 
-## 本地浏览
+## 本地开发
 
 ```bash
-python3 -m http.server 8000   # 或任意静态服务器
-# 打开 http://localhost:8000
+pnpm install
+pnpm dev        # 本地预览
+pnpm build      # 产出 dist/
 ```
+
+数据改动只需改 `data/*.json`，`pnpm build` 时自动生成站点数据；提交前跑 `node scripts/validate.mjs`。
+
+## 线上部署
+
+push 到 main 后由 GitHub Actions 自动构建并部署到 Pages，无需手工操作。
 
 ## 校验
 
 ```bash
-npm test
+node scripts/validate.mjs
 ```
 
 ## License
