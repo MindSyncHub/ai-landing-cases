@@ -65,16 +65,30 @@ const RATIOS: Record<string, string> = {
   '21:9': 'aspect-[21/9]',
 }
 
-/** Illustration placeholder — navy 8% ground + centered mono label. */
+/** Illustration slot — renders image when src given, else navy placeholder. */
 export function IllustrationSlot({
   ratio,
   label = 'ILLUSTRATION',
+  src,
   className = '',
 }: {
   ratio: '4:3' | '16:9' | '21:9'
   label?: string
+  src?: string
   className?: string
 }) {
+  if (src) {
+    return (
+      <div className={`${RATIOS[ratio]} w-full ${className}`}>
+        <img
+          src={src}
+          alt={label}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
   return (
     <div
       className={`${RATIOS[ratio]} w-full bg-navy/[0.08] flex items-center justify-center ${className}`}

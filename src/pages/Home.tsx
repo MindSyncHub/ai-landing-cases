@@ -83,7 +83,11 @@ export function Home() {
             </p>
           </div>
           <div className="md:col-span-7">
-            <IllustrationSlot ratio="4:3" />
+            <IllustrationSlot
+              ratio="4:3"
+              src={`${import.meta.env.BASE_URL}illustrations/home-yearbook.webp`}
+              label="年鉴档案室 · Yearbook Archive"
+            />
           </div>
         </div>
       </section>

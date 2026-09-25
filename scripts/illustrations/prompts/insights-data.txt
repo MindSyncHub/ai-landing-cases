@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: ultra-wide 21:9 labeled material illustration for a website data-insights banner.
+Primary request: A data-first scene built like a physical exhibition of charts. From a grid base rises a row of solid 3D bar columns of different heights representing case statistics; the tallest column is topped with a small brass marker. To the right, a donut chart and a small stacked column sit as physical models. Two tiny analyst figures with a clipboard stand in front, reading the bars. Everything feels like printed editorial infographics turned into small physical models.
+Chinese labels: Add three short Simplified Chinese labels as clean printed callouts inside the illustration: "案例样本", "行业分布", "模式聚类". Place each label near the matching chart; keep labels horizontal, large, high-contrast, readable, and away from edges.
+Style/medium: clean Swiss editorial 3D vector-like illustration, off-white background, black ink lines, refined gray surfaces, one vivid deep navy blue accent (#1A3068).
+Composition/framing: very wide landscape composition, subject fills the width naturally, centered vertically, generous safe margins on all sides, full subject visible, no crop, keep all important objects in the vertical middle band.
+Lighting/mood: crisp studio light, calm analytical mood.
+Constraints: no extra words beyond the specified Chinese labels, no English labels, no logo, no watermark, no poster frame, no page title, no decorative blobs, no gradient background.

@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: 16:9 labeled material illustration for a website pattern detail page.
+Primary request: A three-layer stack showing that knowledge and data must be built before AI models can work. Bottom layer: a drawer cabinet filled with document folders and notebooks representing accumulated knowledge. Middle layer: a clean data platform slab with neat rows of labeled data blocks. Top layer: a small AI application block standing on the platform, glowing gently. A vertical arrow on the left shows the build order from bottom to top. The top block only stands firmly because the two layers below are solid.
+Chinese labels: Add three short Simplified Chinese labels as clean printed callouts inside the illustration: "知识沉淀", "数据底座", "模型应用". Place each label on the matching layer; keep labels horizontal, large, high-contrast, readable, and away from edges.
+Style/medium: clean Swiss editorial 3D vector-like illustration, off-white background, black ink lines, refined gray surfaces, one vivid deep navy blue accent (#1A3068).
+Composition/framing: wide landscape composition, subject fills the width naturally, centered vertically, generous safe margins on all sides, full subject visible, no crop, keep all important objects in the vertical middle band.
+Lighting/mood: crisp studio light, calm analytical mood.
+Constraints: no extra words beyond the specified Chinese labels, no English labels, no logo, no watermark, no poster frame, no page title, no decorative blobs, no gradient background.

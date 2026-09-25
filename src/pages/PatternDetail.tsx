@@ -56,7 +56,16 @@ export function PatternDetail({ id }: { id: string }) {
 
       {/* 16:9 illustration */}
       <div className="mt-8">
-        <IllustrationSlot ratio="16:9" />
+        <IllustrationSlot
+          ratio="16:9"
+          src={
+            {
+              m1: `${import.meta.env.BASE_URL}illustrations/pattern-m1-validation.webp`,
+              m2: `${import.meta.env.BASE_URL}illustrations/pattern-m2-copilot.webp`,
+            }[p.id]
+          }
+          label={`${p.name} · 模式插画`}
+        />
       </div>
 
       {/* Description */}
