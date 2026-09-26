@@ -7,6 +7,7 @@ import {
   tiers,
   knowledgeLabel,
   painPointLabels,
+  TIER_CN,
   type Tier,
 } from '../data/cases'
 import { Kicker, TierBadge } from '../components/primitives'
@@ -125,9 +126,11 @@ export function CaseIndex() {
             />
             <FilterGroup
               label="档位 · TIER"
-              options={tiers}
-              active={filter.tier}
-              onPick={(v) => setFilter((f) => ({ ...f, tier: v as Tier | null }))}
+              options={tiers.map((t) => `${t}（${TIER_CN[t]}）`)}
+              active={filter.tier ? `${filter.tier}（${TIER_CN[filter.tier]}）` : null}
+              onPick={(v) =>
+                setFilter((f) => ({ ...f, tier: v ? (v[0] as Tier) : null }))
+              }
             />
           </div>
         </aside>

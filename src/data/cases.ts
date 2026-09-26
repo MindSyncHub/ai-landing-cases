@@ -1,7 +1,14 @@
 import { CASES, PATTERNS, PAIN_POINTS } from './generated'
 
 /** 档位：S 深度 / 标准 / 概览（SPEC 2.3） */
-export type Tier = 'S' | '标准' | '概览'
+export type Tier = 'S' | 'A' | 'B'
+
+/** 档位汉字名：展示用 字母（汉字），紧凑处直接用字母 */
+export const TIER_CN: Record<Tier, string> = {
+  S: '深度',
+  A: '标准',
+  B: '概览',
+}
 
 export interface DecisionInfo {
   effort: string
@@ -178,7 +185,7 @@ export const industries = uniqSorted(cases.map((c) => c.industry))
 export const sourceTypes = uniqSorted(
   cases.map((c) => DIM_LABELS.knowledge[c.dimensions.knowledge] ?? c.dimensions.knowledge),
 )
-export const tiers: Tier[] = ['S', '标准', '概览']
+export const tiers: Tier[] = ['S', 'A', 'B']
 
 export function knowledgeLabel(c: Case): string {
   return DIM_LABELS.knowledge[c.dimensions.knowledge] ?? c.dimensions.knowledge

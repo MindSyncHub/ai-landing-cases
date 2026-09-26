@@ -3662,7 +3662,7 @@
  },
  {
   "id": "b03-jiawo-quality",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "迦沃科技（智能手表/眼镜 ODM 厂商）",
   "industry": "制造/3C 智能硬件",
   "scenario": "飞书平台 AI 质检闭环：拍照上报-AI分析建任务-看板跟踪",
@@ -3947,7 +3947,7 @@
  },
  {
   "id": "b07-szwater-steward",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "深圳环境水务集团（深圳环水集团）",
   "industry": "公共服务/城市水务",
   "scenario": "供排水客服与管网运维：千家万户水管家智能体（C端数字入口+一线员工助手+风险预警派单）",
@@ -3990,7 +3990,7 @@
  },
  {
   "id": "b08-cea-dongdong",
-  "detail_tier": "概览",
+  "detail_tier": "B",
   "company": "中国东方航空 × 百度智能云",
   "industry": "航空/高端服务业",
   "scenario": "数字员工「东东」：东航 App 内对话式一站式出行服务（行程规划/订票/选座值机/退改签/特殊服务申请）",
@@ -4031,7 +4031,7 @@
  },
  {
   "id": "b09-taikang-yangyi",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "泰康保险集团（泰康之家/泰康医疗）",
   "industry": "保险/养老医疗",
   "scenario": "养医垂类大模型 1.0：养老社区+居家养老的健康管理助手（健康画像/智能分组/个性化照护方案/主动风险预警）",
@@ -4075,7 +4075,7 @@
  },
  {
   "id": "b10-baixin-data-agent",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "中信百信银行（国有控股数字普惠银行）× 数势科技",
   "industry": "金融/银行",
   "scenario": "全行级 Data Agent 智能指标平台：对话式问数+智能归因+主动风险预警（SwiftMetrics 指标治理 + SwiftAgent 智能分析）",
@@ -4118,7 +4118,7 @@
  },
  {
   "id": "b11-meituan-ai",
-  "detail_tier": "概览",
+  "detail_tier": "B",
   "company": "美团",
   "industry": "本地生活/服务零售",
   "scenario": "全链路 AI 布局：大模型基础设施+AI 服务小帮手（「小美」智能体等）+无人机/自动车配送+硬科技投资，年投入超百亿元",
@@ -4157,7 +4157,7 @@
  },
  {
   "id": "b12-cqpolice-digital-cop",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "重庆市公安局（两江新区分局为主）× 实在智能",
   "industry": "政务/公共安全",
   "scenario": "「数字干警」Agent 警员小助手：跨 20 余个警种场景的 RPA/Agent 自动化（反诈止付、交巡警、刑侦、经侦、反恐、出入境、看守所、网安等）",
@@ -4200,7 +4200,7 @@
  },
  {
   "id": "d01-airbus-skywise",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Airbus（Skywise 平台，与 Palantir 共建）",
   "industry": "航空制造/航空服务",
   "scenario": "Skywise 开放航空数据平台：统一数据底座（Ontology）+预测性维护（Fleet Performance+）+机队运营分析，连接主机厂、航空公司、供应商",
@@ -4241,7 +4241,7 @@
  },
  {
   "id": "d02-cisco-codex",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Cisco（含 Splunk 部门）× OpenAI",
   "industry": "科技/网络设备与软件",
   "scenario": "Codex 深度集成企业软件工程闭环：跨仓库构建优化、大规模缺陷修复、框架迁移（C/C++ 为主的多仓库代码库）",
@@ -4282,7 +4282,7 @@
  },
  {
   "id": "d03-syneos-accenture",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Syneos Health × Accenture",
   "industry": "医药/CRO（生物医药解决方案）",
   "scenario": "全球临床项目运营统一数字底座：Oracle Cloud ERP + Workday HR 覆盖 60+ 国家，19 个月全球上线，为 R&D 价值链 AI 应用筑 AI-ready 数据底座",
@@ -4325,7 +4325,7 @@
  },
  {
   "id": "d04-hibob-gpt",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "HiBob × OpenAI",
   "industry": "科技/HR SaaS（人力资源软件）",
   "scenario": "全员 GPT 体系化落地并反哺产品：2,500+ 实验性 GPT → 200 个部署进内部工作流 → 成熟方案经 OpenAI API 产品化为 Bob 平台 AI 功能",
@@ -4368,7 +4368,7 @@
  },
  {
   "id": "d05-holidayextras",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Holiday Extras × OpenAI",
   "industry": "旅游/在线预订（机场休息室、酒店、停车、旅行保险等附加服务）",
   "scenario": "全员 ChatGPT Enterprise 横向部署 + 面向客户的产品化：内部翻译/数据分析/工程提效，外部 Syd AI 保险解释 bot 与 30% 客服前置自动化",
@@ -4413,7 +4413,7 @@
  },
  {
   "id": "d06-nttdata-codex",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "NTT DATA Group × OpenAI",
   "industry": "IT服务/系统集成（全球）",
   "scenario": "全员 ChatGPT Enterprise 铺底 + Codex 扩展至约 9,000 名技术/非技术员工；标志性用例：复杂事故分析从 5 名工程师 3 天缩到 30 分钟",
@@ -4458,7 +4458,7 @@
  },
  {
   "id": "d07-lockheed-aifactory",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Lockheed Martin × NVIDIA",
   "industry": "航空航天/国防",
   "scenario": "中心化 AI 基础设施（AI Factory，基于 NVIDIA DGX SuperPOD）：统一 MLOps 平台+内部 LLM 托管（微调/RAG/推理），支撑 7,000 工程师、数百个项目与内部应用（Text Navigator 等）",
@@ -4502,7 +4502,7 @@
  },
  {
   "id": "d08-berenberg-ai",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Berenberg（贝伦贝格银行，德国最老私人银行）",
   "industry": "金融/私人银行与投行",
   "scenario": "全行分层 AI 策略：Base AI（全员通用 GenAI 提效）+ Tailored AI（专有数据训练的定制应用），2022 末起上线投研助手（买方组合经理+卖方分析师）",
@@ -4546,7 +4546,7 @@
  },
  {
   "id": "d09-block-goose",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Block（原 Square）× Anthropic（MCP 协议合作）",
   "industry": "金融科技",
   "scenario": "开源 AI Agent 框架 codename goose：以 MCP（模型上下文协议）连接 LLM 与真实系统动作，首个运营系统是软件工程 Agent（自主执行维护与重复性任务）",
@@ -4588,7 +4588,7 @@
  },
  {
   "id": "d10-telstra-ai",
-  "detail_tier": "标准",
+  "detail_tier": "A",
   "company": "Telstra（澳大利亚电信）× Quantium/Accenture/Microsoft",
   "industry": "电信",
   "scenario": "数据底座整合（约80个数据平台精简到约20个）+ 全员 AI 赋能 + 网络自愈（SmartFix）+ 分层负责任的 AI 治理体系（RCAID/模型注册表/控制面）",

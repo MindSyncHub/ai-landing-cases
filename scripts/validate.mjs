@@ -12,7 +12,7 @@ const cases = read('data/cases.json');
 const patterns = read('data/patterns.json');
 const painPoints = read('data/pain-points.json');
 const tagIds = new Set((painPoints.tags || []).map((t) => t.id));
-const tierEnum = ['S', '标准', '概览'];
+const tierEnum = ['S', 'A', 'B'];
 const patternEnum = ['诊断型', '平台型', '助手型', '评测型'];
 
 const errors = [];

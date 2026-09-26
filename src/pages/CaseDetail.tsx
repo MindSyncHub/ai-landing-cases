@@ -10,6 +10,7 @@ import {
   type Case,
 } from '../data/cases'
 import { Kicker, TierBadge } from '../components/primitives'
+import { TIER_CN } from '../data/cases'
 
 function Meta({ label, value }: { label: string; value: string }) {
   return (
@@ -183,7 +184,7 @@ export function CaseDetail({ id }: { id: string }) {
         </p>
         {c.tier !== 'S' && (
           <p className="mt-4 inline-block border border-navy/25 px-4 py-2 text-sm text-navy/60">
-            {c.tier}级案例：细节不足，暂未做深度分析，仅供参考。
+            {c.tier}（{TIER_CN[c.tier]}）级案例：细节有限，未做深度分析，仅供参考。
           </p>
         )}
       </div>

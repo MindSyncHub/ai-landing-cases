@@ -207,12 +207,12 @@ export function Guide() {
           </div>
           <div className="md:col-span-9 space-y-0 border border-navy/15 divide-y divide-navy/15">
             {[
-              ['S', `${sCount} 条`, '有公开一手来源（PDF 原文/官方案例库），做过完整五维分析。给要做决策的人读。'],
-              ['标准', '15 条', '信息来源可靠但细节有限，未做深度分析，作对照样本收录。'],
-              ['概览', '2 条', '只有公开报道级别信息，保留线索价值。'],
+              ['S（深度）', `${sCount} 条`, '有公开一手来源（PDF 原文/官方案例库），做过完整五维分析。给要做决策的人读。'],
+              ['A（标准）', '15 条', '信息来源可靠但细节有限，未做深度分析，作对照样本收录。'],
+              ['B（概览）', '2 条', '只有公开报道级别信息，保留线索价值。'],
             ].map(([t, n, d]) => (
               <div key={t} className="flex items-baseline gap-6 p-6 bg-cream">
-                <span className="font-serif text-3xl font-semibold text-gold w-20 shrink-0">
+                <span className="font-serif text-xl md:text-2xl font-semibold text-gold w-28 shrink-0">
                   {t}
                 </span>
                 <span className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-navy/40 w-16 shrink-0">
@@ -224,7 +224,7 @@ export function Guide() {
             <div className="p-6 bg-cream">
               <p className="text-sm text-navy/65 leading-relaxed">
                 收录口径：只收进入生产环境的真实落地，不收发布会 demo 和概念验证。
-                分级看信息密度，不看作案例好不好——B、C 档里同样有值得抄的做法。
+                分级看信息密度，不看作案例好不好——档位低的案例里同样有值得抄的做法。
               </p>
             </div>
           </div>
