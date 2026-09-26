@@ -91,7 +91,11 @@ export function Insights() {
 
       {/* 21:9 wide illustration */}
       <div className="mt-10">
-        <IllustrationSlot ratio="21:9" />
+        <IllustrationSlot
+          ratio="21:9"
+          src={`${import.meta.env.BASE_URL}illustrations/insights-data.webp`}
+          label="数据洞察 · Data Gallery"
+        />
       </div>
 
       {/* Headline numbers */}

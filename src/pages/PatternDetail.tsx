@@ -62,6 +62,9 @@ export function PatternDetail({ id }: { id: string }) {
             {
               m1: `${import.meta.env.BASE_URL}illustrations/pattern-m1-validation.webp`,
               m2: `${import.meta.env.BASE_URL}illustrations/pattern-m2-copilot.webp`,
+              m3: `${import.meta.env.BASE_URL}illustrations/pattern-m3-knowledge.webp`,
+              m4: `${import.meta.env.BASE_URL}illustrations/pattern-m4-reliability.webp`,
+              m5: `${import.meta.env.BASE_URL}illustrations/pattern-m5-spread.webp`,
             }[p.id]
           }
           label={`${p.name} · 模式插画`}
