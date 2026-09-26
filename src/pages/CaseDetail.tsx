@@ -69,7 +69,7 @@ function DecisionBlock({ c }: { c: Case }) {
     <section className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 border-b border-navy/15">
       <div className="md:col-span-3">
         <span className="font-serif text-4xl font-semibold text-navy/20">
-          05
+          06
         </span>
         <div className="mt-2">
           <Kicker className="text-gold">DECISION INFO</Kicker>
@@ -214,16 +214,86 @@ export function CaseDetail({ id }: { id: string }) {
       <div className="mt-4">
         <Section no="01" kicker="BACKGROUND" title="背景" body={c.problem} />
         <Section no="02" kicker="APPROACH" title="做法" body={c.solution} />
-        <Section no="03" kicker="HUMAN × AI" title="人机分工" body={c.human} />
-        <Section no="04" kicker="OUTCOME" title="效果" body={c.result} />
+        {c.steps.length > 0 && (
+          <section className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 border-b border-navy/15">
+            <div className="md:col-span-3">
+              <span className="font-serif text-4xl font-semibold text-navy/20">
+                03
+              </span>
+              <div className="mt-2">
+                <Kicker className="text-gold">PLAYBOOK</Kicker>
+              </div>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-ink mb-4">
+                落地步骤
+              </h2>
+              <ol className="space-y-0 border-t border-navy/15">
+                {c.steps.map((st, i) => (
+                  <li
+                    key={i}
+                    className="grid md:grid-cols-12 gap-2 py-4 border-b border-navy/10"
+                  >
+                    <span className="md:col-span-1 font-serif text-xl font-semibold text-gold">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="md:col-span-11">
+                      <div className="font-serif text-lg font-semibold text-navy">
+                        {st.t}
+                      </div>
+                      <p className="mt-1 text-[0.9375rem] leading-relaxed text-navy/75">
+                        {st.d}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        )}
+        <Section no="04" kicker="HUMAN × AI" title="人机分工" body={c.human} />
+        <Section no="05" kicker="OUTCOME" title="效果" body={c.result} />
         <DecisionBlock c={c} />
+
+        {/* 原文引文 */}
+        {c.quotes.length > 0 && (
+          <section className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 border-b border-navy/15">
+            <div className="md:col-span-3">
+              <span className="font-serif text-4xl font-semibold text-navy/20">
+                07
+              </span>
+              <div className="mt-2">
+                <Kicker className="text-gold">IN THEIR WORDS</Kicker>
+              </div>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-ink mb-4">
+                原文引文
+              </h2>
+              <div className="space-y-6">
+                {c.quotes.map((qt, i) => (
+                  <blockquote key={i} className="border-l-2 border-gold pl-5">
+                    <p className="font-serif text-lg leading-relaxed text-navy/85">
+                      「{qt.q}」
+                    </p>
+                    {qt.ctx && (
+                      <cite className="mt-2 block font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40 not-italic">
+                        {qt.ctx}
+                      </cite>
+                    )}
+                  </blockquote>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* FDE 关键动作 */}
         {c.fdeActions.length > 0 && (
           <section className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 border-b border-navy/15">
             <div className="md:col-span-3">
               <span className="font-serif text-4xl font-semibold text-navy/20">
-                06
+                08
               </span>
               <div className="mt-2">
                 <Kicker className="text-gold">FDE ACTIONS</Kicker>

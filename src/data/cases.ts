@@ -19,6 +19,16 @@ export interface Dimensions {
   diffusion: string
 }
 
+export interface Step {
+  t: string
+  d: string
+}
+
+export interface Quote {
+  q: string
+  ctx: string
+}
+
 export interface Case {
   id: string
   company: string
@@ -34,6 +44,8 @@ export interface Case {
   deliveryPattern: string | null
   fdeActions: string[]
   patternLinks: string[]
+  steps: Step[]
+  quotes: Quote[]
   evidenceNote: string
   url: string
   source: string
@@ -123,6 +135,8 @@ export const cases: Case[] = CASES.map((c) => ({
   deliveryPattern: c.delivery_pattern ?? null,
   fdeActions: [...(c.fde_actions ?? [])],
   patternLinks: [...(c.pattern_links ?? [])],
+  steps: [...((c as { steps?: Step[] }).steps ?? [])],
+  quotes: [...((c as { quotes?: Quote[] }).quotes ?? [])],
   evidenceNote: c.evidence_note ?? '',
   url: c.url ?? '',
   source: c.source ?? '',
