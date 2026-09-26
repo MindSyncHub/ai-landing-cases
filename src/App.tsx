@@ -6,6 +6,7 @@ import { CaseDetail } from './pages/CaseDetail'
 import { Patterns } from './pages/Patterns'
 import { PatternDetail } from './pages/PatternDetail'
 import { Insights } from './pages/Insights'
+import { Guide } from './pages/Guide'
 
 const routes: RouteDef[] = [
   { path: '/', render: () => <Home /> },
@@ -14,6 +15,7 @@ const routes: RouteDef[] = [
   { path: '/patterns', render: () => <Patterns /> },
   { path: '/pattern/:id', render: (p) => <PatternDetail id={p.id} /> },
   { path: '/insights', render: () => <Insights /> },
+  { path: '/guide', render: () => <Guide /> },
   { path: '*', render: () => <Home /> },
 ]
 

@@ -13,9 +13,10 @@ const NAV: NavItem[] = [
   { path: '/cases', cn: '案例索引', en: 'INDEX', page: '02' },
   { path: '/patterns', cn: '模式库', en: 'PATTERNS', page: '03' },
   { path: '/insights', cn: '数据洞察', en: 'INSIGHTS', page: '04' },
+  { path: '/guide', cn: '指南', en: 'GUIDE', page: '05' },
 ]
 
-const TOTAL = '04'
+const TOTAL = '05'
 
 function activeNav(path: string): NavItem {
   if (path === '/') return NAV[0]
@@ -23,6 +24,7 @@ function activeNav(path: string): NavItem {
   if (path.startsWith('/patterns') || path.startsWith('/pattern/'))
     return NAV[2]
   if (path.startsWith('/insights')) return NAV[3]
+  if (path.startsWith('/guide')) return NAV[4]
   return NAV[0]
 }
 
