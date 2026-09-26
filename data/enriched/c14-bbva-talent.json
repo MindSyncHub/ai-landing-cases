@@ -1,0 +1,20 @@
+{
+  "id": "c14-bbva-talent",
+  "problem": "BBVA（西班牙对外银行）把 AI 作为组织级转型议题推进，而不是单纯采购工具。银行面对的问题是：全集团员工如何真正把生成式 AI 用进日常工作，以及工具部署之后，哪些流程能产生最大影响、岗位和专业能力如何随之演化。若只发工具不做配套，AI 会停留在少数人手里。BBVA 的解法是把培训、新的内部角色、鼓励试错的文化作为转型支柱，覆盖全体员工，而不只技术部门。",
+  "solution": "做法分四层铺开：一是全员发 license。通过与 OpenAI 和 Google 的全球协议，BBVA 集团几乎全部员工都能使用生成式 AI 工具；ChatGPT Enterprise 的推广带动数据分析、营销、技术开发、文档管理等工作方式的改变。二是设内部催化角色 wizard（向导）：由员工兼任，在本部门推广 AI 应用，负责发现新用例、分享最佳实践、帮团队把工具嵌进工作流。三是持续培训：面向各层级推广生成式 AI 知识与负责任使用，Gemini Express 课程上线第一周就成为银行历史上参训人数最多的培训。四是社区与实践：员工社群开展 bootcamp、meetup、mentoring 等内部培训活动。落地实例：Talent & Culture（人才与文化）部门的生成式 AI 虚拟助手，回答弹性薪酬、福利、职业发展、工资流程等问题，面向墨西哥和西班牙员工，知识库超过 2500 份文档。度量方式：成功标准定为组织整体和人们工作方式的转型程度，而不是部署了多少工具。",
+  "human": "人在决策中保留判断、批判性思考和同理心（BBVA 人才与文化转型及数据负责人 Aila Jiménez 原话口径）；AI 承担速度和大数据分析量。员工角色发生变化：约 750 名员工以 wizard 身份成为部门内 AI 推广者，另有一个 9 万人的实践社区承担分享和互助。自动化释放的时间被定向到高价值活动：每个员工每周约省 3 小时，转向战略性工作。原文未提及裁员或编制收缩。",
+  "result": "以下为 BBVA 官网新闻稿披露口径（2026-04-30 发布）。使用率：超过半数员工每周使用这些工具；ChatGPT 平均每人每月使用 12 天，Gemini 近 9 天；指标跨部门和跨国家高度一致。用例：团队已识别超过 8000 个活跃用例，其中约 700 个因潜力和战略重要性被视为重点。效率：自动化重复任务估计为每个员工每周节省约 3 小时；部分任务从几小时缩到几分钟（定性描述）。助手实例：Talent & Culture 虚拟助手每月处理超过 34000 次查询，知识库超过 2500 份文档。培训：Gemini Express 首周即成为银行史上参训最多的培训，累计超 105000 名员工通过该项目受训；2025 年 AI 相关培训超 28 万小时。社区：超 90000 名员工加入实践社区，成立以来已办 20 场全球活动。投入金额、项目周期原文未披露；失败或踩坑原文未提及。",
+  "steps": [
+    {"t": "全员发工具license", "d": "通过与 OpenAI、Google 的全球协议，集团几乎全部员工获得生成式 AI 工具使用权；ChatGPT Enterprise 带动数据分析、营销、技术开发、文档管理等工作方式变化。"},
+    {"t": "设wizard催化角色", "d": "约 750 名员工兼任 wizard，在各部门推广 AI：发现新用例、分享最佳实践、支持团队把工具嵌入工作流，每周人数还在增长。"},
+    {"t": "分层培训负责任使用", "d": "面向全组织各层级推广生成式 AI 知识和负责任使用；Gemini Express 首周成为银行史上参训最多培训，累计超 10.5 万人受训。"},
+    {"t": "建实践社区互助", "d": "超 9 万名员工的社区开展 bootcamp、meetup、mentoring 等内部培训，成立以来举办 20 场全球活动。"},
+    {"t": "业务场景落地验证", "d": "Talent & Culture 虚拟助手面向墨西哥和西班牙员工，基于超 2500 份文档回答弹性薪酬、福利、职业发展、工资等问题，月查询超 3.4 万次。"}
+  ],
+  "quotes": [
+    {"q": "What makes the difference is not the technology in itself, but how we support people so they feel confident in trying new ways of doing things", "ctx": "正文·Aila Jiménez"},
+    {"q": "people remain essential in contributing judgment, critical thinking, and empathy in decision-making", "ctx": "正文·Aila Jiménez"},
+    {"q": "More than half of BBVA employees use these tools on a weekly basis", "ctx": "正文·使用率数据"},
+    {"q": "saves each employee around three hours per week", "ctx": "正文·效率数据"}
+  ]
+}

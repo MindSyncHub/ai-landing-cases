@@ -1,0 +1,51 @@
+{
+  "id": "c06-uber-genie",
+  "problem": "Uber 内部各平台工程团队（如 Michelangelo 团队）在 Slack 上有支持频道供内部用户求助，每月约 45,000 个问题。用户提问后要等值班工程师响应，几轮来回才解决，响应等待长，用户和值班工程师的生产力都受损。很多问题的答案在现有文档里，但信息分散在内部 wiki（Engwiki）、内部 Stack Overflow 等位置，找不到具体答案，用户重复提问，数百个 Slack 频道对值班支持的需求很高。团队需要一个用生成式 AI 优化值班沟通和问答的 copilot（助手）。",
+  "solution": "架构选型：在微调 LLM 和 RAG（检索增强生成，Retrieval-Augmented Generation）之间选了 RAG——微调需要高质量、多样化样本和持续算力更新模型，RAG 不需要多样样本起步，缩短了上线时间。数据管线：抓取内部数据源（内部 wiki、内部 Stack Overflow、工程需求文档），用 OpenAI embedding 模型生成向量存入向量数据库；用户在 Slack 频道提问后问题转成向量检索相关结果，作为 prompt 给 LLM 返回答案；数据准备、embedding、服务发布各步泛化为用 Apache Spark 的 RAG 应用流程。防幻觉：给来自向量库的每条结果附上一个带源 URL 的 sub-context 段落，要求 LLM 只基于给定 sub-context 回答并返回源 URL 引用，每条回答都有出处。数据安全：预先筛选大多数 Uber 工程师都可访问的数据源，只允许用这些数据生成 embedding，避免敏感数据源泄漏给 OpenAI 或不该看到的人。成本追踪：调用链传 UUID，经 Michelangelo Gateway（直通 LLM 的服务）记入审计日志，按 UUID 追踪成本。反馈闭环：用户可在 Slack 回复里点 Resolved、Helpful、Not Helpful、Not Relevant 四类按钮，Slack 插件经 Kafka topic 流入 Hive 表，仪表盘可视化。评估体系：用户可跑自定义评估（幻觉、回答相关性等），评估是独立 ETL 管线，从 Hive 取 Genie 的上下文与回答，关联 Slack 元数据和用户反馈，用 LLM as a Judge（让 LLM 当评委）打分出报告，供用户调优检索和生成组件；另有文档评估应用——把知识库文档转成 Spark dataframe 逐篇让 LLM 打分，给出分数解释和可执行的文档改进建议，反哺文档质量。交互设计：新交互模式给回答附“下一步”按钮，用户可追问、标记已解决或联系人工支持，答不了可一键升级。",
+  "human": "值班工程师保留人工通道：Genie 答不了的问题，用户可一键 escalate（升级）到 on-call 支持；“Not Relevant”反馈即表示用户需要人工帮助（如代码评审）的场景。文档质量责任在人：RAG 的效果取决于源文档，团队用 LLM as a Judge 逐篇评估文档并给出可执行改进建议，文档作者据此改进。用户通过四类反馈按钮持续参与效果改进，产品侧据此迭代。",
+  "result": "2023年9月上线后扩展到 154 个 Slack 频道，累计回答超 70,000 个问题，helpfulness rate（有帮助率）48.9%，估计节省 13,000 工程小时（Uber 官方工程博客披露口径）。项目周期、投入金额原文未披露，也未提及失败案例。挑战与对策：幻觉（sub-context 加源 URL 约束生成）、数据源保护（预选多数人可访问的数据源做 embedding）、用户体验（下一步按钮交互加反馈闭环加成本追踪）。未来方向：从 Slack 频道扩展到 Michelangelo、IDE 等产品内的场景化帮助。",
+  "steps": [
+    {
+      "t": "RAG路线选型",
+      "d": "对比微调与 RAG（检索增强生成）：微调需要高质量、多样化的样本，还要持续算力让模型保持更新；RAG 不需要多样样本即可起步、缩短了上线时间，团队选定 RAG。"
+    },
+    {
+      "t": "Spark管线建索引",
+      "d": "抓取内部 wiki、内部 Stack Overflow、工程需求文档等数据源，用 OpenAI embedding 模型生成向量存入向量数据库；数据准备、embedding、推送服务各步骤泛化为基于 Apache Spark 的 RAG 应用。"
+    },
+    {
+      "t": "源URL约束防幻觉",
+      "d": "为减少幻觉，把来自向量库的每条检索结果整理成带源 URL 的 sub-context 段落，显式要求 LLM 只从这些上下文里作答并返回源 URL，让每条回答都可引用、可核查。"
+    },
+    {
+      "t": "反馈评估双闭环",
+      "d": "用户可在 Slack 回复点 Resolved、Helpful、Not Helpful、Not Relevant 四档反馈，经 Kafka 流入 Hive 表看板可视化；评估管线用 LLM as a Judge 打分，文档评估应用逐篇给改进建议。"
+    },
+    {
+      "t": "成本追踪与升级",
+      "d": "Slack 客户端调用 Knowledge Service 时传入 UUID，经 Michelangelo Gateway 记入审计日志按 UUID 追踪成本；新交互模式给回答附“下一步”按钮，答不了可一键升级转人工值班。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "People ask around 45,000 questions on these channels each month",
+      "ctx": "Problem and Motivation"
+    },
+    {
+      "q": "RAG doesn’t require any diverse examples to begin with.",
+      "ctx": "Architectural Challenges"
+    },
+    {
+      "q": "return the source url to cite the answer",
+      "ctx": "Solutions to Challenges·防幻觉"
+    },
+    {
+      "q": "We estimate it’s saved us 13,000 engineering hours so far since its launch.",
+      "ctx": "Results"
+    },
+    {
+      "q": "users can easily escalate the issue to on-call support.",
+      "ctx": "Solutions to Challenges·交互模式"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "c09-bmw-factory-genius",
+  "problem": "BMW 集团工厂里，生产设备一旦发生故障，每分钟都很关键，维修团队必须快速定位和排除故障原因。过去维修人员要自己在大量资料里查：设备手册、质量数据、内部故障报告、规划文档分散在各处，故障诊断耗时。多工厂并行开发也造成重复：Dingolfing 工厂 2024 年春天自研了一个工具，美国 Spartanburg 工厂、南非 Rosslyn 工厂同时在做类似方案，各厂需求多样。另外匈牙利 Debrecen 新工厂建设期间，手册常没有匈牙利语版本，语言 barrier 影响使用。",
+  "solution": "宝马在 Dingolfing 工厂车身车间（body shop）做试点，开发 AI 维修助手 Factory Genius。技术形态是知识发现工具（knowledge discovery tool）：本质像搜索引擎，但不从互联网取内容，而是从训练时喂入的设备手册、质量数据、内部故障报告、规划文档中快速筛选与用户问题相关的答案；集成大语言模型（类似 ChatGPT、Gemini 所用）后能理解自然语言，在合适的语言语境中搜索相关内容，结果比传统搜索引擎更准。输出形式：显示最佳匹配并附来源链接，也可以把检索到的维修指引概括成几句话；用户随后可以在聊天中继续追问。数据保持更新：定期喂入新知识，例如每日更新的班次日志（shift-log）数据。开发方式：慕尼黑总部 AI 专家汇总各厂经验，整合不同工厂的需求，做成集团级 best-of 应用，在初始开发阶段通过内部平台全球可用；除搜索和聊天外带翻译功能，可随时切换语言。方法可迁移：通用做法支持接入多种文档、为不同用户群定制助手，依托云端功能可快速全球部署。",
+  "human": "维修人员的决策权未变：AI 在几秒内给出针对具体系统故障的建议方案，把错误诊断时间压到最低，但定位与排除故障的执行仍由维修团队完成。多工厂协作方式变化：各厂不再各自重复造工具，由总部 AI 专家整合需求做集团级应用。原文未提及岗位裁减。",
+  "result": "宝马新闻稿口径，无量化数字：故障发生后 AI 能在几秒内（within seconds）给出针对具体系统问题的建议方案，将错误诊断所需时间降到最少（reducing the time required for error diagnosis to a minimum）。试点在 Dingolfing 工厂车身车间，2024 年春起有工具可用；初始开发阶段已通过内部平台全球使用；方法可迁移到其他生产场景，Debrecen 建厂的翻译功能被点名为“极其有用”（extremely useful）。项目周期、投入金额、故障率变化等量化数据原文均未披露。踩坑原文未直接描述，仅披露了一个结构性问题：各工厂并行重复开发类似方案，由总部整合为 best-of 应用收拢。原文引述 Michael Ströbel（宝马订单到交付流程管理与数字化负责人）：生成式 AI 能简化所有参与者的运营并提升经济效率。",
+  "steps": [
+    {"t": "Dingolfing试点起步", "d": "2024 年春在 Dingolfing 工厂车身车间做试点开发维修助手，目标是改善故障发生时以及计划性培训和维护时的信息获取。"},
+    {"t": "LLM增强语义搜索", "d": "集成大语言模型，从设备手册、质量数据、故障报告、规划文档中按语言语境检索相关内容；显示最佳匹配附来源链接，可把维修指引概括成几句话，并支持聊天追问。"},
+    {"t": "数据每日更新", "d": "为保持数据管理系统最新，定期喂入新知识，例如每日更新的班次日志数据。"},
+    {"t": "总部整合多厂方案", "d": "慕尼黑总部 AI 专家整合 Dingolfing、Spartanburg、Rosslyn 等厂经验，把多样需求合并为集团级 best-of 应用，初始阶段通过内部平台全球可用。"}
+  ],
+  "quotes": [
+    {"q": "It can suggest solutions for the specific system problem within seconds, reducing the time required for error diagnosis to a minimum.", "ctx": "Press Release 正文"},
+    {"q": "AI applications have become an integral part of modern production systems and are a key element of the BMW Group’s digital transformation.", "ctx": "Press Release 正文·Michael Ströbel"},
+    {"q": "The general approach enables integration of a wide range of documents and development of assistants tailored to different user groups.", "ctx": "Press Release 正文·Transferable methodology"}
+  ]
+}

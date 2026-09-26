@@ -1,0 +1,47 @@
+{
+  "id": "c02-nubank-agents",
+  "problem": "Nubank 是用户超 1 亿（100m+）的数字银行，要在客服场景上线面向真实客户的 AI Agent（智能体）。难点不在单点技术：评估方法、上下文工程、训练、线上测量这几个支柱通常各自孤立开发，盲点要到部署后才暴露。过去客户自己搭过一个 Agent，做法是提示词式“你现在是一个数据分析师/客服”，底层模型很好但输出不符合业务要求，且不稳定；业界还有一种说法把不稳定归因为“大模型本来就是不确定性的”，团队不认同——数据没变时问两遍应该得到同一个答案。客服场景的核心指标是 tNPS（交互后即时净推荐值，质量指标）和 SSR（自助解决率，自动化指标），两者通常存在取舍：把难处理的客户直接转人工、只留简单案例给 AI，能抬高 tNPS 但牺牲 SSR。",
+  "solution": "团队提出评估驱动（evaluation-driven）的统一框架，把离线开发和线上影响打通，包含四个阶段：①上下文工程（context engineering）：把每一轮喂给模型的全部输入作为系统设计对象，拆成独立版本化的模块——Instructions（角色、约束、合规护栏、输出规范）、Routines（把人工客服 SOP 翻译成有序的、Agent 可执行步骤）、Macros（预写回复模板，Agent 改写压缩而非从零写）、工具规格与编排规则（并行调用、瞬态错误处理、确认门控）、工作记忆 scratchpad（跟踪对话中收集的参数、工具输出、当前步骤，避免重复调用）。②工具和基础设施先行：先建数据层和动作层（身份认证、幂等可重试的事务性 Action API、全量审计日志），再写 prompt；确定性流程用代码组合成复合工具，不让 LLM 自己排调用顺序；工具描述按 prompt 标准写（名称、输入 schema、预期输出、何时不该调用）；工具只返回 LLM 推理需要的字段，压缩输出面。③系统化的人在环 prompt 迭代与离线评估：评估数据集来自真实对话的脱敏管道，三名业务分析师多标注加多数投票定 ground truth；用 GEPA（反思式 prompt 进化优化）自动优化评审 prompt，并测量跨模型评审者一致性（Cohen's Kappa）。④渐进上线：新版本先放 1–5% 流量，监控 SSR、tNPS、升级率、错误率；Agent 遇到例程外情况、取不到数据或置信度低时按置信度升级转人工；模型迁移前跑完整评估套件，按一等 prompt 变更对待。案例主线是卡片配送（card delivery）Agent：查物流工具、重新发卡工具，从 V0 只含知识库检索+转人工，逐版加入 SOP 例程、领域工具、挫败检测主动升级、自助重新发卡，共 A/B 测试 11 个线上变体。",
+  "human": "人工客服保留例程外和低保信案例：Agent 遇到定义例程之外的情况、检索失败或置信度低就把对话转给人工。评估环节的人也在环：ground truth 由三名业务分析师标注加多数投票产生，评审 prompt 的自动化以与人类标注一致为校准目标。指标上承认 SSR 与 tNPS 的取舍存在，上线策略用 1–5% 小流量加监控控制风险，而非全量替换。",
+  "result": "全部为论文披露口径（A/B 测试，KDD 2026 论文）。卡片配送：AI tNPS 提升 37 个百分点，SSR 提升 29 个百分点，最终 tNPS 距专家人工客服仅差 10 个百分点。其余四个域同框架复用：债务管理 tNPS +40 p.p.（距人工 -23.6 p.p.，最难域）、SSR +2.9；信用卡额度 tNPS +4.5、SSR +7.5、距人工 -7.1，其中账户上下文失败降 14.95 p.p.、客户共情失败降 11.32 p.p.；卡片管理 tNPS +38.3、SSR +4.8、距人工仅 -1.1；产品讲解 tNPS +12.3、SSR -1.5（论文注明源于瞬态 LLM 请求失败）。离线评估与线上 tNPS/SSR 呈正相关，V6 离线几乎无提升则线上近零提升，证明离线评估能预测线上效果。离线侧：GEPA 优化把 E3 评审准确率从人工 prompt 的 58.07 提到 73.01，E2 从 68.88（低于多数类基线 77.78）提到 88.89；评审一致性 GPT-4.1 与 GPT-4.1-mini 从 κ=0.00 提到 0.745，GPT-5 与 o3 达 κ=0.950。GPT-5 迁移暴露指令遵循更严格的问题（不再隐式推断未声明的要求），用 tool-first 原则修复。踩坑原文自述：先做 prompt 后补基础设施是常见失败模式；人工 starter prompt 在高类别不平衡任务上比多数类基线还差；工具描述不清导致误用。",
+  "steps": [
+    {
+      "t": "基础设施和工具先行",
+      "d": "先建身份认证、幂等可重试的 Action API、全量审计日志三层基础设施；确定性流程用代码封装成复合工具，工具描述按 prompt 标准写，只返回推理必需字段。"
+    },
+    {
+      "t": "模块化上下文工程",
+      "d": "把每轮输入拆成独立版本化模块：Instructions、Routines（SOP 翻译成的有序步骤）、Macros 回复模板、工具规格与编排规则、scratchpad 工作记忆，prompt 迭代变成可定向测试的改动。"
+    },
+    {
+      "t": "多标注建评估集",
+      "d": "真实对话经脱敏管道构造评估集，三名业务分析师标注加多数投票定 ground truth，保留文字解释作为优化反馈信号；评审 prompt 用 GEPA 自动优化并对齐人类标准。"
+    },
+    {
+      "t": "离线评审校准一致性",
+      "d": "测量跨模型评审者 Cohen's Kappa：优化后 GPT-4.1 与 mini 一致性从 0.00 到 0.745，GPT-5 与 o3 达 0.950，评审标准不随模型架构漂移。"
+    },
+    {
+      "t": "小流量A/B渐进上线",
+      "d": "新版本先放 1–5% 流量监控 SSR、tNPS、升级率、错误率，评估分淘汰无望变体；卡片配送共测 11 个变体，低保信自动转人工。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "A central insight is that evaluation-pipeline quality directly determines iteration velocity.",
+      "ctx": "Abstract"
+    },
+    {
+      "q": "A common failure mode in agent development is beginning with prompts and adding infrastructure later.",
+      "ctx": "§4.3 Infrastructure and Tool Design"
+    },
+    {
+      "q": "Tool descriptions are prompts.",
+      "ctx": "§4.3.2 Tool design principles"
+    },
+    {
+      "q": "eval-driven development reliably predicts production impact",
+      "ctx": "Abstract"
+    }
+  ]
+}

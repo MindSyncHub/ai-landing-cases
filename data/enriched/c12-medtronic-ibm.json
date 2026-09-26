@@ -1,0 +1,43 @@
+{
+  "id": "c12-medtronic-ibm",
+  "problem": "Medtronic（美敦力）是全球医疗器械公司，1949年创立，总部在都柏林，运营总部在明尼阿波利斯，产品销往150多个国家，覆盖心血管、医疗外科、神经科学、糖尿病。要在庞大产品范围内快速识别关键原材料，这直接影响产品开发周期、成本控制和市场竞争力。难点在于原材料信息藏在复杂的工程图纸里，识别流程复杂。管理层希望找到更快的原材料识别办法，与 IBM 合作，用 AI 开发工程图纸分析的自动化方案。",
+  "solution": "由 Medtronic 全球运营与供应链（GO&SC）分析洞察团队、全球供应商管理团队与 IBM 紧密协作，定制出生成式 AI 方案。技术路线是两件套：用 Azure Document Intelligence 的 OCR（光学字符识别）做精确提取，结合由 Azure OpenAI 模型驱动的 RAG（检索增强生成）框架——原文的表述是 OCR 提供精度、RAG 框架提供创造性和经过验证的能力——二者结合从复杂工程图纸中提取关键物料信息，准确率达 90%，零件号提取准确率超过 85%。OCR 负责从图纸中扫描并提取技术属性，RAG 框架负责验证和生成。提取的关键属性存入数据库，通过一个简单搜索应用呈现，改善数据可访问性，支持高效分析和决策，提升运营敏捷性。方案组件：IBM Consulting for Microsoft、Azure OpenAI、Azure Document Intelligence、Azure Blob Storage。原文未展开实施步骤、验收标准、上线时间和陪跑细节，项目周期未披露。",
+  "human": "原文未展开人机分工：披露的内容是方案大幅减少了人工核验需求，把宝贵的人力重新分配到更具战略性的任务上。分工大致是 OCR 负责从图纸提取信息，RAG 框架负责验证和生成，数据库存储关键属性，搜索应用供人查询使用，人在环中做核验与最终决策。",
+  "result": "工程图纸物料信息提取准确率 90%，零件号（part number）提取准确率超 85%；显著减少人工核验需求，人力转向更具战略性的任务；带来可观的时间节省和运营成本下降，提升供应链韧性。以上为 IBM 客户案例页披露口径，IBM 在页尾注明其他环境的实际表现、成本、收益可能有差异。项目周期、投入金额、失败案例原文未披露，实施步骤与验收标准也未展开。",
+  "steps": [
+    {
+      "t": "OCR提取图纸信息",
+      "d": "Medtronic 全球运营与供应链分析洞察团队、全球供应商管理团队与 IBM 协作，用 Azure Document Intelligence 的 OCR 从复杂工程图纸中扫描提取技术属性和关键物料信息。"
+    },
+    {
+      "t": "RAG框架验证生成",
+      "d": "由 Azure OpenAI 模型驱动的 RAG（检索增强生成）框架对 OCR 提取结果做验证和生成：图纸物料信息提取准确率达 90%，零件号提取准确率超过 85%，减少人工核验。"
+    },
+    {
+      "t": "入库加搜索应用",
+      "d": "把提取的关键属性存入数据库，通过一个简单搜索应用呈现给业务人员，改善数据可访问性，让工程文档的处理分析更高效、支撑供应链决策。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "Medtronic achieves 90% accuracy",
+      "ctx": "案例标题"
+    },
+    {
+      "q": "This improvement was crucial for maintaining their product development timelines",
+      "ctx": "引言"
+    },
+    {
+      "q": "setting new industry standards through innovation and excellence",
+      "ctx": "Medtronic 副总裁引言"
+    },
+    {
+      "q": "drastically reduced the need for manual verification",
+      "ctx": "成果"
+    },
+    {
+      "q": "improved data accessibility and facilitated efficient analysis",
+      "ctx": "成果"
+    }
+  ]
+}

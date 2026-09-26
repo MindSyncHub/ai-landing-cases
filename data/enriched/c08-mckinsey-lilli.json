@@ -1,0 +1,20 @@
+{
+  "id": "c08-mckinsey-lilli",
+  "problem": "麦肯锡有近一百年积累的洞察和知识资产，分散在档案和各类载体里，员工难以即时调用。要解决的问题是：怎么让同事获取公司最好、最广的洞察，并在服务客户时激活使用。项目启动时 ChatGPT 爆发，团队提出设想——用自己的信息训练。同时要满足咨询公司特有约束：对监管、安全、访问权限、信息保护必须审慎。麦肯锡的知识体系规模庞大，通用聊天机器人直接拿来用会泄密且不懂公司业务语境，所以需要自建平台。",
+  "solution": "平台定名 Lilli（纪念 1940 年代在公司第一个在职读 MBA 的女性 Lillian Dombrowski，她创建了公司档案）。技术定位经历演变：起步是知识提取与综合工具，后来变成编排层（orchestration layer），协调公司内外的多种知识。架构上不是单一 RAG（检索增强生成）实例，而是大小模型组合加软件技术栈：识别问题意图、微调答案使之贴合咨询交付语境的方式被 Erik Roth 称为很“麦肯锡风格”。开发方式强调学习优先于构建：构建比学习快，学习要等用户真实体验并反馈，因此刻意放慢构建速度；上线只放给约 2500 名同事，保持小组、把人培养成布道者，再逐波扩用户。迭代机制有 alpha 组、beta 组，以及做实验性研究的 LilliX。开发管线纪律：每一个改进项，不管是平台侧还是用户侧新能力，都必须关联一个具体的用户问题，管线里不允许没有用户问题 backing 的条目。落地功能包括 agents 框架：McKinsey Tone of Voice agent 在约 2500 人的 beta 组中是使用最多的 agent，把任何文稿改写成符合麦肯锡标准的行文，对非英语母语者尤其有用。数据侧建议：需要数据架构、打标标签框架和一定的整理（curation）流程。",
+  "human": "咨询顾问保留对客户的判断和洞察激活权：AI 替代的是电子表格里的分析性工作，Erik Roth 希望未来的顾问花更多时间激活洞察而不是做产生洞察的分析。角色变化预期：顾问会更技术赋能（tech enabled）、更有同理心、团队更多元，因为 AI 让更多人能做以前做不了的事。组织形态判断：一部分部门会变成 minimum viable organization（最少人力+最大化技术赋能），另一部分员工会获得 superpowers，低绩效者被拉升到平均甚至头部水平。推广靠领导示范：Roth 在每次团队会议第一个问题问“你今天用 Lilli 了吗”，遇到讲 gen AI 的会议会停下来问“大家都懂 GPT 是什么吧”，每次都至少一半人不懂。",
+  "result": "以下为 McKinsey《At the Edge》播客采访披露口径（2024-11-25）。使用量与团队规模：Lilli 成为公司使用最多的工具之一，开发团队从起步 4 人扩到远超 150 人。推广节奏：首发仅约 2500 人，靠 alpha/beta/LilliX 分级迭代扩量。采用率数据：原文未给出全公司渗透率的量化数字，仅定性描述为 most-used tools 之一。agents 框架：Tone of Voice agent 在约 2500 人 beta 组中排名第一。采用机制：360 度沟通和采用计划，从入职最早期的学习到每季度全员风险与法务评估都把 Lilli 纳入；10 个办公室有 Lilli 社区持续提想法；平台内置 how-to 指南。项目周期、投入金额原文未披露。认知边界：Roth 明确表示现有模型只是模拟推理、还不会真正推理；LilliX 内的小团队在与领域领先研究者合作做能推理的模型。踩坑与反思原文自述：构建快于学习，团队被迫自我减速；约一半员工并不真正懂 GPT 是什么，培训要假设零基础；模型有偏见，使用要尊重多样性。",
+  "steps": [
+    {"t": "小团队四域立项", "d": "起步只有 4 人，先做经典观察式、人种学研究，锁定四个域：高绩效团队、AI 增强的客户开发、差异化客户服务、项目结束后的高质量沟通，以此作为北极星。"},
+    {"t": "2500人限量首发", "d": "首发只给约 2500 名同事，刻意慢节奏，把首批用户培养成布道者，再逐波加用户；构建速度被学习速度压制。"},
+    {"t": "管线绑定用户问题", "d": "开发管线上每个条目，无论平台侧还是用户侧能力，都必须关联一个具体用户问题，没有这个 backing 的条目不进管线。"},
+    {"t": "分级测试机制", "d": "设 alpha 组、beta 组和做实验性研究的 LilliX，用多轮迭代测试驱动采用率和使用深度。"},
+    {"t": "360度推广运营", "d": "领导在每次团队会议问“你今天用 Lilli 了吗”；入职培训和每季度风险法务评估都纳入 Lilli；10 个办公室建 Lilli 社区；平台内置 how-to 指南。"}
+  ],
+  "quotes": [
+    {"q": "Lilli started as a knowledge extraction and synthesis tool, but to your question, it has now become an orchestration layer that basically coordinates many different types of knowledge across and outside the firm.", "ctx": "The origins of Lilli"},
+    {"q": "There’s nothing in the pipeline that doesn’t have that on the back end.", "ctx": "Building deliberately·用户中心"},
+    {"q": "My hope is the future McKinsey consultant, and perhaps broader to the industry as well, will actually spend more time activating their insights as opposed to doing the analytics to create them.", "ctx": "The consultant of the future"},
+    {"q": "It amazes me that every time, at least half the group doesn’t.", "ctx": "正文·GPT 认知差距"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "c16-vodafone-genai",
+  "problem": "Vodafone（跨国电信运营商）在 H1 FY26（2026 财年上半年，2025年11月发布）业绩报告里把生成式 AI 列为已嵌入核心运营的能力，由 AI taskforce（AI 专项组）推动、共享运营部门 2,000 名工程师支撑。要解决的问题分散在多条线：客服中心需要更快理解客户沟通历史；采购要压缩招标周期；现场服务和网络运维要缩短修复时间；员工要有效率工具；软件开发要提效；营销活动分析耗时；HR 要服务 6.9 万员工。",
+  "solution": "原文是业绩演示页，未描述单点实施过程；披露的是 Vodafone AI Booster 平台化打法。平台由 GenAI Operations（生成式 AI 运营）、GenAI App Catalogue（应用目录）、GenAI Reusable Templates（可复用模板）、Vodafone Data Ocean（数据底座）、Multivendor Cloud & LLMs（多云多模型）和 Testing, monitoring & responsible AI（测试监控与负责任 AI）组成，应用从 App End Points（应用端点）接入，由 AI taskforce 推动、共享运营部门 2,000 名工程师支撑。在此平台上按场景铺开：德国客服中心的坐席辅助，GenAI 即时呈现客户沟通历史，改善客户体验、加快解决；TOBi 和 SuperTOBi 客服机器人，SuperTOBi 已上线全部欧洲市场，每月处理约 6,000 万次客户对话；自主采购门户，GenAI 寻源平台支撑更高频的重新招标；Zero Touch Operation（零触碰运维），基于实时诊断推荐行动，自动化和优化现场服务与网络运维；员工 GenAI 助手，覆盖 5 万+用户；GenAI 代码开发，2,800 名工程师在用；AI 驱动的客户价值管理（CVM），模型覆盖全欧洲市场，首个 agentic（智能体式）CVM 用例已在德国上线；HR 数字代理，为员工提供个性化支持。",
+  "human": "原文信息量有限：客服侧 GenAI 给坐席即时呈现客户沟通历史，坐席保留服务过程；Zero Touch Operation 是“推荐行动”而非全自动，现场工程师保留执行决策；采购团队用平台驱动更高频的重新招标，价值判断在人。人机分工细节原文没有展开。",
+  "result": "H1 FY26 业绩演示披露口径：德国客服 helpfulness（有帮助度）评分提升 61%；TOBi/SuperTOBi 每月处理约 6,000 万次客户对话，SuperTOBi 覆盖全欧洲市场，端到端解决率 70%、NPS（净推荐值）提升 +8pp（对比上一代 AI 代理）；采购招标时间减少 30%，90% 招标使用 GenAI 寻源平台；网络运维平均修复时间减少 43%；员工助手覆盖 5 万+用户，月活采用率超 90%，93% 用户感觉“效率更高”；2,800 名工程师用 AI 写代码，AI 代码接受率 30%，开发生产率提升 12%；营销活动的分析时间减少 85%；HR 代理服务 6.9 万+员工，请求解决率 86%。项目周期、投入与失败案例原文未披露。",
+  "steps": [
+    {
+      "t": "搭Booster平台",
+      "d": "平台由 Data Ocean（数据底座）、Multivendor Cloud & LLMs（多云多模型）、GenAI Reusable Templates（可复用模板）、应用目录、测试监控与负责任 AI 组成，应用从端点接入，AI taskforce 推动、2,000 名共享运营工程师支撑。"
+    },
+    {
+      "t": "客服线出结果",
+      "d": "德国客服坐席辅助 helpfulness（有帮助度）评分提升 61%；SuperTOBi 上线全部欧洲市场，TOBi 系每月处理约 6,000 万次客户对话，端到端解决率 70%、NPS 提升 8 个百分点。"
+    },
+    {
+      "t": "横向铺到运营职能",
+      "d": "横向铺开：采购 90% 招标用 GenAI 寻源平台、网络运维平均修复时长降 43%、员工助手覆盖 5 万+用户月活超 90%、2,800 名工程师用 AI 写代码、HR 代理服务 6.9 万员工。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "Embedded in core operations, providing benefits at scale",
+      "ctx": "H1 FY26 Results 标题"
+    },
+    {
+      "q": "Organisation-wide application enabled by AI taskforce",
+      "ctx": "总览页"
+    },
+    {
+      "q": "2,000 engineers in shared operations",
+      "ctx": "总览页"
+    },
+    {
+      "q": "GenAI sourcing platform used in 90% of our tenders",
+      "ctx": "Autonomous procurement portal"
+    },
+    {
+      "q": "Now live for >50,000 users",
+      "ctx": "Employee GenAI assistant"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "c07-grab-llmkit",
+  "problem": "2023 年上半年，Grab 技术基础设施团队（Tech Infra）处理数千张支持工单，大量是已有答案的重复问题。GPT-4-32k到来后，团队把 Bot 升级为 GPT 版 Level-0 支持层：先查文档、runbook、历史Slack线程直接回答，解决不了再带上下文路由给人。规模化后反复踩坑：没有真实评估，只有「vibe check」；换模型供应商要重写集成；答案错了要在三个系统里grep日志，缺共享 trace；认证、密钥、环境配置等外围活要先做完——推理循环一个下午，生产封装两周。",
+  "solution": "Grab 停止逐服务解决这些问题，改为集中解决一次，把共享组件从 Bot 里抽出固化为 LLM-Kit——刻意做框架而非重型平台，避免团队被锁进很快过时的刚性假设，框架标准化管道、保留迭代自由。组成：一，模板起步，填表单拿回 GitLab 仓库，FastAPI 生产封装已预装（OIDC、Vault 密钥、按环境配置、Postgres+pgvector），自带两个 LangGraph ReAct 循环（带重试和每步 30 秒超时），评估路由开箱跑 ROUGE/BLEU/LLM-as-judge；二，生成式类型化 SDK，protobuf 契约生成类型化客户端，gRPC 随 FastAPI 起，CI 检查契约漂移；三，单一 LLM 网关前置所有模型调用，provider 集中选择，不改应用代码即可改路由、配回退、设预算、归因成本，换模型变配置变更；四，gRPC 通道自动选择，Istio 到 Consul 到静态回退，连续失败自动重选；五，OpenTelemetry 追踪内建，一个 instrumentor 自动打点 FastAPI、出站 HTTP、LangChain、MCP，三系统查日志变成一个端到端 trace；六，远程 MCP 框架，工具运行时发现，加能力只需注册 MCP 服务器。规模：500 多个服务、50 多个 MCP 服务器、单网关每月数十亿 token。",
+  "human": "Bot 作为 Level-0 支持层先消化文档化问题，解决不了的路由给对的人并附上相关上下文，on-call 工程师不再被重复问题打扰。评估从第一天就在模板里（golden test cases 加 LLM-as-judge），回应「vibe check 不是评估策略」的教训。框架刻意不规定 Agent 怎么写——app/agents 是团队自己拥有的部分，框架只管外围管道。",
+  "result": "数字为 Grab 署名工程博客披露（未经独立审计）：500 多个生产服务跑在内部 Agent 框架上，50 多个 MCP 服务器，单一 LLM 网关每月处理数十亿 token；Agent 从团队原型变成每天被数百万商家、司机、消费者使用的生产服务。Grab 覆盖东南亚 8 国 900 多个城市。技术栈两年间几乎每层都换过（Poetry 换 uv、LangChain 演进为 LangGraph），框架形状不变，验证了「标准化管道、保留迭代自由」的选型。教训：demo agent 不是 production agent；Agent 难的不是本身，而是让它安全面对用户之前周围必须就位的一切。",
+  "steps": [
+    {
+      "t": "Bot 升一线答疑",
+      "d": "GPT-4-32k 升级 Tech Infra 支持 Bot，先查文档、runbook、历史 Slack 线程直接答，解决不了带上下文路由给对的人。"
+    },
+    {
+      "t": "踩坑收敛成框架",
+      "d": "评估缺失、换供应商重写集成、三系统分别 grep 日志、生产封装花两周——共性问题停止逐服务解决，集中抽出 LLM-Kit。"
+    },
+    {
+      "t": "模板交付生产封装",
+      "d": "填表单生成 GitLab 仓库：FastAPI 加 OIDC、Vault、pgvector、LangGraph ReAct 和 MCP 版 Agent、评估路由开箱即用。"
+    },
+    {
+      "t": "网关 SDK 标准化",
+      "d": "单一 LLM 网关前置所有模型调用（provider 集中、回退、预算、成本归因），protobuf 生成类型化 SDK，gRPC 通道 Istio 到 Consul 自动选择。"
+    },
+    {
+      "t": "MCP 注册即扩展",
+      "d": "工具不在 Agent 进程内硬编码，经远程 MCP 框架在运行时发现，新增能力只需注册 MCP 服务器、不用重新部署 Agent。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "Vibe check is not an evaluation strategy",
+      "ctx": "What it takes to scale·第一个坑"
+    },
+    {
+      "q": "…was not the agent itself, but everything around it that had to be in place…",
+      "ctx": "Extracting the framework·框架的由来"
+    },
+    {
+      "q": "If moving from OpenAI to Anthropic…takes more than a few config changes…",
+      "ctx": "What it takes to scale·换供应商的代价"
+    },
+    {
+      "q": "adding a new capability can be as simple as registering an MCP server…",
+      "ctx": "LLM-Kit·MCP 扩展方式"
+    }
+  ]
+}

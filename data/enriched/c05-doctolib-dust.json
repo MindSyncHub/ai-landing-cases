@@ -1,0 +1,47 @@
+{
+  "id": "c05-doctolib-dust",
+  "problem": "Doctolib 是约3000名员工的法国医疗科技公司。数据团队自研的内部工具 DoctoGPT 上线后迅速获得800名活跃用户，验证需求；但几天内功能请求雪崩，JIRA 看板被各系统连接器、Zendesk 插件等需求淹没，内部工具眼看变成完整产品开发工程。数据 VP 判断自研不可持续：保持前沿要跨团队资源，连接器、权限、审计、合规等基础设施负担远超 AI 功能本身。CISO 面对各部门分散采购（每加一项 AI 功能每年多一两万欧元）与医疗合规压力，要把 AI 安全铺到全员。",
+  "solution": "数据 VP Nacim Rahal 主动叫停自研，按比较优势框架转向购买统一平台 Dust：医疗是 Doctolib 的比较优势，建权限系统和连接器不是。选型基于三个判断：内部能否维持前沿创新（Dust 原生 MCP（模型上下文协议）支持意味着自动获得最新集成能力）；总拥有成本（连接器、权限、审计、合规的隐性负担）；比较优势（把100%稀缺工程资源投在医疗功能上）。CISO Cédric Voisin 以平台整合做安全管控：单一平台集中权限、降复杂度；红线是 never add any kind of PHI（个人健康信息绝不进系统）；POC（概念验证）阶段限制可构建人数控制风险，向领导层透明披露；用 Space 级权限解决 agent chaining（智能体链式调用）的上下文共享不破坏权限模型；旧内网 Cortex 迁移到 AI 知识管理，下线遗留系统。推广分三阶段：30人跨部门试点，发现员工热衷自己创建 Agent；整团队推广——Technical Services 全员上线成功，对产品经理的 A/B 测试失败，确认整团队部署才有效；3000人公司级发布：keynote 事件化发布、从使用数据选拔冠军员工建网络、热线和 office hours 陪跑、全体领导含销售 MD 参加7小时培训、e-Learning 模块。全程由 IT 与 People 团队跨职能联合执行。",
+  "human": "员工自己创建 Agent 而不是等 IT 部署，\"自己动手\"的哲学贯穿全程；冠军员工从高使用量早期采纳者和真正被他人使用的 Agent 构建者中选出，承担团队内教学。IT 管技术实施，People 团队管变革管理与培训设计，两条线从初期就协作；领导层先接受7小时培训以设定合理预期；CISO 保留安全决策权——红线、权限模型、POC 风险敞口由安全团队定义。",
+  "result": "上线九个月口径（Dust 客户案例系列披露，供应商发布，未经独立审计）：30%员工每天使用 Dust；45%在\"失望测试\"中表示失去 Dust 会非常失望；技术团队全员 AI 认证；Marketing 与 Technical Services 有成员报告每周节省数小时；\"Bugbuster\" Agent 在生产危机中几分钟定位问题代码。踩坑：对产品经理的 A/B 测试失败——初期\"先失去时间再得到时间\"的学习曲线叠加年末工作压力，没有全团队接入就没有同伴压力；复盘认为应更早让 People 团队介入、更早聚焦运营团队、预建更多 Agent。衡量上明确前6个月目标应是采用而非 ROI。",
+  "steps": [
+    {
+      "t": "叫停自研转买平台",
+      "d": "DoctoGPT 获 800 活跃用户对但功能请求雪崩，VP of Data & AI 主动叫停内部开发，按比较优势框架转向购买统一平台，外包商品化 ML 基础设施。"
+    },
+    {
+      "t": "CISO定红线搭管控",
+      "d": "单一平台集中权限：绝对红线不许传 PHI，POC 阶段限制构建人数控制风险，Space 级权限解决 agent chaining 的权限模型问题，旧内网 Cortex 迁移下线。"
+    },
+    {
+      "t": "30人试点到整团队",
+      "d": "先 30 人跨部门试点，发现员工热衷自建 Agent；Technical Services 整团队上线成功，对 PM 的 A/B 测试失败，确认整团队部署才有效。"
+    },
+    {
+      "t": "事件化发布3000人",
+      "d": "公司级 keynote 事件化发布，从使用数据选拔冠军员工建网络，配热线、office hours、全体领导 7 小时培训和 e-Learning 模块。"
+    },
+    {
+      "t": "采用优先于ROI衡量",
+      "d": "上线九个月后以采用为先：30% 日活、45% 失望测试、全员 AI 认证，再用具体用例算每周节省时长，前 6 个月不谈有形 KPI。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "Build what's in our core business, buy what will be a side project.",
+      "ctx": "Part2·战略转向"
+    },
+    {
+      "q": "Honestly, not great. The A/B test never really worked.",
+      "ctx": "Part1·A/B测试教训"
+    },
+    {
+      "q": "First 6 months' goal should really be about adoption.",
+      "ctx": "Part1·成效衡量"
+    },
+    {
+      "q": "We have agents for everything and anything now",
+      "ctx": "Part1·成效衡量"
+    }
+  ]
+}

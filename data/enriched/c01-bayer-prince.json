@@ -1,0 +1,47 @@
+{
+  "id": "c01-bayer-prince",
+  "problem": "拜耳的临床前研究数据和多数大药企一样又多又散：结构化数据集之外，大量知识嵌在几十年积累的研究报告、出版物和监管提交文档里。研究人员要拿到某个化合物或研究的完整视图很难，原因有三：信息碎片化散落在众多异构系统和仓库；传统关键词布尔搜索对付不了临床前术语的复杂多变，常返回不相关、不完整或过量的结果；跨多个文档提取洞察、汇总信息全靠人工，挤占科研时间。更麻烦的是，由于历年系统迁移，结构化元数据不完整、缺失甚至错误，权威「金标准」信息始终锁在获批的 PDF 研究报告里。",
+  "solution": "拜耳与 Thoughtworks 共建 PRINCE 云端平台，三期演进：Search 先做统一网关，整合各临床前领域的结构化元数据供筛选检索；Ask 引入 RAG，自然语言直接提问几十年积累的非结构化 PDF 报告；Do 引入多 Agent 系统执行复杂任务、起草监管文档。技术栈：React 界面，LangGraph 编排，FastAPI 服务；向量库 OpenSearch，结构化数据走 Text-to-SQL，状态存 PostgreSQL 和 DynamoDB；模型经内部平台统一接入、可换可回退。Agentic RAG 工作流：Clarify 对模糊查询主动追问、锁定领域和数据源；Think & Plan 做过程反思，评估进度、选对工具；Researcher 双路检索，非结构化走 RAG 管线（关键词与元数据过滤、查询扩展、混合检索与重排），结构化走 Text-to-SQL（只读、失败重试至多 3 次）；Reflection 校验数据充分性，不足生成追问回炉再检索；Writer 综合成文，强制句级引用。信任与运维：中间步骤透明、Langfuse 监控、RAGAS 评估（真实流量每日评、变更跑数据集）、NER 从 PDF 提取实体修正元数据。context engineering 控制各阶段可见上下文，harness engineering 管编排、边界、持久化、重试与回退。",
+  "human": "受监管环境的信任要求靠人守：中间步骤——系统构造的查询和使用的工具——对用户可见，相关来源链接直接展示；答案句级可溯源，鼠标悬停任何一句可看到引用报告的页码和原文引句，人工审查因此简化。Clarify 的数据源推荐用户可接受、调整或覆盖，领域专家有最终决定权。监管文档起草的输出全部供专家审查，最终提交文件由合格人员撰写和批准。评估数据集由领域专家精心准备。",
+  "result": "效果为定性披露：PRINCE 已在拜耳显著提升数据可及性和研究效率，改变科学家与临床前信息的交互方式；量化业务影响见配套 Frontiers in Artificial Intelligence 论文。2024 年初上线，同年晚些引入 agentic 集成，之后靠真实用户反馈持续迭代。工程取舍：早期优先准确率和性能、接受较高成本，达标后再做成本优化；Text-to-SQL 曾设 LLM 审查步骤，因审查模型误报有效查询、得不偿失而移除。原文结论：可靠性来自同时工程化模型所见的上下文（context engineering）和模型所行动的支架（harness engineering）。",
+  "steps": [
+    {
+      "t": "统一元数据网关",
+      "d": "第一阶段先整合各临床前领域数据孤岛里的结构化研究元数据，建统一网关支持高级筛选检索，作为全公司临床前数据检索的统一入口。"
+    },
+    {
+      "t": "接入 RAG 提问",
+      "d": "引入 RAG（检索增强生成），从筛选式「搜索」升级为自然语言「提问」，直接查询几十年积累的非结构化 PDF 报告（含扫描件）。"
+    },
+    {
+      "t": "意图澄清与过程反思",
+      "d": "Clarify 对模糊查询主动追问锁定领域和工具（fail-fast）；Think & Plan 反思工作流进度、在工具变多时选对工具。"
+    },
+    {
+      "t": "双路检索与数据校验",
+      "d": "Researcher 跑 RAG 管线（查询扩展、混合检索、重排）和 Text-to-SQL（只读、限 50 条、重试 3 次）；Reflection 校验数据充分性，不足生成追问继续检索。"
+    },
+    {
+      "t": "成文与信任机制",
+      "d": "Writer 句级引用成文；中间步骤透明可见；Langfuse 监控加 RAGAS 评估（真实流量每日、数据集随变更）；NER 自动修正元数据；监管输出人工审查。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "…was consistently present within the approved PDF study reports",
+      "ctx": "The Solution·元数据与 PDF 的关系"
+    },
+    {
+      "q": "final submissions are authored and approved by qualified personnel",
+      "ctx": "The Writer Agent·监管文档的人机边界"
+    },
+    {
+      "q": "the reviewing LLM sometimes incorrectly flagged valid queries as erroneous…",
+      "ctx": "Text-to-SQL·被移除的 LLM 审查步骤"
+    },
+    {
+      "q": "Reliability comes from engineering both the context the model sees…",
+      "ctx": "Conclusion·全文结论"
+    }
+  ]
+}

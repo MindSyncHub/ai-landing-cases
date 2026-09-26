@@ -1,0 +1,51 @@
+{
+  "id": "c17-walmart-icm2025",
+  "problem": "沃尔玛在2025年投资社区会议（ICM 2025）上系统披露AI布局。背景是规模化经营的时间成本：多年用机器学习做个性化、赋能员工、改善库存流转，早期以预测式AI为主；近年生成式AI角色增大，并处于部署agentic AI（自主管理复杂任务的数字agent）和物理AI的早期阶段。CEO Doug McMillon的口径：把AI交到人手中，带来更好的客户和员工体验，消除或替代任务。要解的问题分散在各业务线：商品上架周期过长、员工被例行任务占用、库存流转决策依赖经验。",
+  "solution": "客户侧两个例子。一是个人购物助手Sparky：帮客户探索新品、策划生日派对、完成每周采购任务，即将向App和网站全部用户开放，持续学习改进。二是Trend-to-Product：用AI提升从趋势到商品的上市速度，首个由该流程设计的服装系列上月到货，砍掉了典型流程中的18周，售罄表现（sell-through）强劲。员工侧两个例子。一是给商品团队（merchants）的AI助手Wally：分析门店、市场、渠道的销售表现，诊断某件商品表现不佳或超预期的原因，下一步将从助手进化为能微调商品、数量和库存流转决策的AI agent；二是开发者工程师的AI工具，覆盖规划、写码、测试到数据分析和排障。运营侧：门店前台建数字孪生（digital twin），模拟顾客行为和排队积压，调对再落地；设想中的agent盯着天气，下雪前给门店多发雪铲和雪橇。国际市场：Flipkart把2亿多商品目录匹配给5亿多用户（其最大投资方向），并用AI把商品目录转成视频，给卖家低成本工具；Walmex把Beneficios会员项目的购买数据喂给Scintilla，经AI处理后提供给供应商做商业决策，并在网页上线新的AI推荐引擎；沃尔玛中国用AI改造品类line review流程。Sam's Club侧：Just Go AI计算机视觉收银（即拿即走）一年内从0覆盖到全部门店。",
+  "human": "口径是把AI分发给所有员工，让改善自然发生：Sam's Club一年内移除1亿项例行任务，员工转向更复杂的工作、与会员更有意义的互动；沃尔玛中国line review压缩到1人1天，省下的时间用于真正重要的事。公司同时明确：任务会被自动化、工作会改变，但多年之后仍会雇用大量员工。Flipkart CEO Kalyan的判断是“AI必须成为公司的文化”，不限于某个团队、职能或产品。",
+  "result": "以下均为公司在投资会议上的披露口径。沃尔玛中国：单次品类line review从3名采购3周全时压缩到1人1天。Walmex：新AI推荐引擎初期测试互动提升45%、加购提升2.4%。Trend-to-Product：首个AI设计服装系列砍掉18周典型流程，售罄表现强劲。Sam's Club：一年内移除1亿项例行任务；Just Go AI视觉收银一年内从0到全舰队；会员续费率提升近700个基点。沃尔玛美国：约三分之一门店履约订单走快速配送（$5三小时内、$10约一小时），圣诞夜达77%。原文未披露各项目投入成本。",
+  "steps": [
+    {
+      "t": "预测AI打底多年",
+      "d": "会议口径：早在GenAI热潮之前多年就投资AI，先做客户个性化、员工赋能、库存流转，近年叠加生成式AI，并开始把agentic AI投入实际工作。"
+    },
+    {
+      "t": "客户侧出购物助手",
+      "d": "Sparky帮客户探索新品、策划派对、完成每周采购，向App和网站全量用户开放；Trend-to-Product用AI设计服装，首个系列砍掉18周典型流程。"
+    },
+    {
+      "t": "员工侧出AI工具",
+      "d": "Wally帮商品团队分析销售、诊断商品表现、改进库存管理，将从助手进化为调整库存决策的agent；开发者工具覆盖规划、写码、测试和数据分析。"
+    },
+    {
+      "t": "数字孪生模拟决策",
+      "d": "门店前台数字孪生模拟顾客行为与排队积压，调对再落地；设想中agent看天气在雪前发雪铲雪橇；modular先模拟再实建。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "we have been investing in AI long before the GenAI boom became a reality.",
+      "ctx": "Suresh Kumar·AI问答"
+    },
+    {
+      "q": "AI has to become the culture of the company.",
+      "ctx": "Flipkart CEO Kalyan·国际业务讨论"
+    },
+    {
+      "q": "It took out 18 weeks of our typical timeline...",
+      "ctx": "Doug McMillon·客户侧例子"
+    },
+    {
+      "q": "from three people, three weeks down to one person and a day",
+      "ctx": "Christina Zhu·沃尔玛中国line review"
+    },
+    {
+      "q": "We've taken out 100 million tasks in the last year alone",
+      "ctx": "Sam's Club业务回顾"
+    },
+    {
+      "q": "distribute AI to all of our associates so that organically we get goodness.",
+      "ctx": "Doug McMillon·AI问答"
+    }
+  ]
+}

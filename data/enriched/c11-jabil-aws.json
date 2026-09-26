@@ -1,0 +1,47 @@
+{
+  "id": "c11-jabil-aws",
+  "problem": "捷普（Jabil）1966年成立，全球工程、供应链与制造解决方案商，100多个全球基地、140,000多名员工，服务400多个品牌。数字化转型中把400多个业务应用从本地迁移到 AWS（亚马逊云），从自建的 CAPEX（资本支出）模式转为按需付费的 OPEX（运营支出）模式。挑战有两个：一是25国100多工厂的大量机器数据分散在各基地，没有集中分析位置，跨域分析做不了；二是车间操作工排障要查1,700多份政策、规格、工单文档，多语言分散在多个系统，排障耗时且依赖个人经验。",
+  "solution": "捷普与 AWS Professional Services（专业服务费团队）多年合作，用 D2E（Data-Driven Everything，数据驱动一切，从业务价值倒推用例的工作法）加 EBA（Experience-Based Acceleration，实操体验加速法）制定渐进式现代化路线，聚焦数据分析和生成式 AI 高影响用例。路径：先培训人——不新招人，用讲师授课加 AWS Skill Builder 实训平台让现有员工掌握技术；再现代化底座——用 AWS CDK（云开发套件）和 Terraform（基础设施即代码工具）自动化车间流程，车间控制系统跑在 Amazon EKS（弹性 Kubernetes 服务）上并由 AWS 专家解决稳定性问题，用 Amazon Redshift 建数据湖集中机器数据；再做生成式 AI——与生成式 AI 创新中心合作，基于 Amazon Q Business 构建智能车间助手，首版1周建成，随后几周接入事件工单、知识文章等多源数据，操作工自然语言实时检索1,700多份文档；捷普作为早期用户向 AWS 反馈制造业需求（多语言能力）；再横向扩展智能客户研究助手、智能采购助手；Data Dispatcher 迁 AWS Glue Flex（无服务器数据集成）再省23%成本。",
+  "human": "捷普不新招人才，用 AWS 培训体系（Skill Builder 加认证）让现有技术与非技术员工快速掌握技术——原文称没有这项投入，转型会晚很多才达成。车间操作工保留现场操作和最终判断，助手负责实时多语言检索。捷普作为 Amazon Q Business 早期采纳者把制造业功能需求反馈给 AWS，参与产品演进。高管口径：几乎所有生成式 AI 应用都部署在 AWS 上。",
+  "result": "数字为 AWS 官方客户案例页披露，未经独立审计：首次 EBA 自动化车间流程，部署时间降67-83%，数据处理时间降74%，新厂点横向扩展不降级；Data Dispatcher 迁 AWS Glue Flex 省23%成本，且串号处理量显著增加；车间助手首版1周上线，为全球员工提供1,700多份文档的实时多语言访问，平均排障时间显著缩短、诊断准确率提升。周期：多年多阶段项目制，AI 助手首版1周。踩坑自述：全球应用初期有性能扩展性问题，AWS 专家优化设计与存储解决；车间控制系统在 EKS 上遇稳定性问题，靠架构调整解决；云采纳初期有变革阻力，约两年前策略改为\"该上云才上云\"的混合部署。",
+  "steps": [
+    {
+      "t": "D2E加EBA定路线",
+      "d": "与 AWS 专业服务费团队多年合作，用 D2E（数据驱动一切）加 EBA（实操体验加速）组合出渐进式现代化路线，聚焦数据分析和生成式 AI 等高影响用例。"
+    },
+    {
+      "t": "培训现有员工",
+      "d": "不新招人才，用讲师授课加 AWS Skill Builder 实训平台培训现有技术与非技术员工快速掌握云和 AI 技术；原文称没有这项投入，转型目标会晚很多才达成。"
+    },
+    {
+      "t": "自动化车间流程",
+      "d": "首次 EBA 用 AWS CDK 和 Terraform 自动化车间应用手工流程，部署时间降 67-83%，数据处理时间降 74%。"
+    },
+    {
+      "t": "数据湖集中打底",
+      "d": "作为数据底座步骤，捷普与 AWS 一起用 Amazon Redshift 建数据湖，把分散在全球各基地的机器数据集中管理，支撑跨域分析，也为生成式 AI 工具的应用打底。"
+    },
+    {
+      "t": "一周首版车间助手",
+      "d": "基于 Amazon Q Business 的智能车间助手首版 1 周建成，后续几周接入工单与知识库，再横向扩展客户研究、采购助手。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "we didn’t have a centralized place for our data",
+      "ctx": "原文·机会与挑战"
+    },
+    {
+      "q": "we revised our strategy to a 'cloud when it makes sense' approach",
+      "ctx": "原文·机会与挑战"
+    },
+    {
+      "q": "Working closely with AWS experts has improved our inventory management",
+      "ctx": "原文·成果"
+    },
+    {
+      "q": "a staple product that will be implemented everywhere in our business",
+      "ctx": "原文·成果"
+    }
+  ]
+}

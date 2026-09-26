@@ -1,0 +1,39 @@
+{
+  "id": "c13-rollsroyce-azure",
+  "problem": "劳斯莱斯 2023 年启动一项多年转型计划，目标是成为由数字和 AI 技术支撑的高绩效企业，让数字与 AI 贯穿发动机设计、制造、运营全价值链。落地前有三个具体瓶颈：发动机设计传统上靠人工、以年计；涡轮叶片上布满保护叶片免受燃烧高温的复杂冷却通道和孔洞，历史上每月人工检查约 200 万个冷却孔，极其耗时且造成产线瓶颈，误判还会产生废件；发动机健康监测数据分散，故障事后响应以天计。",
+  "solution": "劳斯莱斯基于 Microsoft Cloud for Manufacturing（配合西门子技术）建中央数据仓库，重构数据供生成式 AI 使用，打造跨价值链的数字主线（digital thread，产品全生命周期的数据贯通链路）。三条线并进。设计侧：用 Azure Databricks、Unity Catalog 和高功率 GPU，工程师数小时内即可探索更广的设计参数空间，AI 自动化组件选型与装配，更小、更敏捷的团队也能快速创新，缩短上市时间。制造侧：上线 Signature Analyzer——机器学习加机器振动分析和生成式 AI 优化缺陷检测，检验员从逐孔检查改为聚焦 AI 标出的可疑区域，单件处理时间大幅下降。运维侧：Pearl 发动机家族配备 EVHMU（发动机振动健康监测单元），支持双向通信，可从地面远程重配置发动机监测特性；基于云端分析，系统追踪 1 万多个发动机参数，做预测性维护，提升在翼可用性。",
+  "human": "检验员从逐孔全检转为聚焦 AI 标记的可疑区域，人工只处理机器标出的位置；工程师从人工设计转为在参数空间里探索、由 AI 承担组件选型与装配；发动机监测特性可从地面远程重配置，减少现场干预。公司高层的口径是继续投入重金现代化系统和设计工程。",
+  "result": "机器利用率提升 30%，人工质检误判造成的废件显著减少；故障解决从数天加速到接近实时；全机队每年检测并预防约 400 起非计划维护事件，节省数百万欧元维修成本，同时减少客户运营中断。数字为 Microsoft 官方客户案例页披露口径，未经独立审计。转型 2023 年启动，由首席转型官 Nikki Grady-Smith 与集团首席数字信息官 Kaveh Pourteymour 站台，案例页发布于 2025 年 4 月。",
+  "steps": [
+    {
+      "t": "建中央数据仓库",
+      "d": "基于 Microsoft Cloud for Manufacturing（配西门子技术）建中央数据仓库，重构数据供生成式 AI 使用，为跨价值链数字主线打基础。"
+    },
+    {
+      "t": "AI 加速发动机设计",
+      "d": "Azure Databricks 加高功率 GPU，工程师数小时内探索更广的设计参数空间，AI 自动化组件选型与装配，小团队也能快速创新。"
+    },
+    {
+      "t": "AI 质检叶片",
+      "d": "上线 Signature Analyzer：机器学习加机器振动分析和生成式 AI 优化缺陷检测，检验员从逐孔全检改为聚焦 AI 标出的可疑区域。"
+    },
+    {
+      "t": "EVHMU 健康监测",
+      "d": "Pearl 发动机家族配发动机振动健康监测单元，云端追踪 1 万多个发动机参数，从地面远程重配置监测特性，做预测性维护。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "Historically, we inspected about 2 million cooling holes per month manually",
+      "ctx": "涡轮叶片质检·Tim Pickup（数字制造负责人）"
+    },
+    {
+      "q": "Digital is a key enabler of our transformation",
+      "ctx": "全文·Nikki Grady-Smith（首席转型官）"
+    },
+    {
+      "q": "We are investing heavily in modernizing our systems…",
+      "ctx": "全文·Kaveh Pourteymour（集团首席数字信息官）"
+    }
+  ]
+}

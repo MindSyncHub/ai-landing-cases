@@ -1,0 +1,43 @@
+{
+  "id": "c18-morgan-stanley",
+  "problem": "摩根士丹利财富管理部门的理财顾问服务高净值客户，但公司内 10 万多份研究文档和知识资产靠人工检索，顾问能触达的文档只有约 20%，知识与客户沟通之间的摩擦大；会议纪要和客户跟进靠手工，跟进周期以天计。金融行业的质量和合规标准极高，AI 输出必须可信——顾问的第一问就是「我们的信息会不会被 OpenAI 拿去训练公开的 ChatGPT」。",
+  "solution": "摩根士丹利与 OpenAI 共建，打法是 eval framework（评测框架）先行：每个 AI 用例上线前，先用真实用例集评测模型表现。首批做摘要评测——把大量知识资本和流程性内容浓缩成简洁摘要，由顾问和提示词工程师（prompt engineer）按准确性和连贯性给 GPT-4 的输出打分，据此迭代提示词。评测框架不静态：随后引入翻译评测服务多语言客户，并与 OpenAI 一起微调检索方法，把可回答范围从 7000 个问题扩到「10 万文档语料里的任何问题」。在此基座上出两个产品：AI @ Morgan Stanley Assistant，内嵌 GPT-4 的理财顾问知识问答机器人；AI @ Morgan Stanley Debrief，用 Whisper 加 GPT-4 把经客户同意的 Zoom 录音转成客户笔记、自动写入 CRM（客户关系管理系统）并生成跟进草稿。质量控制：每日用回归测试题集（regression suite）找出弱点，团队拿着问题清单和 OpenAI 一起改检索方法；OpenAI 的零数据保留政策打消数据安全顾虑。",
+  "human": "顾问和提示词工程师参与评测打分，人的判断直接决定提示词的迭代方向，而不是上线后听天由命；顾问在发出前审阅、调整 AI 生成的客户笔记和跟进草稿，自动化与人工监督并存。监管标准要求这套组合，也是员工信任 AI 工具的来源。",
+  "result": "财富管理部门超过 98% 的顾问团队日常使用 Assistant；文档触达率从 20% 升到 80%，检索时间大幅下降；会议跟进从数天缩短到数小时内，顾问把更多时间放在客户关系上。Assistant 正扩展为面向员工的「超级应用」，功能已推广到机构证券集团；Debrief 的想象空间延伸到投行家与 CFO 的会议。数字为 OpenAI 官方案例页引用的大摩口径披露，未经独立审计。",
+  "steps": [
+    {
+      "t": "eval 框架先行",
+      "d": "每个 AI 用例上线之前，都先用真实用例集评测模型表现；顾问和提示词工程师给摘要按准确性和连贯性打分，再据此迭代提示词。"
+    },
+    {
+      "t": "检索扩到全语料",
+      "d": "与 OpenAI 微调检索方法、引入翻译评测服务多语言客户，可答范围从 7000 个问题扩到 10 万文档语料里的任意问题。"
+    },
+    {
+      "t": "纪要自动进 CRM",
+      "d": "Whisper 加 GPT-4 把经客户同意的 Zoom 录音转成客户笔记，自动写入 CRM，并生成含关键行动项的跟进草稿。"
+    },
+    {
+      "t": "每日回归与合规",
+      "d": "回归测试题集每日跑、找出弱点，团队与 OpenAI 坐在一起逐条改检索方法；零数据保留政策满足金融行业的数据安全合规要求。"
+    }
+  ],
+  "quotes": [
+    {
+      "q": "This technology makes you as smart as the smartest person in the organization.",
+      "ctx": "全文·Jeff McMillan（公司级 AI 负责人）"
+    },
+    {
+      "q": "We went from being able to answer 7,000 questions…a corpus of 100,000 documents",
+      "ctx": "评测驱动·David Wu"
+    },
+    {
+      "q": "follow-ups that used to take days now happen within hours",
+      "ctx": "规模化推广·Kaitlin Elliott"
+    },
+    {
+      "q": "The OpenAI team’s willingness to ensure zero data retention…",
+      "ctx": "信任与合规·David Wu"
+    }
+  ]
+}
