@@ -18,7 +18,7 @@ export function PatternDetail({ id }: { id: string }) {
         </p>
         <Link
           to="/patterns"
-          className="inline-block mt-6 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-gold border border-gold px-5 py-2.5"
+          className="inline-block mt-6 font-mono text-[0.825rem] uppercase tracking-[0.14em] text-gold border border-gold px-5 py-2.5"
         >
           返回模式库
         </Link>
@@ -34,7 +34,7 @@ export function PatternDetail({ id }: { id: string }) {
     <div className="px-5 md:px-10 py-12 md:py-16 max-w-[1400px] mx-auto">
       <Link
         to="/patterns"
-        className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-navy/50 hover:text-gold transition-colors"
+        className="font-mono text-[0.75rem] uppercase tracking-[0.16em] text-navy/50 hover:text-gold transition-colors"
       >
         ← 模式库 · PATTERNS
       </Link>
@@ -134,7 +134,7 @@ export function PatternDetail({ id }: { id: string }) {
       <div className="mt-16">
         <div className="flex items-baseline justify-between border-b-2 border-navy/80 pb-3">
           <Kicker className="text-gold">CASES · 本模式案例</Kicker>
-          <span className="font-mono text-[0.625rem] text-navy/50">
+          <span className="font-mono text-[0.75rem] text-navy/50">
             {String(list.length).padStart(2, '0')} 例
           </span>
         </div>
@@ -154,10 +154,10 @@ export function PatternDetail({ id }: { id: string }) {
                   </span>
                   <TierBadge tier={c.tier} />
                 </div>
-                <span className="hidden md:block md:col-span-3 font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-navy/50">
+                <span className="hidden md:block md:col-span-3 font-mono text-[0.825rem] uppercase tracking-[0.1em] text-navy/50">
                   {knowledgeLabel(c)}
                 </span>
-                <span className="col-span-12 md:col-span-2 md:text-right font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-navy/70">
+                <span className="col-span-12 md:col-span-2 md:text-right font-mono text-[0.825rem] uppercase tracking-[0.12em] text-navy/70">
                   {c.industry}
                 </span>
               </Link>
@@ -171,7 +171,7 @@ export function PatternDetail({ id }: { id: string }) {
         to={`/pattern/${next.id}`}
         className="group mt-14 flex items-center justify-between border-t border-navy/15 pt-8"
       >
-        <span className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/50">
+        <span className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/50">
           下一个模式 · Next
         </span>
         <span className="font-serif text-2xl font-semibold text-navy group-hover:text-gold transition-colors">

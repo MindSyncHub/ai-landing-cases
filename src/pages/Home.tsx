@@ -41,13 +41,13 @@ export function Home() {
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   to="/cases"
-                  className="font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-navy bg-gold px-6 py-3 hover:bg-gold/90 transition-colors"
+                  className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy bg-gold px-6 py-3 hover:bg-gold/90 transition-colors"
                 >
                   翻阅案例索引
                 </Link>
                 <Link
                   to="/patterns"
-                  className="font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-cream border border-cream/30 px-6 py-3 hover:border-cream/60 transition-colors"
+                  className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-cream border border-cream/30 px-6 py-3 hover:border-cream/60 transition-colors"
                 >
                   五种落地模式
                 </Link>
@@ -69,8 +69,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* 关于本年鉴：来源 / 规模 / 框架 */}
-      <section className="px-5 md:px-10 py-14 md:py-20 max-w-[1400px] mx-auto">
+      {/* 关于本年鉴：理念 + 插画 */}
+      <section className="px-5 md:px-10 pt-14 md:pt-20 pb-8 max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-5">
             <Kicker className="text-gold">ABOUT THIS YEARBOOK · 关于本年鉴</Kicker>
@@ -83,7 +83,7 @@ export function Home() {
             </p>
             <Link
               to="/guide"
-              className="mt-6 inline-block font-mono uppercase tracking-[0.16em] text-[0.625rem] text-gold hover:text-navy transition-colors"
+              className="mt-6 inline-block font-mono uppercase tracking-[0.16em] text-[0.75rem] text-gold hover:text-navy transition-colors"
             >
               阅读框架说明 →
             </Link>
@@ -94,35 +94,37 @@ export function Home() {
               src={`${import.meta.env.BASE_URL}illustrations/home-yearbook.webp`}
               label="年鉴档案室 · Yearbook Archive"
             />
-            <div className="mt-8 divide-y divide-navy/12 border-y border-navy/12">
-              <div className="py-5 grid md:grid-cols-12 gap-3">
-                <div className="md:col-span-3 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-gold pt-1">
-                  案例来源 · SOURCES
-                </div>
-                <p className="md:col-span-9 text-sm leading-relaxed text-navy/70">
-                  全部来自公开一手来源：Datawhale《FDE 案例 100》PDF 原文（24 条）、国内企业官方案例与公开报道（12 条）、海外企业官方案例库与年报（28 条）。每条附来源链接与原文留存，不做二手转引。
-                </p>
-              </div>
-              <div className="py-5 grid md:grid-cols-12 gap-3">
-                <div className="md:col-span-3 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-gold pt-1">
-                  收录规模 · COVERAGE
-                </div>
-                <div className="md:col-span-9 text-sm leading-relaxed text-navy/70">
-                  <span className="font-serif text-2xl font-semibold text-navy">64</span> 个进入生产环境的真实案例，覆盖
-                  <span className="font-serif text-2xl font-semibold text-navy"> 58</span> 个细分行业——制造、金融、政务、医疗、物流、零售。
-                </div>
-              </div>
-              <div className="py-5 grid md:grid-cols-12 gap-3">
-                <div className="md:col-span-3 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-gold pt-1">
-                  分析框架 · FRAMEWORK
-                </div>
-                <div className="md:col-span-9 text-sm leading-relaxed text-navy/70">
-                  <p>
-                    所有案例按同一套框架拆解，分三档收录：<span className="text-navy font-medium">S（深度）</span> 47 条，有公开一手来源，附决策五问、落地步骤与原文引文，给要做决策的人读；<span className="text-navy font-medium">A（标准）</span> 15 条，信息可靠但细节有限，作对照样本；<span className="text-navy font-medium">B（概览）</span> 2 条，公开报道级别的线索卡。三档都按五种落地模式归档，并打五维标签（切入方式、人机分工、知识来源、验证方式、推广方式）。
-                  </p>
-                </div>
-              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 来源 / 规模 / 框架 三栏 */}
+      <section className="px-5 md:px-10 pb-14 md:pb-20 max-w-[1400px] mx-auto">
+        <div className="grid md:grid-cols-3 gap-px bg-navy/15 border border-navy/15">
+          <div className="bg-cream p-6 md:p-7">
+            <div className="font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-gold">
+              案例来源 · SOURCES
             </div>
+            <p className="mt-3 text-sm leading-relaxed text-navy/70">
+              全部来自公开一手来源：Datawhale《FDE 案例 100》PDF 原文（24 条）、国内企业官方案例与公开报道（12 条）、海外企业官方案例库与年报（28 条）。每条附来源链接与原文留存，不做二手转引。
+            </p>
+          </div>
+          <div className="bg-cream p-6 md:p-7">
+            <div className="font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-gold">
+              收录规模 · COVERAGE
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-navy/70">
+              <span className="font-serif text-2xl font-semibold text-navy">64</span> 个进入生产环境的真实案例，覆盖
+              <span className="font-serif text-2xl font-semibold text-navy"> 58</span> 个细分行业——制造、金融、政务、医疗、物流、零售。
+            </p>
+          </div>
+          <div className="bg-cream p-6 md:p-7">
+            <div className="font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-gold">
+              分析框架 · FRAMEWORK
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-navy/70">
+              同一套框架拆每个案例，分三档收录：<span className="text-navy font-medium">S（深度）</span> 47 条附决策五问与原文引文；<span className="text-navy font-medium">A（标准）</span> 15 条作对照样本；<span className="text-navy font-medium">B（概览）</span> 2 条为线索卡。三档都按五种模式归档、打五维标签。
+            </p>
           </div>
         </div>
       </section>
@@ -152,7 +154,7 @@ export function Home() {
                   <h3 className="font-serif text-2xl font-semibold text-ink">
                     {p.name}
                   </h3>
-                  <span className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/50">
+                  <span className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/50">
                     {p.nameEn}
                   </span>
                 </div>
@@ -160,7 +162,7 @@ export function Home() {
                   <p className="text-navy/70 leading-relaxed">{p.summary}</p>
                 </div>
                 <div className="md:col-span-1 md:text-right">
-                  <span className="font-mono text-[0.625rem] text-navy/40">
+                  <span className="font-mono text-[0.75rem] text-navy/40">
                     {casesByPattern(p.id).length} 例
                   </span>
                 </div>
@@ -184,7 +186,7 @@ export function Home() {
               to={`/case/${c.id}`}
               className="group bg-cream p-7 hover:bg-bluegray/40 transition-colors"
             >
-              <span className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/50">
+              <span className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/50">
                 {c.industry} · {knowledgeLabel(c)}
               </span>
               <h3 className="mt-3 font-serif text-2xl font-semibold text-ink group-hover:text-gold transition-colors">

@@ -21,7 +21,7 @@ function BarList({
         <div key={d.label}>
           <div className="flex items-baseline justify-between mb-1.5">
             <span className="text-sm text-navy/80">{d.label}</span>
-            <span className="font-mono text-xs text-navy/50">
+            <span className="font-mono text-sm text-navy/50">
               {String(d.value).padStart(2, '0')}
             </span>
           </div>
@@ -58,7 +58,7 @@ function ColumnChart({
             <div className="font-serif text-2xl font-semibold text-ink">
               {d.value}
             </div>
-            <div className="font-mono text-[0.5625rem] uppercase tracking-[0.1em] text-navy/50 mt-1">
+            <div className="font-mono text-[0.825rem] uppercase tracking-[0.1em] text-navy/50 mt-1">
               {d.label}
             </div>
           </div>
@@ -113,7 +113,7 @@ export function Insights() {
             <div className="font-serif text-4xl md:text-5xl font-semibold text-gold leading-none">
               {s.v}
             </div>
-            <div className="mt-3 font-mono uppercase tracking-[0.14em] text-[0.625rem] text-navy/50">
+            <div className="mt-3 font-mono uppercase tracking-[0.14em] text-[0.75rem] text-navy/50">
               {s.l}
             </div>
           </div>
@@ -125,7 +125,7 @@ export function Insights() {
         <div>
           <div className="flex items-baseline justify-between border-b border-navy/15 pb-3 mb-6">
             <Kicker className="text-gold">FIG. 01 · 行业分布</Kicker>
-            <span className="font-mono text-[0.5625rem] text-navy/40">
+            <span className="font-mono text-[0.825rem] text-navy/40">
               BY INDUSTRY
             </span>
           </div>
@@ -135,7 +135,7 @@ export function Insights() {
         <div>
           <div className="flex items-baseline justify-between border-b border-navy/15 pb-3 mb-6">
             <Kicker className="text-gold">FIG. 02 · 知识来源分布</Kicker>
-            <span className="font-mono text-[0.5625rem] text-navy/40">
+            <span className="font-mono text-[0.825rem] text-navy/40">
               BY SOURCE
             </span>
           </div>
@@ -145,7 +145,7 @@ export function Insights() {
         <div>
           <div className="flex items-baseline justify-between border-b border-navy/15 pb-3 mb-6">
             <Kicker className="text-gold">FIG. 03 · 模式分布</Kicker>
-            <span className="font-mono text-[0.5625rem] text-navy/40">
+            <span className="font-mono text-[0.825rem] text-navy/40">
               BY PATTERN
             </span>
           </div>
@@ -155,7 +155,7 @@ export function Insights() {
         <div>
           <div className="flex items-baseline justify-between border-b border-navy/15 pb-3 mb-6">
             <Kicker className="text-gold">FIG. 04 · 档位分布</Kicker>
-            <span className="font-mono text-[0.5625rem] text-navy/40">
+            <span className="font-mono text-[0.825rem] text-navy/40">
               BY TIER
             </span>
           </div>

@@ -32,13 +32,13 @@ function FilterGroup({
 }) {
   return (
     <div className="py-5 border-b border-navy/15">
-      <div className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/50 mb-3">
+      <div className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/50 mb-3">
         {label}
       </div>
       <div className="flex flex-wrap gap-2">
         <button
           onClick={() => onPick(null)}
-          className={`font-mono text-[0.6875rem] uppercase tracking-[0.1em] px-3 py-1.5 border transition-colors ${
+          className={`font-mono text-[0.825rem] uppercase tracking-[0.1em] px-3 py-1.5 border transition-colors ${
             active === null
               ? 'border-gold text-gold'
               : 'border-navy/15 text-navy/60 hover:border-navy/40'
@@ -103,7 +103,7 @@ export function CaseIndex() {
         {/* Filters */}
         <aside className="md:col-span-3">
           <div className="md:sticky md:top-36">
-            <div className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/60 border-b border-navy/15 pb-3">
+            <div className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/60 border-b border-navy/15 pb-3">
               筛选 · FILTER
             </div>
             <FilterGroup
@@ -138,10 +138,10 @@ export function CaseIndex() {
         {/* Listing */}
         <div className="md:col-span-9">
           <div className="flex items-baseline justify-between border-b-2 border-navy/80 pb-3">
-            <span className="font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/60">
+            <span className="font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/60">
               目录 · CONTENTS
             </span>
-            <span className="font-mono text-[0.625rem] text-navy/50">
+            <span className="font-mono text-[0.75rem] text-navy/50">
               {String(filtered.length).padStart(2, '0')} / {cases.length} 例
             </span>
           </div>
@@ -172,10 +172,10 @@ export function CaseIndex() {
                       </div>
                       <TierBadge tier={c.tier} />
                     </div>
-                    <span className="hidden md:block md:col-span-3 font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-navy/50">
+                    <span className="hidden md:block md:col-span-3 font-mono text-[0.825rem] uppercase tracking-[0.1em] text-navy/50">
                       {knowledgeLabel(c)}
                     </span>
-                    <span className="col-span-12 md:col-span-2 md:text-right font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-navy/70">
+                    <span className="col-span-12 md:col-span-2 md:text-right font-mono text-[0.825rem] uppercase tracking-[0.12em] text-navy/70">
                       {c.industry}
                     </span>
                   </Link>

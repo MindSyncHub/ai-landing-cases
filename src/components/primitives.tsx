@@ -10,7 +10,7 @@ export function Kicker({
 }) {
   return (
     <span
-      className={`font-mono uppercase tracking-[0.18em] text-[0.6875rem] font-medium ${className}`}
+      className={`font-mono uppercase tracking-[0.18em] text-[0.825rem] font-medium ${className}`}
     >
       {children}
     </span>
@@ -107,7 +107,7 @@ export function IllustrationSlot({
           <path d="M3 16l5-5 4 4 3-3 6 6" />
           <circle cx="8.5" cy="9" r="1.5" />
         </svg>
-        <span className="font-mono uppercase tracking-[0.2em] text-[0.625rem] text-navy/35">
+        <span className="font-mono uppercase tracking-[0.2em] text-[0.75rem] text-navy/35">
           {label}
         </span>
       </div>
@@ -131,7 +131,7 @@ export function StatMatrix({
           <div className="font-serif text-gold font-semibold leading-none text-[4rem] md:text-[5.5rem]">
             {s.value}
           </div>
-          <div className={`mt-3 font-mono uppercase tracking-[0.16em] text-[0.6875rem] ${labelColor}`}>
+          <div className={`mt-3 font-mono uppercase tracking-[0.16em] text-[0.825rem] ${labelColor}`}>
             {s.label}
           </div>
           {s.sub && (
@@ -148,9 +148,9 @@ export function TierBadge({ tier }: { tier: string }) {
   const isS = tier === 'S'
   return (
     <span
-      className={`inline-flex items-center justify-center px-1.5 h-6 border font-mono text-xs font-semibold shrink-0 ${
+      className={`inline-flex items-center justify-center px-1.5 h-7 border font-mono text-sm font-semibold shrink-0 ${
         isS
-          ? 'w-6 border-gold text-gold'
+          ? 'w-7 border-gold text-gold'
           : 'border-navy/30 text-navy/50'
       }`}
     >

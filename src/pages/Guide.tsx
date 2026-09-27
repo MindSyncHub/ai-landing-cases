@@ -106,7 +106,7 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               三种用法
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               START FROM YOUR QUESTION
             </p>
           </div>
@@ -140,7 +140,7 @@ export function Guide() {
                 </p>
                 <Link
                   to={x.link}
-                  className="mt-5 font-mono uppercase tracking-[0.16em] text-[0.625rem] text-gold hover:text-navy transition-colors"
+                  className="mt-5 font-mono uppercase tracking-[0.16em] text-[0.75rem] text-gold hover:text-navy transition-colors"
                 >
                   {x.ln} →
                 </Link>
@@ -158,7 +158,7 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               案例怎么读
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               ANATOMY OF A CASE
             </p>
           </div>
@@ -201,7 +201,7 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               收录与分级
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               WHAT GETS IN, AND WHY
             </p>
           </div>
@@ -215,7 +215,7 @@ export function Guide() {
                 <span className="font-serif text-xl md:text-2xl font-semibold text-gold w-28 shrink-0">
                   {t}
                 </span>
-                <span className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-navy/40 w-16 shrink-0">
+                <span className="font-mono text-[0.75rem] uppercase tracking-[0.16em] text-navy/40 w-16 shrink-0">
                   {n}
                 </span>
                 <p className="text-sm text-navy/65 leading-relaxed">{d}</p>
@@ -239,12 +239,12 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               五种落地模式
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               FIVE PATTERNS
             </p>
             <Link
               to="/patterns"
-              className="mt-4 inline-block font-mono uppercase tracking-[0.16em] text-[0.625rem] text-gold hover:text-navy transition-colors"
+              className="mt-4 inline-block font-mono uppercase tracking-[0.16em] text-[0.75rem] text-gold hover:text-navy transition-colors"
             >
               模式库 →
             </Link>
@@ -265,13 +265,13 @@ export function Guide() {
                   <p className="mt-1 text-sm text-navy/65">{p.summary}</p>
                 </div>
                 <div className="md:col-span-4 text-sm text-navy/65 leading-relaxed">
-                  <span className="font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+                  <span className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
                     适用信号 ·{' '}
                   </span>
                   {PATTERN_WHEN[p.id]?.use}
                 </div>
                 <div className="md:col-span-4 text-sm text-navy/65 leading-relaxed">
-                  <span className="font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+                  <span className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
                     反模式 · 何时失败 ·{' '}
                   </span>
                   {PATTERN_WHEN[p.id]?.fail}
@@ -290,7 +290,7 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               五维分析标签
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               FIVE DIMENSIONS
             </p>
           </div>
@@ -304,7 +304,7 @@ export function Guide() {
                   <span className="font-serif text-lg font-semibold text-navy">
                     {DIM_NAMES[k]}
                   </span>
-                  <span className="font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-gold">
+                  <span className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-gold">
                     {DIM_QUESTIONS[k]}
                   </span>
                 </div>
@@ -314,7 +314,7 @@ export function Guide() {
                       <div className="text-sm font-semibold text-navy">
                         {DIM_LABELS[k][v]}
                       </div>
-                      <div className="mt-1 text-xs text-navy/55 leading-relaxed">
+                      <div className="mt-1 text-sm text-navy/55 leading-relaxed">
                         {DIM_EXPLAIN[k][v]}
                       </div>
                     </div>
@@ -334,7 +334,7 @@ export function Guide() {
             <h2 className="mt-3 font-serif text-2xl font-semibold text-ink">
               来源与溯源
             </h2>
-            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <p className="mt-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               PROVENANCE
             </p>
           </div>

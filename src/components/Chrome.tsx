@@ -38,10 +38,10 @@ export function Chrome({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-navy/15">
         {/* Running header thin bar */}
         <div className="flex items-center justify-between px-5 md:px-10 py-2 border-b border-navy/10">
-          <span className="font-mono uppercase tracking-[0.18em] text-[0.625rem] text-navy/60">
+          <span className="font-mono uppercase tracking-[0.18em] text-[0.75rem] text-navy/60">
             {current.cn} · {current.en}
           </span>
-          <span className="font-mono uppercase tracking-[0.18em] text-[0.625rem] text-navy/60">
+          <span className="font-mono uppercase tracking-[0.18em] text-[0.75rem] text-navy/60">
             {current.page} / {TOTAL}
           </span>
         </div>
@@ -51,7 +51,7 @@ export function Chrome({ children }: { children: ReactNode }) {
             <span className="font-serif text-lg md:text-xl font-semibold text-navy">
               企业 AI 落地案例年鉴
             </span>
-            <span className="font-mono uppercase tracking-[0.18em] text-[0.5625rem] text-gold hidden sm:inline">
+            <span className="font-mono uppercase tracking-[0.18em] text-[0.825rem] text-gold hidden sm:inline">
               ANNUAL
             </span>
           </Link>
@@ -62,7 +62,7 @@ export function Chrome({ children }: { children: ReactNode }) {
                 <li key={n.path}>
                   <Link
                     to={n.path}
-                    className={`font-mono uppercase tracking-[0.14em] text-[0.6875rem] transition-colors ${
+                    className={`font-mono uppercase tracking-[0.14em] text-[0.825rem] transition-colors ${
                       isActive
                         ? 'text-gold'
                         : 'text-navy/70 hover:text-navy'
@@ -83,15 +83,15 @@ export function Chrome({ children }: { children: ReactNode }) {
       {/* Running footer thin bar */}
       <footer className="border-t border-navy/15 bg-cream">
         <div className="flex items-center justify-between px-5 md:px-10 py-4">
-          <span className="font-mono uppercase tracking-[0.18em] text-[0.625rem] text-navy/60">
+          <span className="font-mono uppercase tracking-[0.18em] text-[0.75rem] text-navy/60">
             AI CASE YEARBOOK — 案例年鉴
           </span>
-          <span className="font-mono uppercase tracking-[0.18em] text-[0.625rem] text-navy/60">
+          <span className="font-mono uppercase tracking-[0.18em] text-[0.75rem] text-navy/60">
             {current.en} · {current.page}/{TOTAL}
           </span>
         </div>
         <div className="px-5 md:px-10 pb-8 pt-2">
-          <p className="font-mono text-[0.625rem] text-navy/40 uppercase tracking-[0.14em]">
+          <p className="font-mono text-[0.75rem] text-navy/40 uppercase tracking-[0.14em]">
             © 2026 · 一本可检索的在线年鉴 · A searchable annual of AI in
             production
           </p>

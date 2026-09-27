@@ -15,7 +15,7 @@ import { TIER_CN } from '../data/cases'
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div className="py-3">
-      <div className="font-mono uppercase tracking-[0.16em] text-[0.5625rem] text-navy/40">
+      <div className="font-mono uppercase tracking-[0.16em] text-[0.825rem] text-navy/40">
         {label}
       </div>
       <div className="mt-1 text-sm text-navy leading-snug">{value}</div>
@@ -86,7 +86,7 @@ function DecisionBlock({ c }: { c: Case }) {
               key={r.label}
               className="grid md:grid-cols-12 gap-2 py-4 border-b border-navy/10 last:border-b-0"
             >
-              <dt className="md:col-span-2 font-mono uppercase tracking-[0.14em] text-[0.6875rem] text-gold pt-1">
+              <dt className="md:col-span-2 font-mono uppercase tracking-[0.14em] text-[0.825rem] text-gold pt-1">
                 {r.label}
               </dt>
               <dd className="md:col-span-10 text-[0.9375rem] leading-relaxed text-navy/80">
@@ -106,14 +106,14 @@ function DimBar({ c }: { c: Case }) {
     <div className="mt-10 border border-navy/15">
       <div className="flex items-center justify-between px-5 py-3 border-b border-navy/15">
         <Kicker className="text-gold">FIVE DIMENSIONS</Kicker>
-        <span className="font-mono text-[0.5625rem] text-navy/40">
+        <span className="font-mono text-[0.825rem] text-navy/40">
           五维分析标签
         </span>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-navy/10">
         {(Object.keys(DIM_NAMES) as (keyof typeof DIM_LABELS)[]).map((k) => (
           <div key={k} className="bg-cream px-5 py-4">
-            <div className="font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40">
+            <div className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40">
               {DIM_NAMES[k]}
             </div>
             <div className="mt-1.5 font-serif text-base font-semibold text-navy">
@@ -137,7 +137,7 @@ export function CaseDetail({ id }: { id: string }) {
         </p>
         <Link
           to="/cases"
-          className="inline-block mt-6 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-gold border border-gold px-5 py-2.5"
+          className="inline-block mt-6 font-mono text-[0.825rem] uppercase tracking-[0.14em] text-gold border border-gold px-5 py-2.5"
         >
           返回索引
         </Link>
@@ -157,7 +157,7 @@ export function CaseDetail({ id }: { id: string }) {
     <div className="px-5 md:px-10 py-12 md:py-16 max-w-[1400px] mx-auto">
       <Link
         to="/cases"
-        className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-navy/50 hover:text-gold transition-colors"
+        className="font-mono text-[0.75rem] uppercase tracking-[0.16em] text-navy/50 hover:text-gold transition-colors"
       >
         ← 案例索引 · INDEX
       </Link>
@@ -170,7 +170,7 @@ export function CaseDetail({ id }: { id: string }) {
             <Link
               key={p.id}
               to={`/pattern/${p.id}`}
-              className="font-mono uppercase tracking-[0.14em] text-[0.625rem] text-navy/60 hover:text-gold transition-colors"
+              className="font-mono uppercase tracking-[0.14em] text-[0.75rem] text-navy/60 hover:text-gold transition-colors"
             >
               {p.no} {p.name}
             </Link>
@@ -278,7 +278,7 @@ export function CaseDetail({ id }: { id: string }) {
                       「{qt.q}」
                     </p>
                     {qt.ctx && (
-                      <cite className="mt-2 block font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/40 not-italic">
+                      <cite className="mt-2 block font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/40 not-italic">
                         {qt.ctx}
                       </cite>
                     )}
@@ -342,7 +342,7 @@ export function CaseDetail({ id }: { id: string }) {
             href={c.url}
             target="_blank"
             rel="noreferrer"
-            className="mt-3 inline-block font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-gold border-b border-gold/40 hover:border-gold"
+            className="mt-3 inline-block font-mono text-[0.825rem] uppercase tracking-[0.12em] text-gold border-b border-gold/40 hover:border-gold"
           >
             查看一手来源 →
           </a>
@@ -361,7 +361,7 @@ export function CaseDetail({ id }: { id: string }) {
                 to={`/case/${r.id}`}
                 className="group bg-cream p-6 hover:bg-bluegray/40 transition-colors"
               >
-                <span className="font-mono uppercase tracking-[0.14em] text-[0.5625rem] text-navy/50">
+                <span className="font-mono uppercase tracking-[0.14em] text-[0.825rem] text-navy/50">
                   {r.industry} · {knowledgeLabel(r)}
                 </span>
                 <h3 className="mt-2 font-serif text-xl font-semibold text-ink group-hover:text-gold transition-colors">

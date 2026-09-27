@@ -25,14 +25,14 @@ export function Patterns() {
               <span className="font-serif text-6xl md:text-7xl font-semibold text-navy group-hover:text-gold transition-colors leading-none">
                 {p.no}
               </span>
-              <span className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-navy/40">
+              <span className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-navy/40">
                 {casesByPattern(p.id).length} 例
               </span>
             </div>
             <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">
               {p.name}
             </h2>
-            <div className="mt-1 font-mono uppercase tracking-[0.16em] text-[0.625rem] text-navy/50">
+            <div className="mt-1 font-mono uppercase tracking-[0.16em] text-[0.75rem] text-navy/50">
               {p.nameEn}
             </div>
             <p className="mt-4 text-navy/70 leading-relaxed">{p.summary}</p>
