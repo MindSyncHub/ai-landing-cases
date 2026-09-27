@@ -1,70 +1,119 @@
 import type { ReactNode } from 'react'
 
 /**
- * 长文排版组件：把整段文字拆成短段落，并对关键信息（数字与单位、引号内术语）
- * 加烫金色下划线，提升案例详情页的可读性。
+ * 长文排版组件：识别 data 字段里的轻量标记，按语义渲染。
+ *
+ * 支持语法（data/*.json 的 problem / solution / human / result 字段）：
+ *   - 空行分段
+ *   - "- " 无序列表（连续行）
+ *   - "1. " 有序列表（连续行）
+ *   - "> " 引用（原文口径、验收标准等）
+ *   - **加粗**（关键判断、术语）
  */
 
-// 按句读切句（保留标点），再按目标长度聚合成短段落
-function toParagraphs(text: string): string[][] {
-  const sentences = text.match(/[^。！？!?]+[。！？!?]?/g) ?? [text]
-  const paras: string[][] = []
-  let cur: string[] = []
-  let len = 0
-  for (const s of sentences) {
-    cur.push(s)
-    len += s.length
-    if (len >= 90 && cur.length >= 2) {
-      paras.push(cur)
-      cur = []
-      len = 0
+type Block =
+  | { kind: 'p'; text: string }
+  | { kind: 'ul'; items: string[] }
+  | { kind: 'ol'; items: string[] }
+  | { kind: 'quote'; text: string }
+
+export function parseBlocks(body: string): Block[] {
+  const lines = body.split('\n')
+  const blocks: Block[] = []
+  let list: { kind: 'ul' | 'ol'; items: string[] } | null = null
+  const flushList = () => {
+    if (list) {
+      blocks.push({ kind: list.kind, items: list.items })
+      list = null
     }
   }
-  if (cur.length) paras.push(cur)
-  return paras
+  for (const raw of lines) {
+    const line = raw.trimEnd()
+    const ul = line.match(/^[-•]\s+(.*)$/)
+    const ol = line.match(/^\d+[.、]\s*(.*)$/)
+    const qt = line.match(/^>\s?(.*)$/)
+    if (ul) {
+      if (!list || list.kind !== 'ul') {
+        flushList()
+        list = { kind: 'ul', items: [] }
+      }
+      list.items.push(ul[1])
+    } else if (ol) {
+      if (!list || list.kind !== 'ol') {
+        flushList()
+        list = { kind: 'ol', items: [] }
+      }
+      list.items.push(ol[1])
+    } else if (qt) {
+      flushList()
+      blocks.push({ kind: 'quote', text: qt[1] })
+    } else if (line.trim() === '') {
+      flushList()
+    } else {
+      flushList()
+      const last = blocks[blocks.length - 1]
+      // 无空行衔接的普通行并入上一段（兼容未标记的旧数据）
+      if (last && last.kind === 'p') last.text += line
+      else blocks.push({ kind: 'p', text: line })
+    }
+  }
+  flushList()
+  return blocks
 }
 
-// 关键信息：数字+单位（含 3到5、数百、上千 等）、引号/书名号内的术语
-const KEY_RE =
-  /(\d+(?:\.\d+)?(?:[到~—-]\d+(?:\.\d+)?)?(?:余|多)?(?:个|种|步|层|类|倍|页|天|小时|分钟|人|%|％|次|项|条|款|年|月|日|周|万|亿|千|百)?|[「『“"]([^「『“"」』”"]{2,24})[」』”"]|《[^》]{2,20})/g
-
-function renderInline(text: string) {
+function renderInline(text: string): ReactNode {
   const parts: ReactNode[] = []
+  const re = /\*\*([^*]+)\*\*/g
   let last = 0
   let m: RegExpExecArray | null
   let k = 0
-  KEY_RE.lastIndex = 0
-  while ((m = KEY_RE.exec(text)) !== null) {
-    // 纯数字但无单位且不构成数量表达的不高亮（如年份 2024 单独出现）
-    const hit = m[0]
-    const bareNumber = /^\d{4}$/.test(hit) && m.index > 0 && text[m.index - 1] !== '年'
+  while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index))
     parts.push(
-      bareNumber ? (
-        hit
-      ) : (
-        <span key={k++} className="underline decoration-gold decoration-2 underline-offset-4 text-ink">
-          {hit}
-        </span>
-      ),
+      <strong key={k++} className="font-semibold text-ink">
+        {m[1]}
+      </strong>,
     )
-    last = m.index + hit.length
+    last = m.index + m[0].length
   }
   if (last < text.length) parts.push(text.slice(last))
   return parts
 }
 
 export function Prose({ body }: { body: string }) {
-  const paras = toParagraphs(body)
+  const blocks = parseBlocks(body)
   return (
     <div className="space-y-4">
-      {paras.map((p, i) => (
-        <p key={i} className="leading-relaxed text-[1.0625rem] text-navy/75">
-          {p.map((s, j) => (
-            <span key={j}>{renderInline(s)}</span>
-          ))}
-        </p>
-      ))}
+      {blocks.map((b, i) => {
+        if (b.kind === 'p')
+          return (
+            <p key={i} className="leading-relaxed text-[1.0625rem] text-navy/75">
+              {renderInline(b.text)}
+            </p>
+          )
+        if (b.kind === 'quote')
+          return (
+            <blockquote
+              key={i}
+              className="border-l-2 border-gold pl-4 py-1 font-serif text-[1.0625rem] text-ink/85 leading-relaxed"
+            >
+              {renderInline(b.text)}
+            </blockquote>
+          )
+        const Tag = b.kind === 'ul' ? 'ul' : 'ol'
+        return (
+          <Tag
+            key={i}
+            className={`space-y-2 leading-relaxed text-[1.0625rem] text-navy/75 ${
+              b.kind === 'ul' ? 'list-disc' : 'list-decimal'
+            } marker:text-gold pl-5`}
+          >
+            {b.items.map((it, j) => (
+              <li key={j}>{renderInline(it)}</li>
+            ))}
+          </Tag>
+        )
+      })}
     </div>
   )
 }
