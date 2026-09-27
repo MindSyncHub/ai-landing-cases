@@ -1,0 +1,102 @@
+{
+  "groups": [
+    {
+      "id": "manufacturing",
+      "name": "制造",
+      "prefixes": [
+        "制造",
+        "汽车制造",
+        "航空制造",
+        "航空航天"
+      ],
+      "caseCount": 12
+    },
+    {
+      "id": "finance",
+      "name": "金融",
+      "prefixes": [
+        "金融",
+        "金融科技",
+        "保险"
+      ],
+      "caseCount": 10
+    },
+    {
+      "id": "commerce",
+      "name": "商贸消费",
+      "prefixes": [
+        "零售",
+        "消费品",
+        "快消",
+        "本地生活",
+        "电商",
+        "跨境电商",
+        "外贸"
+      ],
+      "caseCount": 11
+    },
+    {
+      "id": "tech",
+      "name": "科技互联网",
+      "prefixes": [
+        "科技",
+        "互联网",
+        "IT服务"
+      ],
+      "caseCount": 7
+    },
+    {
+      "id": "public",
+      "name": "政务公共",
+      "prefixes": [
+        "政务",
+        "公共服务",
+        "央国企"
+      ],
+      "caseCount": 6
+    },
+    {
+      "id": "health",
+      "name": "医疗医药",
+      "prefixes": [
+        "医疗",
+        "医药",
+        "制药",
+        "生物科技"
+      ],
+      "caseCount": 5
+    },
+    {
+      "id": "professional",
+      "name": "专业服务",
+      "prefixes": [
+        "法律",
+        "咨询",
+        "服务业",
+        "建筑设计",
+        "工程租赁"
+      ],
+      "caseCount": 5
+    },
+    {
+      "id": "telecom",
+      "name": "电信",
+      "prefixes": [
+        "电信"
+      ],
+      "caseCount": 3
+    },
+    {
+      "id": "logistics",
+      "name": "物流能源农业",
+      "prefixes": [
+        "物流",
+        "航空",
+        "能源",
+        "农业",
+        "旅游"
+      ],
+      "caseCount": 5
+    }
+  ]
+}

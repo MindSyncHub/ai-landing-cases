@@ -61,9 +61,30 @@ patterns.forEach((p, i) => {
   (p.case_refs || []).forEach((r) => { if (!ids.has(r)) errors.push(`${at}: case_refs 指向不存在的案例 ${r}`); });
 });
 
+// —— 筛选分组覆盖性检查：每个痛点标签有类目，每个行业前缀被恰好一组覆盖 ——
+const catIds = new Set((painPoints.categories || []).map((c) => c.id));
+(painPoints.tags || []).forEach((t) => {
+  if (!catIds.has(t.category)) errors.push(`pain tag ${t.id}: category 未登记（${t.category}）`);
+});
+const groups = read('data/industry-groups.json').groups || [];
+const seen = new Set();
+groups.forEach((g) => {
+  for (const pre of g.prefixes || []) {
+    if (seen.has(pre)) errors.push(`行业前缀 ${pre}: 被多组覆盖`);
+    seen.add(pre);
+  }
+});
+const casePrefixes = new Set(cases.map((c) => String(c.industry).split('/')[0]));
+casePrefixes.forEach((pre) => {
+  if (!seen.has(pre)) errors.push(`行业前缀 ${pre}: 未被任何行业组覆盖`);
+});
+seen.forEach((pre) => {
+  if (!casePrefixes.has(pre)) errors.push(`行业组前缀 ${pre}: 无对应案例行业`);
+});
+
 if (errors.length) {
   console.error(`校验失败 ${errors.length} 项：`);
   errors.forEach((e) => console.error('  - ' + e));
   process.exit(1);
 }
-console.log(`校验通过：案例 ${cases.length} 条，模式 ${patterns.length} 个，痛点标签 ${tagIds.size} 个。`);
+console.log(`校验通过：案例 ${cases.length} 条，模式 ${patterns.length} 个，痛点标签 ${tagIds.size} 个，痛点类目 ${catIds.size} 个，行业组 ${groups.length} 个。`);

@@ -1,4 +1,10 @@
-import { CASES, PATTERNS, PAIN_POINTS } from './generated'
+import {
+  CASES,
+  PATTERNS,
+  PAIN_POINTS,
+  PAIN_CATEGORIES,
+  INDUSTRY_GROUPS,
+} from './generated'
 
 /** 档位：S 深度 / 标准 / 概览（SPEC 2.3） */
 export type Tier = 'S' | 'A' | 'B'
@@ -193,6 +199,63 @@ export function knowledgeLabel(c: Case): string {
 
 export function painPointLabels(c: Case): string[] {
   return c.painPoints.map((id) => painPointById[id] ?? id)
+}
+
+/** 痛点类目（7 大类，data/pain-points.json 登记）：筛选收敛用 */
+export interface PainCategory {
+  id: string
+  name: string
+  tagIds: string[]
+  caseCount: number
+}
+
+const painCatOfTag: Record<string, string> = Object.fromEntries(
+  (PAIN_POINTS as { id: string; category: string }[]).map((t) => [t.id, t.category]),
+)
+
+export const painCategories: PainCategory[] = (PAIN_CATEGORIES as {
+  id: string
+  name: string
+}[]).map((cat) => {
+  const tagIds = (PAIN_POINTS as { id: string; category: string }[])
+    .filter((t) => t.category === cat.id)
+    .map((t) => t.id)
+  return {
+    ...cat,
+    tagIds,
+    caseCount: cases.filter((c) => c.painPoints.some((id) => painCatOfTag[id] === cat.id)).length,
+  }
+})
+
+/** 行业分组（9 大组，data/industry-groups.json 登记）：筛选收敛用 */
+export interface IndustryGroup {
+  id: string
+  name: string
+  prefixes: string[]
+  caseCount: number
+}
+
+export const industryGroups: IndustryGroup[] = (INDUSTRY_GROUPS as {
+  id: string
+  name: string
+  prefixes: string[]
+}[]).map((g) => ({
+  ...g,
+  caseCount: cases.filter((c) =>
+    g.prefixes.some((pre) => c.industry === pre || c.industry.startsWith(pre + '/')),
+  ).length,
+}))
+
+/** 案例命中某痛点类目（任一 pain tag 属于该类） */
+export function caseInPainCategory(c: Case, catId: string): boolean {
+  return c.painPoints.some((id) => painCatOfTag[id] === catId)
+}
+
+/** 案例命中某行业组（行业前缀属于该组） */
+export function caseInIndustryGroup(c: Case, groupId: string): boolean {
+  const g = industryGroups.find((x) => x.id === groupId)
+  if (!g) return false
+  return g.prefixes.some((pre) => c.industry === pre || c.industry.startsWith(pre + '/'))
 }
 
 export const stats = {

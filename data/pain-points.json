@@ -3,172 +3,236 @@
     {
       "id": "expert-knowledge-loss",
       "name": "专家知识流失",
-      "description": "关键经验沉淀在老员工脑中，面临退休/流失风险，新人培养周期长"
+      "description": "关键经验沉淀在老员工脑中，面临退休/流失风险，新人培养周期长",
+      "category": "knowledge"
     },
     {
       "id": "onboarding-training",
       "name": "新人培训低效",
-      "description": "新人上手依赖师傅带教，周期长、质量不稳定、过程不可跟踪"
+      "description": "新人上手依赖师傅带教，周期长、质量不稳定、过程不可跟踪",
+      "category": "knowledge"
     },
     {
       "id": "document-review",
       "name": "人工审核材料",
-      "description": "图片/文档材料靠人工逐张审核录入，慢、累、易错"
+      "description": "图片/文档材料靠人工逐张审核录入，慢、累、易错",
+      "category": "review"
     },
     {
       "id": "throughput-limit",
       "name": "业务吞吐受限",
-      "description": "单件处理时长卡住整体业务量，制约服务模式和成本结构"
+      "description": "单件处理时长卡住整体业务量，制约服务模式和成本结构",
+      "category": "throughput"
     },
     {
       "id": "information-overload",
       "name": "案头信息过载",
-      "description": "大量非结构化材料消耗专业人员时间，瓶颈在信息处理而非专业判断"
+      "description": "大量非结构化材料消耗专业人员时间，瓶颈在信息处理而非专业判断",
+      "category": "management"
     },
     {
       "id": "professional-judgment-gap",
       "name": "专业判断依赖个人",
-      "description": "核心质量依赖少数资深人员经验，新人与资深差距大、经验难复制"
+      "description": "核心质量依赖少数资深人员经验，新人与资深差距大、经验难复制",
+      "category": "knowledge"
     },
     {
       "id": "cross-department-coordination",
       "name": "跨部门协同重",
-      "description": "多专业部门协作，汇总报告耗时以天计"
+      "description": "多专业部门协作，汇总报告耗时以天计",
+      "category": "process"
     },
     {
       "id": "professional-tool-heavy",
       "name": "专业工具割裂",
-      "description": "工作依赖多个专业软件，人在工具和重复计算之间切换"
+      "description": "工作依赖多个专业软件，人在工具和重复计算之间切换",
+      "category": "process"
     },
     {
       "id": "manual-matching",
       "name": "人工匹配效率低",
-      "description": "资源/商品/人选匹配靠个人经验，规模上来后失效"
+      "description": "资源/商品/人选匹配靠个人经验，规模上来后失效",
+      "category": "throughput"
     },
     {
       "id": "process-tracking",
       "name": "履约跟进靠人工",
-      "description": "进度分散在个人和表格里，靠人盯、靠人催"
+      "description": "进度分散在个人和表格里，靠人盯、靠人催",
+      "category": "throughput"
     },
     {
       "id": "data-siloed",
       "name": "数据分散",
-      "description": "数据散落在多个系统，看不清业务全漏斗"
+      "description": "数据散落在多个系统，看不清业务全漏斗",
+      "category": "process"
     },
     {
       "id": "capacity-underuse",
       "name": "空间/产能利用不足",
-      "description": "资源利用率低于保本线，直接漏利润"
+      "description": "资源利用率低于保本线，直接漏利润",
+      "category": "management"
     },
     {
       "id": "algorithm-execution-gap",
       "name": "方案落不了地",
-      "description": "算法能算出最优解但现场执行不了，数字化工具反复失败"
+      "description": "算法能算出最优解但现场执行不了，数字化工具反复失败",
+      "category": "process"
     },
     {
       "id": "ai-adoption-org",
       "name": "AI采用难成组织",
-      "description": "员工个人提效明显，但认知/工具/流程不统一，无法沉淀为组织能力"
+      "description": "员工个人提效明显，但认知/工具/流程不统一，无法沉淀为组织能力",
+      "category": "adoption"
     },
     {
       "id": "data-quality",
       "name": "主数据污染",
-      "description": "重复/不一致数据让系统越用越脏，检索失效"
+      "description": "重复/不一致数据让系统越用越脏，检索失效",
+      "category": "process"
     },
     {
       "id": "procurement-waste",
       "name": "采购浪费",
-      "description": "买错买重、库存积压报废，损失隐性且没人算过账"
+      "description": "买错买重、库存积压报废，损失隐性且没人算过账",
+      "category": "management"
     },
     {
       "id": "rule-based-backoffice",
       "name": "规则密集后台流程",
-      "description": "财务/人事/行政等规则多层级深的流程，人工判断+录入无法随业务量扩张"
+      "description": "财务/人事/行政等规则多层级深的流程，人工判断+录入无法随业务量扩张",
+      "category": "process"
     },
     {
       "id": "reconciliation",
       "name": "人工对账耗时",
-      "description": "多方数据/单据逐周期人工核对，慢且易返工"
+      "description": "多方数据/单据逐周期人工核对，慢且易返工",
+      "category": "review"
     },
     {
       "id": "revenue-leak",
       "name": "应收差异被容忍",
-      "description": "差异在容忍区间内被放弃，收入悄悄漏掉"
+      "description": "差异在容忍区间内被放弃，收入悄悄漏掉",
+      "category": "review"
     },
     {
       "id": "ai-trust-gap",
       "name": "AI信任与认知门槛",
-      "description": "老板听过概念但看不到和日常问题的关系，不敢投入，需先证明再扩张"
+      "description": "老板听过概念但看不到和日常问题的关系，不敢投入，需先证明再扩张",
+      "category": "adoption"
     },
     {
       "id": "content-production",
       "name": "内容生产靠人力堆",
-      "description": "SKU 多上新快，素材生产人力成本高、品控依赖个人、资产留不住"
+      "description": "SKU 多上新快，素材生产人力成本高、品控依赖个人、资产留不住",
+      "category": "management"
     },
     {
       "id": "field-visibility",
       "name": "一线执行看不见",
-      "description": "老板靠周期性汇报了解现场，信息差造成管理盲区"
+      "description": "老板靠周期性汇报了解现场，信息差造成管理盲区",
+      "category": "management"
     },
     {
       "id": "paper-based-process",
       "name": "纸质/Excel流程割裂",
-      "description": "数据散落在纸质表格、Excel、聊天记录里，不成体系无法决策"
+      "description": "数据散落在纸质表格、Excel、聊天记录里，不成体系无法决策",
+      "category": "process"
     },
     {
       "id": "headcount-cap",
       "name": "编制受限",
-      "description": "业务增长但人员不能同步扩张，专业岗位压力越来越大"
+      "description": "业务增长但人员不能同步扩张，专业岗位压力越来越大",
+      "category": "adoption"
     },
     {
       "id": "ad-hoc-analysis",
       "name": "临时数据分析靠人工",
-      "description": "分析需求不断变化，人工写SQL慢且易错，仪表盘答不了追问"
+      "description": "分析需求不断变化，人工写SQL慢且易错，仪表盘答不了追问",
+      "category": "throughput"
     },
     {
       "id": "quotation-bottleneck",
       "name": "非标报价卡脖子",
-      "description": "报价依赖少数技术骨干经验，响应慢、准确率波动、直接丢单或亏本"
+      "description": "报价依赖少数技术骨干经验，响应慢、准确率波动、直接丢单或亏本",
+      "category": "throughput"
     },
     {
       "id": "management-visibility",
       "name": "经营数据延迟",
-      "description": "管理层看大盘靠人工统计，延迟以月计，无法动态分析"
+      "description": "管理层看大盘靠人工统计，延迟以月计，无法动态分析",
+      "category": "management"
     },
     {
       "id": "review-backlog",
       "name": "审核排队积压",
-      "description": "审核请求随业务量堆积，专业人员被低级问题占用"
+      "description": "审核请求随业务量堆积，专业人员被低级问题占用",
+      "category": "review"
     },
     {
       "id": "anomaly-by-human",
       "name": "异常靠人盯",
-      "description": "业务异常靠人问、人查才能发现，无法主动预警"
+      "description": "业务异常靠人问、人查才能发现，无法主动预警",
+      "category": "service"
     },
     {
       "id": "compliance-check",
       "name": "规范合规核对耗时",
-      "description": "强规范行业的逐项合规检查比干活本身还耗时，修改牵一发动全身"
+      "description": "强规范行业的逐项合规检查比干活本身还耗时，修改牵一发动全身",
+      "category": "review"
     },
     {
       "id": "manual-data-transfer",
       "name": "人工搬运数据",
-      "description": "人在多个系统间扒数、誊抄、核对，充当数据连接件"
+      "description": "人在多个系统间扒数、誊抄、核对，充当数据连接件",
+      "category": "throughput"
     },
     {
       "id": "key-person-bottleneck",
       "name": "老板是唯一瓶颈",
-      "description": "销售/调度/管理全压在老板身上，长尾客户无暇承接"
+      "description": "销售/调度/管理全压在老板身上，长尾客户无暇承接",
+      "category": "knowledge"
     },
     {
       "id": "customer-service-cost",
       "name": "客服体验与自助率",
-      "description": "客服成本高、体验波动，需要可评测、可迭代的 AI 客服方案"
+      "description": "客服成本高、体验波动，需要可评测、可迭代的 AI 客服方案",
+      "category": "service"
     },
     {
       "id": "quality-inspection",
       "name": "质检依赖人工",
-      "description": "人工目检漏检率高、质检模型缺缺陷样本训练困难"
+      "description": "人工目检漏检率高、质检模型缺缺陷样本训练困难",
+      "category": "review"
+    }
+  ],
+  "categories": [
+    {
+      "id": "knowledge",
+      "name": "知识与经验"
+    },
+    {
+      "id": "review",
+      "name": "审核与合规"
+    },
+    {
+      "id": "throughput",
+      "name": "效率与吞吐"
+    },
+    {
+      "id": "process",
+      "name": "流程与数据"
+    },
+    {
+      "id": "management",
+      "name": "经营与决策"
+    },
+    {
+      "id": "adoption",
+      "name": "组织与采纳"
+    },
+    {
+      "id": "service",
+      "name": "客服与异常"
     }
   ]
 }

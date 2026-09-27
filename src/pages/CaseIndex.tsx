@@ -2,19 +2,21 @@ import { useMemo, useState } from 'react'
 import { Link } from '../router'
 import {
   cases,
-  industries,
   sourceTypes,
   tiers,
   knowledgeLabel,
-  painPointLabels,
+  painCategories,
+  industryGroups,
+  caseInPainCategory,
+  caseInIndustryGroup,
   TIER_CN,
   type Tier,
 } from '../data/cases'
 import { Kicker, TierBadge } from '../components/primitives'
 
 type Filter = {
-  pain: string | null
-  industry: string | null
+  painCat: string | null
+  industryGroup: string | null
   source: string | null
   tier: Tier | null
 }
@@ -26,7 +28,7 @@ function FilterGroup({
   onPick,
 }: {
   label: string
-  options: string[]
+  options: { value: string; label: string; count?: number }[]
   active: string | null
   onPick: (v: string | null) => void
 }) {
@@ -48,15 +50,24 @@ function FilterGroup({
         </button>
         {options.map((o) => (
           <button
-            key={o}
-            onClick={() => onPick(o)}
-            className={`text-[0.8125rem] px-3 py-1.5 border transition-colors ${
-              active === o
+            key={o.value}
+            onClick={() => onPick(o.value)}
+            className={`text-[0.8125rem] px-3 py-1.5 border transition-colors inline-flex items-baseline gap-1.5 ${
+              active === o.value
                 ? 'border-gold text-gold bg-gold/5'
                 : 'border-navy/15 text-navy/70 hover:border-navy/40'
             }`}
           >
-            {o}
+            {o.label}
+            {o.count !== undefined && (
+              <span
+                className={`font-mono text-[0.6875rem] ${
+                  active === o.value ? 'text-gold/70' : 'text-navy/40'
+                }`}
+              >
+                {o.count}
+              </span>
+            )}
           </button>
         ))}
       </div>
@@ -66,22 +77,28 @@ function FilterGroup({
 
 export function CaseIndex() {
   const [filter, setFilter] = useState<Filter>({
-    pain: null,
-    industry: null,
+    painCat: null,
+    industryGroup: null,
     source: null,
     tier: null,
   })
 
-  const painOptions = [
-    ...new Set(cases.flatMap((c) => painPointLabels(c))),
-  ].sort()
+  const painOptions = painCategories
+    .slice()
+    .sort((a, b) => b.caseCount - a.caseCount)
+    .map((c) => ({ value: c.id, label: c.name, count: c.caseCount }))
+
+  const industryOptions = industryGroups
+    .slice()
+    .sort((a, b) => b.caseCount - a.caseCount)
+    .map((g) => ({ value: g.id, label: g.name, count: g.caseCount }))
 
   const filtered = useMemo(
     () =>
       cases.filter(
         (c) =>
-          (!filter.pain || painPointLabels(c).includes(filter.pain)) &&
-          (!filter.industry || c.industry === filter.industry) &&
+          (!filter.painCat || caseInPainCategory(c, filter.painCat)) &&
+          (!filter.industryGroup || caseInIndustryGroup(c, filter.industryGroup)) &&
           (!filter.source || knowledgeLabel(c) === filter.source) &&
           (!filter.tier || c.tier === filter.tier),
       ),
@@ -107,30 +124,28 @@ export function CaseIndex() {
               筛选 · FILTER
             </div>
             <FilterGroup
-              label="业务痛点 · PAIN POINT"
+              label="业务痛点 · PAIN"
               options={painOptions}
-              active={filter.pain}
-              onPick={(v) => setFilter((f) => ({ ...f, pain: v }))}
+              active={filter.painCat}
+              onPick={(v) => setFilter((f) => ({ ...f, painCat: v }))}
             />
             <FilterGroup
               label="行业 · INDUSTRY"
-              options={industries}
-              active={filter.industry}
-              onPick={(v) => setFilter((f) => ({ ...f, industry: v }))}
+              options={industryOptions}
+              active={filter.industryGroup}
+              onPick={(v) => setFilter((f) => ({ ...f, industryGroup: v }))}
             />
             <FilterGroup
               label="知识来源 · SOURCE"
-              options={sourceTypes}
+              options={sourceTypes.map((t) => ({ value: t, label: t }))}
               active={filter.source}
               onPick={(v) => setFilter((f) => ({ ...f, source: v }))}
             />
             <FilterGroup
               label="档位 · TIER"
-              options={tiers.map((t) => `${t}（${TIER_CN[t]}）`)}
-              active={filter.tier ? `${filter.tier}（${TIER_CN[filter.tier]}）` : null}
-              onPick={(v) =>
-                setFilter((f) => ({ ...f, tier: v ? (v[0] as Tier) : null }))
-              }
+              options={tiers.map((t) => ({ value: t, label: `${t}（${TIER_CN[t]}）` }))}
+              active={filter.tier}
+              onPick={(v) => setFilter((f) => ({ ...f, tier: v as Tier | null }))}
             />
           </div>
         </aside>
