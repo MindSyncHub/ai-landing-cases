@@ -10,6 +10,7 @@ import {
   type Case,
 } from '../data/cases'
 import { Kicker, TierBadge } from '../components/primitives'
+import { Prose } from '../components/Prose'
 import { TIER_CN } from '../data/cases'
 
 function Meta({ label, value }: { label: string; value: string }) {
@@ -49,7 +50,7 @@ function Section({
         <h2 className="font-serif text-2xl md:text-3xl font-semibold text-ink mb-4">
           {title}
         </h2>
-        <p className="leading-relaxed text-[1.0625rem] text-navy/75">{body}</p>
+        <Prose body={body} />
       </div>
     </section>
   )
