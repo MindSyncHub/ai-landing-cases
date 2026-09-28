@@ -70,7 +70,7 @@ function renderInline(text: string): ReactNode {
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index))
     parts.push(
-      <strong key={k++} className="font-semibold text-ink">
+      <strong key={k++} className="font-semibold">
         {m[1]}
       </strong>,
     )
